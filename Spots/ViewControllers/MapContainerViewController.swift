@@ -20,7 +20,7 @@ class MapContainerViewController: UIViewController {
   }
   
     
-  @IBOutlet weak var btnAdd: FabButton!
+  @IBOutlet weak var btnAdd: FABButton!
   
   open override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,6 +40,7 @@ class MapContainerViewController: UIViewController {
     btnAdd.layer.shadowOffset = CGSize(width: 0, height: 2)
     btnAdd.layer.shadowRadius = 2
     btnAdd.layer.shadowOpacity = 0.4
+    btnAdd.layer.cornerRadius = btnAdd.frame.width/2
     btnAdd.setImage(Icon.add?.tint(with: Color.white), for: .normal)
     
   }

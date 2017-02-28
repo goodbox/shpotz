@@ -13,10 +13,11 @@ public struct SpotIcons {
   
   /// Get the icon by the file name.
   public static func icon(_ name: String) -> UIImage? {
-    return UIImage(named: name, in: nil, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
+    
+    return UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
   }
   
-  public static let person = Icon.icon("ic_person_white")
+  public static let person = SpotIcons.icon("ic_person_white")
   
-  public static let world = Icon.icon("ic_public_white")
+  public static let world = SpotIcons.icon("ic_public_white")
 }

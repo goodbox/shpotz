@@ -19,12 +19,12 @@ extension Button {
 }
 
 
-class ActivityIndicatorRaisedButton : RaisedButton {
+public class ActivityIndicatorRaisedButton : RaisedButton {
   
   var originalButtonText: String?
   var activityIndicator: UIActivityIndicatorView!
   
-  func showLoading() {
+  open override func showLoading() {
     originalButtonText = self.titleLabel?.text
     self.setTitle("", for: UIControlState.normal)
     
@@ -35,7 +35,7 @@ class ActivityIndicatorRaisedButton : RaisedButton {
     showSpinning()
   }
   
-  func hideLoading() {
+  open override func hideLoading() {
     self.setTitle(originalButtonText, for: UIControlState.normal)
     activityIndicator.stopAnimating()
   }

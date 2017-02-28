@@ -17,9 +17,12 @@ public class UserSettingsViewController : UITableViewController {
     
     self.title = "Settings"
     
-    self.tableView.separatorStyle = .none
+    // self.tableView.separatorStyle = .none
     
-    self.tableView.backgroundColor = UIColor.lightGray
   }
   
+  public override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
 }
