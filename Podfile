@@ -13,9 +13,13 @@ target 'Spots' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
-  pod 'FBSDKShareKit'
+  #pod 'FBSDKCoreKit'
+  #pod 'FBSDKLoginKit'
+  #pod 'FBSDKShareKit'
+  
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
   
   # pod 'Font-Awesome-Swift', '~> 1.6.1'
   

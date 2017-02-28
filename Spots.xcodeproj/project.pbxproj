@@ -13,6 +13,8 @@
 		B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583A1E63D8730090E86B /* AppNavigationController.swift */; };
 		B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583C1E6400700090E86B /* UserSettingsViewController.swift */; };
 		B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */; };
+		B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */; };
+		B7049DFF1E651060000824EA /* IconExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFE1E651060000824EA /* IconExtension.swift */; };
 		B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727755F1E62C27B009B20A7 /* AppDelegate.swift */; };
 		B72775651E62C27B009B20A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775631E62C27B009B20A7 /* Main.storyboard */; };
 		B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72775661E62C27B009B20A7 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		B702583A1E63D8730090E86B /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		B702583C1E6400700090E86B /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBackUIBarButton.swift; sourceTree = "<group>"; };
+		B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
+		B7049DFE1E651060000824EA /* IconExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconExtension.swift; sourceTree = "<group>"; };
 		B727755C1E62C27B009B20A7 /* Spots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B727755F1E62C27B009B20A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B72775641E62C27B009B20A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			children = (
 				B70258371E63BED00090E86B /* ButtonExtension.swift */,
 				B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */,
+				B7049DFE1E651060000824EA /* IconExtension.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				B7A3767A1E63A48D004F4786 /* Colors.swift */,
+				B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -398,10 +404,12 @@
 				B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
+				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
 				B7A376761E63828F004F4786 /* MapViewController.swift in Sources */,
 				B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */,
 				B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */,
+				B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */,
 				B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,

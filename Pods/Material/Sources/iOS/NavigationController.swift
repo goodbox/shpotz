@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2016, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -122,7 +122,7 @@ open class NavigationController: UINavigationController {
 	open func prepare() {
         navigationBar.heightPreset = .normal
         navigationBar.width = view.width
-        
+//        delegate = self
         view.clipsToBounds = true
 		view.backgroundColor = .white
         view.contentScaleFactor = Screen.scale

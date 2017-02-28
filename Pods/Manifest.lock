@@ -5,6 +5,19 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - FacebookCore (0.2.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.15)
+  - FacebookLogin (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKLoginKit (~> 4.15)
+  - FacebookShare (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKShareKit (~> 4.15)
   - FBSDKCoreKit (4.19.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.19.0):
@@ -18,17 +31,17 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
-  - Material/Capture (2.4.19):
+  - Material/Capture (2.5.0):
     - Material/Core
-  - Material/Core (2.4.19)
-  - Motion (1.0.3):
-    - Motion/Core (= 1.0.3)
-  - Motion/Core (1.0.3)
+  - Material/Core (2.5.0)
+  - Motion (1.0.4):
+    - Motion/Core (= 1.0.4)
+  - Motion/Core (1.0.4)
 
 DEPENDENCIES:
-  - FBSDKCoreKit
-  - FBSDKLoginKit
-  - FBSDKShareKit
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
   - GoogleMaps
   - GooglePlaces
   - Material/Capture (~> 2.0)
@@ -36,14 +49,17 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
+  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
+  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
   FBSDKCoreKit: 894b2b6eda6a4c8c4204e92e59cc355709ef045c
   FBSDKLoginKit: 83ca4d8f12a2022570af9fd6aacf27f6b425b99f
   FBSDKShareKit: 5953758366278430dc322d5cdc906db361ed7f81
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
-  Material: 67b52869f68ab95757e14801ffba0a52a4f19c31
-  Motion: 6665469c8268bc424c1c3d8e8f7bc99e28178666
+  Material: 878cdefe31685a2b16352a6cfa8c5decc40f75c3
+  Motion: 4b4cb0403d6a357204bc621713070927fe5f40ab
 
-PODFILE CHECKSUM: 35161068bf51e22082c47a461014b49d4d364c9c
+PODFILE CHECKSUM: 79b8bff773eb7a0b9e451b089d5a57cbb5f95fe8
 
 COCOAPODS: 1.1.1

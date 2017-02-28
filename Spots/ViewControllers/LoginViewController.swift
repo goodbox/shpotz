@@ -8,20 +8,36 @@
 
 import Foundation
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
+import FacebookCore
+import FacebookLogin
 import Material
 
 public class LoginViewController : UIViewController {
   
-  @IBOutlet weak var btnLogin: RaisedButton!
+  @IBOutlet weak var btnLogin: ActivityIndicatorRaisedButton!
   
   public override func viewDidLoad() {
     super.viewDidLoad()
+    /*
+    // if the token exists, use it to get the current user
+    if let accessToken = FBSDKAccessToken.current() {
+      // User is logged in, use 'accessToken' here.
+      
+      
+      
+    }
+     */
+    
   }
   
   @IBAction func btnLoginTapped(_ sender: Any) {
     
+    self.btnLogin.isEnabled = false
+    
+    self.btnLogin.showLoading()
+
+    
+    /*
     self.btnLogin.isEnabled = false
     
     self.btnLogin.showLoading()
@@ -40,6 +56,8 @@ public class LoginViewController : UIViewController {
         
         let fbAccessToken = fbLoginResult.token.tokenString!
         
+        UserDefaults.FacebookAuthToken = fbAccessToken
+        
         self.performSegue(withIdentifier: "LoginSegue", sender: self)
       
       } else {
@@ -49,6 +67,6 @@ public class LoginViewController : UIViewController {
       }
       
     }
-    
+    */
   }
 }

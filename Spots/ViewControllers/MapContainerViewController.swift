@@ -19,7 +19,7 @@ class MapContainerViewController: UIViewController {
     
   }
   
-  
+    
   @IBOutlet weak var btnAdd: FabButton!
   
   open override func viewDidLoad() {
@@ -46,7 +46,7 @@ class MapContainerViewController: UIViewController {
   
   private func prepareTabBarItem() {
     tabBarItem.title = nil
-    tabBarItem.image = Icon.world?.tint(with: Color.blueGrey.base)
-    tabBarItem.selectedImage = Icon.world?.tint(with: UIColor.spotsGreen())
+    tabBarItem.image = SpotIcons.world?.tint(with: Color.blueGrey.base)
+    tabBarItem.selectedImage = SpotIcons.world?.tint(with: UIColor.spotsGreen())
   }
 }

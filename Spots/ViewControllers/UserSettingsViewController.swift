@@ -10,12 +10,16 @@ import Foundation
 import UIKit
 
 
-public class UserSettingsViewController : UIViewController {
+public class UserSettingsViewController : UITableViewController {
   
   public override func viewDidLoad() {
     super.viewDidLoad()
     
     self.title = "Settings"
+    
+    self.tableView.separatorStyle = .none
+    
+    self.tableView.backgroundColor = UIColor.lightGray
   }
   
 }

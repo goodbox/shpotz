@@ -41,7 +41,7 @@ class MeViewController: UIViewController {
   
   private func prepareTabBarItem() {
     tabBarItem.title = nil
-    tabBarItem.image = Icon.person?.tint(with: Color.blueGrey.base)
-    tabBarItem.selectedImage = Icon.person?.tint(with: UIColor.spotsGreen())
+    tabBarItem.image = SpotIcons.person?.tint(with: Color.blueGrey.base)
+    tabBarItem.selectedImage = SpotIcons.person?.tint(with: UIColor.spotsGreen())
   }
 }
