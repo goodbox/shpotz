@@ -10,88 +10,126 @@ import Foundation
 import UIKit
 import Material
 import GoogleMaps
+import PopupDialog
 
-class PostViewController: UIViewController, CLLocationManagerDelegate {
+
+class PostViewController: UIViewController {
   
-  @IBOutlet weak var vHeader: UIView!
-  @IBOutlet weak var svLoading: UIStackView!
+  @IBOutlet weak var btnPost: ActivityIndicatorButton!
   
-  var locationManager = CLLocationManager()
-  var currentLocation: CLLocation?
-  var mapView : GMSMapView!
-  var zoomLevel: Float = 15.0
+  @IBOutlet weak var btnPostBottomConstraint: NSLayoutConstraint!
+  
+  var postTableView : PostTableViewController!
   
   open override func viewDidLoad() {
     super.viewDidLoad()
     
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.requestAlwaysAuthorization()
-    locationManager.distanceFilter = 50
-    locationManager.delegate = self
-    locationManager.requestLocation()
+    NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     
-    let camera = GMSCameraPosition.camera(withLatitude: 39.742043,
-                                          longitude: -104.991531,
-                                          zoom: zoomLevel)
-    mapView = GMSMapView.map(withFrame: vHeader.bounds, camera: camera)
-    // mapView.settings.myLocationButton = true
-    mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    mapView.isMyLocationEnabled = true
+    NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+
     
-    // Add the map to the view, hide it until we've got a location update.
-    vHeader.addSubview(mapView)
-    mapView.isHidden = true
-    
+    btnPost.backgroundColor = UIColor.spotsGreen()
+    btnPost.setTitle("Add Spot", for: .normal)
+    btnPost.setTitleColor(UIColor.white, for: .normal)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? PostTableViewController, segue.identifier == "PostTableViewSegue" {
+      
+      vc.didTapAddPhotoDelegate = self
+      
+      self.postTableView = vc
+      
+      
+      
+    }
   }
 
   @IBAction func btnCancelTapped(_ sender: Any) {
+    
+    if postTableView.txtName.isFirstResponder {
+      postTableView.txtName.resignFirstResponder()
+    }
+    
+    if postTableView.txtDescription.isFirstResponder {
+      postTableView.txtDescription.resignFirstResponder()
+    }
+    
     self.dismiss(animated: true, completion: nil)
+    
+  }
+
+  @IBAction func btnPostTapped(_ sender: Any) {
+    
+    self.btnPost.showLoading()
+    
+    // post spot
+    
+    self.showSuccessPopupDialog()
+    
+  }
+  
+  
+  func showSuccessPopupDialog() {
+    let title = "Success!"
+    
+    let message = "Spot added"
+    
+    // let popup = PopupDialog(title: title, message: message)
+    let popup = PopupDialog(title: title, message: message, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
+    
+    let buttonOne = DefaultButton(title: "OK") {
+      if let navController = self.navigationController {
+        navController.dismiss(animated: true, completion: {
+          print("completed dismissing view controller")
+        })
+      }
+    }
+    
+    popup.addButton(buttonOne)
+    
+    self.present(popup, animated: true, completion: nil)
   }
 
   
-  // #MARK -  CLLocationManagerDelegate
-  public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    if locations.last != nil {
-      
-      
-      let location: CLLocation = locations.last!
-      print("Location: \(location)")
-      
-      self.currentLocation = location
-      
-      let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                            longitude: location.coordinate.longitude,
-                                            zoom: zoomLevel)
-      
-      if mapView.isHidden {
-        mapView.isHidden = false
-        mapView.camera = camera
-      } else {
-        mapView.animate(to: camera)
-      }
-      self.svLoading.isHidden = true
-      
-    }
+  // MARK: keyboard notifications
+  func keyboardWillHide(_ notification: Notification) {
     
+    let animationDuration = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).doubleValue
+    
+    self.btnPostBottomConstraint.constant = 0
+    
+    UIView.animate(withDuration: animationDuration, animations: {
+      self.view.layoutIfNeeded()
+    })
   }
   
-  public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    
-    locationManager.stopUpdatingLocation()
-    print("Error: \(error)")
-    
-  }
   
-  public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+  func keyboardWillShow(_ notification: Notification) {
     
-    if status == .authorizedWhenInUse {
-      
-      locationManager.startUpdatingLocation()
-      
-      
-      mapView.isMyLocationEnabled = true
-      // mapView.settings.myLocationButton = true
-    }
+    
+    let keyboardFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+    
+    let animationDuration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+    
+    let height = keyboardFrame.size.height
+    
+    self.btnPostBottomConstraint.constant = height
+    
+    UIView.animate(withDuration: animationDuration, animations: {
+      self.view.layoutIfNeeded()
+    })
+  }
+}
+
+
+extension PostViewController : DidTapAddPhotoButtonDelegate {
+  
+  func didTapAddPhoto(_ sender: Any?) {
+    
+    print("did tap add photo")
+    
   }
   
 }

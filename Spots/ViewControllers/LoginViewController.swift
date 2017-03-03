@@ -29,6 +29,12 @@ public class LoginViewController : UIViewController {
       // User is logged in, use 'accessToken' here.
       // UserDefaults.FacebookAuthToken = accessToken.authenticationToken
       
+      UserProfile.loadCurrent({ (userProfile) in
+        
+        print(UserProfile.current?.profileURL ?? "profile url")
+        
+      })
+      
       let connection = GraphRequestConnection()
       
       connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
@@ -89,7 +95,10 @@ public class LoginViewController : UIViewController {
         UserDefaults.FacebookAuthToken = accessToken.authenticationToken
         
         self.performSegue(withIdentifier: "LoginSegue", sender: self)
-      
+        
+        self.btnLogin.isEnabled = true
+        
+        self.btnLogin.hideLoading()
       }
     }
     

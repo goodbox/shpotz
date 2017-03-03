@@ -15,6 +15,7 @@
 		B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */; };
 		B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */; };
 		B7049DFF1E651060000824EA /* IconExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFE1E651060000824EA /* IconExtension.swift */; };
+		B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049E2F1E66528A000824EA /* PostTableViewController.swift */; };
 		B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727755F1E62C27B009B20A7 /* AppDelegate.swift */; };
 		B72775651E62C27B009B20A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775631E62C27B009B20A7 /* Main.storyboard */; };
 		B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72775661E62C27B009B20A7 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		B7A376761E63828F004F4786 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376751E63828F004F4786 /* MapViewController.swift */; };
 		B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376771E63946C004F4786 /* LoginViewController.swift */; };
 		B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A3767A1E63A48D004F4786 /* Colors.swift */; };
+		B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4AD971E6900B10055FC80 /* Delegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBackUIBarButton.swift; sourceTree = "<group>"; };
 		B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
 		B7049DFE1E651060000824EA /* IconExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconExtension.swift; sourceTree = "<group>"; };
+		B7049E0B1E653B8A000824EA /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Spots-Bridging-Header.h"; path = "ThirdParty/PopupDialog/Spots-Bridging-Header.h"; sourceTree = "<group>"; };
+		B7049E2F1E66528A000824EA /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		B727755C1E62C27B009B20A7 /* Spots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B727755F1E62C27B009B20A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B72775641E62C27B009B20A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		B7A376751E63828F004F4786 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B7A376771E63946C004F4786 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7A3767A1E63A48D004F4786 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B7A4AD971E6900B10055FC80 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		C76A7D860A97B1CC32CA5AC8 /* Pods-Spots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spots/Pods-Spots.debug.xcconfig"; sourceTree = "<group>"; };
 		D5591A9045D523A013F51CBE /* Pods-SpotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpotsTests/Pods-SpotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +132,13 @@
 			path = Backend;
 			sourceTree = "<group>";
 		};
+		B7049E001E653AC5000824EA /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
 		B72775531E62C27B009B20A7 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +162,8 @@
 		B727755E1E62C27B009B20A7 /* Spots */ = {
 			isa = PBXGroup;
 			children = (
+				B7A4AD961E69008B0055FC80 /* Delegates */,
+				B7049E001E653AC5000824EA /* ThirdParty */,
 				B70258391E63D7740090E86B /* Backend */,
 				B70258361E63BEB40090E86B /* Controls */,
 				B7A376791E63A46C004F4786 /* Utils */,
@@ -158,6 +172,7 @@
 				B72775631E62C27B009B20A7 /* Main.storyboard */,
 				B72775661E62C27B009B20A7 /* Assets.xcassets */,
 				B72775681E62C27B009B20A7 /* LaunchScreen.storyboard */,
+				B7049E0B1E653B8A000824EA /* Spots-Bridging-Header.h */,
 				B727756B1E62C27B009B20A7 /* Info.plist */,
 			);
 			path = Spots;
@@ -183,6 +198,7 @@
 				B7A376751E63828F004F4786 /* MapViewController.swift */,
 				B7A376771E63946C004F4786 /* LoginViewController.swift */,
 				B702583C1E6400700090E86B /* UserSettingsViewController.swift */,
+				B7049E2F1E66528A000824EA /* PostTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +210,14 @@
 				B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B7A4AD961E69008B0055FC80 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B7A4AD971E6900B10055FC80 /* Delegates.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +277,7 @@
 					B727755B1E62C27B009B20A7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = UJ8R67WH26;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					B727756F1E62C27B009B20A7 = {
@@ -408,8 +433,10 @@
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
 				B7A376761E63828F004F4786 /* MapViewController.swift in Sources */,
 				B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */,
+				B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */,
 				B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */,
 				B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */,
+				B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */,
 				B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,
@@ -554,11 +581,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJ8R67WH26;
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.Spots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -569,11 +599,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJ8R67WH26;
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.Spots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

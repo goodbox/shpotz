@@ -21,6 +21,8 @@ target 'Spots' do
   pod 'FacebookLogin'
   pod 'FacebookShare'
   
+  pod 'PopupDialog', '~> 0.5.3'
+  
   # pod 'Font-Awesome-Swift', '~> 1.6.1'
   
   # pod 'Google-Material-Design-Icons-Swift', '~> 1.0.1'

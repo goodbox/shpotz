@@ -37,6 +37,7 @@ PODS:
   - Motion (1.0.4):
     - Motion/Core (= 1.0.4)
   - Motion/Core (1.0.4)
+  - PopupDialog (0.5.3)
 
 DEPENDENCIES:
   - FacebookCore
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - GooglePlaces
   - Material/Capture (~> 2.0)
   - Motion (~> 1.0)
+  - PopupDialog (~> 0.5.3)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -59,7 +61,8 @@ SPEC CHECKSUMS:
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   Material: 878cdefe31685a2b16352a6cfa8c5decc40f75c3
   Motion: 4b4cb0403d6a357204bc621713070927fe5f40ab
+  PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
 
-PODFILE CHECKSUM: 79b8bff773eb7a0b9e451b089d5a57cbb5f95fe8
+PODFILE CHECKSUM: a5814bfd23dba9dec39dbce0e0500ad4a0fd3369
 
 COCOAPODS: 1.1.1
