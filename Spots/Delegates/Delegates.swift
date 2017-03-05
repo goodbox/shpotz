@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DidTapAddPhotoButtonDelegate {
-  func didTapAddPhoto(_ sender: Any?)
+  func didTapAddPhoto(_ sender: Any?, numToAdd: Int?)
 }

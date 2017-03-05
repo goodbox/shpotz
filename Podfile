@@ -23,10 +23,12 @@ target 'Spots' do
   
   pod 'PopupDialog', '~> 0.5.3'
   
-  # pod 'Font-Awesome-Swift', '~> 1.6.1'
+  # image picker pods
+  pod 'ImagePicker'
+  pod 'Lightbox', git: 'https://github.com/hyperoslo/Lightbox.git', branch: 'swift-3'
+  pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar.git', branch: 'master'
+  pod 'Hue', git: 'https://github.com/hyperoslo/Hue.git', branch: 'swift3'
   
-  # pod 'Google-Material-Design-Icons-Swift', '~> 1.0.1'
-
   target 'SpotsTests' do
     inherit! :search_paths
     # Pods for testing

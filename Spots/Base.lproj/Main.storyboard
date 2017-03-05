@@ -256,6 +256,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="delete"/>
+                                                    <connections>
+                                                        <action selector="btnFirstDeleteTapped:" destination="rvu-kt-jEt" eventType="touchUpInside" id="y7v-VI-Fok"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SMB-AG-dRx">
                                                     <rect key="frame" x="88" y="8" width="60" height="60"/>
@@ -272,6 +275,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="delete"/>
+                                                    <connections>
+                                                        <action selector="btnSecondDeleteTapped:" destination="rvu-kt-jEt" eventType="touchUpInside" id="8Zz-ce-m6n"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0dj-9Z-ai5">
                                                     <rect key="frame" x="158" y="8" width="60" height="60"/>
@@ -288,6 +294,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="delete"/>
+                                                    <connections>
+                                                        <action selector="btnThirdDeleteTapped:" destination="rvu-kt-jEt" eventType="touchUpInside" id="8G7-Xp-sGC"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hek-WY-rMe" customClass="FABButton" customModule="Material">
                                                     <rect key="frame" x="305" y="8" width="60" height="60"/>
@@ -573,7 +582,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aer-qX-0fe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SFl-Yh-VCc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SFl-Yh-VCc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

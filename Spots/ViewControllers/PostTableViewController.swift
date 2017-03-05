@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Material
 import GoogleMaps
+import ImagePicker
+import Lightbox
 
 public class PostTableViewController : UITableViewController {
   
@@ -26,6 +28,10 @@ public class PostTableViewController : UITableViewController {
   @IBOutlet weak var btnThirdDelete: UIButton!
   @IBOutlet weak var swShareToFacebook: UISwitch!
   
+  var isFirstImageSet : Bool!
+  var isSecondImageSet : Bool!
+  var isThirdImageSet : Bool!
+  
   var locationManager = CLLocationManager()
   var currentLocation: CLLocation?
   var mapView : GMSMapView!
@@ -35,6 +41,10 @@ public class PostTableViewController : UITableViewController {
   
   public override func viewDidLoad() {
     super.viewDidLoad()
+    
+    isFirstImageSet = false
+    isSecondImageSet = false
+    isThirdImageSet = false
    
     txtName.delegate = self
     
@@ -80,10 +90,68 @@ public class PostTableViewController : UITableViewController {
   }
   
   @IBAction func btnAddPhotoTapped(_ sender: Any) {
-    didTapAddPhotoDelegate.didTapAddPhoto(self)
+    
+    
+    
+    didTapAddPhotoDelegate.didTapAddPhoto(self, numToAdd: 1)
   }
   
+  // MARK: delete image methods
+  @IBAction func btnFirstDeleteTapped(_ sender: Any) {
+    if isFirstImageSet == true {
+     
+      
+      isFirstImageSet = false
+    }
+  }
+  
+  @IBAction func btnSecondDeleteTapped(_ sender: Any) {
+    if isSecondImageSet == true {
+      
+      isSecondImageSet = false
+      
+    }
+  }
+  
+  @IBAction func btnThirdDeleteTapped(_ sender: Any) {
+    if isThirdImageSet == true {
+      
+      isThirdImageSet = false
+    }
+  }
 }
+
+// MARK: ImagePickerDelegate
+extension PostTableViewController : ImagePickerDelegate {
+  
+  public func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+    imagePicker.dismiss(animated: true, completion: nil)
+  }
+  
+  public func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+    guard images.count > 0 else { return }
+    
+    let lightboxImages = images.map {
+      return LightboxImage(image: $0)
+    }
+    
+    let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+    imagePicker.present(lightbox, animated: true, completion: nil)
+  }
+  
+  public func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+    imagePicker.dismiss(animated: true, completion: nil)
+    
+    if images.count > 0 {
+      imgFirst.contentMode = .scaleToFill
+      imgFirst.layer.cornerRadius = 5.0
+      imgFirst.clipsToBounds = true
+      imgFirst.image = images[0]
+    }
+    
+  }
+}
+
 
 
 // MARK: textfield delegate
@@ -97,6 +165,8 @@ extension PostTableViewController : UITextFieldDelegate {
       let indexPath = IndexPath(row: 0, section: 1)
       
       tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+      
+      return false
     }
     
     return true

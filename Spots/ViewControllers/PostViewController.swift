@@ -11,7 +11,8 @@ import UIKit
 import Material
 import GoogleMaps
 import PopupDialog
-
+import ImagePicker
+import Lightbox
 
 class PostViewController: UIViewController {
   
@@ -40,9 +41,6 @@ class PostViewController: UIViewController {
       vc.didTapAddPhotoDelegate = self
       
       self.postTableView = vc
-      
-      
-      
     }
   }
 
@@ -124,12 +122,14 @@ class PostViewController: UIViewController {
 }
 
 
+// MARK: DidTapAddPhotoButtonDelegate
 extension PostViewController : DidTapAddPhotoButtonDelegate {
   
-  func didTapAddPhoto(_ sender: Any?) {
+  func didTapAddPhoto(_ sender: Any?, numToAdd: Int?) {
     
-    print("did tap add photo")
-    
+    let imagePickerController = ImagePickerController()
+    imagePickerController.imageLimit = numToAdd!
+    imagePickerController.delegate = self.postTableView
+    present(imagePickerController, animated: true, completion: nil)
   }
-  
 }

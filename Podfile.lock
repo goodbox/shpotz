@@ -18,11 +18,11 @@ PODS:
     - FacebookCore (~> 0.2)
     - FBSDKCoreKit (~> 4.15)
     - FBSDKShareKit (~> 4.15)
-  - FBSDKCoreKit (4.19.0):
+  - FBSDKCoreKit (4.20.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.19.0):
+  - FBSDKLoginKit (4.20.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.19.0):
+  - FBSDKShareKit (4.20.0):
     - FBSDKCoreKit
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
@@ -31,13 +31,19 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
-  - Material/Capture (2.5.0):
+  - Hue (1.2.0)
+  - ImagePicker (2.0.0)
+  - Lightbox (1.0.0):
+    - Hue
+    - Sugar
+  - Material/Capture (2.5.2):
     - Material/Core
-  - Material/Core (2.5.0)
-  - Motion (1.0.4):
-    - Motion/Core (= 1.0.4)
-  - Motion/Core (1.0.4)
+  - Material/Core (2.5.2)
+  - Motion (1.0.5):
+    - Motion/Core (= 1.0.5)
+  - Motion/Core (1.0.5)
   - PopupDialog (0.5.3)
+  - Sugar (3.1.2)
 
 DEPENDENCIES:
   - FacebookCore
@@ -45,24 +51,54 @@ DEPENDENCIES:
   - FacebookShare
   - GoogleMaps
   - GooglePlaces
+  - Hue (from `https://github.com/hyperoslo/Hue.git`, branch `swift3`)
+  - ImagePicker
+  - Lightbox (from `https://github.com/hyperoslo/Lightbox.git`, branch `swift-3`)
   - Material/Capture (~> 2.0)
   - Motion (~> 1.0)
   - PopupDialog (~> 0.5.3)
+  - Sugar (from `https://github.com/hyperoslo/Sugar.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  Hue:
+    :branch: swift3
+    :git: https://github.com/hyperoslo/Hue.git
+  Lightbox:
+    :branch: swift-3
+    :git: https://github.com/hyperoslo/Lightbox.git
+  Sugar:
+    :branch: master
+    :git: https://github.com/hyperoslo/Sugar.git
+
+CHECKOUT OPTIONS:
+  Hue:
+    :commit: 3303cbcdf0f771aea1a6d1a153e4b95eef8696eb
+    :git: https://github.com/hyperoslo/Hue.git
+  Lightbox:
+    :commit: 04437d8450a5ccc92af7e9bd08027bdced9fb589
+    :git: https://github.com/hyperoslo/Lightbox.git
+  Sugar:
+    :commit: 41e0f1e92bfd29b805fa74f87444975ca2976887
+    :git: https://github.com/hyperoslo/Sugar.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
-  FBSDKCoreKit: 894b2b6eda6a4c8c4204e92e59cc355709ef045c
-  FBSDKLoginKit: 83ca4d8f12a2022570af9fd6aacf27f6b425b99f
-  FBSDKShareKit: 5953758366278430dc322d5cdc906db361ed7f81
+  FBSDKCoreKit: 2d16979b28fe28c2b95af0d275ad5f9703c6c8de
+  FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
+  FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
-  Material: 878cdefe31685a2b16352a6cfa8c5decc40f75c3
-  Motion: 4b4cb0403d6a357204bc621713070927fe5f40ab
+  Hue: 0705083b7aff40334033373e6293ec1215285ac2
+  ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
+  Lightbox: e4523e8cf3261cbc833d0e76ae4dae774731d115
+  Material: 00ae261fa04dd3f3f8584d07e44ac658fa1bc6fd
+  Motion: 35d2c694cb62b0325c62504e15ffdf3cc3cc7d39
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
+  Sugar: 41f2efa0244806f524ff2d77c951a6a43e81a0f3
 
-PODFILE CHECKSUM: a5814bfd23dba9dec39dbce0e0500ad4a0fd3369
+PODFILE CHECKSUM: 4babd1c0505729a3e1da100485c4bb914379d263
 
 COCOAPODS: 1.1.1
