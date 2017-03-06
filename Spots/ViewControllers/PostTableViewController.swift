@@ -28,9 +28,9 @@ public class PostTableViewController : UITableViewController {
   @IBOutlet weak var btnThirdDelete: UIButton!
   @IBOutlet weak var swShareToFacebook: UISwitch!
   
-  var isFirstImageSet : Bool!
-  var isSecondImageSet : Bool!
-  var isThirdImageSet : Bool!
+  var firstImage: UIImage!
+  var secondImage: UIImage!
+  var thirdImage: UIImage!
   
   var locationManager = CLLocationManager()
   var currentLocation: CLLocation?
@@ -40,34 +40,24 @@ public class PostTableViewController : UITableViewController {
   var didTapAddPhotoDelegate : DidTapAddPhotoButtonDelegate!
   
   public override func viewDidLoad() {
+    
     super.viewDidLoad()
     
-    isFirstImageSet = false
-    isSecondImageSet = false
-    isThirdImageSet = false
+    firstImage = nil
+    secondImage = nil
+    thirdImage = nil
    
     txtName.delegate = self
     
     btnAddPhoto.setImage(Icon.photoCamera?.tint(with: UIColor.white), for: .normal)
     btnAddPhoto.pulseColor = UIColor.white
     btnAddPhoto.backgroundColor = UIColor.spotsGreen()
-    // btnAddPhoto.cornerRadius = 5.0
     
-    imgFirst.backgroundColor = Color.grey.lighten3
-    imgFirst.image = Icon.photoLibrary?.tint(with: Color.grey.base)
-    imgFirst.contentMode = .center
-    imgFirst.cornerRadius = 5.0
-
-    imgSecond.backgroundColor = Color.grey.lighten3
-    imgSecond.image = Icon.photoLibrary?.tint(with: Color.grey.base)
-    imgSecond.contentMode = .center
-    imgSecond.cornerRadius = 5.0
-
-    imgThird.backgroundColor = Color.grey.lighten3
-    imgThird.image = Icon.photoLibrary?.tint(with: Color.grey.base)
-    imgThird.contentMode = .center
-    imgThird.cornerRadius = 5.0
-
+    setDefaultImage(imageToSet: imgFirst)
+    
+    setDefaultImage(imageToSet: imgSecond)
+    
+    setDefaultImage(imageToSet: imgThird)
     
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.requestAlwaysAuthorization()
@@ -89,34 +79,66 @@ public class PostTableViewController : UITableViewController {
 
   }
   
+  func setDefaultImage(imageToSet: UIImageView) {
+    imageToSet.backgroundColor = Color.grey.lighten3
+    imageToSet.image = Icon.photoLibrary?.tint(with: Color.grey.base)
+    imageToSet.contentMode = .center
+    imageToSet.cornerRadius = 5.0
+
+  }
+  
   @IBAction func btnAddPhotoTapped(_ sender: Any) {
     
+    var numToAdd = 0;
     
+    if firstImage == nil {
+      numToAdd += 1
+    }
     
-    didTapAddPhotoDelegate.didTapAddPhoto(self, numToAdd: 1)
+    if secondImage == nil {
+      numToAdd += 1
+    }
+    
+    if thirdImage == nil {
+      numToAdd += 1
+    }
+    
+    if numToAdd > 0 {
+      didTapAddPhotoDelegate.didTapAddPhoto(self, numToAdd: numToAdd)
+    }
   }
   
   // MARK: delete image methods
   @IBAction func btnFirstDeleteTapped(_ sender: Any) {
-    if isFirstImageSet == true {
+    if firstImage != nil {
      
+      firstImage = nil
       
-      isFirstImageSet = false
+      setDefaultImage(imageToSet: imgFirst)
+      
+      btnAddPhoto.isEnabled = true
     }
   }
   
   @IBAction func btnSecondDeleteTapped(_ sender: Any) {
-    if isSecondImageSet == true {
+    if secondImage != nil {
       
-      isSecondImageSet = false
+      secondImage = nil
       
+      setDefaultImage(imageToSet: imgSecond)
+      
+      btnAddPhoto.isEnabled = true
     }
   }
   
   @IBAction func btnThirdDeleteTapped(_ sender: Any) {
-    if isThirdImageSet == true {
+    if thirdImage != nil {
       
-      isThirdImageSet = false
+      thirdImage = nil
+      
+      setDefaultImage(imageToSet: imgThird)
+      
+      btnAddPhoto.isEnabled = true
     }
   }
 }
@@ -143,10 +165,97 @@ extension PostTableViewController : ImagePickerDelegate {
     imagePicker.dismiss(animated: true, completion: nil)
     
     if images.count > 0 {
-      imgFirst.contentMode = .scaleToFill
-      imgFirst.layer.cornerRadius = 5.0
-      imgFirst.clipsToBounds = true
-      imgFirst.image = images[0]
+      
+      if firstImage == nil {
+        
+        firstImage = images[0]
+        
+        imgFirst.contentMode = .scaleToFill
+        imgFirst.layer.cornerRadius = 5.0
+        imgFirst.clipsToBounds = true
+        imgFirst.image = images[0]
+        
+      } else if secondImage == nil {
+        
+        secondImage = images[0]
+        
+        imgSecond.contentMode = .scaleToFill
+        imgSecond.layer.cornerRadius = 5.0
+        imgSecond.clipsToBounds = true
+        imgSecond.image = images[0]
+      
+      } else if thirdImage == nil {
+        thirdImage = images[0]
+        
+        imgThird.contentMode = .scaleToFill
+        imgThird.layer.cornerRadius = 5.0
+        imgThird.clipsToBounds = true
+        imgThird.image = images[0]
+      }
+    }
+    
+    if images.count > 1 {
+      
+      if firstImage == nil {
+        
+        firstImage = images[1]
+        
+        imgFirst.contentMode = .scaleToFill
+        imgFirst.layer.cornerRadius = 5.0
+        imgFirst.clipsToBounds = true
+        imgFirst.image = images[1]
+        
+      } else if secondImage == nil {
+        
+        secondImage = images[1]
+        
+        imgSecond.contentMode = .scaleToFill
+        imgSecond.layer.cornerRadius = 5.0
+        imgSecond.clipsToBounds = true
+        imgSecond.image = images[1]
+        
+      } else if thirdImage == nil {
+        thirdImage = images[1]
+        
+        imgThird.contentMode = .scaleToFill
+        imgThird.layer.cornerRadius = 5.0
+        imgThird.clipsToBounds = true
+        imgThird.image = images[1]
+      }
+    }
+    
+    if images.count > 2 {
+      
+      if firstImage == nil {
+        
+        firstImage = images[2]
+        
+        imgFirst.contentMode = .scaleToFill
+        imgFirst.layer.cornerRadius = 5.0
+        imgFirst.clipsToBounds = true
+        imgFirst.image = images[2]
+        
+      } else if secondImage == nil {
+        
+        secondImage = images[2]
+        
+        imgSecond.contentMode = .scaleToFill
+        imgSecond.layer.cornerRadius = 5.0
+        imgSecond.clipsToBounds = true
+        imgSecond.image = images[0]
+        
+      } else if thirdImage == nil {
+        thirdImage = images[0]
+        
+        imgThird.contentMode = .scaleToFill
+        imgThird.layer.cornerRadius = 5.0
+        imgThird.clipsToBounds = true
+        imgThird.image = images[2]
+      }
+    }
+    
+    if firstImage != nil && secondImage != nil && thirdImage != nil {
+      btnAddPhoto.isEnabled = false
     }
     
   }

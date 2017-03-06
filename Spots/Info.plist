@@ -8,8 +8,6 @@
 	<string>camera</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>location</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbauth2</string>

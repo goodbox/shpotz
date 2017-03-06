@@ -29,6 +29,7 @@
 		B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376771E63946C004F4786 /* LoginViewController.swift */; };
 		B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A3767A1E63A48D004F4786 /* Colors.swift */; };
 		B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4AD971E6900B10055FC80 /* Delegates.swift */; };
+		B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		B7A376771E63946C004F4786 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7A3767A1E63A48D004F4786 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B7A4AD971E6900B10055FC80 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
+		B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		C76A7D860A97B1CC32CA5AC8 /* Pods-Spots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spots/Pods-Spots.debug.xcconfig"; sourceTree = "<group>"; };
 		D5591A9045D523A013F51CBE /* Pods-SpotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpotsTests/Pods-SpotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				B70258371E63BED00090E86B /* ButtonExtension.swift */,
 				B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */,
 				B7049DFE1E651060000824EA /* IconExtension.swift */,
+				B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			files = (
 				B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */,
 				B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */,
+				B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,

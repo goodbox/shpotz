@@ -22,7 +22,7 @@ public class MapViewController : UIViewController, CLLocationManagerDelegate {
     
     locationManager = CLLocationManager()
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.requestAlwaysAuthorization()
+    locationManager.requestWhenInUseAuthorization()
     locationManager.distanceFilter = 50
     locationManager.delegate = self
     locationManager.requestLocation()
