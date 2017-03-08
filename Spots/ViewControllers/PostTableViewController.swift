@@ -27,10 +27,13 @@ public class PostTableViewController : UITableViewController {
   @IBOutlet weak var imgThird: UIImageView!
   @IBOutlet weak var btnThirdDelete: UIButton!
   @IBOutlet weak var swShareToFacebook: UISwitch!
+  @IBOutlet weak var lblSpotType: UILabel!
   
   var firstImage: UIImage!
   var secondImage: UIImage!
   var thirdImage: UIImage!
+  
+  var spotType: String!
   
   var locationManager = CLLocationManager()
   var currentLocation: CLLocation?
@@ -47,6 +50,8 @@ public class PostTableViewController : UITableViewController {
     secondImage = nil
     thirdImage = nil
    
+    spotType = ""
+    
     txtName.delegate = self
     
     btnAddPhoto.setImage(Icon.photoCamera?.tint(with: UIColor.white), for: .normal)
@@ -77,6 +82,25 @@ public class PostTableViewController : UITableViewController {
     vHeader.addSubview(mapView)
     mapView.isHidden = true
 
+  }
+  
+  override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    if indexPath.section == 2 {
+      self.performSegue(withIdentifier: "SelectSpotTypeSegue", sender: self)
+    }
+    
+  }
+  
+  override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "SelectSpotTypeSegue" {
+      
+      let destinationVC = segue.destination as! UINavigationController
+      let selectSpotTypeVC = destinationVC.topViewController as! SelectSpotTypeViewController
+      
+      selectSpotTypeVC.spotTypeDelegate = self
+    }
   }
   
   func setDefaultImage(imageToSet: UIImageView) {
@@ -142,6 +166,19 @@ public class PostTableViewController : UITableViewController {
     }
   }
 }
+
+// MARK: SpotTypeDelegate
+extension PostTableViewController : DidSelectSpotTypeDelegate {
+  
+  public func didSelectSpotType(_sender: Any?, spotType: String?) {
+    
+    lblSpotType.text = spotType!
+    
+    self.spotType = spotType!
+  }
+  
+}
+
 
 // MARK: ImagePickerDelegate
 extension PostTableViewController : ImagePickerDelegate {

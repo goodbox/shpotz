@@ -60,14 +60,48 @@ class PostViewController: UIViewController {
 
   @IBAction func btnPostTapped(_ sender: Any) {
     
+    //validate all fields
+    if postTableView.txtName.text == "" {
+      
+    }
+    
+    if postTableView.txtDescription.text == "" {
+      
+    }
+    
+    if postTableView.spotType == "" {
+      
+    }
+    
+    if postTableView.firstImage == nil ||
+      postTableView.secondImage == nil ||
+      postTableView.thirdImage == nil {
+      
+      
+    }
+    
     self.btnPost.showLoading()
     
     // post spot
+    // post images to amazon
+    // post location to api
     
     self.showSuccessPopupDialog()
     
   }
   
+  func showValidationPopup(theTitle: String?, theMessage: String?) {
+    
+    let popup = PopupDialog(title: theTitle, message: theMessage, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
+    
+    let buttonOne = DefaultButton(title: "Dismiss") {
+      
+    }
+    
+    popup.addButton(buttonOne)
+    
+    self.present(popup, animated: true, completion: nil)
+  }
   
   func showSuccessPopupDialog() {
     let title = "Success!"
@@ -80,7 +114,9 @@ class PostViewController: UIViewController {
     let buttonOne = DefaultButton(title: "OK") {
       if let navController = self.navigationController {
         navController.dismiss(animated: true, completion: {
-          print("completed dismissing view controller")
+          
+          
+          
         })
       }
     }
