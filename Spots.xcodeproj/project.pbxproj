@@ -33,6 +33,12 @@
 		B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */; };
 		B7F1A4581E6E447D003D1FE8 /* SelectSpotTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F1A4571E6E447D003D1FE8 /* SelectSpotTypeCell.xib */; };
 		B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */; };
+		B7F1A45C1E6F9EB9003D1FE8 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; };
+		B7F1A45E1E6F9ECF003D1FE8 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */; };
+		B7F1A45F1E6FBBE9003D1FE8 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */; };
+		B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7F1A4611E6FBBE9003D1FE8 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; };
+		B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,21 @@
 			remoteInfo = Spots;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B7F1A4631E6FBBE9003D1FE8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */,
+				B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		007EF68DF32644BB7D6CD605 /* Pods-Spots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spots.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spots/Pods-Spots.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +100,8 @@
 		B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeViewController.swift; sourceTree = "<group>"; };
 		B7F1A4571E6E447D003D1FE8 /* SelectSpotTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectSpotTypeCell.xib; sourceTree = "<group>"; };
 		B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeCell.swift; sourceTree = "<group>"; };
+		B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
+		B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
 		C76A7D860A97B1CC32CA5AC8 /* Pods-Spots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spots/Pods-Spots.debug.xcconfig"; sourceTree = "<group>"; };
 		D5591A9045D523A013F51CBE /* Pods-SpotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpotsTests/Pods-SpotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +111,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7F1A45F1E6FBBE9003D1FE8 /* AWSS3.framework in Frameworks */,
+				B7F1A4611E6FBBE9003D1FE8 /* AWSCore.framework in Frameworks */,
 				7D34DD9F82412ABDF50B99B6 /* Pods_Spots.framework in Frameworks */,
+				B7F1A45C1E6F9EB9003D1FE8 /* AWSCore.framework in Frameworks */,
+				B7F1A45E1E6F9ECF003D1FE8 /* AWSS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +144,8 @@
 		64862A4BE3AE2B58EEDAF17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */,
+				B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */,
 				582FDB3F05CF7841AC46FA69 /* Pods_Spots.framework */,
 				AB318AC6AE1AD6ECD965AB01 /* Pods_SpotsTests.framework */,
 			);
@@ -253,6 +282,7 @@
 				B727755A1E62C27B009B20A7 /* Resources */,
 				0FBECD4C8CE514542FB21955 /* [CP] Embed Pods Frameworks */,
 				2E78958E4ACD01DA621F5C54 /* [CP] Copy Pods Resources */,
+				B7F1A4631E6FBBE9003D1FE8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -607,6 +637,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJ8R67WH26;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.Spots;
@@ -625,6 +659,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJ8R67WH26;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.Spots;

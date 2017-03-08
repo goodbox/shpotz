@@ -13,6 +13,8 @@ import GoogleMaps
 import PopupDialog
 import ImagePicker
 import Lightbox
+import AWSS3
+import Photos
 
 class PostViewController: UIViewController {
   
@@ -85,6 +87,52 @@ class PostViewController: UIViewController {
     // post spot
     // post images to amazon
     // post location to api
+    
+    do {
+     
+      let testFileUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("testfile.jpg")
+      let data = UIImageJPEGRepresentation(postTableView.firstImage, 0.6)
+      
+      try data?.write(to: testFileUrl!)
+      
+      let transferManager = AWSS3TransferManager.default()
+      
+      let uploadRequest = AWSS3TransferManagerUploadRequest()
+      
+      uploadRequest?.bucket = "spots-app-bucket"
+      
+      uploadRequest?.key = "uploads/myTestFile.jpg"
+      
+      uploadRequest?.contentType = "image/jpeg"
+      
+      uploadRequest?.body = testFileUrl!
+      
+      transferManager.upload(uploadRequest!).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask<AnyObject>) -> Any? in
+        
+        if let error = task.error as? NSError {
+          if error.domain == AWSS3TransferManagerErrorDomain, let code = AWSS3TransferManagerErrorType(rawValue: error.code) {
+            switch code {
+            case .cancelled, .paused:
+              break
+            default:
+              print("Error uploading: \(uploadRequest?.key) Error: \(error)")
+            }
+          } else {
+            print("Error uploading: \(uploadRequest?.key) Error: \(error)")
+          }
+          return nil
+        }
+        
+        let uploadOutput = task.result
+        print("Upload complete for: \(uploadRequest?.key)")
+        return nil
+      })
+    
+    } catch {
+      
+      print("other error occurred : \(error)")
+      
+    }
     
     self.showSuccessPopupDialog()
     
