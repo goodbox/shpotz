@@ -290,13 +290,14 @@ open class NavigationBar: UINavigationBar {
      */
 	open func prepare() {
         barStyle = .black
+        isTranslucent = false
         depthPreset = .depth1
         interimSpacePreset = .interimSpace3
         contentEdgeInsetsPreset = .square1
         contentScaleFactor = Screen.scale
 		backButtonImage = Icon.cm.arrowBack
-        let image = UIImage.image(with: .clear, size: CGSize(width: bounds.width, height: bounds.height))
-		shadowImage = image
+        let image = UIImage()
+        shadowImage = image
 		setBackgroundImage(image, for: .default)
 		backgroundColor = .white
 	}
