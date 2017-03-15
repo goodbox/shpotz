@@ -89,9 +89,18 @@ class PostViewController: UIViewController {
     // post location to api
     
     do {
+      
+      let uuidFilename = UUID().uuidString + ".jpg"
+      
+      let uuidPrefix = uuidFilename.substring(to: uuidFilename.index(uuidFilename.startIndex, offsetBy: 4))
      
-      let testFileUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("testfile.jpg")
-      let data = UIImageJPEGRepresentation(postTableView.firstImage, 0.6)
+      let resizedImage = postTableView.firstImage.resizedImageWithinRect(rectSize: CGSize(width: 320, height: 240))
+      
+      // let resizedImage = postTableView.firstImage.resizedImage(newSize: CGSize(width: 320, height: 240))
+      
+      let testFileUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(uuidFilename)
+      
+      let data = UIImageJPEGRepresentation(resizedImage, 1.0)
       
       try data?.write(to: testFileUrl!)
       
@@ -101,7 +110,7 @@ class PostViewController: UIViewController {
       
       uploadRequest?.bucket = "spots-app-bucket"
       
-      uploadRequest?.key = "uploads/myTestFile.jpg"
+      uploadRequest?.key = "uploads/" + uuidPrefix + "/" + uuidFilename
       
       uploadRequest?.contentType = "image/jpeg"
       
@@ -124,7 +133,11 @@ class PostViewController: UIViewController {
         }
         
         let uploadOutput = task.result
+        
         print("Upload complete for: \(uploadRequest?.key)")
+        
+        self.showSuccessPopupDialog()
+        
         return nil
       })
     
@@ -133,9 +146,6 @@ class PostViewController: UIViewController {
       print("other error occurred : \(error)")
       
     }
-    
-    self.showSuccessPopupDialog()
-    
   }
   
   func showValidationPopup(theTitle: String?, theMessage: String?) {

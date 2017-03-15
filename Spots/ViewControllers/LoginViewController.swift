@@ -33,12 +33,12 @@ public class LoginViewController : UIViewController {
       
       // User is logged in, use 'accessToken' here.
       // UserDefaults.FacebookAuthToken = accessToken.authenticationToken
-      
+        /*
       UserProfile.loadCurrent({ (userProfile) in
         
         print(UserProfile.current?.profileURL ?? "profile url")
         
-      })
+      })*/
       
       let connection = GraphRequestConnection()
       
@@ -48,6 +48,12 @@ public class LoginViewController : UIViewController {
           
           print("Graph Request Succeeded: \(response)")
           
+          let userId = accessToken.userId!
+          
+          UserDefaults.FacebookUserId = userId
+          
+          UserDefaults.FacebookAuthToken = accessToken.authenticationToken
+
           self.performSegue(withIdentifier: "LoginSegue", sender: self)
         
         case .failed(let error):
@@ -100,18 +106,20 @@ public class LoginViewController : UIViewController {
         if declinedPermissions.contains("email") {
           
           // show popup dialog saying email is required
-          self.showValidationPopup(theTitle: "Email is Required", theMessage: "Email is required in order to use this app.")
+          self.showValidationPopup(theTitle: "Email is Required", theMessage: "Email is required to use this app.")
         
         } else if declinedPermissions.contains("user_friends") {
           
           // show popup dialog saying email is required
-          self.showValidationPopup(theTitle: "Friends List is Required", theMessage: "Friends List is required in order to use this app.")
+          self.showValidationPopup(theTitle: "Friends List is Required", theMessage: "Friends List is required to use this app.")
           
         } else {
           
           UserDefaults.FacebookUserId = accessToken.userId
           
           UserDefaults.FacebookAuthToken = accessToken.authenticationToken
+          
+          // authenticate user against spot api
           
           self.performSegue(withIdentifier: "LoginSegue", sender: self)
           

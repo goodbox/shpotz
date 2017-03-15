@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 import Material
+import Alamofire
+import AlamofireImage
 
 class MeViewController: UIViewController {
   
   @IBOutlet weak var btnSettings: UIBarButtonItem!
+  @IBOutlet weak var vHeader: UIView!
+  @IBOutlet weak var containerView: UIView!
+  @IBOutlet weak var imgProfilePic: UIImageView!
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -24,6 +29,26 @@ class MeViewController: UIViewController {
     super.viewDidLoad()
     
     btnSettings.image = Icon.settings?.tint(with: UIColor.white)
+    
+    vHeader.backgroundColor = UIColor.spotsGreen() // Color.grey.darken1
+    
+    self.imgProfilePic.layer.cornerRadius = self.imgProfilePic.layer.width/2
+    self.imgProfilePic.layer.masksToBounds = true
+    self.imgProfilePic.layer.borderColor = UIColor.white.cgColor
+    self.imgProfilePic.layer.borderWidth = 2
+    
+    
+    if let userId = UserDefaults.FacebookUserId {
+      
+      let profilePicUrl = "https://graph.facebook.com/v2.8/" + userId + "/picture?type=large"
+      
+      self.imgProfilePic.af_setImage(
+        withURL: URL(string: profilePicUrl)!,
+        placeholderImage: nil,
+        filter: nil,
+        imageTransition: .crossDissolve(0.2)
+       )
+    }
   }
   
   @IBAction func btnSettingsTapped(_ sender: Any) {

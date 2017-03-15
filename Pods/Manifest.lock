@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.3.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -36,16 +39,22 @@ PODS:
   - Lightbox (1.0.0):
     - Hue
     - Sugar
-  - Material/Capture (2.5.2):
-    - Material/Core
+  - Material (2.5.2):
+    - Material/Core (= 2.5.2)
   - Material/Core (2.5.2)
   - Motion (1.0.5):
     - Motion/Core (= 1.0.5)
   - Motion/Core (1.0.5)
   - PopupDialog (0.5.3)
   - Sugar (3.1.2)
+  - SwiftyJSON (3.1.4)
+  - XCGLogger (4.0.0):
+    - XCGLogger/Core (= 4.0.0)
+  - XCGLogger/Core (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.3.0)
+  - AlamofireImage (~> 3.2.0)
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -54,10 +63,12 @@ DEPENDENCIES:
   - Hue (from `https://github.com/hyperoslo/Hue.git`, branch `swift3`)
   - ImagePicker
   - Lightbox (from `https://github.com/hyperoslo/Lightbox.git`, branch `swift-3`)
-  - Material/Capture (~> 2.0)
+  - Material (~> 2.0)
   - Motion (~> 1.0)
   - PopupDialog (~> 0.5.3)
   - Sugar (from `https://github.com/hyperoslo/Sugar.git`, branch `master`)
+  - SwiftyJSON
+  - XCGLogger (~> 4.0)
 
 EXTERNAL SOURCES:
   Hue:
@@ -82,6 +93,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/hyperoslo/Sugar.git
 
 SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
@@ -98,7 +111,9 @@ SPEC CHECKSUMS:
   Motion: 35d2c694cb62b0325c62504e15ffdf3cc3cc7d39
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   Sugar: 41f2efa0244806f524ff2d77c951a6a43e81a0f3
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 4babd1c0505729a3e1da100485c4bb914379d263
+PODFILE CHECKSUM: e4a286c2b2d63ca0dfc1c8b8bbb4753a5970d67e
 
 COCOAPODS: 1.1.1

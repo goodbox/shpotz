@@ -16,10 +16,10 @@ public class SelectSpotTypeViewController : UIViewController {
   @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
   
   fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
-  fileprivate let sectionInsets = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+  fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
   fileprivate let itemsPerRow: CGFloat = 3
   fileprivate let spotTypes: [String] = ["Camping", "Fishing", "Hiking", "Rock Climbing", "Mtn Biking",
-                                         "Ice Climbing", "Rafting", "Surfing", "Swimming", "Diving"];
+                                         "Ice Climbing", "Rafting", "Surfing", "Swimming", "Diving", "Other"];
   
   var spotTypeDelegate: DidSelectSpotTypeDelegate!
   

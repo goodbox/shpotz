@@ -6,9 +6,17 @@ target 'Spots' do
   use_frameworks!
 
   # Pods for Spots
-  pod 'Material/Capture', '~> 2.0'
+  pod 'Material', '~> 2.0'
   
   pod 'Motion', '~> 1.0'
+  
+  pod 'Alamofire', '~> 4.3.0'
+  
+  pod 'AlamofireImage', '~> 3.2.0'
+  
+  pod 'XCGLogger', '~> 4.0'
+  
+  pod 'SwiftyJSON'
   
   pod 'GoogleMaps'
   pod 'GooglePlaces'

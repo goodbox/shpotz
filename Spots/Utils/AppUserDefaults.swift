@@ -14,14 +14,13 @@ extension UserDefaults {
   static var FacebookUserId: String? {
     get {
       if let facebookUserId = UserDefaults.standard.value( forKey: _facebookUserIdKey ) as? String {
-        return String(facebookUserId)
+        return facebookUserId
       }
       return nil
     }
     set(value) {
       if value != nil {
-        let facebookUserId = String(describing: value)
-        UserDefaults.standard.setValue(facebookUserId, forKey: _facebookUserIdKey)
+        UserDefaults.standard.setValue(value, forKey: _facebookUserIdKey)
       }
       else {
         UserDefaults.standard.removeObject(forKey: _facebookUserIdKey)

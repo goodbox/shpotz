@@ -28,10 +28,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lCZ-8i-flY">
-                        <rect key="frame" x="60" y="45" width="80" height="80"/>
+                        <rect key="frame" x="50" y="35" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="80" id="3RV-Bi-tNI"/>
-                            <constraint firstAttribute="width" constant="80" id="ctk-at-OOo"/>
+                            <constraint firstAttribute="height" constant="100" id="3RV-Bi-tNI"/>
+                            <constraint firstAttribute="width" constant="100" id="ctk-at-OOo"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yBK-G5-yxd">
+                        <rect key="frame" x="70" y="55" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="ocz-ne-L4u"/>
+                            <constraint firstAttribute="width" constant="60" id="wvB-AG-5Gc"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -41,9 +48,12 @@
                 <constraint firstItem="lCZ-8i-flY" firstAttribute="centerY" secondItem="eLG-S9-29D" secondAttribute="centerY" constant="-15" id="SPV-B0-Yi4"/>
                 <constraint firstItem="lCZ-8i-flY" firstAttribute="centerX" secondItem="eLG-S9-29D" secondAttribute="centerX" id="SXr-0d-VgE"/>
                 <constraint firstItem="mcq-WI-Lhh" firstAttribute="leading" secondItem="eLG-S9-29D" secondAttribute="leading" id="VhM-41-jOO"/>
+                <constraint firstItem="yBK-G5-yxd" firstAttribute="centerY" secondItem="eLG-S9-29D" secondAttribute="centerY" constant="-15" id="XsZ-rp-c8d"/>
+                <constraint firstItem="yBK-G5-yxd" firstAttribute="centerX" secondItem="eLG-S9-29D" secondAttribute="centerX" id="edw-QW-1bd"/>
                 <constraint firstAttribute="bottom" secondItem="mcq-WI-Lhh" secondAttribute="bottom" id="fWi-Oa-Wqh"/>
             </constraints>
             <connections>
+                <outlet property="imgSpotIcon" destination="yBK-G5-yxd" id="L0O-rM-Yjy"/>
                 <outlet property="imgSpotType" destination="lCZ-8i-flY" id="vev-Jb-bt5"/>
                 <outlet property="lblSpotType" destination="mcq-WI-Lhh" id="TUB-Nz-msH"/>
             </connections>

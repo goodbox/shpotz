@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3F0C8C940309DB5B59CA1016 /* Pods_SpotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB318AC6AE1AD6ECD965AB01 /* Pods_SpotsTests.framework */; };
 		7D34DD9F82412ABDF50B99B6 /* Pods_Spots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582FDB3F05CF7841AC46FA69 /* Pods_Spots.framework */; };
+		B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7020A5B1E72463D007C437A /* MySpotsViewController.swift */; };
+		B7020A5E1E724753007C437A /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7020A5D1E724753007C437A /* SpotDetailViewController.swift */; };
 		B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70258371E63BED00090E86B /* ButtonExtension.swift */; };
 		B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583A1E63D8730090E86B /* AppNavigationController.swift */; };
 		B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583C1E6400700090E86B /* UserSettingsViewController.swift */; };
@@ -71,6 +73,8 @@
 		196ADEC6DB52F7B8B59D44BB /* Pods-SpotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpotsTests/Pods-SpotsTests.release.xcconfig"; sourceTree = "<group>"; };
 		582FDB3F05CF7841AC46FA69 /* Pods_Spots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB318AC6AE1AD6ECD965AB01 /* Pods_SpotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7020A5B1E72463D007C437A /* MySpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySpotsViewController.swift; sourceTree = "<group>"; };
+		B7020A5D1E724753007C437A /* SpotDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
 		B70258371E63BED00090E86B /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		B702583A1E63D8730090E86B /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		B702583C1E6400700090E86B /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 				B702583C1E6400700090E86B /* UserSettingsViewController.swift */,
 				B7049E2F1E66528A000824EA /* PostTableViewController.swift */,
 				B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */,
+				B7020A5B1E72463D007C437A /* MySpotsViewController.swift */,
+				B7020A5D1E724753007C437A /* SpotDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -476,8 +482,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */,
 				B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */,
 				B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */,
+				B7020A5E1E724753007C437A /* SpotDetailViewController.swift in Sources */,
 				B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
@@ -643,7 +651,7 @@
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.Spots;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.goodspots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -665,7 +673,7 @@
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.Spots;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.goodspots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
