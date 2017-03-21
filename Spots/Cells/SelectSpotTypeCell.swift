@@ -51,6 +51,10 @@ public class SelectSpotTypeCell: UICollectionViewCell {
       imgSpotIcon.image = SpotIcons.surfing?.tint(with: Color.grey.darken3)
     case "Swimming":
       imgSpotIcon.image = SpotIcons.swimming?.tint(with: Color.grey.darken3)
+    case "Canoeing":
+      imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
+    case "Hot Springs":
+      imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
     default:
       imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
     }

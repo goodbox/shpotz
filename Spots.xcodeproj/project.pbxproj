@@ -24,6 +24,13 @@
 		B727756A1E62C27B009B20A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775681E62C27B009B20A7 /* LaunchScreen.storyboard */; };
 		B72775751E62C27B009B20A7 /* SpotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72775741E62C27B009B20A7 /* SpotsTests.swift */; };
 		B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */; };
+		B77692371E80DE060099412E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692361E80DE060099412E /* Models.swift */; };
+		B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692381E80E1420099412E /* GoodSpotsError.swift */; };
+		B776923B1E80E1940099412E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776923A1E80E1940099412E /* APIConstants.swift */; };
+		B776923D1E80E2030099412E /* ApiServiceTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776923C1E80E2030099412E /* ApiServiceTask.swift */; };
+		B776923F1E80E2930099412E /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776923E1E80E2930099412E /* ApiServices.swift */; };
+		B77692411E80E3080099412E /* ApiServiceTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692401E80E3080099412E /* ApiServiceTaskFactory.swift */; };
+		B77692431E80E32C0099412E /* ApiServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692421E80E32C0099412E /* ApiServiceController.swift */; };
 		B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376521E62CD6B004F4786 /* PostViewController.swift */; };
 		B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376541E62CD76004F4786 /* MeViewController.swift */; };
 		B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376561E62CD81004F4786 /* MapContainerViewController.swift */; };
@@ -93,6 +100,13 @@
 		B72775741E62C27B009B20A7 /* SpotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsTests.swift; sourceTree = "<group>"; };
 		B72775761E62C27B009B20A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBottomNavigationController.swift; sourceTree = "<group>"; };
+		B77692361E80DE060099412E /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B77692381E80E1420099412E /* GoodSpotsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodSpotsError.swift; sourceTree = "<group>"; };
+		B776923A1E80E1940099412E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		B776923C1E80E2030099412E /* ApiServiceTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceTask.swift; sourceTree = "<group>"; };
+		B776923E1E80E2930099412E /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		B77692401E80E3080099412E /* ApiServiceTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceTaskFactory.swift; sourceTree = "<group>"; };
+		B77692421E80E32C0099412E /* ApiServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceController.swift; sourceTree = "<group>"; };
 		B7A376521E62CD6B004F4786 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B7A376541E62CD76004F4786 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		B7A376561E62CD81004F4786 /* MapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +184,12 @@
 		B70258391E63D7740090E86B /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				B77692381E80E1420099412E /* GoodSpotsError.swift */,
+				B776923A1E80E1940099412E /* APIConstants.swift */,
+				B776923C1E80E2030099412E /* ApiServiceTask.swift */,
+				B776923E1E80E2930099412E /* ApiServices.swift */,
+				B77692401E80E3080099412E /* ApiServiceTaskFactory.swift */,
+				B77692421E80E32C0099412E /* ApiServiceController.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -179,6 +199,14 @@
 			children = (
 			);
 			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		B70EA4AE1E80DD340075ADA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B77692361E80DE060099412E /* Models.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B72775531E62C27B009B20A7 = {
@@ -204,6 +232,7 @@
 		B727755E1E62C27B009B20A7 /* Spots */ = {
 			isa = PBXGroup;
 			children = (
+				B70EA4AE1E80DD340075ADA1 /* Models */,
 				B7AEB7081E6E388B00AF6E65 /* Cells */,
 				B7A4AD961E69008B0055FC80 /* Delegates */,
 				B7049E001E653AC5000824EA /* ThirdParty */,
@@ -482,6 +511,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77692431E80E32C0099412E /* ApiServiceController.swift in Sources */,
+				B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */,
 				B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */,
 				B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */,
 				B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */,
@@ -489,19 +520,24 @@
 				B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
+				B776923D1E80E2030099412E /* ApiServiceTask.swift in Sources */,
 				B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
 				B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */,
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
+				B77692371E80DE060099412E /* Models.swift in Sources */,
 				B7A376761E63828F004F4786 /* MapViewController.swift in Sources */,
 				B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */,
 				B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */,
+				B77692411E80E3080099412E /* ApiServiceTaskFactory.swift in Sources */,
 				B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */,
 				B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */,
 				B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */,
 				B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */,
+				B776923B1E80E1940099412E /* APIConstants.swift in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,
+				B776923F1E80E2930099412E /* ApiServices.swift in Sources */,
 				B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,8 +18,8 @@ public class SelectSpotTypeViewController : UIViewController {
   fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
   fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
   fileprivate let itemsPerRow: CGFloat = 3
-  fileprivate let spotTypes: [String] = ["Camping", "Fishing", "Hiking", "Rock Climbing", "Mtn Biking",
-                                         "Ice Climbing", "Rafting", "Surfing", "Swimming", "Diving", "Other"];
+  fileprivate let spotTypes: [String] = ["Camping", "Fishing", "Hiking", "Hot Springs",  "Mtn Biking", "Swimming", "Surfing",
+                                         "Rafting", "Canoeing",  "Diving", "Rock Climbing", "Ice Climbing","Other"];
   
   var spotTypeDelegate: DidSelectSpotTypeDelegate!
   
