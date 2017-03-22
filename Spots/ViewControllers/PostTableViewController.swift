@@ -42,9 +42,15 @@ public class PostTableViewController : UITableViewController {
   
   var didTapAddPhotoDelegate : DidTapAddPhotoButtonDelegate!
   
+  var spotsModel: SpotsModel!
+  
   public override func viewDidLoad() {
     
     super.viewDidLoad()
+    
+    spotsModel = SpotsModel()
+    
+    spotsModel.SpotType = SpotsType.all
     
     firstImage = nil
     secondImage = nil
@@ -170,7 +176,7 @@ public class PostTableViewController : UITableViewController {
 // MARK: SpotTypeDelegate
 extension PostTableViewController : DidSelectSpotTypeDelegate {
   
-  public func didSelectSpotType(_sender: Any?, spotType: String?) {
+  public func didSelectSpotType(_sender: Any?, spotType: String?, spotName: String?) {
     
     lblSpotType.text = spotType!
     

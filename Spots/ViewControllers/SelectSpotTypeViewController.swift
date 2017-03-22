@@ -19,7 +19,7 @@ public class SelectSpotTypeViewController : UIViewController {
   fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
   fileprivate let itemsPerRow: CGFloat = 3
   fileprivate let spotTypes: [String] = ["Camping", "Fishing", "Hiking", "Hot Springs",  "Mtn Biking", "Swimming", "Surfing",
-                                         "Rafting", "Canoeing",  "Diving", "Rock Climbing", "Ice Climbing","Other"];
+                                         "Rafting", "Canoeing",  "Diving", "Rock Climbing", "Ice Climbing", "Beach", "Other"];
   
   var spotTypeDelegate: DidSelectSpotTypeDelegate!
   
@@ -81,9 +81,17 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
     
     collectionView.deselectItem(at: indexPath, animated: false)
     
+    var spotName = spotTypes[indexPath.row]
+    
+    if indexPath.row == (spotTypes.count - 1) {
+      
+      // make them enter the name of the spot
+    
+    }
+    
     dismiss(animated: true, completion: nil)
     
-    spotTypeDelegate.didSelectSpotType(_sender: self, spotType: spotTypes[indexPath.row])
+    spotTypeDelegate.didSelectSpotType(_sender: self, spotType: spotTypes[indexPath.row], spotName: spotName)
   }
   
   public func collectionView(_ collectionView: UICollectionView,

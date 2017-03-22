@@ -34,12 +34,62 @@ class ApiServiceController {
     var success: Bool = false
   }
   
+  // account api
+  typealias CompletionUserFunc = (_ success: Bool, _ user: LoginModel?, _ error: NSError?) -> Void
+  
+  
+  func performFbAuth(_ fbAccessToken: String, completion: @escaping CompletionUserFunc) -> Bool {
+    
+    let task = ApiServiceTask.CreateLoginTask(fbAccessToken)
+    
+    _ = task.performTask { (success, json, headerFields, error) in
+      
+      if error != nil {
+        completion(false, nil, error)
+        return
+      }
+     
+      if success {
+        
+        let loginModel = LoginModel(json: json!)
+        
+        completion(success, loginModel, nil)
+        
+      } else {
+        completion(false, nil, nil)
+      }
+      
+    }
+    
+    return true
+  }
   
   // spots api
   typealias PostSpotCompletionUserFunc = (_ success: Bool, _ spot: SpotsModel?, _ error: NSError?) -> Void
   
-  func performPostSpot(_ authToken: String, spotsModel: SpotsModel, completion: @escaping PostSpotCompletionUserFunc) -> Void {
+  func performPostSpot(_ authToken: String, spotsModel: SpotsModel, completion: @escaping PostSpotCompletionUserFunc) -> Bool {
+   
+    let task = ApiServiceTask.CreatePostSpotTask(authToken, spotsModel: spotsModel)
     
+    _ = task.performTask({ (success, json, headerFields, error) in
+      
+      if error != nil {
+        completion(false, nil, error)
+        return
+      }
+      
+      if success {
+        
+        let spot = SpotsModel(json: json!)
+        
+        completion(success, spot, nil)
+        
+      } else {
+        completion(success, nil, nil)
+      }
+      
+    })
+    
+    return true
   }
-  
 }

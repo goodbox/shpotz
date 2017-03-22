@@ -127,6 +127,22 @@ public class SpotsModel {
   func encodeToDictionary() -> [String:AnyObject] {
     
     var data = [ String : AnyObject ]()
+    
+    data["latitude"] = self.Lat as AnyObject?
+    
+    data["longitude"] = self.Long as AnyObject?
+    
+    data["spotType"] = NSNumber(value: self.SpotType.rawValue as Int)
+    
+    data["visibility"] = NSNumber(value: self.Visibility.rawValue as Int)
+    
+    data["name"] = self.Name as AnyObject?
+    
+    data["description"] = self.Description as AnyObject?
+    
+    data["spotTypeName"] = self.SpotTypeName as AnyObject?
+    
+    data["sharedToFacebook"] = self.SharedToFacebook as AnyObject?
 
     return data
   }

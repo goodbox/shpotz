@@ -30,43 +30,25 @@ public class LoginViewController : UIViewController {
     self.btnLogin.showLoading()
     
     if let accessToken = AccessToken.current {
+    
+      let api = ApiServiceController.sharedInstance
       
-      // User is logged in, use 'accessToken' here.
-      // UserDefaults.FacebookAuthToken = accessToken.authenticationToken
-        /*
-      UserProfile.loadCurrent({ (userProfile) in
+      _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
         
-        print(UserProfile.current?.profileURL ?? "profile url")
-        
-      })*/
-      
-      let connection = GraphRequestConnection()
-      
-      connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
-        switch result {
-        case .success(let response):
+        if success {
           
-          print("Graph Request Succeeded: \(response)")
+          UserDefaults.SpotsToken = loginModel?.BearerToken
           
-          let userId = accessToken.userId!
-          
-          UserDefaults.FacebookUserId = userId
-          
-          UserDefaults.FacebookAuthToken = accessToken.authenticationToken
-
           self.performSegue(withIdentifier: "LoginSegue", sender: self)
-        
-        case .failed(let error):
           
-          print("Graph Request Failed: \(error)")
+        } else {
           
-          self.btnLogin.isEnabled = true
+          // TODO: modal to say there was an error
           
-          self.btnLogin.hideLoading()
-        
         }
-      }
-      connection.start()
+      })
+
+      
     } else {
       self.btnLogin.isEnabled = true
       
@@ -103,6 +85,10 @@ public class LoginViewController : UIViewController {
         
       case .success(let grantedPermissions, let declinedPermissions, let accessToken):
         
+        self.btnLogin.isEnabled = false
+        
+        self.btnLogin.showLoading()
+        
         if declinedPermissions.contains("email") {
           
           // show popup dialog saying email is required
@@ -120,9 +106,22 @@ public class LoginViewController : UIViewController {
           UserDefaults.FacebookAuthToken = accessToken.authenticationToken
           
           // authenticate user against spot api
+          let api = ApiServiceController.sharedInstance
           
-          self.performSegue(withIdentifier: "LoginSegue", sender: self)
-          
+          _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
+            
+            if success {
+              
+              UserDefaults.SpotsToken = loginModel?.BearerToken
+            
+              self.performSegue(withIdentifier: "LoginSegue", sender: self)
+            
+            } else {
+              
+              // TODO: modal to say there was an error
+              
+            }
+          })
         }
       }
     }

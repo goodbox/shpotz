@@ -11,6 +11,7 @@ import Foundation
 
 extension UserDefaults {
   
+  fileprivate static let _facebookUserIdKey = "FacebookUserIdKey"
   static var FacebookUserId: String? {
     get {
       if let facebookUserId = UserDefaults.standard.value( forKey: _facebookUserIdKey ) as? String {
@@ -27,14 +28,17 @@ extension UserDefaults {
       }
     }
   }
-  fileprivate static let _facebookUserIdKey = "FacebookUserIdKey"
 
-  
+  fileprivate static let _facebookAuthTokenKey = "FacebookAuthTokenKey"
   static var FacebookAuthToken: String? {
     get { return UserDefaults.standard.value( forKey: _facebookAuthTokenKey ) as? String }
     set(value) { UserDefaults.standard.setValue(value, forKey: _facebookAuthTokenKey) }
   }
   
-  fileprivate static let _facebookAuthTokenKey = "FacebookAuthTokenKey"
+  fileprivate static let _spotToken = "SpotsToken"
+  static var SpotsToken: String? {
+    get { return UserDefaults.standard.value( forKey: _spotToken ) as? String }
+    set(value) { UserDefaults.standard.setValue(value, forKey: _spotToken) }
+  }
   
 }

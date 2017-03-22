@@ -10,6 +10,14 @@ import Foundation
 
 
 extension ApiServiceTask {
+  
+  static func CreateLoginTask(_ fbAccessToken: String) -> ApiServiceTask {
+    
+    let serviceUrl = "/api/account/fbAuth"
+    let headerParameters = ["fbAccessToken": fbAccessToken]
+
+    return ApiServiceTask(serviceMethod: .POST, serviceUrl: serviceUrl, urlParameters: nil, headerParameters: headerParameters as [String : AnyObject]?, authToken: nil)
+  }
 
   static func CreatePostSpotTask(_ accessToken: String, spotsModel: SpotsModel) -> ApiServiceTask {
   
