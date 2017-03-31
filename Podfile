@@ -37,6 +37,10 @@ target 'Spots' do
   pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar.git', branch: 'master'
   pod 'Hue', git: 'https://github.com/hyperoslo/Hue.git', branch: 'swift3'
   
+  #xl actioncontroller
+  pod 'XLActionController'
+  pod 'XLActionController/Twitter'
+  
   target 'SpotsTests' do
     inherit! :search_paths
     # Pods for testing

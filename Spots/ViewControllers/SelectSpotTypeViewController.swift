@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Material
+import PopupDialog
 
 public class SelectSpotTypeViewController : UIViewController {
   
@@ -83,15 +84,50 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
     
     var spotName = spotTypes[indexPath.row]
     
-    if indexPath.row == (spotTypes.count - 1) {
+    if spotName == "Other" {
       
       // make them enter the name of the spot
+      let spotNameViewController = SpotTypeNameViewController(nibName: "SpotTypeName", bundle: nil)
+      
+      let popup = PopupDialog(viewController: spotNameViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false) {
+        
+        // print("validation popup dismissed")
+        
+      }
+      
+      let btnCancel = CancelButton(title: "Cancel") {
+        //print("validation popup dismissed : Cancel")
+      }
+      
+      let btnOk = DefaultButton(title: "Select", action: { 
+        
+        let vc = popup.viewController as! SpotTypeNameViewController
+        
+        if vc.txtSpotName.text! == "" || (vc.txtSpotName.text?.characters.count)! < 2 {
+          
+          // TODO: figure otu what to do here
+          
+        } else {
+          
+          self.dismiss(animated: true, completion: nil)
+          
+          spotName = (popup.viewController as! SpotTypeNameViewController).txtSpotName.text!
+          
+          self.spotTypeDelegate.didSelectSpotType(_sender: self, spotType: self.spotTypes[indexPath.row], spotName: spotName)
+
+        }
+      })
+      
+      popup.addButtons([btnCancel, btnOk])
+      
+      self.present(popup, animated: true, completion: nil)
+      
+    } else {
     
+      dismiss(animated: true, completion: nil)
+    
+      spotTypeDelegate.didSelectSpotType(_sender: self, spotType: spotTypes[indexPath.row], spotName: spotName)
     }
-    
-    dismiss(animated: true, completion: nil)
-    
-    spotTypeDelegate.didSelectSpotType(_sender: self, spotType: spotTypes[indexPath.row], spotName: spotName)
   }
   
   public func collectionView(_ collectionView: UICollectionView,

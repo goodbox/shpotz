@@ -47,16 +47,16 @@ public class SelectSpotTypeCell: UICollectionViewCell {
       imgSpotIcon.image = SpotIcons.iceclimbing?.tint(with: Color.grey.darken3)
     case "Rafting":
       imgSpotIcon.image = SpotIcons.rafting?.tint(with: Color.grey.darken3)
+    case "Canoeing":
+      imgSpotIcon.image = SpotIcons.canoeing?.tint(with: Color.grey.darken3)
     case "Surfing":
       imgSpotIcon.image = SpotIcons.surfing?.tint(with: Color.grey.darken3)
     case "Swimming":
       imgSpotIcon.image = SpotIcons.swimming?.tint(with: Color.grey.darken3)
-    case "Canoeing":
-      imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
     case "Hot Springs":
-      imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
+      imgSpotIcon.image = SpotIcons.hottub?.tint(with: Color.grey.darken3)
     case "Beach":
-      imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
+      imgSpotIcon.image = SpotIcons.beach?.tint(with: Color.grey.darken3)
     default:
       imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
     }

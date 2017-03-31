@@ -24,11 +24,65 @@ enum SpotsType : Int {
   case diving = 10
   case rafting = 11
   case hotsprings = 12
+  case beach = 13
   case other = 10000
+  
+  
+  static func getSpotTypeFromSpotName(spotName: String) -> Int {
+    
+    switch spotName {
+      
+    case "All":
+      return SpotsType.all.rawValue
+      
+    case "Camping":
+      return SpotsType.camping.rawValue
+      
+    case "Fishing":
+      return SpotsType.fishing.rawValue
+      
+    case "Hiking":
+      return SpotsType.hiking.rawValue
+      
+    case "Rock Climbing":
+      return SpotsType.rockclimbing.rawValue
+      
+    case "Mtn Biking":
+      return SpotsType.mtnbiking.rawValue
+      
+    case "Ice Climbing":
+      return SpotsType.iceclimbing.rawValue
+      
+    case "Canoeing":
+      return SpotsType.canoeing.rawValue
+      
+    case "Surfing":
+      return SpotsType.surfing.rawValue
+      
+    case "Swimming":
+      return SpotsType.swimming.rawValue
+      
+    case "Diving":
+      return SpotsType.diving.rawValue
+      
+    case "Rafting":
+      return SpotsType.rafting.rawValue
+      
+    case "Hot Springs":
+      return SpotsType.hotsprings.rawValue
+      
+    case "Beach":
+      return SpotsType.beach.rawValue
+      
+    default:
+      return SpotsType.other.rawValue
+    }
+  }
 }
 
 // MARK: ENums Visibility
 enum SpotsVisibility: Int {
+  case none = 0
   case `public` = 1
   case friends = 3
   case `private` = 4
@@ -70,27 +124,27 @@ public class LoginModel {
 // MARK: spots model
 public class SpotsModel {
   
-  var Id: Int64!
+  var Id: Int64! = 0
   
-  var UserId: Int64!
+  var UserId: Int64! = 0
   
-  var Lat: Double!
+  var Lat: Double! = 0
   
-  var Long: Double!
+  var Long: Double! = 0
   
-  var SpotType: SpotsType!
+  var SpotType: SpotsType! = SpotsType.all
   
-  var Visibility: SpotsVisibility!
+  var Visibility: SpotsVisibility! = SpotsVisibility.none
   
-  var State: Int!
+  var State: Int! = 0
   
-  var Name: String!
+  var Name: String! = ""
   
-  var Description: String!
+  var Description: String! = ""
   
-  var SpotTypeName: String!
+  var SpotTypeName: String! = ""
   
-  var SharedToFacebook: Bool!
+  var SharedToFacebook: Bool! = false
   
   init() {}
   
@@ -116,13 +170,18 @@ public class SpotsModel {
     
     self.Name = json["name"].string!
     
-    self.Description = json["description"].string!
+    if let description = json["description"].string {
+      self.Description = description
+    }
     
-    self.SpotTypeName = json["spotTypeName"].string!
+    if let spotTypeName = json["spotTypeName"].string {
+        self.SpotTypeName = spotTypeName
+    }
     
     self.SharedToFacebook = json["sharedToFacebook"].bool!
     
   }
+  
   
   func encodeToDictionary() -> [String:AnyObject] {
     

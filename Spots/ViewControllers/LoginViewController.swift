@@ -17,9 +17,21 @@ public class LoginViewController : UIViewController {
   
   @IBOutlet weak var btnLogin: RaisedButton!
   
+  
+  @IBOutlet weak var lblAppTitle: UILabel!
+  @IBOutlet weak var imgLogo: UIImageView!
+  
   public override func viewDidLoad() {
     
     super.viewDidLoad()
+    
+    imgLogo.image = UIImage(named: "logo_image")?.tint(with: Color.grey.lighten3)
+    imgLogo.contentMode = .scaleAspectFit
+    imgLogo.masksToBounds = true
+    
+    // imgLogo.backgroundColor = UIColor.red
+    
+    lblAppTitle.font = UIFont(name:"Roboto-Light", size: 50)!
   }
   
   public override func viewDidAppear(_ animated: Bool) {
@@ -119,6 +131,7 @@ public class LoginViewController : UIViewController {
             } else {
               
               // TODO: modal to say there was an error
+              self.showValidationPopup(theTitle: "Login failed", theMessage: "An error occurred logging in with Facebook.")
               
             }
           })

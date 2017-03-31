@@ -21,11 +21,11 @@ PODS:
     - FacebookCore (~> 0.2)
     - FBSDKCoreKit (~> 4.15)
     - FBSDKShareKit (~> 4.15)
-  - FBSDKCoreKit (4.20.0):
+  - FBSDKCoreKit (4.20.2):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.20.0):
+  - FBSDKLoginKit (4.20.2):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.20.0):
+  - FBSDKShareKit (4.20.2):
     - FBSDKCoreKit
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
@@ -39,18 +39,23 @@ PODS:
   - Lightbox (1.0.0):
     - Hue
     - Sugar
-  - Material (2.5.2):
-    - Material/Core (= 2.5.2)
-  - Material/Core (2.5.2)
-  - Motion (1.0.5):
-    - Motion/Core (= 1.0.5)
-  - Motion/Core (1.0.5)
-  - PopupDialog (0.5.3)
+  - Material (2.6.0):
+    - Material/Core (= 2.6.0)
+  - Material/Core (2.6.0)
+  - Motion (1.0.6):
+    - Motion/Core (= 1.0.6)
+  - Motion/Core (1.0.6)
+  - PopupDialog (0.5.4)
   - Sugar (3.1.2)
   - SwiftyJSON (3.1.4)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
+  - XLActionController (3.0.1):
+    - XLActionController/Core (= 3.0.1)
+  - XLActionController/Core (3.0.1)
+  - XLActionController/Twitter (3.0.1):
+    - XLActionController/Core
 
 DEPENDENCIES:
   - Alamofire (~> 4.3.0)
@@ -69,6 +74,8 @@ DEPENDENCIES:
   - Sugar (from `https://github.com/hyperoslo/Sugar.git`, branch `master`)
   - SwiftyJSON
   - XCGLogger (~> 4.0)
+  - XLActionController
+  - XLActionController/Twitter
 
 EXTERNAL SOURCES:
   Hue:
@@ -99,21 +106,22 @@ SPEC CHECKSUMS:
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
-  FBSDKCoreKit: 2d16979b28fe28c2b95af0d275ad5f9703c6c8de
-  FBSDKLoginKit: a9d9391506c687e2304a590bf9312837fce7f375
-  FBSDKShareKit: 1b91af62a603d67f392bc7fde63bc4a0705dde31
+  FBSDKCoreKit: 82eac696eb6157da5f4266c3a241f00e9bd72471
+  FBSDKLoginKit: 2211bede07c83391349eacc1fd86cf6d9289ce38
+  FBSDKShareKit: ca9b22264ea49a896dafb2467c1a4f72aa41996f
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   Hue: 0705083b7aff40334033373e6293ec1215285ac2
   ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
   Lightbox: e4523e8cf3261cbc833d0e76ae4dae774731d115
-  Material: 00ae261fa04dd3f3f8584d07e44ac658fa1bc6fd
-  Motion: 35d2c694cb62b0325c62504e15ffdf3cc3cc7d39
-  PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
+  Material: f7165e4f995fda1d1ba7737a561cbfa1b80e72b6
+  Motion: 4fed19de36355dc724af89eb117cd1c9c26b585d
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   Sugar: 41f2efa0244806f524ff2d77c951a6a43e81a0f3
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
+  XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
 
-PODFILE CHECKSUM: e4a286c2b2d63ca0dfc1c8b8bbb4753a5970d67e
+PODFILE CHECKSUM: e56d7f06f2e06420ef3129d747fdb82d67891686
 
 COCOAPODS: 1.1.1

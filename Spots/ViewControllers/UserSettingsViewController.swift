@@ -36,8 +36,6 @@ public class UserSettingsViewController : UITableViewController {
     case 0 :
       print("selected 1")
     case 1:
-      print("selected 2")
-    case 2:
       print("logout")
       
       let loginManager = LoginManager()

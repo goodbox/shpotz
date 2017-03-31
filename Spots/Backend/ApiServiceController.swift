@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 // Manage all the ApiService calls
 // User will performs ApiService operations using the Controller
@@ -83,6 +84,43 @@ class ApiServiceController {
         let spot = SpotsModel(json: json!)
         
         completion(success, spot, nil)
+        
+      } else {
+        completion(success, nil, nil)
+      }
+      
+    })
+    
+    return true
+  }
+  
+  typealias GetSpotsCompletionFunc = (_ success: Bool, _ spots: [SpotsModel]?, _ error: NSError?) -> Void
+  
+  func getSpots(_ accessToken: String, bllat: String, bllong: String, brlat: String, brlong: String,
+                fllat: String, fllong: String, frlat: String, frlong: String, completion: @escaping GetSpotsCompletionFunc) -> Bool {
+    
+    let task = ApiServiceTask.GetSpots(accessToken, bllat: bllat, bllong: bllong, brlat: brlat, brlong: brlong, fllat: fllat, fllong: fllong, frlat: frlat, frlong: frlong)
+    
+    _ = task.performTask({ (success, json, headerFields, error) in
+      
+      if error != nil {
+        completion(false, nil, error)
+        return
+      }
+      
+      if success {
+        
+        var spots: [SpotsModel]! = []
+        
+        for(_, subJson):(String, JSON) in json! {
+          
+          let spot = SpotsModel(json: subJson)
+          
+          spots.append(spot)
+          
+        }
+        
+        completion(success, spots, nil)
         
       } else {
         completion(success, nil, nil)

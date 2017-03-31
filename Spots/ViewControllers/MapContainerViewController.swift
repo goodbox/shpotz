@@ -13,26 +13,42 @@ import GoogleMaps
 
 class MapContainerViewController: UIViewController {
   
+  var mapViewController: MapViewController!
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     prepareTabBarItem()
     
   }
-  
     
   @IBOutlet weak var btnAdd: FABButton!
   
   open override func viewDidLoad() {
     super.viewDidLoad()
-  
     prepareAddButton()
-    
   }
   
   @IBAction func btnAddTapped(_ sender: Any) {
     
     self.performSegue(withIdentifier: "PostLocationSegue", sender: self)
   
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "SpotsMapSegue" {
+      
+      if let vc = segue.destination as? MapViewController {
+        
+        vc.didSelectMapMarkerDelegate = self
+        
+        self.mapViewController = vc
+      }
+    } else if segue.identifier == "SpotDetailSegue" {
+      
+       self.navigationItem.backBarButtonItem = SimpleBackUIBarButton()
+      
+    }
   }
   
   private func prepareAddButton() {
@@ -51,3 +67,14 @@ class MapContainerViewController: UIViewController {
     tabBarItem.selectedImage = SpotIcons.world?.tint(with: UIColor.spotsGreen())
   }
 }
+
+
+extension MapContainerViewController : DidSelectMapMarkerDelegate {
+  
+  func didSelectMapMarker(_sender: Any?) {
+    
+    performSegue(withIdentifier: "SpotDetailSegue", sender: self)
+    
+  }
+}
+

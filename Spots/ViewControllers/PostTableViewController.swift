@@ -12,6 +12,7 @@ import Material
 import GoogleMaps
 import ImagePicker
 import Lightbox
+import XLActionController
 
 public class PostTableViewController : UITableViewController {
   
@@ -28,12 +29,16 @@ public class PostTableViewController : UITableViewController {
   @IBOutlet weak var btnThirdDelete: UIButton!
   @IBOutlet weak var swShareToFacebook: UISwitch!
   @IBOutlet weak var lblSpotType: UILabel!
+  @IBOutlet weak var lblSpotPrivacy: UILabel!
+  @IBOutlet weak var imgSpotPrivacy: UIImageView!
   
   var firstImage: UIImage!
   var secondImage: UIImage!
   var thirdImage: UIImage!
   
   var spotType: String!
+  
+  var spotVisibility: SpotsVisibility! = SpotsVisibility.none
   
   var locationManager = CLLocationManager()
   var currentLocation: CLLocation?
@@ -42,15 +47,11 @@ public class PostTableViewController : UITableViewController {
   
   var didTapAddPhotoDelegate : DidTapAddPhotoButtonDelegate!
   
-  var spotsModel: SpotsModel!
+  var privacyActionController: TwitterActionController!
   
   public override func viewDidLoad() {
     
     super.viewDidLoad()
-    
-    spotsModel = SpotsModel()
-    
-    spotsModel.SpotType = SpotsType.all
     
     firstImage = nil
     secondImage = nil
@@ -87,13 +88,45 @@ public class PostTableViewController : UITableViewController {
     // Add the map to the view, hide it until we've got a location update.
     vHeader.addSubview(mapView)
     mapView.isHidden = true
-
+    
+    self.privacyActionController = TwitterActionController()
+    
+    self.privacyActionController.headerData = "Select Visibility"
+    
+    self.privacyActionController.addAction(
+      Action(
+        ActionData(title: "Public",
+                   subtitle: "Visibile to everyone",
+                   image: (UIImage(named: "ic_public_white")?.tint(with: Color.grey.darken2))!),
+        style: .default,
+        handler: { action in
+          
+          self.spotVisibility = SpotsVisibility.public
+          self.lblSpotPrivacy.text = "Public"
+          self.imgSpotPrivacy.image = UIImage(named: "ic_public_white")?.tint(with: Color.grey.darken2)
+    }))
+    
+    
+    self.privacyActionController.addAction(
+      Action(
+        ActionData(title: "Private",
+                   subtitle: "Visibile to friends only",
+                   image: (UIImage(named: "ic_lock_white")?.tint(with: Color.grey.darken2))!),
+        style: .default,
+        handler: { action in
+          self.spotVisibility = SpotsVisibility.private
+          self.lblSpotPrivacy.text = "Private"
+          self.imgSpotPrivacy.image = UIImage(named: "ic_lock_white")?.tint(with: Color.grey.darken2)
+    }))
+    
   }
   
   override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     if indexPath.section == 2 {
       self.performSegue(withIdentifier: "SelectSpotTypeSegue", sender: self)
+    } else if indexPath.section == 3 {
+      self.present(self.privacyActionController, animated: true, completion: nil)
     }
     
   }
@@ -171,6 +204,7 @@ public class PostTableViewController : UITableViewController {
       btnAddPhoto.isEnabled = true
     }
   }
+  
 }
 
 // MARK: SpotTypeDelegate
@@ -178,7 +212,7 @@ extension PostTableViewController : DidSelectSpotTypeDelegate {
   
   public func didSelectSpotType(_sender: Any?, spotType: String?, spotName: String?) {
     
-    lblSpotType.text = spotType!
+    lblSpotType.text = spotName!
     
     self.spotType = spotType!
   }
@@ -331,9 +365,7 @@ extension PostTableViewController : CLLocationManagerDelegate {
   public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     if locations.last != nil {
       
-      
       let location: CLLocation = locations.last!
-      print("Location: \(location)")
       
       self.currentLocation = location
       
@@ -348,9 +380,9 @@ extension PostTableViewController : CLLocationManagerDelegate {
         mapView.animate(to: camera)
       }
       self.svLoading.isHidden = true
-      
+     
+      locationManager.stopUpdatingLocation()
     }
-    
   }
   
   public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

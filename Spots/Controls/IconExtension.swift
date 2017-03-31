@@ -35,11 +35,17 @@ public struct SpotIcons {
   
   public static let rafting = SpotIcons.icon("rafting_image")
   
+  public static let canoeing = SpotIcons.icon("canoeing_image")
+  
   public static let rockclimbing = SpotIcons.icon("rockclimbing_image")
   
   public static let surfing = SpotIcons.icon("surfing_image")
   
   public static let swimming = SpotIcons.icon("swimming_image")
+  
+  public static let beach = SpotIcons.icon("beach_image")
+  
+  public static let hottub = SpotIcons.icon("hottub_image")
   
   public static let other = SpotIcons.icon("other_image")
 }
