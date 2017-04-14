@@ -21,6 +21,8 @@ public class MapViewController : UIViewController {
   
   var didSelectMapMarkerDelegate: DidSelectMapMarkerDelegate!
   
+  var selectedMarker: GMSMarker!
+  
   override public func viewDidLoad() {
     super.viewDidLoad()
     
@@ -53,6 +55,30 @@ public class MapViewController : UIViewController {
 
 extension MapViewController: GMSMapViewDelegate {
   
+  public func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+    
+    /*
+    self.didSelectMapMarkerDelegate.didSelectMapMarker(_sender: self, spot: marker.userData as! SpotMapModel)
+    
+    if selectedMarker == nil {
+      
+      marker.icon = GMSMarker.markerImage(with: UIColor.spotsGreen())
+      
+      selectedMarker = marker
+      
+    } else {
+      
+      marker.icon = GMSMarker.markerImage(with: UIColor.spotsGreen())
+      
+      selectedMarker.icon = GMSMarker.markerImage(with: UIColor.red)
+      
+      selectedMarker = marker
+      
+    }
+    */
+    return false
+  }
+  
   public func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
     
     let vr = mapView.projection.visibleRegion()
@@ -77,10 +103,49 @@ extension MapViewController: GMSMapViewDelegate {
         
           for spot in spots! {
             
-            let position = CLLocationCoordinate2D(latitude: spot.Lat, longitude: spot.Long)
+            let position = CLLocationCoordinate2D(latitude: spot.Latitude, longitude: spot.Longitude)
             let marker = GMSMarker(position: position)
+            
+            /*
+            if self.selectedMarker != nil {
+              
+              if spot.Id == (self.selectedMarker.userData as! SpotsModel).Id {
+                
+                marker.icon = GMSMarker.markerImage(with: UIColor.spotsGreen())
+             
+              }
+              
+            }
+            */
+            
+            // marker.icon = GMSMarker.markerImage(with: UIColor.spotsGreen())
+            
+            // marker.icon = SpotIcons.other_map
+            
+            /*
+            let markerView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            
+            markerView.backgroundColor = UIColor.black
+            
+            markerView.layer.cornerRadius = markerView.layer.width/2
+            markerView.layer.masksToBounds = true
+            markerView.layer.borderColor = UIColor.white.cgColor
+            markerView.layer.borderWidth = 2
+            
+            markerView.image = SpotIcons.other
+            markerView.contentMode = .scaleAspectFit
+            
+            marker.iconView = markerView
+            */
+            
             marker.title = spot.Name
+            
+            marker.appearAnimation = .none
+            
+            marker.userData = spot
+            
             marker.map = mapView
+            
           }
         }
     }
@@ -88,12 +153,15 @@ extension MapViewController: GMSMapViewDelegate {
   
   public func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
     
-    self.didSelectMapMarkerDelegate.didSelectMapMarker(_sender: self)
+    self.didSelectMapMarkerDelegate.didSelectMapMarker(_sender: self, spot: marker.userData as! SpotMapModel)
+    
   }
   
+  /*
   public func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
     
   }
+  */
 }
 
 extension MapViewController: CLLocationManagerDelegate {

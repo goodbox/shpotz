@@ -94,7 +94,7 @@ class ApiServiceController {
     return true
   }
   
-  typealias GetSpotsCompletionFunc = (_ success: Bool, _ spots: [SpotsModel]?, _ error: NSError?) -> Void
+  typealias GetSpotsCompletionFunc = (_ success: Bool, _ spots: [SpotMapModel]?, _ error: NSError?) -> Void
   
   func getSpots(_ accessToken: String, bllat: String, bllong: String, brlat: String, brlong: String,
                 fllat: String, fllong: String, frlat: String, frlong: String, completion: @escaping GetSpotsCompletionFunc) -> Bool {
@@ -110,11 +110,11 @@ class ApiServiceController {
       
       if success {
         
-        var spots: [SpotsModel]! = []
+        var spots: [SpotMapModel]! = []
         
         for(_, subJson):(String, JSON) in json! {
           
-          let spot = SpotsModel(json: subJson)
+          let spot = SpotMapModel(json: subJson)
           
           spots.append(spot)
           
@@ -130,4 +130,35 @@ class ApiServiceController {
     
     return true
   }
+  
+  typealias GetFacilityCompletionFunc = (_ success: Bool, _ facilityDetail: FacilityDetail?,_ error: NSError?) -> Void
+  
+  func getFacility(_ accessToken: String, facilityId: String, completion: @escaping GetFacilityCompletionFunc) -> Bool {
+    
+    let task = ApiServiceTask.GetFacility(accessToken, facilityId: facilityId)
+    
+    _ = task.performTask({ (success, json, headerFields, error) in
+      
+      if error != nil {
+        completion(false, nil, error)
+        return
+      }
+      
+      if success {
+        
+        let facilityDetail = FacilityDetail(json: json!)
+        
+        completion(success, facilityDetail, error)
+        
+      } else {
+      
+        completion(false, nil, nil)
+      
+      }
+      
+    })
+    
+    return true
+  }
+  
 }

@@ -32,9 +32,15 @@ extension ApiServiceTask {
                        fllat: String, fllong: String, frlat: String, frlong: String) -> ApiServiceTask {
     
     let serviceUrl = "/api/spots/bllat/" + bllat + "/bllong/" + bllong + "/brlat/" + brlat + "/brlong/" + brlong + "/fllat/" + fllat +
-      "/fllong/" + fllong + "/frlat/" + frlat + "/frlong/" + frlong + "/";
+      "/fllong/" + fllong + "/frlat/" + frlat + "/frlong/" + frlong + "/"
     
     return ApiServiceTask(serviceMethod: .GET, serviceUrl: serviceUrl, urlParameters: nil, headerParameters: nil, authToken: accessToken)
+  }
+  
+  static func GetFacility(_ accessToken: String, facilityId: String) -> ApiServiceTask {
     
+    let serviceUrl = "/api/spots/facility/" + facilityId
+    
+    return ApiServiceTask(serviceMethod: .GET, serviceUrl: serviceUrl, urlParameters: nil, headerParameters: nil, authToken: accessToken)
   }
 }

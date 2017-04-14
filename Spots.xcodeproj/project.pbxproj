@@ -47,8 +47,13 @@
 		B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4AD971E6900B10055FC80 /* Delegates.swift */; };
 		B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */; };
 		B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */; };
+		B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */; };
+		B7B20AE01EA05421006B86CA /* FXLabel.h in Sources */ = {isa = PBXBuildFile; fileRef = B7F04DA21EA04AE300FFCF1C /* FXLabel.h */; };
+		B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20AE11EA0550F006B86CA /* FontExtension.swift */; };
 		B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D925D01E8620E100F160F8 /* SpotTypeName.xib */; };
 		B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D925D21E86211A00F160F8 /* SpotTypeNameViewController.swift */; };
+		B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */; };
+		B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F04DA31EA04B1000FFCF1C /* FXLabel.m */; };
 		B7F1A4581E6E447D003D1FE8 /* SelectSpotTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F1A4571E6E447D003D1FE8 /* SelectSpotTypeCell.xib */; };
 		B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */; };
 		B7F1A45C1E6F9EB9003D1FE8 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; };
@@ -132,8 +137,13 @@
 		B7A4AD971E6900B10055FC80 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeViewController.swift; sourceTree = "<group>"; };
+		B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGradientImageView.swift; sourceTree = "<group>"; };
+		B7B20AE11EA0550F006B86CA /* FontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		B7D925D01E8620E100F160F8 /* SpotTypeName.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotTypeName.xib; sourceTree = "<group>"; };
 		B7D925D21E86211A00F160F8 /* SpotTypeNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTypeNameViewController.swift; sourceTree = "<group>"; };
+		B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityDetailViewController.swift; sourceTree = "<group>"; };
+		B7F04DA21EA04AE300FFCF1C /* FXLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXLabel.h; sourceTree = "<group>"; };
+		B7F04DA31EA04B1000FFCF1C /* FXLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLabel.m; sourceTree = "<group>"; };
 		B7F1A4571E6E447D003D1FE8 /* SelectSpotTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectSpotTypeCell.xib; sourceTree = "<group>"; };
 		B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeCell.swift; sourceTree = "<group>"; };
 		B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
@@ -218,6 +228,7 @@
 				B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */,
 				B7049DFE1E651060000824EA /* IconExtension.swift */,
 				B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */,
+				B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 		B7049E001E653AC5000824EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B7F04DA11EA04AB300FFCF1C /* FXLabel */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -317,6 +329,7 @@
 				B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */,
 				B7020A5B1E72463D007C437A /* MySpotsViewController.swift */,
 				B7020A5D1E724753007C437A /* SpotDetailViewController.swift */,
+				B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +339,7 @@
 			children = (
 				B7A3767A1E63A48D004F4786 /* Colors.swift */,
 				B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */,
+				B7B20AE11EA0550F006B86CA /* FontExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -345,6 +359,15 @@
 				B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B7F04DA11EA04AB300FFCF1C /* FXLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B7F04DA21EA04AE300FFCF1C /* FXLabel.h */,
+				B7F04DA31EA04B1000FFCF1C /* FXLabel.m */,
+			);
+			path = FXLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,15 +584,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7B20AE01EA05421006B86CA /* FXLabel.h in Sources */,
 				B77692431E80E32C0099412E /* ApiServiceController.swift in Sources */,
 				B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */,
+				B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */,
 				B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */,
 				B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */,
+				B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */,
 				B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */,
 				B7020A5E1E724753007C437A /* SpotDetailViewController.swift in Sources */,
 				B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
+				B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */,
 				B776923D1E80E2030099412E /* ApiServiceTask.swift in Sources */,
 				B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
@@ -587,6 +614,7 @@
 				B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */,
 				B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */,
 				B776923B1E80E1940099412E /* APIConstants.swift in Sources */,
+				B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,
 				B776923F1E80E2930099412E /* ApiServices.swift in Sources */,

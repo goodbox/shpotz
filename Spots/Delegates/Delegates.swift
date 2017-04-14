@@ -18,5 +18,5 @@ protocol DidSelectSpotTypeDelegate {
 
 
 protocol DidSelectMapMarkerDelegate {
-  func didSelectMapMarker(_sender: Any?)
+  func didSelectMapMarker(_sender: Any?, spot: SpotMapModel)
 }

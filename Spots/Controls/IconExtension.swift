@@ -48,4 +48,9 @@ public struct SpotIcons {
   public static let hottub = SpotIcons.icon("hottub_image")
   
   public static let other = SpotIcons.icon("other_image")
+  
+  public static let other_map = SpotIcons.icon("other_image_map")
+  
+  public static let arrow_right = SpotIcons.icon("ic_arrow_right_white")
+  
 }

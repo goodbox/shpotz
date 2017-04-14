@@ -9,6 +9,16 @@
 import Foundation
 import SwiftyJSON
 
+enum SpotsSystemType: Int {
+  
+  case unknown = 0
+  
+  case facility = 1
+  
+  case goodSpot = 2
+  
+}
+
 // MARK: Enums : SpotType
 enum SpotsType : Int {
   case all = 0
@@ -101,6 +111,8 @@ public class LoginModel {
   
   var Email: String!
   
+  var IsNewUser: Bool!
+  
   init() {}
   
   init(json: JSON) {
@@ -114,6 +126,10 @@ public class LoginModel {
     self.FacebookId = json["facebookId"].string!
     
     self.Name = json["name"].string!
+    
+    if let isNewUser = json["isNewUser"].bool {
+      self.IsNewUser = isNewUser
+    }
   }
   
   func populateUserDefaults() {
@@ -207,7 +223,257 @@ public class SpotsModel {
   }
 }
 
+public class SpotMapModel {
+  
+  var Id: Int64!
+  
+  var Name: String!
+  
+  var Latitude: Double!
+  
+  var Longitude: Double!
+  
+  var SpotType: SpotsType! = SpotsType.all
+  
+  var SpotSystemType: SpotsSystemType! = SpotsSystemType.unknown
+  
+  init() {}
+  
+  init(json: JSON) {
+    
+    if let id = json["id"].int64 {
+      self.Id = id
+    }
+    
+    if let name = json["name"].string {
+      self.Name = name
+    }
+    
+    if let lat = json["latitude"].double {
+      self.Latitude = lat
+    }
+    
+    if let lon = json["longitude"].double {
+      self.Longitude = lon
+    }
+    
+    if let spotType = json["spoType"].int {
+      self.SpotType = SpotsType.init(rawValue: spotType)
+    }
+    
+    if let spotSystemType = json["spotSystemType"].int {
+      self.SpotSystemType = SpotsSystemType.init(rawValue: spotSystemType)
+    }
+    
+  }
+  
+}
 
+// MARK: Facility models
+public class FacilityDetail {
+  
+  var Model: FacilityModel! = nil
+  
+  var Attributes: [FacilityAttribute]! = []
+  
+  var Media: [FacilityMedia]! = []
+  
+  var Activities: [FacilityActivity]! = []
+  
+  init() {}
+  
+  init(json: JSON) {
+    
+    // set the core poperties
+    self.Model = FacilityModel(json: json["facilityModel"])
+    
+    // set activities
+    let activities = json["facilityActivities"]
+    
+    if(activities != JSON.null) {
+      for (_,subJson):(String, JSON) in activities {
+        //Do something you want
+        self.Activities.append(FacilityActivity(json: subJson))
+      }
+    }
+    
+    // set media
+    let media = json["facilityMedia"]
+    
+    if(activities != JSON.null) {
+      for (_,subJson):(String, JSON) in media {
+        //Do something you want
+        self.Media.append(FacilityMedia(json: subJson))
+      }
+    }
+
+    // set attributes
+    let attributes = json["facilityAttributes"]
+    
+    if(attributes != JSON.null) {
+      for (_,subJson):(String, JSON) in attributes {
+        //Do something you want
+        self.Attributes.append(FacilityAttribute(json: subJson))
+      }
+    }
+  }
+}
+
+public class FacilityModel {
+  
+  var Id: Int64 = 0
+  
+  var AdaAccess: String = ""
+  
+  var Description: String = ""
+  
+  var Directions: String = ""
+  
+  var Latitude: Double = 0
+  
+  var Longitude: Double = 0
+  
+  var MapUrl: String = ""
+  
+  var Name: String = ""
+  
+  var Phone: String = ""
+  
+  var TypeDescription: String = ""
+  
+  var UseFee: String = ""
+  
+  var StayLimit: String = ""
+  
+  var SpotType: SpotsType = SpotsType.camping
+  
+  init() {}
+  
+  init(json: JSON) {
+    
+    if let id = json["facilityId"].int64 {
+      self.Id = id
+    }
+    
+    if let adaAccess = json["facilityAdaAccess"].string {
+      self.AdaAccess = adaAccess
+    }
+    
+    if let description = json["facilityDescription"].string {
+      self.Description = description
+    }
+    
+    if let facilityDirections = json["facilityDirections"].string {
+      self.Directions = facilityDirections
+    }
+    
+    if let latitude = json["latitude"].double {
+      self.Latitude = latitude
+    }
+    
+    if let longitude = json["longitude"].double {
+      self.Longitude = longitude
+    }
+    
+    if let mapUrl = json["mapUrl"].string {
+      self.MapUrl = mapUrl
+    }
+    
+    if let name = json["name"].string {
+      self.Name = name
+    }
+    
+    if let phone = json["phone"].string {
+      self.Phone = phone
+    }
+    
+    if let typeDescription = json["typeDescription"].string {
+      self.TypeDescription = typeDescription
+    }
+    
+    if let useFee = json["useFee"].string {
+      self.UseFee = useFee
+    }
+    
+    if let stayLimit = json["stayLimit"].string {
+      self.StayLimit = stayLimit
+    }
+    
+  }
+}
+
+public class FacilityAttribute {
+  
+  var Name: String = ""
+  
+  var Value: String = ""
+  
+  init() {}
+  
+  init(json: JSON) {
+    
+    if let name = json["name"].string {
+      self.Name = name
+    }
+    
+    if let value = json["value"].string {
+      self.Value = value
+    }
+    
+  }
+}
+
+public class FacilityMedia {
+  
+  var Height: Int = 0
+  
+  var Width: Int = 0
+  
+  var MediaType: String = ""
+  
+  var Url: String = ""
+  
+  init() {}
+  
+  init(json: JSON) {
+    
+    if let height = json["height"].int {
+      self.Height = height
+    }
+    
+    if let width = json["width"].int {
+      self.Width = width
+    }
+    
+    if let mediaType = json["mediaType"].string {
+      self.MediaType = mediaType
+    }
+    
+    if let url = json["url"].string {
+      self.Url = url
+    }
+  }
+}
+
+public class FacilityActivity {
+  
+  var Name: String = ""
+  
+  var Id: Int = 0
+  
+  init() { }
+  
+  init(json: JSON) {
+    
+    if let id = json["activityId"].int {
+      self.Id = id
+    }
+    
+    if let name = json["activityName"].string {
+      self.Name = name
+    }
+  }
+}
 
 
 
