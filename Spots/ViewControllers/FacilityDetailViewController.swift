@@ -26,6 +26,7 @@ public class FacilityDetailViewController: UITableViewController {
   
   @IBOutlet weak var cvActivities: UICollectionView!
   
+  var activityName: [String]! = []
   
   var facilityDetail: FacilityDetail!
   
@@ -34,6 +35,9 @@ public class FacilityDetailViewController: UITableViewController {
   var api: ApiServiceController!
   
   fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
+  fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+  
+  fileprivate let itemsPerRow: CGFloat = 3
   
   public override func viewDidLoad() {
     
@@ -69,6 +73,10 @@ public class FacilityDetailViewController: UITableViewController {
           filter: nil,
           imageTransition: .crossDissolve(0.2)
         )
+      } else {
+        
+        self.imgHeaderPic.image = SpotIcons.other?.tint(with: Color.grey.lighten1)
+        self.imgHeaderPic.contentMode = .center
       }
       
       self.lblFacilityName.text = self.facilityDetail.Model.Name
@@ -83,31 +91,114 @@ public class FacilityDetailViewController: UITableViewController {
       self.lblFacilityName.textAlignment = NSTextAlignment.left
       self.lblFacilityName.contentMode = UIViewContentMode.bottom
 
-      self.lblFacilityPhone.text = self.facilityDetail.Model.Phone
+      if !self.facilityDetail.Model.Phone.isEmpty {
+        self.lblFacilityPhone.text = self.facilityDetail.Model.Phone
+      }
       
       self.wvDescription.loadHTMLString(self.facilityDetail.Model.Description, baseURL: nil)
       
       if self.facilityDetail.Activities != nil && self.facilityDetail.Activities.count > 0 {
         
-        self.cvActivities.reloadData()
+        self.setActivities()
         
+        if self.activityName != nil && self.activityName.count > 0 {
+         
+          self.cvActivities.reloadData()
+          
+        }
       }
+      
+      self.tableView.reloadData()
       
     })
   }
+  
+  func setActivities() {
+    
+    for act in self.facilityDetail.Activities as [FacilityActivity] {
+      switch act.Name {
+      case "CAMPING":
+        
+        self.activityName.append("Camping")
+        
+      case "BIKING":
+        
+        self.activityName.append("Mtn Biking")
+  
+      case "CLIMBING":
+        
+        self.activityName.append("Rock Climbing")
+
+      case "FISHING":
+        
+        self.activityName.append("Fishing")
+       
+      case "HIKING":
+        
+        self.activityName.append("Hiking")
+        
+      case "HIKING":
+        
+        self.activityName.append("Hiking")
+        
+      case "SWIMMING":
+        
+        self.activityName.append("Swimming")
+        
+      default:
+        continue
+      }
+    }
+  }
+  
+  // MARK: uitableview 
+  override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    print("section : \(section)")
+    if facilityDetail != nil && facilityDetail.Model != nil {
+      if(section == 0 && self.facilityDetail.Model.Phone.isEmpty) {
+        return 0.0
+      } else {
+        return super.tableView(tableView, heightForHeaderInSection: section)
+      }
+    }
+    else {
+      return super.tableView(tableView, heightForHeaderInSection: section)
+    }
+   
+  }
+  
+  override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    print("section : \(section)")
+    if facilityDetail != nil && facilityDetail.Model != nil {
+      if(section == 0 && self.facilityDetail.Model.Phone.isEmpty) {
+        return 0
+      } else {
+        return super.tableView(tableView, numberOfRowsInSection: section)
+      }
+    }
+    else {
+      return super.tableView(tableView, numberOfRowsInSection: section)
+    }
+  }
+  
 }
 
-// MARK: UICollectionView
+// MARK: UICollectionViewDataSource
 extension FacilityDetailViewController: UICollectionViewDataSource {
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.facilityDetail.Activities.count
+    
+    return self.activityName.count
+  
   }
   
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
                                                   for: indexPath) as! SelectSpotTypeCell
-    // cell.configure(spotTypes[indexPath.row])
+    
+    
+    
+    cell.configure(self.activityName[indexPath.row])
     // Configure the cell
     return cell
     
@@ -139,6 +230,29 @@ extension FacilityDetailViewController : UICollectionViewDelegateFlowLayout {
     collectionView.deselectItem(at: indexPath, animated: false)
     
   }
+  
+  public func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+    let availableWidth = view.frame.width - paddingSpace
+    let widthPerItem = availableWidth / itemsPerRow
+    
+    return CGSize(width: widthPerItem, height: widthPerItem + 20)
+  }
+  
+  public func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             insetForSectionAt section: Int) -> UIEdgeInsets {
+    return sectionInsets
+  }
+  
+  public func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return sectionInsets.left
+  }
+
   
 }
 
