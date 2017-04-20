@@ -26,6 +26,9 @@ public class FacilityDetailViewController: UITableViewController {
   
   @IBOutlet weak var cvActivities: UICollectionView!
   
+  @IBOutlet weak var photosContainer: UIView!
+  
+  
   var activityName: [String]! = []
   
   var facilityDetail: FacilityDetail!
@@ -39,6 +42,8 @@ public class FacilityDetailViewController: UITableViewController {
   
   fileprivate let itemsPerRow: CGFloat = 3
   
+  var photosColContainer: PhotosContainerViewController!
+  
   public override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -51,11 +56,26 @@ public class FacilityDetailViewController: UITableViewController {
     
     cvActivities.delegate = self
     cvActivities.dataSource = self
+    
     cvActivities.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
+    
     
     
     loadFacility()
     
+  }
+  
+  override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "PhotosSegue" {
+      
+      if let vc = segue.destination as? PhotosContainerViewController {
+        
+        
+        self.photosColContainer = vc
+      }
+
+    }
   }
   
   func loadFacility() {
@@ -106,6 +126,10 @@ public class FacilityDetailViewController: UITableViewController {
           self.cvActivities.reloadData()
           
         }
+      }
+      
+      if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
+        self.photosColContainer.facilityDetail = self.facilityDetail
       }
       
       self.tableView.reloadData()

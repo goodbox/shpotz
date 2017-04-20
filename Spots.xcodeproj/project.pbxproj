@@ -62,6 +62,9 @@
 		B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B7F1A4611E6FBBE9003D1FE8 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; };
 		B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7FBC55F1EA8383400EF0CAB /* PhotosContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */; };
+		B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBC5601EA86D1800EF0CAB /* FacilityImageCell.swift */; };
+		B7FBC5631EA86D7200EF0CAB /* FacilityImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7FBC5621EA86D7200EF0CAB /* FacilityImageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +151,9 @@
 		B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeCell.swift; sourceTree = "<group>"; };
 		B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
 		B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosContainerViewController.swift; sourceTree = "<group>"; };
+		B7FBC5601EA86D1800EF0CAB /* FacilityImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityImageCell.swift; sourceTree = "<group>"; };
+		B7FBC5621EA86D7200EF0CAB /* FacilityImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacilityImageCell.xib; sourceTree = "<group>"; };
 		C76A7D860A97B1CC32CA5AC8 /* Pods-Spots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spots.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spots/Pods-Spots.debug.xcconfig"; sourceTree = "<group>"; };
 		D5591A9045D523A013F51CBE /* Pods-SpotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpotsTests/Pods-SpotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,6 +336,7 @@
 				B7020A5B1E72463D007C437A /* MySpotsViewController.swift */,
 				B7020A5D1E724753007C437A /* SpotDetailViewController.swift */,
 				B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */,
+				B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +364,8 @@
 			children = (
 				B7F1A4571E6E447D003D1FE8 /* SelectSpotTypeCell.xib */,
 				B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */,
+				B7FBC5601EA86D1800EF0CAB /* FacilityImageCell.swift */,
+				B7FBC5621EA86D7200EF0CAB /* FacilityImageCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -469,6 +478,7 @@
 				B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */,
 				B7019CB21E83315D000765DC /* Roboto-Bold.ttf in Resources */,
 				B7019CA91E8302D7000765DC /* ValidationPopup.xib in Resources */,
+				B7FBC5631EA86D7200EF0CAB /* FacilityImageCell.xib in Resources */,
 				B7019CB31E83315D000765DC /* Roboto-Light.ttf in Resources */,
 				B7019CB51E83315D000765DC /* Roboto-Regular.ttf in Resources */,
 				B72775651E62C27B009B20A7 /* Main.storyboard in Resources */,
@@ -601,6 +611,7 @@
 				B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
 				B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */,
+				B7FBC55F1EA8383400EF0CAB /* PhotosContainerViewController.swift in Sources */,
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
 				B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */,
 				B77692371E80DE060099412E /* Models.swift in Sources */,
@@ -618,6 +629,7 @@
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,
 				B776923F1E80E2930099412E /* ApiServices.swift in Sources */,
+				B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */,
 				B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
