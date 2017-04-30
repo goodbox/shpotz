@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Material
 import PopupDialog
+import AlamofireImage
 
 public class FacilityDetailViewController: UITableViewController {
   
@@ -71,11 +72,20 @@ public class FacilityDetailViewController: UITableViewController {
       
       if let vc = segue.destination as? PhotosContainerViewController {
         
+        vc.didTapPhotoDelegate = self
         
         self.photosColContainer = vc
       }
-
+    } else if segue.identifier == "PhotoGallerySegue" {
+      
+      if let vc = segue.destination as? PhotosContainerViewController {
+        
+        vc.didTapPhotoDelegate = self
+        
+        self.photosColContainer = vc
+      }
     }
+
   }
   
   func loadFacility() {
@@ -176,10 +186,45 @@ public class FacilityDetailViewController: UITableViewController {
   }
   
   // MARK: uitableview 
+  // override public func tableView(_ tableView: UITableView, titleForHeaderInSection section: )
+  override public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+    if facilityDetail != nil {
+      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+        return UIView(frame: CGRect.zero)
+      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+        return UIView(frame: CGRect.zero)
+      } else {
+        return super.tableView(tableView, viewForHeaderInSection: section)
+      }
+    }
+    else {
+      return super.tableView(tableView, viewForHeaderInSection: section)
+    }
+  }
+  
+  override public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    
+    if facilityDetail != nil {
+      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+        return UIView(frame: CGRect.zero)
+      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+        return UIView(frame: CGRect.zero)
+      } else {
+        return super.tableView(tableView, viewForFooterInSection: section)
+      }
+    }
+    else {
+      return super.tableView(tableView, viewForFooterInSection: section)
+    }
+  }
+  
   override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     print("section : \(section)")
-    if facilityDetail != nil && facilityDetail.Model != nil {
-      if(section == 0 && self.facilityDetail.Model.Phone.isEmpty) {
+    if facilityDetail != nil {
+      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+        return 0.0
+      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
         return 0.0
       } else {
         return super.tableView(tableView, heightForHeaderInSection: section)
@@ -190,11 +235,31 @@ public class FacilityDetailViewController: UITableViewController {
     }
    
   }
+
+  override public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    print("section : \(section)")
+    if facilityDetail != nil {
+      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+        return 0.0
+      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+        return 0.0
+      } else {
+        return super.tableView(tableView, heightForFooterInSection: section)
+      }
+    }
+    else {
+      return super.tableView(tableView, heightForFooterInSection: section)
+    }
+    
+  }
+
   
   override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     print("section : \(section)")
     if facilityDetail != nil && facilityDetail.Model != nil {
       if(section == 0 && self.facilityDetail.Model.Phone.isEmpty) {
+        return 0
+      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
         return 0
       } else {
         return super.tableView(tableView, numberOfRowsInSection: section)
@@ -205,6 +270,46 @@ public class FacilityDetailViewController: UITableViewController {
     }
   }
   
+}
+
+// MARK: SwiftPhotoGalleryDataSource Methods
+extension FacilityDetailViewController: SwiftPhotoGalleryDataSource {
+  
+  public func numberOfImagesInGallery(gallery: SwiftPhotoGallery) -> Int {
+    return self.facilityDetail.Media.count
+  }
+  
+  public func imageInGallery(gallery: SwiftPhotoGallery, forIndex: Int) -> String? {
+    return self.facilityDetail.Media[forIndex].Url
+  }
+}
+
+// MARK: SwiftPhotoGalleryDelegate Methods
+extension FacilityDetailViewController: SwiftPhotoGalleryDelegate {
+  
+  public func galleryDidTapToClose(gallery: SwiftPhotoGallery) {
+    dismiss(animated: true, completion: nil)
+  }
+}
+
+// MARK: DidTapPhotoDelegate
+extension FacilityDetailViewController: DidTapFacilityImageDelegate {
+  
+  func didTapFacilityImage(_ sender: Any?, index: Int?) {
+    print("did tap photo")
+    
+    /*
+    let gallery = SwiftPhotoGallery(delegate: self, dataSource: self)
+    
+    gallery.backgroundColor = UIColor.black
+    gallery.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.5)
+    gallery.currentPageIndicatorTintColor = UIColor(red: 0.0, green: 0.66, blue: 0.875, alpha: 1.0)
+    gallery.hidePageControl = false
+    gallery.modalPresentationStyle = .overCurrentContext
+    gallery.currentPage = index!
+    present(gallery, animated: true, completion: nil)
+    */
+  }
 }
 
 // MARK: UICollectionViewDataSource

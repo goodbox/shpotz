@@ -15,6 +15,7 @@ class PhotosContainerViewController : UIViewController {
   
   @IBOutlet weak var cvPhotos: UICollectionView!
   
+  var didTapPhotoDelegate: DidTapFacilityImageDelegate!
   
   var facilityDetail: FacilityDetail!
   
@@ -48,6 +49,15 @@ extension PhotosContainerViewController: UICollectionViewDataSource {
     }
     
     return 0 // self.facilityDetail.Media.count
+    
+  }
+  
+  public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    
+    collectionView.deselectItem(at: indexPath, animated: true)
+    
+    print("didSelectItem : \(indexPath.row)")
+    
     
   }
   
@@ -90,6 +100,11 @@ extension PhotosContainerViewController : UICollectionViewDelegateFlowLayout {
   public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
     collectionView.deselectItem(at: indexPath, animated: false)
+    
+    print("did select photo : \(indexPath.row)")
+    
+    self.didTapPhotoDelegate.didTapFacilityImage(self, index: indexPath.row)
+
     
   }
   

@@ -20,3 +20,8 @@ protocol DidSelectSpotTypeDelegate {
 protocol DidSelectMapMarkerDelegate {
   func didSelectMapMarker(_sender: Any?, spot: SpotMapModel)
 }
+
+
+protocol DidTapFacilityImageDelegate {
+  func didTapFacilityImage(_ sender: Any?, index: Int?)
+}
