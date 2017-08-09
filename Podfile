@@ -41,6 +41,8 @@ target 'Spots' do
   pod 'XLActionController'
   pod 'XLActionController/Twitter'
   
+  pod 'SKPhotoBrowser'
+  
   target 'SpotsTests' do
     inherit! :search_paths
     # Pods for testing

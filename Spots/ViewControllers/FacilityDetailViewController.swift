@@ -12,6 +12,8 @@ import Material
 import PopupDialog
 import AlamofireImage
 
+import SKPhotoBrowser
+
 public class FacilityDetailViewController: UITableViewController {
   
   
@@ -78,11 +80,11 @@ public class FacilityDetailViewController: UITableViewController {
       }
     } else if segue.identifier == "PhotoGallerySegue" {
       
-      if let vc = segue.destination as? PhotosContainerViewController {
+      if let vc = segue.destination as? UINavigationController {
         
-        vc.didTapPhotoDelegate = self
-        
-        self.photosColContainer = vc
+        if let vd = vc.topViewController as? PhotoGalleryViewController {
+          vd.facilityDetail = self.facilityDetail
+        }
       }
     }
 
@@ -298,6 +300,8 @@ extension FacilityDetailViewController: DidTapFacilityImageDelegate {
   func didTapFacilityImage(_ sender: Any?, index: Int?) {
     print("did tap photo")
     
+    performSegue(withIdentifier: "PhotoGallerySegue", sender: self)
+    
     /*
     let gallery = SwiftPhotoGallery(delegate: self, dataSource: self)
     
@@ -308,6 +312,17 @@ extension FacilityDetailViewController: DidTapFacilityImageDelegate {
     gallery.modalPresentationStyle = .overCurrentContext
     gallery.currentPage = index!
     present(gallery, animated: true, completion: nil)
+    */
+    /*
+    // 1. create SKPhoto Array from UIImage
+    var images = [SKPhoto]()
+    let photo = SKPhoto.photoWithImage(SpotsIcons.camping)// add some UIImage
+    images.append(photo)
+    
+    // 2. create PhotoBrowser Instance, and present from your viewController.
+    let browser = SKPhotoBrowser(photos: images)
+    browser.initializePageIndex(0)
+    presentViewController(browser, animated: true, completion: {})
     */
   }
 }
