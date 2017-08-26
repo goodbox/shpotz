@@ -2,12 +2,21 @@ PODS:
   - Alamofire (4.3.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - AXPhotoViewer (1.2.7):
+    - AXPhotoViewer/Lite (= 1.2.7)
+  - AXPhotoViewer/Core (1.2.7):
+    - FLAnimatedImage (>= 1.0.0)
+  - AXPhotoViewer/Lite (1.2.7):
+    - AXPhotoViewer/Core
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DRPLoadingSpinner (1.3.1):
+    - DRPLoadingSpinner/core (= 1.3.1)
+  - DRPLoadingSpinner/core (1.3.1)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -16,37 +25,32 @@ PODS:
     - FacebookCore (~> 0.2)
     - FBSDKCoreKit (~> 4.15)
     - FBSDKLoginKit (~> 4.15)
-  - FacebookShare (0.2.0):
-    - Bolts (~> 1.8)
-    - FacebookCore (~> 0.2)
-    - FBSDKCoreKit (~> 4.15)
-    - FBSDKShareKit (~> 4.15)
-  - FBSDKCoreKit (4.22.0):
+  - FBSDKCoreKit (4.26.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.22.0):
+  - FBSDKLoginKit (4.26.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.22.0):
-    - FBSDKCoreKit
-  - GoogleMaps (2.2.0):
-    - GoogleMaps/Maps (= 2.2.0)
-  - GoogleMaps/Base (2.2.0)
-  - GoogleMaps/Maps (2.2.0):
+  - FLAnimatedImage (1.0.12)
+  - GoogleMaps (2.4.0):
+    - GoogleMaps/Maps (= 2.4.0)
+  - GoogleMaps/Base (2.4.0)
+  - GoogleMaps/Maps (2.4.0):
     - GoogleMaps/Base
-  - GooglePlaces (2.2.0):
-    - GoogleMaps/Base (= 2.2.0)
-  - Hue (1.2.0)
+  - GooglePlaces (2.4.0):
+    - GoogleMaps/Base (= 2.4.0)
+  - Hue (2.0.1)
   - ImagePicker (2.1.1)
   - Lightbox (1.0.0):
     - Hue
     - Sugar
-  - Material (2.6.3):
-    - Material/Core (= 2.6.3)
-  - Material/Core (2.6.3)
-  - Motion (1.0.8):
-    - Motion/Core (= 1.0.8)
-  - Motion/Core (1.0.8)
+  - Material (2.9.4):
+    - Material/Core (= 2.9.4)
+  - Material/Core (2.9.4)
+  - Motion (1.1.2):
+    - Motion/Core (= 1.1.2)
+  - Motion/Core (1.1.2)
   - PopupDialog (0.5.4)
-  - SKPhotoBrowser (4.0.1)
+  - ReachabilitySwift (3)
+  - Reveal-SDK (10)
   - Sugar (3.1.2)
   - SwiftyJSON (3.1.4)
   - XCGLogger (4.0.0):
@@ -61,18 +65,20 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.3.0)
   - AlamofireImage (~> 3.2.0)
+  - AXPhotoViewer
+  - DRPLoadingSpinner
   - FacebookCore
   - FacebookLogin
-  - FacebookShare
   - GoogleMaps
   - GooglePlaces
-  - Hue (from `https://github.com/hyperoslo/Hue.git`, branch `swift3`)
+  - Hue
   - ImagePicker
   - Lightbox (from `https://github.com/hyperoslo/Lightbox.git`, branch `swift-3`)
   - Material (~> 2.0)
   - Motion (~> 1.0)
   - PopupDialog (~> 0.5.3)
-  - SKPhotoBrowser
+  - ReachabilitySwift (~> 3)
+  - Reveal-SDK
   - Sugar (from `https://github.com/hyperoslo/Sugar.git`, branch `master`)
   - SwiftyJSON
   - XCGLogger (~> 4.0)
@@ -80,9 +86,6 @@ DEPENDENCIES:
   - XLActionController/Twitter
 
 EXTERNAL SOURCES:
-  Hue:
-    :branch: swift3
-    :git: https://github.com/hyperoslo/Hue.git
   Lightbox:
     :branch: swift-3
     :git: https://github.com/hyperoslo/Lightbox.git
@@ -91,40 +94,39 @@ EXTERNAL SOURCES:
     :git: https://github.com/hyperoslo/Sugar.git
 
 CHECKOUT OPTIONS:
-  Hue:
-    :commit: 3303cbcdf0f771aea1a6d1a153e4b95eef8696eb
-    :git: https://github.com/hyperoslo/Hue.git
   Lightbox:
     :commit: 04437d8450a5ccc92af7e9bd08027bdced9fb589
     :git: https://github.com/hyperoslo/Lightbox.git
   Sugar:
-    :commit: e192e6aa197b85716e02b55ca09df27f14b7b258
+    :commit: 68b77482f061fc7d748c89787838d1223e287e87
     :git: https://github.com/hyperoslo/Sugar.git
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  AXPhotoViewer: 4bf6908cf0eb735629f9bf47a02c346e0f269228
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DRPLoadingSpinner: 725e530bf4ebe2cc351b1fbc94d24fe8ac3300fd
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
-  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
-  FBSDKCoreKit: c693bad19feb225469eeff14452ba364522ee48b
-  FBSDKLoginKit: 1fa529fc622d7b32ebeaffbecd377180833c6d30
-  FBSDKShareKit: 21ab3c8d173f4fa20c47c1061f3a9fac5950b5fa
-  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
-  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
-  Hue: 0705083b7aff40334033373e6293ec1215285ac2
+  FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
+  FBSDKLoginKit: f3f03b94c21eb834af243c0a881d48641f47ca60
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
+  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
+  Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
   ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
   Lightbox: e4523e8cf3261cbc833d0e76ae4dae774731d115
-  Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
-  Motion: cae3bf09f58547f5866140b44f813f9f5af44b90
+  Material: 06fa0a5f29c45c42608ae32f3be96f1c46558d13
+  Motion: d4072ac96d5f114ad1f1d9c699808b60a01bd4e9
   PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
-  SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  Reveal-SDK: 7869ddf1f902cabbb07a1f0dd06bd25861a126f7
   Sugar: 41f2efa0244806f524ff2d77c951a6a43e81a0f3
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
   XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
 
-PODFILE CHECKSUM: c162a09de50786522b5f6190ed519152666cfb1f
+PODFILE CHECKSUM: 4c88b69ce263a34bae6c2d27c0261d614d92e778
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1

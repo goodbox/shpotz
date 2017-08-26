@@ -27,7 +27,7 @@ target 'Spots' do
   
   pod 'FacebookCore'
   pod 'FacebookLogin'
-  pod 'FacebookShare'
+  #pod 'FacebookShare'
   
   pod 'PopupDialog', '~> 0.5.3'
   
@@ -35,17 +35,38 @@ target 'Spots' do
   pod 'ImagePicker'
   pod 'Lightbox', git: 'https://github.com/hyperoslo/Lightbox.git', branch: 'swift-3'
   pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar.git', branch: 'master'
-  pod 'Hue', git: 'https://github.com/hyperoslo/Hue.git', branch: 'swift3'
+  pod 'Hue'
   
   #xl actioncontroller
   pod 'XLActionController'
   pod 'XLActionController/Twitter'
   
-  pod 'SKPhotoBrowser'
+  # pod 'SKPhotoBrowser'
   
+  #AXPhotoViewer pods
+  pod 'Reveal-SDK'
+  
+  # Loading spinner
+  pod 'DRPLoadingSpinner'
+  
+  # AXPhotoViewer
+  pod 'AXPhotoViewer'
+
+  #reachability
+  pod 'ReachabilitySwift', '~> 3'
+
   target 'SpotsTests' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+  
+  #post_install do |installer|
+  #  installer.pods_project.targets.each do |target|
+  #    target.build_configurations.each do |config|
+  #      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.3.3'
+  #    end
+  #  end
+  #end
 
 end

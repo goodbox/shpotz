@@ -11,8 +11,7 @@ import UIKit
 import Material
 import PopupDialog
 import AlamofireImage
-
-import SKPhotoBrowser
+import AXPhotoViewer
 
 public class FacilityDetailViewController: UITableViewController {
   
@@ -47,6 +46,11 @@ public class FacilityDetailViewController: UITableViewController {
   
   var photosColContainer: PhotosContainerViewController!
   
+  // var urlSession = URLSession(configuration: .default)
+  // var content = [Int: Data]()
+  
+  var photos: [Photo]! = []
+  
   public override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -61,8 +65,6 @@ public class FacilityDetailViewController: UITableViewController {
     cvActivities.dataSource = self
     
     cvActivities.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
-    
-    
     
     loadFacility()
     
@@ -80,12 +82,16 @@ public class FacilityDetailViewController: UITableViewController {
       }
     } else if segue.identifier == "PhotoGallerySegue" {
       
+      
+      print("PhotoGallerySegue")
+      /*
       if let vc = segue.destination as? UINavigationController {
         
         if let vd = vc.topViewController as? PhotoGalleryViewController {
           vd.facilityDetail = self.facilityDetail
         }
       }
+ */
     }
 
   }
@@ -142,7 +148,16 @@ public class FacilityDetailViewController: UITableViewController {
       
       if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
         self.photosColContainer.facilityDetail = self.facilityDetail
+        
+        for photo in self.facilityDetail.Media {
+          self.photos.append(Photo(attributedTitle: NSAttributedString(string: "The Flash Poster"),
+                                  attributedDescription: NSAttributedString(string: "Season 3"),
+                                  attributedCredit: NSAttributedString(string: "Vignette"),
+                                  url: URL(string: photo.Url)))
+        }
       }
+      
+      
       
       self.tableView.reloadData()
       
@@ -274,6 +289,7 @@ public class FacilityDetailViewController: UITableViewController {
   
 }
 
+/*
 // MARK: SwiftPhotoGalleryDataSource Methods
 extension FacilityDetailViewController: SwiftPhotoGalleryDataSource {
   
@@ -293,6 +309,7 @@ extension FacilityDetailViewController: SwiftPhotoGalleryDelegate {
     dismiss(animated: true, completion: nil)
   }
 }
+ */
 
 // MARK: DidTapPhotoDelegate
 extension FacilityDetailViewController: DidTapFacilityImageDelegate {
@@ -300,7 +317,12 @@ extension FacilityDetailViewController: DidTapFacilityImageDelegate {
   func didTapFacilityImage(_ sender: Any?, index: Int?) {
     print("did tap photo")
     
-    performSegue(withIdentifier: "PhotoGallerySegue", sender: self)
+    let dataSource = PhotosDataSource(photos: self.photos)
+    // let dataSource = PhotosDataSource(photos: self.photos, initialPhotoIndex: index!, prefetchBehavior: .aggressive)
+    let photosViewController = PhotosViewController(dataSource: dataSource)
+    self.present(photosViewController, animated: true)
+    
+    // performSegue(withIdentifier: "PhotoGallerySegue", sender: self)
     
     /*
     let gallery = SwiftPhotoGallery(delegate: self, dataSource: self)
@@ -397,7 +419,37 @@ extension FacilityDetailViewController : UICollectionViewDelegateFlowLayout {
     return sectionInsets.left
   }
 
+  /*
+  // MARK: - PhotosViewControllerDelegate
+  public func photosViewController(_ photosViewController: PhotosViewController,
+                            didNavigateTo photo: PhotoProtocol,
+                            at index: Int) {
+    
+    let indexPath = IndexPath(row: index, section: 0)
+    
+    // ideally, _your_ URL cache will be large enough to the point where this isn't necessary
+    // (or, you're using a predefined integration that has a shared cache with your codebase)
+    self.loadContent(at: indexPath, completion: nil)
+  }
   
+  // MARK: - Loading
+  func loadContent(at indexPath: IndexPath, completion: ((_ data: Data) -> Void)?) {
+    if let data = self.content[indexPath.row] {
+      completion?(data)
+      return
+    }
+    
+    self.urlSession.dataTask(with: self.photos[indexPath.row].url!) { [weak self] (data, response, error) in
+      guard let uData = data else {
+        return
+      }
+      
+      self?.content[indexPath.row] = uData
+      completion?(uData)
+      }.resume()
+  }
+*/
+
 }
 
 

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Material
+import AXPhotoViewer
 
 class PhotosContainerViewController : UIViewController {
   
@@ -24,6 +25,8 @@ class PhotosContainerViewController : UIViewController {
   
   fileprivate let itemsPerRow: CGFloat = 3
   
+  
+  
   public override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -32,10 +35,7 @@ class PhotosContainerViewController : UIViewController {
     cvPhotos.delegate = self
     
     cvPhotos.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
-    
   }
-  
-  
   
 }
 
@@ -104,7 +104,6 @@ extension PhotosContainerViewController : UICollectionViewDelegateFlowLayout {
     print("did select photo : \(indexPath.row)")
     
     self.didTapPhotoDelegate.didTapFacilityImage(self, index: indexPath.row)
-
     
   }
   

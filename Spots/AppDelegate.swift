@@ -43,6 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     AWSLogger.default().logLevel = .verbose
     
+    let cacheSizeMemory = 1024 * 1024 * 200
+    let cacheSizeDisk = 1024 * 1024 * 200
+    let sharedCache = URLCache(memoryCapacity: cacheSizeMemory, diskCapacity: cacheSizeDisk, diskPath: nil)
+    URLCache.shared = sharedCache
+    
     return true
   }
 

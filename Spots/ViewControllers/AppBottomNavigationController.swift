@@ -11,6 +11,13 @@ import Material
 
 
 class AppBottomNavigationController: BottomNavigationController {
+  
+  public override func viewDidLoad() {
+    super.viewDidLoad()
+  
+
+  }
+  
   open override func prepare() {
     super.prepare()
     prepareTabBar()

@@ -21,6 +21,7 @@ public class LoginViewController : UIViewController {
   @IBOutlet weak var lblAppTitle: UILabel!
   @IBOutlet weak var imgLogo: UIImageView!
   
+  
   public override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -32,6 +33,9 @@ public class LoginViewController : UIViewController {
     // imgLogo.backgroundColor = UIColor.red
     
     lblAppTitle.font = UIFont(name:"Roboto-Light", size: 50)!
+    
+    
+    
   }
   
   public override func viewDidAppear(_ animated: Bool) {
@@ -41,31 +45,40 @@ public class LoginViewController : UIViewController {
     
     self.btnLogin.showLoading()
     
-    if let accessToken = AccessToken.current {
     
-      let api = ApiServiceController.sharedInstance
-      
-      _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
+    if true {
+      performSegue(withIdentifier: "NoNetworkSegue", sender: self)
+    } else {
+     
+      if let accessToken = AccessToken.current {
         
-        if success {
+        let api = ApiServiceController.sharedInstance
+        
+        _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
           
-          UserDefaults.SpotsToken = loginModel?.BearerToken
-          
-          self.performSegue(withIdentifier: "LoginSegue", sender: self)
-          
-        } else {
-          
-          // TODO: modal to say there was an error
-          
-        }
-      })
+          if success {
+            
+            UserDefaults.SpotsToken = loginModel?.BearerToken
+            
+            self.performSegue(withIdentifier: "LoginSegue", sender: self)
+            
+          } else {
+            
+            // TODO: modal to say there was an error
+            
+          }
+        })
+        
+        
+      } else {
+        self.btnLogin.isEnabled = true
+        
+        self.btnLogin.hideLoading()
+      }
 
       
-    } else {
-      self.btnLogin.isEnabled = true
-      
-      self.btnLogin.hideLoading()
     }
+    
   }
   
   
