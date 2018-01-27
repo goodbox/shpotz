@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Material
+import MaterialComponents
 import PopupDialog
 
 public class SelectSpotTypeViewController : UIViewController {
@@ -67,14 +67,14 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
     
     let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = Color.grey.lighten4
+    cell?.backgroundColor = MDCPalette.grey.tint400
   }
   
   public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
     
     let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = Color.clear
+    cell?.backgroundColor = UIColor.clear
     
   }
   
@@ -103,7 +103,7 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
         
         let vc = popup.viewController as! SpotTypeNameViewController
         
-        if vc.txtSpotName.text! == "" || (vc.txtSpotName.text?.characters.count)! < 2 {
+        if vc.txtSpotName.text! == "" || (vc.txtSpotName.text?.count)! < 2 {
           
           // TODO: figure otu what to do here
           

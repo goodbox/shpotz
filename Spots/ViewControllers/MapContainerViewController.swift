@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-import Material
 import GoogleMaps
+import MaterialComponents
 
 class MapContainerViewController: UIViewController {
   
@@ -19,7 +19,7 @@ class MapContainerViewController: UIViewController {
   
   // @IBOutlet weak var btnViewSpot: FABButton!
   
-  @IBOutlet weak var btnAdd: FABButton!
+  @IBOutlet weak var btnAdd: MDCFloatingButton!
   
   // @IBOutlet weak var lblSpotName: UILabel!
   
@@ -120,14 +120,14 @@ class MapContainerViewController: UIViewController {
     btnAdd.layer.shadowRadius = 2
     btnAdd.layer.shadowOpacity = 0.4
     btnAdd.layer.cornerRadius = btnAdd.frame.width/2
-    btnAdd.setImage(Icon.add?.tint(with: Color.white), for: .normal)
+    // btnAdd.setImage(Icon.add?.tint(with: Color.white), for: .normal)
     
   }
   
   private func prepareTabBarItem() {
     tabBarItem.title = nil
-    tabBarItem.image = SpotIcons.world?.tint(with: Color.blueGrey.base)
-    tabBarItem.selectedImage = SpotIcons.world?.tint(with: UIColor.spotsGreen())
+    // tabBarItem.image = SpotIcons.world?..tint(with: MDCPalette.blueGrey)
+    // tabBarItem.selectedImage = SpotIcons.world?.tint(with: UIColor.spotsGreen())
   }
 }
 

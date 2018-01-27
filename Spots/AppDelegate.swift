@@ -10,7 +10,6 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import FBSDKCoreKit
-import Material
 import AWSCore
 
 @UIApplicationMain
@@ -32,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     UINavigationBar.appearance().tintColor = UIColor.white
     
-    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     
     let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
                                                             identityPoolId:"us-east-1:112f5823-6d50-4575-97e1-9e730158b177")

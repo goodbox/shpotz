@@ -6,8 +6,8 @@
 //  Copyright © 2017 goodbox. All rights reserved.
 //
 
+import UIKit
 import Foundation
-import Material
 
 public struct SpotIcons {
   

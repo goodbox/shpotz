@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Material
+// import Material
 
-
+/*
 class AppBottomNavigationController: BottomNavigationController {
   
   public override func viewDidLoad() {
@@ -28,3 +28,4 @@ class AppBottomNavigationController: BottomNavigationController {
     tabBar.dividerColor = Color.grey.lighten3
   }
 }
+ */

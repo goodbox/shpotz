@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
-import Material
+import MaterialComponents
 import GoogleMaps
-import ImagePicker
-import Lightbox
+//import ImagePicker
+//import Lightbox
 import XLActionController
 
 public class PostTableViewController : UITableViewController {
@@ -20,7 +20,7 @@ public class PostTableViewController : UITableViewController {
   @IBOutlet weak var vHeader: UIView!
   @IBOutlet weak var txtName: UITextField!
   @IBOutlet weak var txtDescription: UITextView!
-  @IBOutlet weak var btnAddPhoto: FABButton!
+  @IBOutlet weak var btnAddPhoto: MDCFloatingButton!
   @IBOutlet weak var imgFirst: UIImageView!
   @IBOutlet weak var btnFirstDelete: UIButton!
   @IBOutlet weak var imgSecond: UIImageView!
@@ -61,8 +61,8 @@ public class PostTableViewController : UITableViewController {
     
     txtName.delegate = self
     
-    btnAddPhoto.setImage(Icon.photoCamera?.tint(with: UIColor.white), for: .normal)
-    btnAddPhoto.pulseColor = UIColor.white
+    // btnAddPhoto.setImage(Icon.photoCamera?.tint(with: UIColor.white), for: .normal)
+    // btnAddPhoto.pulseColor = UIColor.white
     btnAddPhoto.backgroundColor = UIColor.spotsGreen()
     
     setDefaultImage(imageToSet: imgFirst)
@@ -97,13 +97,13 @@ public class PostTableViewController : UITableViewController {
       Action(
         ActionData(title: "Public",
                    subtitle: "Visibile to everyone",
-                   image: (UIImage(named: "ic_public_white")?.tint(with: Color.grey.darken2))!),
+                   image: (UIImage(named: "ic_public_white"))!),//!?.tint(with: MDCPalette.grey.tint600))!),
         style: .default,
         handler: { action in
           
           self.spotVisibility = SpotsVisibility.public
           self.lblSpotPrivacy.text = "Public"
-          self.imgSpotPrivacy.image = UIImage(named: "ic_public_white")?.tint(with: Color.grey.darken2)
+          self.imgSpotPrivacy.image = UIImage(named: "ic_public_white")//?.tint(with: MDCPalette.grey.tint600)
     }))
     
     
@@ -111,12 +111,12 @@ public class PostTableViewController : UITableViewController {
       Action(
         ActionData(title: "Private",
                    subtitle: "Visibile to friends only",
-                   image: (UIImage(named: "ic_lock_white")?.tint(with: Color.grey.darken2))!),
+                   image: (UIImage(named: "ic_lock_white"))!),//?.tint(with: MDCPalette.grey.tint600))!),
         style: .default,
         handler: { action in
           self.spotVisibility = SpotsVisibility.private
           self.lblSpotPrivacy.text = "Private"
-          self.imgSpotPrivacy.image = UIImage(named: "ic_lock_white")?.tint(with: Color.grey.darken2)
+            self.imgSpotPrivacy.image = UIImage(named: "ic_lock_white")//?.tint(with: MDCPalette.grey.tint600)
     }))
     
   }
@@ -143,10 +143,10 @@ public class PostTableViewController : UITableViewController {
   }
   
   func setDefaultImage(imageToSet: UIImageView) {
-    imageToSet.backgroundColor = Color.grey.lighten3
-    imageToSet.image = Icon.photoLibrary?.tint(with: Color.grey.base)
+    imageToSet.backgroundColor = MDCPalette.grey.tint600
+    // imageToSet.image = Icon.photoLibrary?.tint(with: Color.grey.base)
     imageToSet.contentMode = .center
-    imageToSet.cornerRadius = 5.0
+    imageToSet.layer.cornerRadius = 5.0
 
   }
   
@@ -221,6 +221,7 @@ extension PostTableViewController : DidSelectSpotTypeDelegate {
 
 
 // MARK: ImagePickerDelegate
+/*
 extension PostTableViewController : ImagePickerDelegate {
   
   public func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
@@ -338,7 +339,7 @@ extension PostTableViewController : ImagePickerDelegate {
   }
 }
 
-
+*/
 
 // MARK: textfield delegate
 extension PostTableViewController : UITextFieldDelegate {

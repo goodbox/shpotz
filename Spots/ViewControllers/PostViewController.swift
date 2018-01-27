@@ -8,11 +8,11 @@
 
 import Foundation
 import UIKit
-import Material
+
 import GoogleMaps
 import PopupDialog
-import ImagePicker
-import Lightbox
+// import ImagePicker
+// import Lightbox
 import AWSS3
 import Photos
 
@@ -277,7 +277,7 @@ class PostViewController: UIViewController {
     
     let vc = popup.viewController as! ValidationPopupViewController
     
-    vc.imgValidationImage.image = UIImage(named: "ic_check")?.tint(with: UIColor.spotsGreen())
+    vc.imgValidationImage.image = UIImage(named: "ic_check")//?.tint(with: UIColor.spotsGreen())
     
     vc.lblValidationTitle.text = "Success!"
     
@@ -289,7 +289,7 @@ class PostViewController: UIViewController {
   
   
   // MARK: keyboard notifications
-  func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
     
     let animationDuration = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).doubleValue
     
@@ -301,7 +301,7 @@ class PostViewController: UIViewController {
   }
   
   
-  func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
     
     
     let keyboardFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -323,10 +323,11 @@ class PostViewController: UIViewController {
 extension PostViewController : DidTapAddPhotoButtonDelegate {
   
   func didTapAddPhoto(_ sender: Any?, numToAdd: Int?) {
-    
+    /*
     let imagePickerController = ImagePickerController()
     imagePickerController.imageLimit = numToAdd!
     imagePickerController.delegate = self.postTableView
     present(imagePickerController, animated: true, completion: nil)
+ */
   }
 }

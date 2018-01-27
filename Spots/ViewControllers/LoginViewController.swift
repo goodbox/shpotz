@@ -10,25 +10,27 @@ import Foundation
 import UIKit
 import FacebookCore
 import FacebookLogin
-import Material
+import MaterialComponents
 import PopupDialog
 
 public class LoginViewController : UIViewController {
   
-  @IBOutlet weak var btnLogin: RaisedButton!
+  @IBOutlet weak var btnLogin: MDCRaisedButton!
   
   
   @IBOutlet weak var lblAppTitle: UILabel!
   @IBOutlet weak var imgLogo: UIImageView!
   
+    
+    var readPermissions: [ReadPermission] = [.publicProfile, .email, .userFriends]
   
   public override func viewDidLoad() {
     
     super.viewDidLoad()
     
-    imgLogo.image = UIImage(named: "logo_image")?.tint(with: Color.grey.lighten3)
+    // imgLogo.image = UIImage(named: "logo_image")?.tint(with: MDCPalette.grey.tint500)
     imgLogo.contentMode = .scaleAspectFit
-    imgLogo.masksToBounds = true
+    //imgLogo.masksToBounds = true
     
     // imgLogo.backgroundColor = UIColor.red
     
@@ -45,8 +47,9 @@ public class LoginViewController : UIViewController {
     
     self.btnLogin.showLoading()
     
+    let networkAvailable = false
     
-    if true {
+    if networkAvailable {
       performSegue(withIdentifier: "NoNetworkSegue", sender: self)
     } else {
      
@@ -88,9 +91,9 @@ public class LoginViewController : UIViewController {
     
     self.btnLogin.showLoading()
 
-    let loginManager = LoginManager()
+    let loginManager = LoginManager(loginBehavior: .native, defaultAudience: .friends)
     
-    loginManager.logIn([.publicProfile, .email, .userFriends], viewController: self) { (loginResult) in
+    loginManager.logIn(readPermissions: readPermissions, viewController: self) { (loginResult) in
       
       switch loginResult {
         

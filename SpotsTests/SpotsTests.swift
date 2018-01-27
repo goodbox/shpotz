@@ -5,7 +5,7 @@
 //  Created by goodbox on 2/26/17.
 //  Copyright © 2017 goodbox. All rights reserved.
 //
-
+/*
 import XCTest
 @testable import Spots
 
@@ -34,3 +34,4 @@ class SpotsTests: XCTestCase {
     }
     
 }
+ */

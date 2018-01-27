@@ -9,9 +9,10 @@
 import Foundation
 
 import UIKit
-import Material
+// import Material
 
-class AppNavigationController: NavigationController {
+// class AppNavigationController: NavigationController {
+    /*
   open override func prepare() {
     super.prepare()
     guard let v = navigationBar as? NavigationBar else {
@@ -19,6 +20,7 @@ class AppNavigationController: NavigationController {
     }
     
     v.depthPreset = .none
-    v.dividerColor = Color.grey.lighten3
+   // v.dividerColor = Color.grey.lighten3
   }
-}
+ */
+// }

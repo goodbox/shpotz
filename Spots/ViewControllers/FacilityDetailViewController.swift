@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
-import Material
+import MaterialComponents
 import PopupDialog
 import AlamofireImage
-import AXPhotoViewer
+// import AXPhotoViewer
 
 public class FacilityDetailViewController: UITableViewController {
   
@@ -49,7 +49,7 @@ public class FacilityDetailViewController: UITableViewController {
   // var urlSession = URLSession(configuration: .default)
   // var content = [Int: Data]()
   
-  var photos: [Photo]! = []
+  // var photos: [Photo]! = []
   
   public override func viewDidLoad() {
     
@@ -113,7 +113,7 @@ public class FacilityDetailViewController: UITableViewController {
         )
       } else {
         
-        self.imgHeaderPic.image = SpotIcons.other?.tint(with: Color.grey.lighten1)
+        self.imgHeaderPic.image = SpotIcons.other//?.tint(with: MDCPalette.grey.tint100)
         self.imgHeaderPic.contentMode = .center
       }
       
@@ -148,13 +148,14 @@ public class FacilityDetailViewController: UITableViewController {
       
       if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
         self.photosColContainer.facilityDetail = self.facilityDetail
-        
+        /*
         for photo in self.facilityDetail.Media {
           self.photos.append(Photo(attributedTitle: NSAttributedString(string: "The Flash Poster"),
                                   attributedDescription: NSAttributedString(string: "Season 3"),
                                   attributedCredit: NSAttributedString(string: "Vignette"),
                                   url: URL(string: photo.Url)))
         }
+ */
       }
       
       
@@ -317,10 +318,10 @@ extension FacilityDetailViewController: DidTapFacilityImageDelegate {
   func didTapFacilityImage(_ sender: Any?, index: Int?) {
     print("did tap photo")
     
-    let dataSource = PhotosDataSource(photos: self.photos)
+   // let dataSource = PhotosDataSource(photos: self.photos)
     // let dataSource = PhotosDataSource(photos: self.photos, initialPhotoIndex: index!, prefetchBehavior: .aggressive)
-    let photosViewController = PhotosViewController(dataSource: dataSource)
-    self.present(photosViewController, animated: true)
+    //let photosViewController = PhotosViewController(dataSource: dataSource)
+    //self.present(photosViewController, animated: true)
     
     // performSegue(withIdentifier: "PhotoGallerySegue", sender: self)
     
@@ -380,14 +381,14 @@ extension FacilityDetailViewController : UICollectionViewDelegateFlowLayout {
     
     let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = Color.grey.lighten4
+    cell?.backgroundColor = MDCPalette.grey.tint400
   }
   
   public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
     
     let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = Color.clear
+    cell?.backgroundColor = UIColor.clear
     
   }
   

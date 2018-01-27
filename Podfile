@@ -5,16 +5,13 @@ target 'Spots' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Spots
-  pod 'Material', '~> 2.0'
+
   
-  pod 'Motion', '~> 1.0'
+  pod 'Alamofire', '~> 4.6.0'
   
-  pod 'Alamofire', '~> 4.3.0'
+  pod 'AlamofireImage', '~> 3.3.0'
   
-  pod 'AlamofireImage', '~> 3.2.0'
-  
-  pod 'XCGLogger', '~> 4.0'
+  # pod 'XCGLogger', '~> 4.0'
   
   pod 'SwiftyJSON'
   
@@ -29,13 +26,19 @@ target 'Spots' do
   pod 'FacebookLogin'
   #pod 'FacebookShare'
   
-  pod 'PopupDialog', '~> 0.5.3'
+  pod 'PopupDialog', '~> 0.6.2'
+  
+  # Pods for Spots
+  # pod 'Material'
+  # pod 'Motion'
+  
+  pod 'MaterialComponents'
   
   # image picker pods
-  pod 'ImagePicker'
-  pod 'Lightbox', git: 'https://github.com/hyperoslo/Lightbox.git', branch: 'swift-3'
-  pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar.git', branch: 'master'
-  pod 'Hue'
+  #pod 'ImagePicker'
+  #pod 'Lightbox', git: 'https://github.com/hyperoslo/Lightbox.git'
+  #pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar.git'
+  #pod 'Hue'
   
   #xl actioncontroller
   pod 'XLActionController'
@@ -44,16 +47,16 @@ target 'Spots' do
   # pod 'SKPhotoBrowser'
   
   #AXPhotoViewer pods
-  pod 'Reveal-SDK'
+  #pod 'Reveal-SDK'
   
   # Loading spinner
-  pod 'DRPLoadingSpinner'
+  #pod 'DRPLoadingSpinner'
   
   # AXPhotoViewer
-  pod 'AXPhotoViewer'
+  #pod 'AXPhotoViewer'
 
   #reachability
-  pod 'ReachabilitySwift', '~> 3'
+  pod 'ReachabilitySwift'
 
   target 'SpotsTests' do
     inherit! :search_paths

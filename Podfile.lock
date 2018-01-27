@@ -1,132 +1,423 @@
 PODS:
-  - Alamofire (4.3.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
-  - AXPhotoViewer (1.2.7):
-    - AXPhotoViewer/Lite (= 1.2.7)
-  - AXPhotoViewer/Core (1.2.7):
-    - FLAnimatedImage (>= 1.0.0)
-  - AXPhotoViewer/Lite (1.2.7):
-    - AXPhotoViewer/Core
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
+  - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
-  - DRPLoadingSpinner (1.3.1):
-    - DRPLoadingSpinner/core (= 1.3.1)
-  - DRPLoadingSpinner/core (1.3.1)
-  - FacebookCore (0.2.0):
+  - Bolts/Tasks (1.9.0)
+  - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
-    - FBSDKCoreKit (~> 4.15)
-  - FacebookLogin (0.2.0):
+    - FBSDKCoreKit (~> 4.27)
+  - FacebookLogin (0.3.0):
     - Bolts (~> 1.8)
-    - FacebookCore (~> 0.2)
-    - FBSDKCoreKit (~> 4.15)
-    - FBSDKLoginKit (~> 4.15)
-  - FBSDKCoreKit (4.26.0):
+    - FacebookCore (~> 0.3)
+    - FBSDKCoreKit (~> 4.27)
+    - FBSDKLoginKit (~> 4.27)
+  - FBSDKCoreKit (4.30.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.26.0):
+  - FBSDKLoginKit (4.30.0):
     - FBSDKCoreKit
-  - FLAnimatedImage (1.0.12)
-  - GoogleMaps (2.4.0):
-    - GoogleMaps/Maps (= 2.4.0)
-  - GoogleMaps/Base (2.4.0)
-  - GoogleMaps/Maps (2.4.0):
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
-  - GooglePlaces (2.4.0):
-    - GoogleMaps/Base (= 2.4.0)
-  - Hue (2.0.1)
-  - ImagePicker (2.1.1)
-  - Lightbox (1.0.0):
-    - Hue
-    - Sugar
-  - Material (2.9.4):
-    - Material/Core (= 2.9.4)
-  - Material/Core (2.9.4)
-  - Motion (1.1.2):
-    - Motion/Core (= 1.1.2)
-  - Motion/Core (1.1.2)
-  - PopupDialog (0.5.4)
-  - ReachabilitySwift (3)
-  - Reveal-SDK (10)
-  - Sugar (3.1.2)
-  - SwiftyJSON (3.1.4)
-  - XCGLogger (4.0.0):
-    - XCGLogger/Core (= 4.0.0)
-  - XCGLogger/Core (4.0.0)
-  - XLActionController (3.0.1):
-    - XLActionController/Core (= 3.0.1)
-  - XLActionController/Core (3.0.1)
-  - XLActionController/Twitter (3.0.1):
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
+  - MaterialComponents (44.5.0):
+    - MaterialComponents/ActivityIndicator (= 44.5.0)
+    - MaterialComponents/ActivityIndicator+Extensions (= 44.5.0)
+    - MaterialComponents/AnimationTiming (= 44.5.0)
+    - MaterialComponents/AppBar (= 44.5.0)
+    - MaterialComponents/AppBar+Extensions (= 44.5.0)
+    - MaterialComponents/BottomAppBar (= 44.5.0)
+    - MaterialComponents/BottomNavigation (= 44.5.0)
+    - MaterialComponents/BottomNavigation+Extensions (= 44.5.0)
+    - MaterialComponents/BottomSheet (= 44.5.0)
+    - MaterialComponents/ButtonBar (= 44.5.0)
+    - MaterialComponents/ButtonBar+Extensions (= 44.5.0)
+    - MaterialComponents/Buttons (= 44.5.0)
+    - MaterialComponents/Buttons+Extensions (= 44.5.0)
+    - MaterialComponents/Chips (= 44.5.0)
+    - MaterialComponents/CollectionCells (= 44.5.0)
+    - MaterialComponents/CollectionLayoutAttributes (= 44.5.0)
+    - MaterialComponents/Collections (= 44.5.0)
+    - MaterialComponents/Dialogs (= 44.5.0)
+    - MaterialComponents/Dialogs+Extensions (= 44.5.0)
+    - MaterialComponents/FeatureHighlight (= 44.5.0)
+    - MaterialComponents/FeatureHighlight+Extensions (= 44.5.0)
+    - MaterialComponents/FlexibleHeader (= 44.5.0)
+    - MaterialComponents/FlexibleHeader+Extensions (= 44.5.0)
+    - MaterialComponents/HeaderStackView (= 44.5.0)
+    - MaterialComponents/HeaderStackView+Extensions (= 44.5.0)
+    - MaterialComponents/Ink (= 44.5.0)
+    - MaterialComponents/Ink+Extensions (= 44.5.0)
+    - MaterialComponents/LibraryInfo (= 44.5.0)
+    - MaterialComponents/MaskedTransition (= 44.5.0)
+    - MaterialComponents/NavigationBar (= 44.5.0)
+    - MaterialComponents/NavigationBar+Extensions (= 44.5.0)
+    - MaterialComponents/OverlayWindow (= 44.5.0)
+    - MaterialComponents/PageControl (= 44.5.0)
+    - MaterialComponents/PageControl+Extensions (= 44.5.0)
+    - MaterialComponents/Palettes (= 44.5.0)
+    - MaterialComponents/private (= 44.5.0)
+    - MaterialComponents/ProgressView (= 44.5.0)
+    - MaterialComponents/ProgressView+Extensions (= 44.5.0)
+    - MaterialComponents/ShadowElevations (= 44.5.0)
+    - MaterialComponents/ShadowLayer (= 44.5.0)
+    - MaterialComponents/Slider (= 44.5.0)
+    - MaterialComponents/Slider+Extensions (= 44.5.0)
+    - MaterialComponents/Snackbar (= 44.5.0)
+    - MaterialComponents/Tabs (= 44.5.0)
+    - MaterialComponents/Tabs+Extensions (= 44.5.0)
+    - MaterialComponents/TextFields (= 44.5.0)
+    - MaterialComponents/TextFields+Extensions (= 44.5.0)
+    - MaterialComponents/Themes (= 44.5.0)
+    - MaterialComponents/Typography (= 44.5.0)
+  - MaterialComponents/ActivityIndicator (44.5.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Application
+    - MDFInternationalization
+    - MotionAnimator (~> 2.0)
+  - MaterialComponents/ActivityIndicator+Extensions (44.5.0):
+    - MaterialComponents/ActivityIndicator+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/ActivityIndicator+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/ActivityIndicator
+    - MaterialComponents/Themes
+  - MaterialComponents/AnimationTiming (44.5.0)
+  - MaterialComponents/AppBar (44.5.0):
+    - MaterialComponents/FlexibleHeader
+    - MaterialComponents/HeaderStackView
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Icons/ic_arrow_back
+    - MaterialComponents/private/UIMetrics
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/AppBar+Extensions (44.5.0):
+    - MaterialComponents/AppBar+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/AppBar+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/AppBar
+    - MaterialComponents/Themes
+  - MaterialComponents/BottomAppBar (44.5.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/private/Math
+    - MDFInternationalization
+  - MaterialComponents/BottomNavigation (44.5.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/BottomNavigation+Extensions (44.5.0):
+    - MaterialComponents/BottomNavigation+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/BottomNavigation+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/BottomNavigation
+    - MaterialComponents/Themes
+  - MaterialComponents/BottomSheet (44.5.0):
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MotionAnimator (~> 2.3)
+    - MotionTransitioning (~> 5.0)
+  - MaterialComponents/ButtonBar (44.5.0):
+    - MaterialComponents/Buttons
+    - MDFInternationalization
+  - MaterialComponents/ButtonBar+Extensions (44.5.0):
+    - MaterialComponents/ButtonBar+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/ButtonBar+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/ButtonBar
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/Themes
+  - MaterialComponents/Buttons (44.5.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Buttons+Extensions (44.5.0):
+    - MaterialComponents/Buttons+Extensions/ColorThemer (= 44.5.0)
+    - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 44.5.0)
+  - MaterialComponents/Buttons+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/Themes
+  - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (44.5.0):
+    - MaterialComponents/Buttons
+    - MDFTextAccessibility
+  - MaterialComponents/Chips (44.5.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/ShapeLibrary
+    - MaterialComponents/private/Shapes
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/TextFields
+    - MaterialComponents/Typography
+  - MaterialComponents/CollectionCells (44.5.0):
+    - MaterialComponents/CollectionLayoutAttributes
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Icons/ic_check
+    - MaterialComponents/private/Icons/ic_check_circle
+    - MaterialComponents/private/Icons/ic_chevron_right
+    - MaterialComponents/private/Icons/ic_info
+    - MaterialComponents/private/Icons/ic_radio_button_unchecked
+    - MaterialComponents/private/Icons/ic_reorder
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/CollectionLayoutAttributes (44.5.0)
+  - MaterialComponents/Collections (44.5.0):
+    - MaterialComponents/CollectionCells
+    - MaterialComponents/CollectionLayoutAttributes
+    - MaterialComponents/Ink
+    - MaterialComponents/Palettes
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+  - MaterialComponents/Dialogs (44.5.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MDFInternationalization
+    - MotionAnimator (~> 2.5)
+    - MotionTransitioning (~> 5.0)
+  - MaterialComponents/Dialogs+Extensions (44.5.0):
+    - MaterialComponents/Dialogs+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/Dialogs+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/Dialogs
+    - MaterialComponents/Themes
+  - MaterialComponents/FeatureHighlight (44.5.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFTextAccessibility
+  - MaterialComponents/FeatureHighlight+Extensions (44.5.0):
+    - MaterialComponents/FeatureHighlight+Extensions/ColorThemer (= 44.5.0)
+    - MaterialComponents/FeatureHighlight+Extensions/FontThemer (= 44.5.0)
+  - MaterialComponents/FeatureHighlight+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/FeatureHighlight
+    - MaterialComponents/Themes
+  - MaterialComponents/FeatureHighlight+Extensions/FontThemer (44.5.0):
+    - MaterialComponents/FeatureHighlight
+    - MaterialComponents/Themes
+  - MaterialComponents/FlexibleHeader (44.5.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/UIMetrics
+    - MDFTextAccessibility
+  - MaterialComponents/FlexibleHeader+Extensions (44.5.0):
+    - MaterialComponents/FlexibleHeader+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/FlexibleHeader+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/FlexibleHeader
+    - MaterialComponents/Themes
+  - MaterialComponents/HeaderStackView (44.5.0)
+  - MaterialComponents/HeaderStackView+Extensions (44.5.0):
+    - MaterialComponents/HeaderStackView+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/HeaderStackView+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/HeaderStackView
+    - MaterialComponents/Themes
+  - MaterialComponents/Ink (44.5.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink+Extensions (44.5.0):
+    - MaterialComponents/Ink+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/Ink+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/Themes
+  - MaterialComponents/LibraryInfo (44.5.0)
+  - MaterialComponents/MaskedTransition (44.5.0):
+    - MotionAnimator (~> 2.0)
+    - MotionInterchange (~> 1.0)
+    - MotionTransitioning (~> 5.0)
+  - MaterialComponents/NavigationBar (44.5.0):
+    - MaterialComponents/ButtonBar
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/NavigationBar+Extensions (44.5.0):
+    - MaterialComponents/NavigationBar+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/NavigationBar+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/Themes
+  - MaterialComponents/OverlayWindow (44.5.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/PageControl (44.5.0)
+  - MaterialComponents/PageControl+Extensions (44.5.0):
+    - MaterialComponents/PageControl+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/PageControl+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/PageControl
+    - MaterialComponents/Themes
+  - MaterialComponents/Palettes (44.5.0)
+  - MaterialComponents/private (44.5.0):
+    - MaterialComponents/private/Application (= 44.5.0)
+    - MaterialComponents/private/Icons (= 44.5.0)
+    - MaterialComponents/private/KeyboardWatcher (= 44.5.0)
+    - MaterialComponents/private/Math (= 44.5.0)
+    - MaterialComponents/private/Overlay (= 44.5.0)
+    - MaterialComponents/private/ShapeLibrary (= 44.5.0)
+    - MaterialComponents/private/Shapes (= 44.5.0)
+    - MaterialComponents/private/ThumbTrack (= 44.5.0)
+    - MaterialComponents/private/UIMetrics (= 44.5.0)
+  - MaterialComponents/private/Application (44.5.0)
+  - MaterialComponents/private/Icons (44.5.0):
+    - MaterialComponents/private/Icons/Base (= 44.5.0)
+    - MaterialComponents/private/Icons/ic_arrow_back (= 44.5.0)
+    - MaterialComponents/private/Icons/ic_check (= 44.5.0)
+    - MaterialComponents/private/Icons/ic_check_circle (= 44.5.0)
+    - MaterialComponents/private/Icons/ic_chevron_right (= 44.5.0)
+    - MaterialComponents/private/Icons/ic_info (= 44.5.0)
+    - MaterialComponents/private/Icons/ic_radio_button_unchecked (= 44.5.0)
+    - MaterialComponents/private/Icons/ic_reorder (= 44.5.0)
+  - MaterialComponents/private/Icons/Base (44.5.0)
+  - MaterialComponents/private/Icons/ic_arrow_back (44.5.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_check (44.5.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_check_circle (44.5.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_chevron_right (44.5.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_info (44.5.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_radio_button_unchecked (44.5.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/Icons/ic_reorder (44.5.0):
+    - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/KeyboardWatcher (44.5.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (44.5.0)
+  - MaterialComponents/private/Overlay (44.5.0)
+  - MaterialComponents/private/ShapeLibrary (44.5.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+  - MaterialComponents/private/Shapes (44.5.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/private/ThumbTrack (44.5.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/private/UIMetrics (44.5.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/ProgressView (44.5.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MDFInternationalization
+    - MotionAnimator (~> 2.1)
+  - MaterialComponents/ProgressView+Extensions (44.5.0):
+    - MaterialComponents/ProgressView+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/ProgressView+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/ProgressView
+    - MaterialComponents/Themes
+  - MaterialComponents/ShadowElevations (44.5.0)
+  - MaterialComponents/ShadowLayer (44.5.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Slider (44.5.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/ThumbTrack
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Slider+Extensions (44.5.0):
+    - MaterialComponents/Slider+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/Slider+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/Slider
+    - MaterialComponents/Themes
+  - MaterialComponents/Snackbar (44.5.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Tabs (44.5.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Tabs+Extensions (44.5.0):
+    - MaterialComponents/Tabs+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/Tabs+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/Tabs
+    - MaterialComponents/Themes
+  - MaterialComponents/TextFields (44.5.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/TextFields+Extensions (44.5.0):
+    - MaterialComponents/TextFields+Extensions/ColorThemer (= 44.5.0)
+  - MaterialComponents/TextFields+Extensions/ColorThemer (44.5.0):
+    - MaterialComponents/TextFields
+    - MaterialComponents/Themes
+  - MaterialComponents/Themes (44.5.0)
+  - MaterialComponents/Typography (44.5.0):
+    - MaterialComponents/private/Application
+  - MDFInternationalization (1.0.4)
+  - MDFTextAccessibility (1.2.0)
+  - MotionAnimator (2.8.0):
+    - MotionInterchange (~> 1.6)
+  - MotionInterchange (1.6.0)
+  - MotionTransitioning (5.0.0)
+  - PopupDialog (0.6.2)
+  - ReachabilitySwift (4.1.0)
+  - SwiftyJSON (4.0.0)
+  - XLActionController (4.0.0):
+    - XLActionController/Core (= 4.0.0)
+  - XLActionController/Core (4.0.0)
+  - XLActionController/Twitter (4.0.0):
     - XLActionController/Core
 
 DEPENDENCIES:
-  - Alamofire (~> 4.3.0)
-  - AlamofireImage (~> 3.2.0)
-  - AXPhotoViewer
-  - DRPLoadingSpinner
+  - Alamofire (~> 4.6.0)
+  - AlamofireImage (~> 3.3.0)
   - FacebookCore
   - FacebookLogin
   - GoogleMaps
   - GooglePlaces
-  - Hue
-  - ImagePicker
-  - Lightbox (from `https://github.com/hyperoslo/Lightbox.git`, branch `swift-3`)
-  - Material (~> 2.0)
-  - Motion (~> 1.0)
-  - PopupDialog (~> 0.5.3)
-  - ReachabilitySwift (~> 3)
-  - Reveal-SDK
-  - Sugar (from `https://github.com/hyperoslo/Sugar.git`, branch `master`)
+  - MaterialComponents
+  - PopupDialog (~> 0.6.2)
+  - ReachabilitySwift
   - SwiftyJSON
-  - XCGLogger (~> 4.0)
   - XLActionController
   - XLActionController/Twitter
 
-EXTERNAL SOURCES:
-  Lightbox:
-    :branch: swift-3
-    :git: https://github.com/hyperoslo/Lightbox.git
-  Sugar:
-    :branch: master
-    :git: https://github.com/hyperoslo/Sugar.git
-
-CHECKOUT OPTIONS:
-  Lightbox:
-    :commit: 04437d8450a5ccc92af7e9bd08027bdced9fb589
-    :git: https://github.com/hyperoslo/Lightbox.git
-  Sugar:
-    :commit: 68b77482f061fc7d748c89787838d1223e287e87
-    :git: https://github.com/hyperoslo/Sugar.git
-
 SPEC CHECKSUMS:
-  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  AXPhotoViewer: 4bf6908cf0eb735629f9bf47a02c346e0f269228
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  DRPLoadingSpinner: 725e530bf4ebe2cc351b1fbc94d24fe8ac3300fd
-  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
-  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
-  FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
-  FBSDKLoginKit: f3f03b94c21eb834af243c0a881d48641f47ca60
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
-  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
-  Hue: 354caec055fdc9d38b5ef33ca2e7224721843baf
-  ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
-  Lightbox: e4523e8cf3261cbc833d0e76ae4dae774731d115
-  Material: 06fa0a5f29c45c42608ae32f3be96f1c46558d13
-  Motion: d4072ac96d5f114ad1f1d9c699808b60a01bd4e9
-  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  Reveal-SDK: 7869ddf1f902cabbb07a1f0dd06bd25861a126f7
-  Sugar: 41f2efa0244806f524ff2d77c951a6a43e81a0f3
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
-  XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
-  XLActionController: 57fe0ce1642e2eed971b188b490762345fdbf963
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
+  FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
+  FBSDKCoreKit: 7c4bba2877781a131ab5d54c0a78c405d4307b62
+  FBSDKLoginKit: fe7a7e82373dc5daad92e1623219e86224ab1fb1
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
+  MaterialComponents: d50819588c896bbc206f2b145e00385159ef5f22
+  MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
+  MotionAnimator: 8af077dac084b7880a4d2ddae31a26171087bd87
+  MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
+  MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
+  PopupDialog: d4336d7274a6aa3af4cb26d8b6691510eba90cc3
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  XLActionController: 7e88fece1799e61357cb00b1cc67104d66ec4d2c
 
-PODFILE CHECKSUM: 4c88b69ce263a34bae6c2d27c0261d614d92e778
+PODFILE CHECKSUM: eb27c0d902995825e3cd3462fcafabeb6a147fea
 
 COCOAPODS: 1.3.1

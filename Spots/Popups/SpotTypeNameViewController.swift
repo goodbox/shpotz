@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Material
+import MaterialComponents
 
 class SpotTypeNameViewController: UIViewController {
   
@@ -16,13 +16,13 @@ class SpotTypeNameViewController: UIViewController {
   
   @IBOutlet var containerView: UIView!
   
-  @IBOutlet weak var txtSpotName: TextField!
+  @IBOutlet weak var txtSpotName: MDCTextField!
   
   override func viewDidLoad() {
     
     txtSpotName.placeholder = "Spot Type"
-    txtSpotName.detail = "The type of this spot"
-    txtSpotName.isClearIconButtonEnabled = false
+    // txtSpotName.detail = "The type of this spot"
+    // txtSpotName.isClearIconButtonEnabled = false
     
   }
 }

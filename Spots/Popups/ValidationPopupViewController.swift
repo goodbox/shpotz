@@ -24,7 +24,7 @@ class ValidationPopupViewController : UIViewController {
     
     self.imgValidationImage.contentMode = .scaleAspectFit
     
-    self.imgValidationImage.masksToBounds = true
+    self.imgValidationImage.layer.masksToBounds = true
     
   }
 }

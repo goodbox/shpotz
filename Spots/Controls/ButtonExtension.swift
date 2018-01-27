@@ -8,13 +8,13 @@
 
 import Foundation
 import UIKit
-import Material
+import MaterialComponents
 import ObjectiveC
 
 private var xoOriginalButtonText: String? = ""
 private var xoActivityIndicator: UIActivityIndicatorView!
 
-extension Button {
+extension MDCButton {
   
   var originalButtonText: String! {
     get {
@@ -73,7 +73,7 @@ extension Button {
   }
 
   
-}
+ }
 
 public class ActivityIndicatorButton : UIButton {
   var originalButtonText: String?

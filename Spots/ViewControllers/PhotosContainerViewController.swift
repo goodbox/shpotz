@@ -8,8 +8,8 @@
 
 import Foundation
 import UIKit
-import Material
-import AXPhotoViewer
+import MaterialComponents
+// import AXPhotoViewer
 
 class PhotosContainerViewController : UIViewController {
   
@@ -86,14 +86,14 @@ extension PhotosContainerViewController : UICollectionViewDelegateFlowLayout {
     
     let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = Color.grey.lighten4
+    cell?.backgroundColor = MDCPalette.grey.tint600
   }
   
   public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
     
     let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = Color.clear
+    cell?.backgroundColor = UIColor.clear
     
   }
   
