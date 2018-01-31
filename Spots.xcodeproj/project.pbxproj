@@ -49,6 +49,10 @@
 		B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */; };
 		B7B20AE01EA05421006B86CA /* FXLabel.h in Sources */ = {isa = PBXBuildFile; fileRef = B7F04DA21EA04AE300FFCF1C /* FXLabel.h */; };
 		B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20AE11EA0550F006B86CA /* FontExtension.swift */; };
+		B7CE9B4A20201BEA00B823FF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4920201BE900B823FF /* Color.swift */; };
+		B7CE9B4C20201C8B00B823FF /* Material+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4B20201C8B00B823FF /* Material+UIImage.swift */; };
+		B7CE9B4E20201D5700B823FF /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4D20201D5600B823FF /* Screen.swift */; };
+		B7CE9B50202021C200B823FF /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4F202021C200B823FF /* Icon.swift */; };
 		B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D925D01E8620E100F160F8 /* SpotTypeName.xib */; };
 		B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D925D21E86211A00F160F8 /* SpotTypeNameViewController.swift */; };
 		B7E77BD51F3BC61E00C39E65 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */; };
@@ -140,6 +144,10 @@
 		B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeViewController.swift; sourceTree = "<group>"; };
 		B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGradientImageView.swift; sourceTree = "<group>"; };
 		B7B20AE11EA0550F006B86CA /* FontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		B7CE9B4920201BE900B823FF /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B7CE9B4B20201C8B00B823FF /* Material+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage.swift"; sourceTree = "<group>"; };
+		B7CE9B4D20201D5600B823FF /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		B7CE9B4F202021C200B823FF /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		B7D925D01E8620E100F160F8 /* SpotTypeName.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotTypeName.xib; sourceTree = "<group>"; };
 		B7D925D21E86211A00F160F8 /* SpotTypeNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTypeNameViewController.swift; sourceTree = "<group>"; };
 		B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -246,6 +254,7 @@
 		B7049E001E653AC5000824EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B7CE9B4820201B9300B823FF /* Material */,
 				B7F04DA11EA04AB300FFCF1C /* FXLabel */,
 			);
 			path = ThirdParty;
@@ -362,6 +371,17 @@
 				B7FBC5621EA86D7200EF0CAB /* FacilityImageCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B7CE9B4820201B9300B823FF /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				B7CE9B4D20201D5600B823FF /* Screen.swift */,
+				B7CE9B4B20201C8B00B823FF /* Material+UIImage.swift */,
+				B7CE9B4920201BE900B823FF /* Color.swift */,
+				B7CE9B4F202021C200B823FF /* Icon.swift */,
+			);
+			path = Material;
 			sourceTree = "<group>";
 		};
 		B7F04DA11EA04AB300FFCF1C /* FXLabel */ = {
@@ -650,6 +670,7 @@
 				B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
 				B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */,
+				B7CE9B4A20201BEA00B823FF /* Color.swift in Sources */,
 				B7FBC55F1EA8383400EF0CAB /* PhotosContainerViewController.swift in Sources */,
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
 				B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */,
@@ -662,12 +683,15 @@
 				B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */,
 				B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */,
 				B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */,
+				B7CE9B50202021C200B823FF /* Icon.swift in Sources */,
+				B7CE9B4E20201D5700B823FF /* Screen.swift in Sources */,
 				B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */,
 				B7FB95B91F51107300CBEF81 /* NoNetworkViewController.swift in Sources */,
 				B776923B1E80E1940099412E /* APIConstants.swift in Sources */,
 				B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,
+				B7CE9B4C20201C8B00B823FF /* Material+UIImage.swift in Sources */,
 				B776923F1E80E2930099412E /* ApiServices.swift in Sources */,
 				B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */,
 				B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */,

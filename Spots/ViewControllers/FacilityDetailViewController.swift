@@ -113,7 +113,7 @@ public class FacilityDetailViewController: UITableViewController {
         )
       } else {
         
-        self.imgHeaderPic.image = SpotIcons.other//?.tint(with: MDCPalette.grey.tint100)
+        self.imgHeaderPic.image = SpotIcons.other?.tint(with: Color.lightGray)
         self.imgHeaderPic.contentMode = .center
       }
       

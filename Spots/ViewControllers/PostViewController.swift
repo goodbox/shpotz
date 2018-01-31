@@ -289,7 +289,7 @@ class PostViewController: UIViewController {
   
   
   // MARK: keyboard notifications
-    @objc func keyboardWillHide(_ notification: Notification) {
+@objc func keyboardWillHide(_ notification: Notification) {
     
     let animationDuration = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).doubleValue
     
@@ -301,7 +301,7 @@ class PostViewController: UIViewController {
   }
   
   
-    @objc func keyboardWillShow(_ notification: Notification) {
+@objc func keyboardWillShow(_ notification: Notification) {
     
     
     let keyboardFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue

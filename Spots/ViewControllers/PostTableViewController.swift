@@ -61,7 +61,7 @@ public class PostTableViewController : UITableViewController {
     
     txtName.delegate = self
     
-    // btnAddPhoto.setImage(Icon.photoCamera?.tint(with: UIColor.white), for: .normal)
+    btnAddPhoto.setImage(Icon.photoCamera?.tint(with: UIColor.white), for: .normal)
     // btnAddPhoto.pulseColor = UIColor.white
     btnAddPhoto.backgroundColor = UIColor.spotsGreen()
     
@@ -97,13 +97,13 @@ public class PostTableViewController : UITableViewController {
       Action(
         ActionData(title: "Public",
                    subtitle: "Visibile to everyone",
-                   image: (UIImage(named: "ic_public_white"))!),//!?.tint(with: MDCPalette.grey.tint600))!),
+                   image: (UIImage(named: "ic_public_white")?.tint(with: MDCPalette.grey.tint600))!),
         style: .default,
         handler: { action in
           
           self.spotVisibility = SpotsVisibility.public
           self.lblSpotPrivacy.text = "Public"
-          self.imgSpotPrivacy.image = UIImage(named: "ic_public_white")//?.tint(with: MDCPalette.grey.tint600)
+          self.imgSpotPrivacy.image = UIImage(named: "ic_public_white")?.tint(with: MDCPalette.grey.tint600)
     }))
     
     
@@ -111,12 +111,12 @@ public class PostTableViewController : UITableViewController {
       Action(
         ActionData(title: "Private",
                    subtitle: "Visibile to friends only",
-                   image: (UIImage(named: "ic_lock_white"))!),//?.tint(with: MDCPalette.grey.tint600))!),
+                   image: (UIImage(named: "ic_lock_white")?.tint(with: MDCPalette.grey.tint600))!),
         style: .default,
         handler: { action in
           self.spotVisibility = SpotsVisibility.private
           self.lblSpotPrivacy.text = "Private"
-            self.imgSpotPrivacy.image = UIImage(named: "ic_lock_white")//?.tint(with: MDCPalette.grey.tint600)
+            self.imgSpotPrivacy.image = UIImage(named: "ic_lock_white")?.tint(with: MDCPalette.grey.tint600)
     }))
     
   }
@@ -144,7 +144,7 @@ public class PostTableViewController : UITableViewController {
   
   func setDefaultImage(imageToSet: UIImageView) {
     imageToSet.backgroundColor = MDCPalette.grey.tint600
-    // imageToSet.image = Icon.photoLibrary?.tint(with: Color.grey.base)
+    imageToSet.image = Icon.photoLibrary?.tint(with: Color.grey.base)
     imageToSet.contentMode = .center
     imageToSet.layer.cornerRadius = 5.0
 

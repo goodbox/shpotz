@@ -28,9 +28,9 @@ public class LoginViewController : UIViewController {
     
     super.viewDidLoad()
     
-    // imgLogo.image = UIImage(named: "logo_image")?.tint(with: MDCPalette.grey.tint500)
+    imgLogo.image = UIImage(named: "logo_image")?.tint(with: MDCPalette.grey.tint500)
     imgLogo.contentMode = .scaleAspectFit
-    //imgLogo.masksToBounds = true
+    imgLogo.layer.masksToBounds = true
     
     // imgLogo.backgroundColor = UIColor.red
     
@@ -124,7 +124,7 @@ public class LoginViewController : UIViewController {
         
         } else if declinedPermissions.contains("user_friends") {
           
-          // show popup dialog saying email is required
+          // show popup dialog saying friends list is required
           self.showValidationPopup(theTitle: "Friends List is Required", theMessage: "Friends List is required to use this app.")
           
         } else {

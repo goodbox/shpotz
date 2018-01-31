@@ -27,7 +27,7 @@ class MeViewController: UIViewController {
   open override func viewDidLoad() {
     super.viewDidLoad()
     
-    // btnSettings.image = Icon.settings//?.tint(with: UIColor.white)
+    btnSettings.image = Icon.settings?.tint(with: UIColor.white)
     
     vHeader.backgroundColor = UIColor.spotsGreen() // Color.grey.darken1
     
@@ -65,7 +65,9 @@ class MeViewController: UIViewController {
   
   private func prepareTabBarItem() {
     tabBarItem.title = nil
-    tabBarItem.image = SpotIcons.person//?.tint(with: Color.blueGrey.base)
-    tabBarItem.selectedImage = SpotIcons.person//?.tint(with: UIColor.spotsGreen())
+    tabBarItem.image = SpotIcons.person?.tint(with: Color.blueGrey.base)
+    tabBarItem.selectedImage = SpotIcons.person?.tint(with: UIColor.spotsGreen())
+    
+    
   }
 }
