@@ -11,8 +11,8 @@ import UIKit
 
 import GoogleMaps
 import PopupDialog
-// import ImagePicker
-// import Lightbox
+import ImagePicker
+import Lightbox
 import AWSS3
 import Photos
 
@@ -323,11 +323,10 @@ class PostViewController: UIViewController {
 extension PostViewController : DidTapAddPhotoButtonDelegate {
   
   func didTapAddPhoto(_ sender: Any?, numToAdd: Int?) {
-    /*
+    
     let imagePickerController = ImagePickerController()
     imagePickerController.imageLimit = numToAdd!
     imagePickerController.delegate = self.postTableView
     present(imagePickerController, animated: true, completion: nil)
- */
   }
 }

@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import MaterialComponents
 import GoogleMaps
-//import ImagePicker
-//import Lightbox
+import ImagePicker
+import Lightbox
 import XLActionController
 
 public class PostTableViewController : UITableViewController {
@@ -97,13 +97,13 @@ public class PostTableViewController : UITableViewController {
       Action(
         ActionData(title: "Public",
                    subtitle: "Visibile to everyone",
-                   image: (UIImage(named: "ic_public_white")?.tint(with: MDCPalette.grey.tint600))!),
+                   image: (UIImage(named: "ic_public_white")?.tint(with: Color.grey.darken2))!),
         style: .default,
         handler: { action in
           
           self.spotVisibility = SpotsVisibility.public
           self.lblSpotPrivacy.text = "Public"
-          self.imgSpotPrivacy.image = UIImage(named: "ic_public_white")?.tint(with: MDCPalette.grey.tint600)
+          self.imgSpotPrivacy.image = UIImage(named: "ic_public_white")?.tint(with: Color.grey.darken2)
     }))
     
     
@@ -111,12 +111,12 @@ public class PostTableViewController : UITableViewController {
       Action(
         ActionData(title: "Private",
                    subtitle: "Visibile to friends only",
-                   image: (UIImage(named: "ic_lock_white")?.tint(with: MDCPalette.grey.tint600))!),
+                   image: (UIImage(named: "ic_lock_white")?.tint(with: Color.grey.darken2))!),
         style: .default,
         handler: { action in
           self.spotVisibility = SpotsVisibility.private
           self.lblSpotPrivacy.text = "Private"
-            self.imgSpotPrivacy.image = UIImage(named: "ic_lock_white")?.tint(with: MDCPalette.grey.tint600)
+            self.imgSpotPrivacy.image = UIImage(named: "ic_lock_white")?.tint(with: Color.grey.darken2)
     }))
     
   }
@@ -143,7 +143,7 @@ public class PostTableViewController : UITableViewController {
   }
   
   func setDefaultImage(imageToSet: UIImageView) {
-    imageToSet.backgroundColor = MDCPalette.grey.tint600
+    imageToSet.backgroundColor = Color.grey.lighten3
     imageToSet.image = Icon.photoLibrary?.tint(with: Color.grey.base)
     imageToSet.contentMode = .center
     imageToSet.layer.cornerRadius = 5.0
@@ -221,7 +221,7 @@ extension PostTableViewController : DidSelectSpotTypeDelegate {
 
 
 // MARK: ImagePickerDelegate
-/*
+
 extension PostTableViewController : ImagePickerDelegate {
   
   public func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
@@ -339,7 +339,6 @@ extension PostTableViewController : ImagePickerDelegate {
   }
 }
 
-*/
 
 // MARK: textfield delegate
 extension PostTableViewController : UITextFieldDelegate {

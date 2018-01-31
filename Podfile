@@ -35,10 +35,10 @@ target 'Spots' do
   pod 'MaterialComponents'
   
   # image picker pods
-  #pod 'ImagePicker'
-  #pod 'Lightbox', git: 'https://github.com/hyperoslo/Lightbox.git'
+  pod 'ImagePicker'
+  pod 'Lightbox'
   #pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar.git'
-  #pod 'Hue'
+  pod 'Hue'
   
   #xl actioncontroller
   pod 'XLActionController'
