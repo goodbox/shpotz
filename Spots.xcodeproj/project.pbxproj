@@ -30,6 +30,7 @@
 		B72ED5F4201C6FE40029DBD3 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5EF201C6FDF0029DBD3 /* Roboto-Medium.ttf */; };
 		B72ED5F5201C6FE40029DBD3 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5F0201C6FE10029DBD3 /* Roboto-Regular.ttf */; };
 		B72ED5F6201C6FE40029DBD3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */; };
+		B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */; };
 		B77692371E80DE060099412E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692361E80DE060099412E /* Models.swift */; };
 		B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692381E80E1420099412E /* GoodSpotsError.swift */; };
 		B776923B1E80E1940099412E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776923A1E80E1940099412E /* APIConstants.swift */; };
@@ -126,6 +127,7 @@
 		B72ED5EF201C6FDF0029DBD3 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		B72ED5F0201C6FE10029DBD3 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkTableViewController.swift; sourceTree = "<group>"; };
 		B77692361E80DE060099412E /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B77692381E80E1420099412E /* GoodSpotsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodSpotsError.swift; sourceTree = "<group>"; };
 		B776923A1E80E1940099412E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */,
 				B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */,
 				B7FB95B81F51107300CBEF81 /* NoNetworkViewController.swift */,
+				B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */,
 				B776923D1E80E2030099412E /* ApiServiceTask.swift in Sources */,
 				B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */,
+				B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
 				B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */,
 				B7CE9B4A20201BEA00B823FF /* Color.swift in Sources */,

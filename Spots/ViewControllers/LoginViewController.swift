@@ -12,8 +12,25 @@ import FacebookCore
 import FacebookLogin
 import MaterialComponents
 import PopupDialog
+import Reachability
 
-public class LoginViewController : UIViewController {
+public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDelegate {
+    
+    
+    func didTapCloseNoNetowrk(_ sender: Any?) {
+        
+        self.btnLogin.hideLoading()
+        
+        self.btnLogin.isEnabled = true
+        
+        self.tryLogin = false
+    }
+    
+    
+
+    
+    
+    
   
   @IBOutlet weak var btnLogin: MDCRaisedButton!
   
@@ -24,6 +41,8 @@ public class LoginViewController : UIViewController {
     
     var readPermissions: [ReadPermission] = [.publicProfile, .email, .userFriends]
   
+    var tryLogin: Bool = true
+    
   public override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -38,54 +57,101 @@ public class LoginViewController : UIViewController {
     
     
     
+    
   }
+    
+    public func loadReachableScreen() {
+        
+        if let accessToken = AccessToken.current {
+            
+            let api = ApiServiceController.sharedInstance
+            
+            _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
+                
+                if success {
+                    
+                    UserDefaults.SpotsToken = loginModel?.BearerToken
+                    
+                    self.performSegue(withIdentifier: "LoginSegue", sender: self)
+                    
+                } else {
+                    
+                    // TODO: modal to say there was an error
+                    
+                }
+            })
+            
+            
+        } else {
+            self.btnLogin.isEnabled = true
+            
+            self.btnLogin.hideLoading()
+        }
+        
+    }
+    
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        if(segue.identifier == "NoNetworkSegue") {
+        
+            let destinationVC = segue.destination as! UINavigationController
+            let noNetworkVC = destinationVC.topViewController as! NoNetworkViewController
+            noNetworkVC.didCancelNoNetworkSaveDelegate = self
+        }
+    }
   
   public override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
   
-    self.btnLogin.isEnabled = false
-    
-    self.btnLogin.showLoading()
-    
-    let networkAvailable = false
-    
-    if networkAvailable {
-      performSegue(withIdentifier: "NoNetworkSegue", sender: self)
-    } else {
-     
-      if let accessToken = AccessToken.current {
-        
-        let api = ApiServiceController.sharedInstance
-        
-        _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
-          
-          if success {
-            
-            UserDefaults.SpotsToken = loginModel?.BearerToken
-            
-            self.performSegue(withIdentifier: "LoginSegue", sender: self)
-            
-          } else {
-            
-            // TODO: modal to say there was an error
-            
-          }
-        })
+    if self.tryLogin {
         
         
-      } else {
-        self.btnLogin.isEnabled = true
+        self.btnLogin.isEnabled = false
         
-        self.btnLogin.hideLoading()
-      }
-
-      
+        self.btnLogin.showLoading()
+        
+        //declare this property where it won't go ou d     t of scope relative to your listener
+        let reachability = Reachability()!
+        
+        reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi || reachability.connection == .cellular {
+                self.loadReachableScreen()
+            } else {
+                self.performSegue(withIdentifier: "NoNetworkSegue", sender: self)
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            self.performSegue(withIdentifier: "NoNetworkSegue", sender: self)
+        }
+        
+        /*
+         
+         reachability.whenReachable = { reachability in
+         if (reachability.whenReachable != nil)  {
+         self.loadReachableScreen()
+         
+         } else if (reachability.whenUnreachable != nil) {
+         print("no network")
+         
+         }
+         }
+         */
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+        
     }
+    
     
   }
   
   
   @IBAction func btnLoginTapped(_ sender: Any) {
+    
+    self.tryLogin = true
     
     self.btnLogin.isEnabled = false
     

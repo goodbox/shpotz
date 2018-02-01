@@ -10,10 +10,31 @@ import Foundation
 import UIKit
 
 class NoNetworkViewController : UIViewController {
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    @IBOutlet weak var btnCancel: UIButton!
     
+    @IBOutlet weak var btnSave: UIButton!
     
-  }
+    var didCancelNoNetworkSaveDelegate: DidCancelNoNetworkSaveDelegate!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func btnSaveTapped(_ sender: Any) {
+    
+    }
+    
+    @IBAction func btnCancelTapped(_ sender: Any) {
+    
+    }
+    
+    @IBAction func btnCloseTapped(_ sender: Any) {
+        
+        
+        didCancelNoNetworkSaveDelegate.didTapCloseNoNetowrk(self)
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
 }
