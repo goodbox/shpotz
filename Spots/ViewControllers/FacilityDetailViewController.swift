@@ -12,8 +12,7 @@ import MaterialComponents
 import PopupDialog
 import AlamofireImage
 import Serrata
-
-var MyObservationContext = 0
+import GoogleMaps
 
 public class FacilityDetailViewController: UITableViewController {
   
@@ -34,6 +33,10 @@ public class FacilityDetailViewController: UITableViewController {
   
     @IBOutlet weak var tvCellDescription: UITableViewCell!
     
+    @IBOutlet weak var vLocation: UIView!
+    
+    @IBOutlet weak var btnGetDirections: UIButton!
+    
   var activityName: [String]! = []
   
   var facilityDetail: FacilityDetail!
@@ -48,11 +51,13 @@ public class FacilityDetailViewController: UITableViewController {
   fileprivate let itemsPerRow: CGFloat = 3
   
   var photosColContainer: PhotosContainerViewController!
-  
-  var observing = false
     
     var webViewHeight : CGFloat = 300
   
+    var mapView : GMSMapView!
+    var zoomLevel: Float = 15.0
+    
+    
   public override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -66,6 +71,10 @@ public class FacilityDetailViewController: UITableViewController {
     cvActivities.dataSource = self
     
     cvActivities.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
+    
+    btnGetDirections.backgroundColor = UIColor.spotsGreen()
+    btnGetDirections.setTitle("Get Directions", for: .normal)
+    btnGetDirections.setTitleColor(UIColor.white, for: .normal)
     
     loadFacility()
     
@@ -151,8 +160,25 @@ public class FacilityDetailViewController: UITableViewController {
         self.photosColContainer.facilityDetail = self.facilityDetail
         }
       
-      
-      
+      // set the map and location
+        
+        let camera = GMSCameraPosition.camera(withLatitude: self.facilityDetail.Model.Latitude,
+                                              longitude: self.facilityDetail.Model.Longitude,
+                                              zoom: self.zoomLevel)
+        self.mapView = GMSMapView.map(withFrame: self.vLocation.bounds, camera: camera)
+        // mapView.settings.myLocationButton = true
+        self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.mapView.isMyLocationEnabled = false
+        
+        // Add the map to the view, hide it until we've got a location update.
+        self.vLocation.addSubview(self.mapView)
+        // mapView.isHidden = true
+        
+        let position = CLLocationCoordinate2D(latitude: self.facilityDetail.Model.Latitude, longitude: self.facilityDetail.Model.Longitude)
+        let marker = GMSMarker(position: position)
+        
+       marker.map = self.mapView
+        
       self.tableView.reloadData()
       
     })
@@ -195,6 +221,13 @@ public class FacilityDetailViewController: UITableViewController {
       }
     }
   }
+    
+    
+    @IBAction func btnGetDirectionsTapped(_ sender: Any) {
+        
+        
+    }
+    
   
   // MARK: uitableview
     
@@ -210,7 +243,7 @@ public class FacilityDetailViewController: UITableViewController {
                 })
                 
                 // UIApplication.shared.open(url, options: , completionHandler: { (bool) in
-                    
+                
                 // })
             }
         }
@@ -224,7 +257,7 @@ public class FacilityDetailViewController: UITableViewController {
         } else if indexPath.section == 3 {
             return 200
         } else if indexPath.section == 4 {
-            return 120
+            return 300
         } else {
             return UITableViewAutomaticDimension
         }
@@ -446,11 +479,6 @@ extension FacilityDetailViewController: UIWebViewDelegate {
         webViewHeight = wvDescription.scrollView.contentSize.height
         
         self.tableView.reloadData()
-        
-        if(!observing) {
-            // startObservingHeight()
-        }
-   
     
     }
   

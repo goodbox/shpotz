@@ -1024,12 +1024,37 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Location" id="SK8-te-DsK">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="lf3-aq-uQ3">
-                                        <rect key="frame" x="0.0" y="1188" width="375" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="lf3-aq-uQ3">
+                                        <rect key="frame" x="0.0" y="1188" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lf3-aq-uQ3" id="qsn-vg-rPq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9P-vv-bFM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEt-bW-yJt" customClass="ActivityIndicatorButton" customModule="Spots" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="240" width="375" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="MwO-ie-IAC"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Get Directions"/>
+                                                    <connections>
+                                                        <action selector="btnGetDirectionsTapped:" destination="Tp5-YW-l9x" eventType="touchUpInside" id="Bhw-pZ-YVE"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Y9P-vv-bFM" secondAttribute="trailing" id="0EI-iZ-rSb"/>
+                                                <constraint firstItem="QEt-bW-yJt" firstAttribute="leading" secondItem="qsn-vg-rPq" secondAttribute="leading" id="26h-RA-EWR"/>
+                                                <constraint firstItem="Y9P-vv-bFM" firstAttribute="leading" secondItem="qsn-vg-rPq" secondAttribute="leading" id="47a-mH-em0"/>
+                                                <constraint firstItem="Y9P-vv-bFM" firstAttribute="bottom" secondItem="QEt-bW-yJt" secondAttribute="top" id="T3D-SU-Njr"/>
+                                                <constraint firstItem="Y9P-vv-bFM" firstAttribute="top" secondItem="qsn-vg-rPq" secondAttribute="top" id="W3o-ZV-GgL"/>
+                                                <constraint firstAttribute="trailing" secondItem="QEt-bW-yJt" secondAttribute="trailing" id="Wg7-q5-Cd2"/>
+                                                <constraint firstAttribute="bottom" secondItem="QEt-bW-yJt" secondAttribute="bottom" id="tUM-Zv-M4n"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1041,6 +1066,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnGetDirections" destination="QEt-bW-yJt" id="IOR-Fa-qam"/>
                         <outlet property="cvActivities" destination="0OW-3N-Fdw" id="Hn9-dR-TyK"/>
                         <outlet property="imgHeaderPic" destination="pBS-iB-96u" id="mjx-r7-zb0"/>
                         <outlet property="lblFacilityName" destination="VKJ-4z-5JR" id="r3N-Qb-Nke"/>
@@ -1048,6 +1074,7 @@
                         <outlet property="photosContainer" destination="Agl-aL-fJg" id="n1Z-3G-lhL"/>
                         <outlet property="tvCellDescription" destination="xhp-0l-RxM" id="5X8-EI-aNJ"/>
                         <outlet property="vHeader" destination="gyc-Fk-9hZ" id="vLM-nv-Ys6"/>
+                        <outlet property="vLocation" destination="Y9P-vv-bFM" id="viw-y2-0De"/>
                         <outlet property="wvDescription" destination="SdQ-c9-aEb" id="877-IT-ET7"/>
                     </connections>
                 </tableViewController>
