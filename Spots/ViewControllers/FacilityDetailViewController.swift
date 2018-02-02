@@ -11,7 +11,9 @@ import UIKit
 import MaterialComponents
 import PopupDialog
 import AlamofireImage
-// import AXPhotoViewer
+import Serrata
+
+var MyObservationContext = 0
 
 public class FacilityDetailViewController: UITableViewController {
   
@@ -30,7 +32,8 @@ public class FacilityDetailViewController: UITableViewController {
   
   @IBOutlet weak var photosContainer: UIView!
   
-  
+    @IBOutlet weak var tvCellDescription: UITableViewCell!
+    
   var activityName: [String]! = []
   
   var facilityDetail: FacilityDetail!
@@ -46,10 +49,9 @@ public class FacilityDetailViewController: UITableViewController {
   
   var photosColContainer: PhotosContainerViewController!
   
-  // var urlSession = URLSession(configuration: .default)
-  // var content = [Int: Data]()
-  
-  // var photos: [Photo]! = []
+  var observing = false
+    
+    var webViewHeight : CGFloat = 300
   
   public override func viewDidLoad() {
     
@@ -57,9 +59,8 @@ public class FacilityDetailViewController: UITableViewController {
     
     api = ApiServiceController.sharedInstance
     
-    //wvDescription.delegate = self
-    
-    // self.tableView.isHidden = true
+    wvDescription.scrollView.isScrollEnabled = false
+    wvDescription.delegate = self
     
     cvActivities.delegate = self
     cvActivities.dataSource = self
@@ -148,15 +149,7 @@ public class FacilityDetailViewController: UITableViewController {
       
       if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
         self.photosColContainer.facilityDetail = self.facilityDetail
-        /*
-        for photo in self.facilityDetail.Media {
-          self.photos.append(Photo(attributedTitle: NSAttributedString(string: "The Flash Poster"),
-                                  attributedDescription: NSAttributedString(string: "Season 3"),
-                                  attributedCredit: NSAttributedString(string: "Vignette"),
-                                  url: URL(string: photo.Url)))
         }
- */
-      }
       
       
       
@@ -204,7 +197,21 @@ public class FacilityDetailViewController: UITableViewController {
   }
   
   // MARK: uitableview 
-  // override public func tableView(_ tableView: UITableView, titleForHeaderInSection section: )
+    override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            return (webViewHeight + 20)
+        } else if indexPath.section == 2 {
+            return 220
+        } else if indexPath.section == 3 {
+            return 200
+        } else if indexPath.section == 4 {
+            return 120
+        } else {
+            return UITableViewAutomaticDimension
+        }
+    }
+    
+    
   override public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
     if facilityDetail != nil {
@@ -287,67 +294,53 @@ public class FacilityDetailViewController: UITableViewController {
       return super.tableView(tableView, numberOfRowsInSection: section)
     }
   }
-  
 }
 
-/*
-// MARK: SwiftPhotoGalleryDataSource Methods
-extension FacilityDetailViewController: SwiftPhotoGalleryDataSource {
-  
-  public func numberOfImagesInGallery(gallery: SwiftPhotoGallery) -> Int {
-    return self.facilityDetail.Media.count
-  }
-  
-  public func imageInGallery(gallery: SwiftPhotoGallery, forIndex: Int) -> String? {
-    return self.facilityDetail.Media[forIndex].Url
-  }
-}
-
-// MARK: SwiftPhotoGalleryDelegate Methods
-extension FacilityDetailViewController: SwiftPhotoGalleryDelegate {
-  
-  public func galleryDidTapToClose(gallery: SwiftPhotoGallery) {
-    dismiss(animated: true, completion: nil)
-  }
-}
- */
 
 // MARK: DidTapPhotoDelegate
 extension FacilityDetailViewController: DidTapFacilityImageDelegate {
   
-  func didTapFacilityImage(_ sender: Any?, index: Int?) {
-    print("did tap photo")
+    func didTapFacilityImage(_ sender: Any?, index: Int?, imageCell: FacilityImageCell?) {
+        print("did tap photo")
     
-   // let dataSource = PhotosDataSource(photos: self.photos)
-    // let dataSource = PhotosDataSource(photos: self.photos, initialPhotoIndex: index!, prefetchBehavior: .aggressive)
-    //let photosViewController = PhotosViewController(dataSource: dataSource)
-    //self.present(photosViewController, animated: true)
+        let slideLeafs: [SlideLeaf] = facilityDetail.Media.enumerated().map { SlideLeaf(imageUrlString: $0.1.Url, title: "", caption: "") }
     
-    // performSegue(withIdentifier: "PhotoGallerySegue", sender: self)
+        let slideImageViewController = SlideLeafViewController.make(leafs: slideLeafs,
+                                                                startIndex: index!,
+                                                                fromImageView: imageCell?.imgPhoto!)
     
-    /*
-    let gallery = SwiftPhotoGallery(delegate: self, dataSource: self)
+        slideImageViewController.delegate = self
+        present(slideImageViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: SlideLeafViewControllerDelegate
+extension FacilityDetailViewController: SlideLeafViewControllerDelegate {
     
-    gallery.backgroundColor = UIColor.black
-    gallery.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.5)
-    gallery.currentPageIndicatorTintColor = UIColor(red: 0.0, green: 0.66, blue: 0.875, alpha: 1.0)
-    gallery.hidePageControl = false
-    gallery.modalPresentationStyle = .overCurrentContext
-    gallery.currentPage = index!
-    present(gallery, animated: true, completion: nil)
-    */
-    /*
-    // 1. create SKPhoto Array from UIImage
-    var images = [SKPhoto]()
-    let photo = SKPhoto.photoWithImage(SpotsIcons.camping)// add some UIImage
-    images.append(photo)
+    public func tapImageDetailView(slideLeaf: SlideLeaf, pageIndex: Int) {
+        print("tapImageDetailView")
+        print(pageIndex)
+        print(slideLeaf)
+        
+        //let viewController = DetailViewController.make(detailTitle: slideLeaf.title)
+        //self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
-    // 2. create PhotoBrowser Instance, and present from your viewController.
-    let browser = SKPhotoBrowser(photos: images)
-    browser.initializePageIndex(0)
-    presentViewController(browser, animated: true, completion: {})
-    */
-  }
+    public func longPressImageView(slideLeafViewController: SlideLeafViewController, slideLeaf: SlideLeaf, pageIndex: Int) {
+        print("longPressImageView")
+        print(slideLeafViewController)
+        print(slideLeaf)
+        print(pageIndex)
+    }
+    
+    public func slideLeafViewControllerDismissed(slideLeaf: SlideLeaf, pageIndex: Int) {
+        print("slideLeafViewControllerDismissed")
+        print(slideLeaf)
+        print(pageIndex)
+        
+        //let indexPath = IndexPath(row: pageIndex, section: 0)
+        //self.collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
+    }
 }
 
 // MARK: UICollectionViewDataSource
@@ -403,7 +396,7 @@ extension FacilityDetailViewController : UICollectionViewDelegateFlowLayout {
                              sizeForItemAt indexPath: IndexPath) -> CGSize {
     let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
     let availableWidth = view.frame.width - paddingSpace
-    let widthPerItem = availableWidth / itemsPerRow
+    let widthPerItem = (availableWidth / itemsPerRow)
     
     return CGSize(width: widthPerItem, height: widthPerItem + 20)
   }
@@ -420,65 +413,29 @@ extension FacilityDetailViewController : UICollectionViewDelegateFlowLayout {
     return sectionInsets.left
   }
 
-  /*
-  // MARK: - PhotosViewControllerDelegate
-  public func photosViewController(_ photosViewController: PhotosViewController,
-                            didNavigateTo photo: PhotoProtocol,
-                            at index: Int) {
-    
-    let indexPath = IndexPath(row: index, section: 0)
-    
-    // ideally, _your_ URL cache will be large enough to the point where this isn't necessary
-    // (or, you're using a predefined integration that has a shared cache with your codebase)
-    self.loadContent(at: indexPath, completion: nil)
-  }
-  
-  // MARK: - Loading
-  func loadContent(at indexPath: IndexPath, completion: ((_ data: Data) -> Void)?) {
-    if let data = self.content[indexPath.row] {
-      completion?(data)
-      return
-    }
-    
-    self.urlSession.dataTask(with: self.photos[indexPath.row].url!) { [weak self] (data, response, error) in
-      guard let uData = data else {
-        return
-      }
-      
-      self?.content[indexPath.row] = uData
-      completion?(uData)
-      }.resume()
-  }
-*/
-
 }
 
 
 
 
 // MARK: UIWebViewDelegate
-/*
+
 extension FacilityDetailViewController: UIWebViewDelegate {
   
-  func webViewDidFinishLoad(webView: UIWebView) {
+    public func webViewDidFinishLoad(_ webView: UIWebView) {
+        
+        webViewHeight = wvDescription.scrollView.contentSize.height
+        
+        self.tableView.reloadData()
+        
+        if(!observing) {
+            // startObservingHeight()
+        }
+   
     
-    var frame = self.wvDescription.frame;
-    frame.size.height = 1;
-    self.wvDescription.frame = frame;
-    
-    // [aWebView sizeThatFits:CGSizeZero];
-    let fittingSize = self.wvDescription.sizeThatFits(CGSize.zero)
-    
-    frame.size = fittingSize;
-    self.wvDescription.frame = frame;
-    
-    // NSLog(@"size: %f, %f", fittingSize.width, fittingSize.height);
-    
-  }
+    }
   
 }
-
- */
 
 
 

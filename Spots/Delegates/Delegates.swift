@@ -23,7 +23,7 @@ protocol DidSelectMapMarkerDelegate {
 
 
 protocol DidTapFacilityImageDelegate {
-  func didTapFacilityImage(_ sender: Any?, index: Int?)
+    func didTapFacilityImage(_ sender: Any?, index: Int?, imageCell: FacilityImageCell?)
 }
 
 protocol DidCancelNoNetworkSaveDelegate {

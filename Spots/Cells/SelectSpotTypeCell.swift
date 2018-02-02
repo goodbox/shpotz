@@ -21,7 +21,7 @@ public class SelectSpotTypeCell: UICollectionViewCell {
     
     lblSpotType.text = spotType
     
-    imgSpotType.backgroundColor = MDCPalette.grey.tint300
+    imgSpotType.backgroundColor = Color.grey.lighten3
     
     imgSpotType.layer.cornerRadius = imgSpotType.layer.frame.width/2
     
@@ -31,33 +31,33 @@ public class SelectSpotTypeCell: UICollectionViewCell {
     
     switch spotType {
     case "Diving":
-        imgSpotIcon.image = SpotIcons.diving//? .tint(with: MDCPalette.grey.tint600)
+        imgSpotIcon.image = SpotIcons.diving?.tint(with: Color.grey.darken3)
     case "Camping":
-      imgSpotIcon.image = SpotIcons.camping//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.camping?.tint(with: Color.grey.darken3)
     case "Fishing":
-      imgSpotIcon.image = SpotIcons.fishing//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.fishing?.tint(with: Color.grey.darken3)
     case "Hiking":
-      imgSpotIcon.image = SpotIcons.hiking//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.hiking?.tint(with: Color.grey.darken3)
     case "Rock Climbing":
-      imgSpotIcon.image = SpotIcons.rockclimbing//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.rockclimbing?.tint(with: Color.grey.darken3)
     case "Mtn Biking":
-      imgSpotIcon.image = SpotIcons.mtnbiking//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.mtnbiking?.tint(with: Color.grey.darken3)
     case "Ice Climbing":
-      imgSpotIcon.image = SpotIcons.iceclimbing//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.iceclimbing?.tint(with: Color.grey.darken3)
     case "Rafting":
-      imgSpotIcon.image = SpotIcons.rafting//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.rafting?.tint(with: Color.grey.darken3)
     case "Canoeing":
-      imgSpotIcon.image = SpotIcons.canoeing//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.canoeing?.tint(with: Color.grey.darken3)
     case "Surfing":
-      imgSpotIcon.image = SpotIcons.surfing//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.surfing?.tint(with: Color.grey.darken3)
     case "Swimming":
-      imgSpotIcon.image = SpotIcons.swimming//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.swimming?.tint(with: Color.grey.darken3)
     case "Hot Springs":
-      imgSpotIcon.image = SpotIcons.hottub//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.hottub?.tint(with: Color.grey.darken3)
     case "Beach":
-      imgSpotIcon.image = SpotIcons.beach//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.beach?.tint(with: Color.grey.darken3)
     default:
-      imgSpotIcon.image = SpotIcons.other//?.tint(with: MDCPalette.grey.tint600)
+      imgSpotIcon.image = SpotIcons.other?.tint(with: Color.grey.darken3)
     }
   }
   

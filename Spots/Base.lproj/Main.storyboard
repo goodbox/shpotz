@@ -1046,6 +1046,7 @@
                         <outlet property="lblFacilityName" destination="VKJ-4z-5JR" id="r3N-Qb-Nke"/>
                         <outlet property="lblFacilityPhone" destination="nZF-SM-dHe" id="UQb-hA-WO1"/>
                         <outlet property="photosContainer" destination="Agl-aL-fJg" id="n1Z-3G-lhL"/>
+                        <outlet property="tvCellDescription" destination="xhp-0l-RxM" id="5X8-EI-aNJ"/>
                         <outlet property="vHeader" destination="gyc-Fk-9hZ" id="vLM-nv-Ys6"/>
                         <outlet property="wvDescription" destination="SdQ-c9-aEb" id="877-IT-ET7"/>
                     </connections>

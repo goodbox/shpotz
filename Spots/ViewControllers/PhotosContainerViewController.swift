@@ -103,7 +103,11 @@ extension PhotosContainerViewController : UICollectionViewDelegateFlowLayout {
     
     print("did select photo : \(indexPath.row)")
     
-    self.didTapPhotoDelegate.didTapFacilityImage(self, index: indexPath.row)
+    guard let selectedCell = collectionView.cellForItem(at: indexPath) as? FacilityImageCell else {
+        return
+    }
+    
+    self.didTapPhotoDelegate.didTapFacilityImage(self, index: indexPath.row, imageCell: selectedCell)
     
   }
   
@@ -112,7 +116,7 @@ extension PhotosContainerViewController : UICollectionViewDelegateFlowLayout {
                              sizeForItemAt indexPath: IndexPath) -> CGSize {
     let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
     let availableWidth = view.frame.width - paddingSpace
-    let widthPerItem = availableWidth / itemsPerRow
+    let widthPerItem = (availableWidth / itemsPerRow)
     
     return CGSize(width: widthPerItem, height: widthPerItem + 20)
   }

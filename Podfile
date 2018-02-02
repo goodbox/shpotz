@@ -58,6 +58,8 @@ target 'Spots' do
   #reachability
   pod 'ReachabilitySwift'
 
+    pod 'Serrata'
+
   target 'SpotsTests' do
     inherit! :search_paths
     # Pods for testing
