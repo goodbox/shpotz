@@ -196,7 +196,26 @@ public class FacilityDetailViewController: UITableViewController {
     }
   }
   
-  // MARK: uitableview 
+  // MARK: uitableview
+    
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 {
+            // make phone call
+            if let url = URL(string: "tel://\(self.facilityDetail.Model.Phone)"), UIApplication.shared.canOpenURL(url) {
+                
+                UIApplication.shared.open(url, options: [:], completionHandler: { (bool) in
+                    
+                })
+                
+                // UIApplication.shared.open(url, options: , completionHandler: { (bool) in
+                    
+                // })
+            }
+        }
+    }
+    
     override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
             return (webViewHeight + 20)
