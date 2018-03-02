@@ -227,27 +227,45 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Spot Type" id="G3M-60-1Yf">
+                            <tableViewSection headerTitle="Activities" id="G3M-60-1Yf">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="yee-5p-cZI">
-                                        <rect key="frame" x="0.0" y="531.5" width="383" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="280" id="yee-5p-cZI">
+                                        <rect key="frame" x="0.0" y="531.5" width="383" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yee-5p-cZI" id="uIK-jC-sxF">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="279.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Spot Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhz-4N-ndE">
-                                                    <rect key="frame" x="18" y="11" width="357" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eo6-xD-6kP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="383" height="220"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="220" id="eXM-ET-04t"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4iE-eh-0JZ">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells/>
+                                                </collectionView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcP-eK-WcD">
+                                                    <rect key="frame" x="0.0" y="220" width="383" height="59.5"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="btnAddActivityTapped:" destination="rvu-kt-jEt" eventType="touchUpInside" id="d4X-LY-HHs"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Dhz-4N-ndE" firstAttribute="leading" secondItem="uIK-jC-sxF" secondAttribute="leadingMargin" constant="10" id="8Og-s7-N6s"/>
-                                                <constraint firstItem="Dhz-4N-ndE" firstAttribute="top" secondItem="uIK-jC-sxF" secondAttribute="topMargin" id="LoC-oH-ZjF"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Dhz-4N-ndE" secondAttribute="bottom" id="Moe-Ae-yZr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Dhz-4N-ndE" secondAttribute="trailing" id="oaa-qm-FH6"/>
+                                                <constraint firstItem="eo6-xD-6kP" firstAttribute="leading" secondItem="uIK-jC-sxF" secondAttribute="leading" id="50I-pn-KSb"/>
+                                                <constraint firstAttribute="trailing" secondItem="HcP-eK-WcD" secondAttribute="trailing" id="9QB-tu-hXn"/>
+                                                <constraint firstItem="eo6-xD-6kP" firstAttribute="top" secondItem="uIK-jC-sxF" secondAttribute="top" id="bzK-ss-3lY"/>
+                                                <constraint firstItem="HcP-eK-WcD" firstAttribute="leading" secondItem="uIK-jC-sxF" secondAttribute="leading" id="eku-eW-WUI"/>
+                                                <constraint firstAttribute="trailing" secondItem="eo6-xD-6kP" secondAttribute="trailing" id="fMF-QM-5l6"/>
+                                                <constraint firstItem="HcP-eK-WcD" firstAttribute="top" secondItem="eo6-xD-6kP" secondAttribute="bottom" id="jA4-hX-jmy"/>
+                                                <constraint firstAttribute="bottom" secondItem="HcP-eK-WcD" secondAttribute="bottom" id="wIt-QZ-Dwv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -256,7 +274,7 @@
                             <tableViewSection headerTitle="Privacy" id="qdj-p3-yjJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="68n-3D-vOK">
-                                        <rect key="frame" x="0.0" y="631.5" width="383" height="44"/>
+                                        <rect key="frame" x="0.0" y="867.5" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="68n-3D-vOK" id="gZz-dH-EdA">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
@@ -291,7 +309,7 @@
                             <tableViewSection headerTitle="Add Up To 3 Photos" id="If8-bR-VbW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="wlI-lh-UdB">
-                                        <rect key="frame" x="0.0" y="731.5" width="383" height="100"/>
+                                        <rect key="frame" x="0.0" y="967.5" width="383" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wlI-lh-UdB" id="tfN-W4-cup">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="99.5"/>
@@ -393,7 +411,7 @@
                             <tableViewSection headerTitle="Share" id="Scu-o0-i7r">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="cl0-Fq-rXU">
-                                        <rect key="frame" x="0.0" y="887.5" width="383" height="44"/>
+                                        <rect key="frame" x="0.0" y="1123.5" width="383" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cl0-Fq-rXU" id="wjf-aF-L0W">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
@@ -430,16 +448,17 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnAddActivity" destination="HcP-eK-WcD" id="wzC-BN-Ei9"/>
                         <outlet property="btnAddPhoto" destination="hek-WY-rMe" id="ufY-ei-MHJ"/>
                         <outlet property="btnFirstDelete" destination="rm2-wW-gef" id="kmF-Zm-94E"/>
                         <outlet property="btnSecondDelete" destination="sAp-gH-Sum" id="siw-FJ-1oi"/>
                         <outlet property="btnThirdDelete" destination="bRz-ov-iWu" id="KwF-S3-Leh"/>
+                        <outlet property="cvActivities" destination="eo6-xD-6kP" id="F7k-eG-kjB"/>
                         <outlet property="imgFirst" destination="Fwk-mN-sOT" id="yjn-rD-Mwi"/>
                         <outlet property="imgSecond" destination="SMB-AG-dRx" id="PEM-Sb-M5r"/>
                         <outlet property="imgSpotPrivacy" destination="5ew-wA-RP5" id="71v-uG-wI3"/>
                         <outlet property="imgThird" destination="0dj-9Z-ai5" id="m11-aN-Gez"/>
                         <outlet property="lblSpotPrivacy" destination="tDf-d0-kJj" id="1eW-Oz-aZV"/>
-                        <outlet property="lblSpotType" destination="Dhz-4N-ndE" id="wdX-1E-baE"/>
                         <outlet property="svLoading" destination="pDh-eS-Vlc" id="3O1-UA-EU1"/>
                         <outlet property="swShareToFacebook" destination="jsd-6r-D0p" id="ONg-ty-2f3"/>
                         <outlet property="txtDescription" destination="sK9-qP-r9j" id="m1i-jy-uS9"/>
@@ -452,7 +471,7 @@
             </objects>
             <point key="canvasLocation" x="5129" y="-64"/>
         </scene>
-        <!--Select Type-->
+        <!--Select Activities-->
         <scene sceneID="6MV-Qd-Ppu">
             <objects>
                 <viewController storyboardIdentifier="SelectSpotTypeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="83W-xt-kwo" customClass="SelectSpotTypeViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
@@ -484,10 +503,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="11U-EK-cyc" secondAttribute="trailing" constant="-20" id="rze-ww-5Z2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Type" id="xdZ-qa-6jz">
+                    <navigationItem key="navigationItem" title="Select Activities" id="xdZ-qa-6jz">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="ebI-Zq-3hD">
                             <connections>
                                 <action selector="btnCancelTapped:" destination="83W-xt-kwo" id="pDm-Nm-dDK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="XAe-I0-rfZ">
+                            <connections>
+                                <action selector="bntDoneTapped:" destination="83W-xt-kwo" id="CuF-IX-U9z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -880,6 +904,27 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-iB-96u" customClass="UIGradientImageView" customModule="Spots" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgK-c3-L3k">
+                                    <rect key="frame" x="10" y="10" width="355" height="30"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-NM-0rE" customClass="RoundedBGLabel" customModule="Spots" customModuleProvider="target">
+                                            <rect key="frame" x="313" y="0.0" width="42" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="E9l-Z9-Gx0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="9BZ-NM-0rE" secondAttribute="trailing" id="1WJ-Wh-LvY"/>
+                                        <constraint firstItem="9BZ-NM-0rE" firstAttribute="top" secondItem="MgK-c3-L3k" secondAttribute="top" id="Y9l-dr-CaF"/>
+                                        <constraint firstAttribute="height" constant="30" id="tcf-iU-gdz"/>
+                                        <constraint firstAttribute="bottom" secondItem="9BZ-NM-0rE" secondAttribute="bottom" id="y03-eA-bkf"/>
+                                    </constraints>
+                                </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKJ-4z-5JR" customClass="FXLabel">
                                     <rect key="frame" x="10" y="110" width="355" height="80"/>
                                     <constraints>
@@ -895,7 +940,10 @@
                                 <constraint firstAttribute="bottom" secondItem="pBS-iB-96u" secondAttribute="bottom" id="AFm-lY-v4Q"/>
                                 <constraint firstItem="VKJ-4z-5JR" firstAttribute="leading" secondItem="gyc-Fk-9hZ" secondAttribute="leading" constant="10" id="I6e-IK-6eS"/>
                                 <constraint firstAttribute="bottom" secondItem="VKJ-4z-5JR" secondAttribute="bottom" constant="10" id="K8P-zI-K8d"/>
+                                <constraint firstItem="MgK-c3-L3k" firstAttribute="leading" secondItem="gyc-Fk-9hZ" secondAttribute="leading" constant="10" id="Nyb-Nu-ioS"/>
                                 <constraint firstAttribute="trailing" secondItem="pBS-iB-96u" secondAttribute="trailing" id="RLe-yv-Jqs"/>
+                                <constraint firstItem="MgK-c3-L3k" firstAttribute="top" secondItem="gyc-Fk-9hZ" secondAttribute="top" constant="10" id="XLn-k9-fy6"/>
+                                <constraint firstAttribute="trailing" secondItem="MgK-c3-L3k" secondAttribute="trailing" constant="10" id="aqp-rh-1jW"/>
                                 <constraint firstAttribute="trailing" secondItem="VKJ-4z-5JR" secondAttribute="trailing" constant="10" id="s06-dG-bAM"/>
                                 <constraint firstItem="pBS-iB-96u" firstAttribute="top" secondItem="gyc-Fk-9hZ" secondAttribute="top" id="tbg-js-JNh"/>
                             </constraints>
@@ -1071,6 +1119,7 @@
                         <outlet property="imgHeaderPic" destination="pBS-iB-96u" id="mjx-r7-zb0"/>
                         <outlet property="lblFacilityName" destination="VKJ-4z-5JR" id="r3N-Qb-Nke"/>
                         <outlet property="lblFacilityPhone" destination="nZF-SM-dHe" id="UQb-hA-WO1"/>
+                        <outlet property="lblReserved" destination="9BZ-NM-0rE" id="lx6-Iz-Tl8"/>
                         <outlet property="photosContainer" destination="Agl-aL-fJg" id="n1Z-3G-lhL"/>
                         <outlet property="tvCellDescription" destination="xhp-0l-RxM" id="5X8-EI-aNJ"/>
                         <outlet property="vHeader" destination="gyc-Fk-9hZ" id="vLM-nv-Ys6"/>

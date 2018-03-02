@@ -25,6 +25,8 @@ class PostViewController: UIViewController {
   var postTableView : PostTableViewController!
   
   var spotModel: SpotsModel!
+    
+    var selectedSpotTypes : [SpotTypeModel] = []
   
   open override func viewDidLoad() {
     super.viewDidLoad()
@@ -82,13 +84,12 @@ class PostViewController: UIViewController {
       showValidationPopup(theTitle: "Description is Required", theMessage: "Please enter a description for this spot.", theImage: uiImage)
       
       
-    } else if postTableView.spotType == "" {
+    } else if postTableView.selectedSpotTypes.count == 0 {
       
       let uiImage = UIImage(named: "ic_error_red")
       
-      showValidationPopup(theTitle: "Spot Type is Required", theMessage: "Please select a spot type for this spot.", theImage: uiImage)
+      showValidationPopup(theTitle: "Activities are Required", theMessage: "Please select at least one activity for this spot.", theImage: uiImage)
 
-      
     } else if postTableView.spotVisibility == SpotsVisibility.none {
       
       let uiImage = UIImage(named: "ic_error_red")
@@ -124,9 +125,11 @@ class PostViewController: UIViewController {
     
     spotModel.Long = postTableView.currentLocation?.coordinate.longitude
     
-    spotModel.SpotTypeName = postTableView.lblSpotType.text
+    spotModel.selectedSpotTypes = postTableView.selectedSpotTypes
     
-    spotModel.SpotType = SpotsType(rawValue: SpotsType.getSpotTypeFromSpotName(spotName: postTableView.lblSpotType.text!))
+    // spotModel.SpotTypeName = postTableView.lblSpotType.text
+    
+    // spotModel.SpotType = SpotsType(rawValue: SpotsType.getSpotTypeFromSpotName(spotName: postTableView.lblSpotType.text!))
     
     spotModel.Visibility = postTableView.spotVisibility
     
@@ -139,6 +142,8 @@ class PostViewController: UIViewController {
         if(success) {
           
           self.showSuccessPopupDialog()
+            
+            // now upload images to amazon in the background
           
         } else {
           

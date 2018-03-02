@@ -37,7 +37,11 @@ public class FacilityDetailViewController: UITableViewController {
     
     @IBOutlet weak var btnGetDirections: UIButton!
     
-  var activityName: [String]! = []
+    @IBOutlet weak var lblReserved: UILabel!
+    
+    
+    
+    var activityName: [String]! = []
   
   var facilityDetail: FacilityDetail!
   
@@ -79,6 +83,23 @@ public class FacilityDetailViewController: UITableViewController {
     loadFacility()
     
   }
+    
+    func setReserved() {
+        
+        self.lblReserved.text = "Reserved Camping"
+        
+        self.lblReserved.layer.backgroundColor = UIColor.totesBusinessMedia().cgColor
+        
+        self.lblReserved.textColor = UIColor.white
+        
+        // self.lblReserved.font = UIFont.totesChallengeCategory()
+        
+        (self.lblReserved as! RoundedBGLabel).textInsets = UIEdgeInsets(top:4, left: 8, bottom: 4, right: 8)
+        
+        self.lblReserved.layer.cornerRadius = 5
+        
+        self.lblReserved.sizeToFit()
+    }
   
   override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
@@ -142,6 +163,8 @@ public class FacilityDetailViewController: UITableViewController {
       if !self.facilityDetail.Model.Phone.isEmpty {
         self.lblFacilityPhone.text = self.facilityDetail.Model.Phone
       }
+        
+        self.setReserved()
       
       self.wvDescription.loadHTMLString(self.facilityDetail.Model.Description, baseURL: nil)
       
@@ -169,6 +192,8 @@ public class FacilityDetailViewController: UITableViewController {
         // mapView.settings.myLocationButton = true
         self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.mapView.isMyLocationEnabled = false
+        self.mapView.settings.scrollGestures = false
+        self.mapView.settings.zoomGestures = false
         
         // Add the map to the view, hide it until we've got a location update.
         self.vLocation.addSubview(self.mapView)
@@ -185,8 +210,10 @@ public class FacilityDetailViewController: UITableViewController {
   }
   
   func setActivities() {
-    
-    for act in self.facilityDetail.Activities as [FacilityActivity] {
+    let sortedActivities = self.facilityDetail.Activities.sorted { (f1, f2) -> Bool in
+        f1.Name < f2.Name
+    }
+    for act in sortedActivities as [FacilityActivity] {
       switch act.Name {
       case "CAMPING":
         
@@ -225,7 +252,32 @@ public class FacilityDetailViewController: UITableViewController {
     
     @IBAction func btnGetDirectionsTapped(_ sender: Any) {
         
+         let alert = UIAlertController(title: "Selection", message: "Select Navigation App", preferredStyle: .actionSheet)
         
+        let googleUrl = URL(string:"comgooglemaps://")
+        
+        if (UIApplication.shared.canOpenURL(googleUrl!)) {
+            alert.addAction(UIAlertAction(title: "Google Maps", style: .default, handler: { (action) in
+                
+                let gUrl = URL(string: "comgooglemaps://?saddr=&daddr=\(self.facilityDetail.Model.Latitude),\(self.facilityDetail.Model.Longitude)&directionsmode=driving")
+                
+                UIApplication.shared.open(gUrl!, options: [:], completionHandler: nil)
+                
+                
+            }))
+        }
+        
+        alert.addAction(UIAlertAction(title: "Apple Maps", style: .default, handler: { (action) in
+            let gUrl = URL(string: "http://maps.apple.com/?daddr=\(self.facilityDetail.Model.Latitude),\(self.facilityDetail.Model.Longitude)")
+            
+            UIApplication.shared.open(gUrl!, options: [:], completionHandler: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
   
@@ -410,7 +462,7 @@ extension FacilityDetailViewController: UICollectionViewDataSource {
     
     
     
-    cell.configure(self.activityName[indexPath.row])
+    cell.configure(SpotTypeModel(name: self.activityName[indexPath.row]))
     // Configure the cell
     return cell
     

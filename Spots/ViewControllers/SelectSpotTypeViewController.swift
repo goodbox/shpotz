@@ -13,31 +13,100 @@ import PopupDialog
 
 public class SelectSpotTypeViewController : UIViewController {
   
-  @IBOutlet weak var collectionView: UICollectionView!
-  @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
-  
-  fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
-  fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-  fileprivate let itemsPerRow: CGFloat = 3
-  fileprivate let spotTypes: [String] = ["Camping", "Fishing", "Hiking", "Hot Springs",  "Mtn Biking", "Swimming", "Surfing",
-                                         "Rafting", "Canoeing",  "Diving", "Rock Climbing", "Ice Climbing", "Beach", "Other"];
-  
-  var spotTypeDelegate: DidSelectSpotTypeDelegate!
-  
-  public override func viewDidLoad() {
-    super.viewDidLoad()
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     
-    collectionView.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
+    fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    fileprivate let itemsPerRow: CGFloat = 3
+    fileprivate var spotTypes: [SpotTypeModel] = [SpotTypeModel(name: "Camping"),
+                                               SpotTypeModel(name: "Fishing"),
+                                               SpotTypeModel(name: "Hiking"),
+                                               SpotTypeModel(name: "Hot Springs"),
+                                               SpotTypeModel(name: "Mtn Biking"),
+                                               SpotTypeModel(name: "Surfing"),
+                                               SpotTypeModel(name: "Rafting"),
+                                               SpotTypeModel(name: "Canoeing"),
+                                               SpotTypeModel(name: "Diving"),
+                                               SpotTypeModel(name: "Rock Climbing"),
+                                               SpotTypeModel(name: "Ice Climbing"),
+                                               SpotTypeModel(name: "Beach"),
+                                               SpotTypeModel(name: "Add Custom")]
     
-    collectionView.dataSource = self
-    
-    collectionView.delegate = self
-    
-  }
+    var selectedSpotTypes: [SpotTypeModel] = []
   
-  @IBAction func btnCancelTapped(_ sender: Any) {
-    self.dismiss(animated: true, completion: nil)
-  }
+    var spotTypeDelegate: DidSelectSpotTypesDelegate!
+  
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        collectionView.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
+    
+        collectionView.dataSource = self
+    
+        collectionView.delegate = self
+    
+    }
+    
+    func setSelectedSpotTypes() {
+        
+    }
+  
+    @IBAction func btnCancelTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func bntDoneTapped(_ sender: Any) {
+        selectedSpotTypes = []
+        
+        for model in spotTypes {
+            
+            if model.IsSelected {
+                selectedSpotTypes.append(model)
+            }
+        }
+        
+        if selectedSpotTypes.count == 0 {
+            
+            let uiImage = UIImage(named: "ic_error_red")
+            
+            showValidationPopup(theTitle: "Activity is Required", theMessage: "Please select at least one activity for this spot.", theImage: uiImage)
+            
+        } else {
+            
+            dismiss(animated: true, completion: nil)
+            
+            spotTypeDelegate.didSelectSpotType(_sender: self, spotTypes: selectedSpotTypes)
+        }
+    }
+    
+    func showValidationPopup(theTitle: String?, theMessage: String?, theImage: UIImage?) {
+        
+        
+        let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
+        
+        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) {
+            
+            print("validation popup dismissed")
+            
+        }
+        
+        let buttonOne = DefaultButton(title: "Dismiss") {
+            
+        }
+        
+        popup.addButton(buttonOne)
+        
+        self.present(popup, animated: true, completion: nil)
+        
+        let vc = popup.viewController as! ValidationPopupViewController
+        
+        vc.imgValidationImage.image = theImage
+        
+        vc.lblValidationTitle.text = theTitle
+        
+        vc.lblValidationMessage.text = theMessage
+    }
 }
 
 
@@ -45,42 +114,53 @@ public class SelectSpotTypeViewController : UIViewController {
 // MARK: UICollectionViewDataSource
 extension SelectSpotTypeViewController: UICollectionViewDataSource {
   
-  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return spotTypes.count
-  }
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return spotTypes.count
+    }
   
-  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
                                                   for: indexPath) as! SelectSpotTypeCell
-    cell.configure(spotTypes[indexPath.row])
-    // Configure the cell
-    return cell
-    
-  }
+        cell.configure(spotTypes[indexPath.row])
+        // Configure the cell
+        return cell
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
-  
-  public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
     
-    let cell = collectionView.cellForItem(at: indexPath)
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-    cell?.backgroundColor = MDCPalette.grey.tint400
-  }
-  
-  public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-    
-    let cell = collectionView.cellForItem(at: indexPath)
-    
-    cell?.backgroundColor = UIColor.clear
-    
-  }
-  
-  public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-    collectionView.deselectItem(at: indexPath, animated: false)
+        collectionView.deselectItem(at: indexPath, animated: false)
+        
+        if indexPath.row == spotTypes.count - 1 {
+            // show dialog to add custom activity
+            let ac = UIAlertController(title: "Add Activity", message: nil, preferredStyle: .alert)
+            ac.addTextField()
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
+                let answer = ac.textFields![0]
+                // do something interesting with "answer" here
+                self.spotTypes.insert(SpotTypeModel(type: SpotsType.other, name: answer.text!, isSelected: true), at: self.spotTypes.count - 1)
+                
+                self.collectionView.insertItems(at: [IndexPath(row: self.spotTypes.count - 2, section: 0)])
+            }
+            
+            ac.addAction(submitAction)
+            
+            present(ac, animated: true)
+            
+        } else {
+            spotTypes[indexPath.row].IsSelected = !spotTypes[indexPath.row].IsSelected
+            
+            let cell = collectionView.cellForItem(at: indexPath) as! SelectSpotTypeCell
+            
+            cell.configure(spotTypes[indexPath.row])
+        }
+    }
+    /*
     
     var spotName = spotTypes[indexPath.row]
     
@@ -128,27 +208,28 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
     
       spotTypeDelegate.didSelectSpotType(_sender: self, spotType: spotTypes[indexPath.row], spotName: spotName)
     }
-  }
+ 
+ */
   
-  public func collectionView(_ collectionView: UICollectionView,
+    public func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-    let availableWidth = view.frame.width - paddingSpace
-    let widthPerItem = availableWidth / itemsPerRow
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
     
-    return CGSize(width: widthPerItem, height: widthPerItem + 20)
-  }
+        return CGSize(width: widthPerItem, height: widthPerItem + 20)
+    }
   
-  public func collectionView(_ collectionView: UICollectionView,
+    public func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
-    return sectionInsets
-  }
+        return sectionInsets
+    }
   
-  public func collectionView(_ collectionView: UICollectionView,
+    public func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return sectionInsets.left
-  }
+        return sectionInsets.left
+    }
 }

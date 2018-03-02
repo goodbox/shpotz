@@ -28,15 +28,19 @@ public class PostTableViewController : UITableViewController {
   @IBOutlet weak var imgThird: UIImageView!
   @IBOutlet weak var btnThirdDelete: UIButton!
   @IBOutlet weak var swShareToFacebook: UISwitch!
-  @IBOutlet weak var lblSpotType: UILabel!
+  
   @IBOutlet weak var lblSpotPrivacy: UILabel!
   @IBOutlet weak var imgSpotPrivacy: UIImageView!
-  
-  var firstImage: UIImage!
+    
+    
+    @IBOutlet weak var cvActivities: UICollectionView!
+    
+    @IBOutlet weak var btnAddActivity: UIButton!
+    var firstImage: UIImage!
   var secondImage: UIImage!
   var thirdImage: UIImage!
   
-  var spotType: String!
+    var selectedSpotTypes: [SpotTypeModel] = []
   
   var spotVisibility: SpotsVisibility! = SpotsVisibility.none
   
@@ -56,8 +60,6 @@ public class PostTableViewController : UITableViewController {
     firstImage = nil
     secondImage = nil
     thirdImage = nil
-   
-    spotType = ""
     
     txtName.delegate = self
     
@@ -121,10 +123,14 @@ public class PostTableViewController : UITableViewController {
     
   }
   
-  override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @IBAction func btnAddActivityTapped(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "SelectSpotTypeSegue", sender: self)
+    }
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     if indexPath.section == 2 {
-      self.performSegue(withIdentifier: "SelectSpotTypeSegue", sender: self)
+      
     } else if indexPath.section == 3 {
       self.present(self.privacyActionController, animated: true, completion: nil)
     }
@@ -137,7 +143,7 @@ public class PostTableViewController : UITableViewController {
       
       let destinationVC = segue.destination as! UINavigationController
       let selectSpotTypeVC = destinationVC.topViewController as! SelectSpotTypeViewController
-      
+      selectSpotTypeVC.selectedSpotTypes = selectedSpotTypes
       selectSpotTypeVC.spotTypeDelegate = self
     }
   }
@@ -208,15 +214,12 @@ public class PostTableViewController : UITableViewController {
 }
 
 // MARK: SpotTypeDelegate
-extension PostTableViewController : DidSelectSpotTypeDelegate {
+extension PostTableViewController : DidSelectSpotTypesDelegate {
   
-  public func didSelectSpotType(_sender: Any?, spotType: String?, spotName: String?) {
-    
-    lblSpotType.text = spotName!
-    
-    self.spotType = spotType!
-  }
-  
+    public func didSelectSpotType(_sender: Any?, spotTypes: [SpotTypeModel]) {
+        
+        selectedSpotTypes = spotTypes
+    }
 }
 
 

@@ -53,4 +53,5 @@ public struct SpotIcons {
   
   public static let arrow_right = SpotIcons.icon("ic_arrow_right_white")
   
+    public static let add_button = SpotIcons.icon("ic_add_white")
 }

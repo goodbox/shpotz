@@ -12,8 +12,8 @@ protocol DidTapAddPhotoButtonDelegate {
   func didTapAddPhoto(_ sender: Any?, numToAdd: Int?)
 }
 
-protocol DidSelectSpotTypeDelegate {
-  func didSelectSpotType(_sender: Any?, spotType: String?, spotName: String?)
+protocol DidSelectSpotTypesDelegate {
+  func didSelectSpotType(_sender: Any?, spotTypes: [SpotTypeModel])
 }
 
 

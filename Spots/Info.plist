@@ -43,6 +43,7 @@
 	<string>spots_dev</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>comgooglemaps</string>
 		<string>fbauth2</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>

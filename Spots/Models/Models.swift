@@ -9,6 +9,9 @@
 import Foundation
 import SwiftyJSON
 
+import Realm
+import RealmSwift
+
 enum SpotsSystemType: Int {
   
   case unknown = 0
@@ -21,73 +24,77 @@ enum SpotsSystemType: Int {
 
 // MARK: Enums : SpotType
 enum SpotsType : Int {
-  case all = 0
-  case camping = 1
-  case fishing = 2
-  case hiking = 3
-  case rockclimbing = 4
-  case mtnbiking = 5
-  case iceclimbing = 6
-  case canoeing = 7
-  case surfing = 8
-  case swimming = 9
-  case diving = 10
-  case rafting = 11
-  case hotsprings = 12
-  case beach = 13
-  case other = 10000
+    case all = 0
+    case camping = 1
+    case fishing = 2
+    case hiking = 3
+    case rockclimbing = 4
+    case mtnbiking = 5
+    case iceclimbing = 6
+    case canoeing = 7
+    case surfing = 8
+    case swimming = 9
+    case diving = 10
+    case rafting = 11
+    case hotsprings = 12
+    case beach = 13
+    case other = 10000
+    case add = 10001
   
   
-  static func getSpotTypeFromSpotName(spotName: String) -> Int {
+    static func getSpotTypeFromSpotName(spotName: String) -> Int {
     
-    switch spotName {
+        switch spotName {
       
-    case "All":
-      return SpotsType.all.rawValue
+        case "All":
+            return SpotsType.all.rawValue
       
-    case "Camping":
-      return SpotsType.camping.rawValue
+        case "Camping":
+            return SpotsType.camping.rawValue
       
-    case "Fishing":
-      return SpotsType.fishing.rawValue
+        case "Fishing":
+            return SpotsType.fishing.rawValue
       
-    case "Hiking":
-      return SpotsType.hiking.rawValue
+        case "Hiking":
+            return SpotsType.hiking.rawValue
       
-    case "Rock Climbing":
-      return SpotsType.rockclimbing.rawValue
+        case "Rock Climbing":
+            return SpotsType.rockclimbing.rawValue
       
-    case "Mtn Biking":
-      return SpotsType.mtnbiking.rawValue
+        case "Mtn Biking":
+            return SpotsType.mtnbiking.rawValue
       
-    case "Ice Climbing":
-      return SpotsType.iceclimbing.rawValue
+        case "Ice Climbing":
+            return SpotsType.iceclimbing.rawValue
       
-    case "Canoeing":
-      return SpotsType.canoeing.rawValue
+        case "Canoeing":
+            return SpotsType.canoeing.rawValue
       
-    case "Surfing":
-      return SpotsType.surfing.rawValue
+        case "Surfing":
+            return SpotsType.surfing.rawValue
       
-    case "Swimming":
-      return SpotsType.swimming.rawValue
+        case "Swimming":
+            return SpotsType.swimming.rawValue
       
-    case "Diving":
-      return SpotsType.diving.rawValue
+        case "Diving":
+            return SpotsType.diving.rawValue
       
-    case "Rafting":
-      return SpotsType.rafting.rawValue
+        case "Rafting":
+            return SpotsType.rafting.rawValue
       
-    case "Hot Springs":
-      return SpotsType.hotsprings.rawValue
+        case "Hot Springs":
+            return SpotsType.hotsprings.rawValue
       
-    case "Beach":
-      return SpotsType.beach.rawValue
+        case "Beach":
+            return SpotsType.beach.rawValue
       
-    default:
-      return SpotsType.other.rawValue
+        case "Add":
+            return SpotsType.add.rawValue
+            
+        default:
+            return SpotsType.other.rawValue
+        }
     }
-  }
 }
 
 // MARK: ENums Visibility
@@ -96,6 +103,45 @@ enum SpotsVisibility: Int {
   case `public` = 1
   case friends = 3
   case `private` = 4
+}
+
+// MARK: spot type model
+public class SpotTypeModel {
+    
+    var IsSelected: Bool = false
+    
+    var SpotType: SpotsType! = SpotsType.other
+    
+    var SpotName: String = ""
+    
+    init() {}
+    
+    init(json: JSON) {
+        
+        self.SpotName = json["name"].string!
+        
+        if let spotTypeId = json["spotTypeId"].int {
+            self.SpotType = SpotsType.init(rawValue: spotTypeId)
+        }
+        
+        self.IsSelected = true
+    }
+    
+    init(type: SpotsType, name: String) {
+        self.SpotType = type
+        self.SpotName = name
+    }
+    
+    init(type: SpotsType, name: String, isSelected: Bool) {
+        self.SpotName = name
+        self.SpotType = type
+        self.IsSelected = isSelected
+    }
+    
+    init(name: String) {
+        self.SpotName = name
+        self.SpotType = SpotsType(rawValue: SpotsType.getSpotTypeFromSpotName(spotName: name))!
+    }
 }
 
 // MARK: login model
@@ -137,6 +183,33 @@ public class LoginModel {
   }
 }
 
+// MARK: Realm Spot
+public class RealmSpot: Object {
+    
+    @objc dynamic var Id = 0
+    
+    @objc dynamic var UserId = 0
+    
+    @objc dynamic var Lat = 0
+    
+    @objc dynamic var Long = 0
+    
+    @objc dynamic var SpotType = 0
+    
+    @objc dynamic var Visibility = 0
+    
+    @objc dynamic var State = 0
+    
+    @objc dynamic var Name = ""
+    
+    @objc dynamic var Description = ""
+    
+    @objc dynamic var SpotTypeName = ""
+    
+    @objc dynamic var SharedToFacebook = false
+    
+}
+
 // MARK: spots model
 public class SpotsModel {
   
@@ -148,7 +221,7 @@ public class SpotsModel {
   
   var Long: Double! = 0
   
-  var SpotType: SpotsType! = SpotsType.all
+    var selectedSpotTypes: [SpotTypeModel] = []
   
   var Visibility: SpotsVisibility! = SpotsVisibility.none
   
@@ -158,7 +231,7 @@ public class SpotsModel {
   
   var Description: String! = ""
   
-  var SpotTypeName: String! = ""
+  
   
   var SharedToFacebook: Bool! = false
   
@@ -174,9 +247,21 @@ public class SpotsModel {
     
     self.Long = json["longitude"].double!
     
+    let spotTypes = json["spotTypes"]
+    
+    if(spotTypes != JSON.null) {
+        for(_, subJson):(String, JSON) in spotTypes {
+            self.selectedSpotTypes.append(SpotTypeModel(json: subJson))
+        }
+    }
+    
+    
+    
+    /*
     if let spotType = json["spotType"].int {
       self.SpotType = SpotsType.init(rawValue: spotType)
     }
+ */
     
     if let visibility = json["visibility"].int {
       self.Visibility = SpotsVisibility.init(rawValue: visibility)
@@ -190,9 +275,14 @@ public class SpotsModel {
       self.Description = description
     }
     
+    
+    
+    /*
+    
     if let spotTypeName = json["spotTypeName"].string {
         self.SpotTypeName = spotTypeName
     }
+ */
     
     self.SharedToFacebook = json["sharedToFacebook"].bool!
     
@@ -207,7 +297,7 @@ public class SpotsModel {
     
     data["longitude"] = self.Long as AnyObject?
     
-    data["spotType"] = NSNumber(value: self.SpotType.rawValue as Int)
+    // data["spotType"] = NSNumber(value: self.SpotType.rawValue as Int)
     
     data["visibility"] = NSNumber(value: self.Visibility.rawValue as Int)
     
@@ -215,10 +305,23 @@ public class SpotsModel {
     
     data["description"] = self.Description as AnyObject?
     
-    data["spotTypeName"] = self.SpotTypeName as AnyObject?
+    // data["spotTypeName"] = self.SpotTypeName as AnyObject?
     
     data["sharedToFacebook"] = self.SharedToFacebook as AnyObject?
-
+    
+    var spotTypes: [[String: AnyObject]] = []
+    for object in self.selectedSpotTypes as [SpotTypeModel] {
+        var item = [String:AnyObject]()
+        
+        item["spotTypeId"] = NSNumber(value: object.SpotType.rawValue)
+        
+        item["name"] = object.SpotName as AnyObject?
+        
+        spotTypes.append(item)
+    }
+    
+    data["spotTypes"] = spotTypes as AnyObject?
+    
     return data
   }
 }
@@ -256,11 +359,11 @@ public class SpotMapModel {
     if let lon = json["longitude"].double {
       self.Longitude = lon
     }
-    
+    /*
     if let spotType = json["spoType"].int {
       self.SpotType = SpotsType.init(rawValue: spotType)
     }
-    
+    */
     if let spotSystemType = json["spotSystemType"].int {
       self.SpotSystemType = SpotsSystemType.init(rawValue: spotSystemType)
     }
