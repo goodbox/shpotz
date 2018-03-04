@@ -231,7 +231,11 @@ public class SpotsModel {
   
   var Description: String! = ""
   
-  
+    var PhotoUrl1: String! = ""
+    
+    var PhotoUrl2: String! = ""
+    
+    var PhotoUrl3: String! = ""
   
   var SharedToFacebook: Bool! = false
   
@@ -321,6 +325,12 @@ public class SpotsModel {
     }
     
     data["spotTypes"] = spotTypes as AnyObject?
+    
+    data["photo1Url"] = self.PhotoUrl1 as AnyObject?
+    
+    data["photo2Url"] = self.PhotoUrl2 as AnyObject?
+    
+    data["photo3Url"] = self.PhotoUrl3 as AnyObject?
     
     return data
   }

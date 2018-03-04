@@ -45,11 +45,22 @@ public class SelectSpotTypeViewController : UIViewController {
         collectionView.dataSource = self
     
         collectionView.delegate = self
-    
+        
+        setSelectedSpotTypes()
     }
     
     func setSelectedSpotTypes() {
-        
+        for spotType in selectedSpotTypes {
+            let s = spotTypes.first(where: { (spot) -> Bool in
+                spot.SpotName == spotType.SpotName
+            })
+            
+            if s == nil {
+                spotTypes.insert(SpotTypeModel(type: spotType.SpotType, name: spotType.SpotName, isSelected: true), at: spotTypes.count-1)
+            } else {
+                s?.IsSelected = true
+            }
+        }
     }
   
     @IBAction func btnCancelTapped(_ sender: Any) {
@@ -140,7 +151,7 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
             let ac = UIAlertController(title: "Add Activity", message: nil, preferredStyle: .alert)
             ac.addTextField()
             
-            let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac] _ in
+            let submitAction = UIAlertAction(title: "Add", style: .default) { [unowned ac] _ in
                 let answer = ac.textFields![0]
                 // do something interesting with "answer" here
                 self.spotTypes.insert(SpotTypeModel(type: SpotsType.other, name: answer.text!, isSelected: true), at: self.spotTypes.count - 1)
@@ -148,7 +159,12 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
                 self.collectionView.insertItems(at: [IndexPath(row: self.spotTypes.count - 2, section: 0)])
             }
             
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                
+            })
+            
             ac.addAction(submitAction)
+            ac.addAction(cancelAction)
             
             present(ac, animated: true)
             

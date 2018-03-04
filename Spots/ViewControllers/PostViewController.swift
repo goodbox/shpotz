@@ -113,6 +113,7 @@ class PostViewController: UIViewController {
   }
   
   func handleSpotPost() {
+    
     self.btnPost.showLoading()
 
     let api = ApiServiceController.sharedInstance
@@ -134,6 +135,20 @@ class PostViewController: UIViewController {
     spotModel.Visibility = postTableView.spotVisibility
     
     spotModel.SharedToFacebook = postTableView.swShareToFacebook.isOn
+    
+    if postTableView.firstImage != nil {
+        spotModel.PhotoUrl1 = uploadImage(img: postTableView.firstImage)
+    }
+    
+    if postTableView.secondImage != nil {
+        spotModel.PhotoUrl2 = uploadImage(img: postTableView.secondImage)
+        
+    }
+    
+    if postTableView.thirdImage != nil {
+        spotModel.PhotoUrl3 = uploadImage(img: postTableView.thirdImage)
+    }
+    
     
     _ = api.performPostSpot(UserDefaults.SpotsToken!, spotsModel: spotModel, completion: { (success, model, error) in
       
@@ -162,69 +177,76 @@ class PostViewController: UIViewController {
     
     /*
     
-    do {
-      
-      
-      
-      let uuidFilename = UUID().uuidString + ".jpg"
-      
-      let uuidPrefix = uuidFilename.substring(to: uuidFilename.index(uuidFilename.startIndex, offsetBy: 4))
-      
-      let resizedImage = postTableView.firstImage.resizedImageWithinRect(rectSize: CGSize(width: 320, height: 240))
-      
-      // let resizedImage = postTableView.firstImage.resizedImage(newSize: CGSize(width: 320, height: 240))
-      
-      let testFileUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(uuidFilename)
-      
-      let data = UIImageJPEGRepresentation(resizedImage, 1.0)
-      
-      try data?.write(to: testFileUrl!)
-      
-      let transferManager = AWSS3TransferManager.default()
-      
-      let uploadRequest = AWSS3TransferManagerUploadRequest()
-      
-      uploadRequest?.bucket = "spots-app-bucket"
-      
-      uploadRequest?.key = "uploads/" + uuidPrefix + "/" + uuidFilename
-      
-      uploadRequest?.contentType = "image/jpeg"
-      
-      uploadRequest?.body = testFileUrl!
-      
-      transferManager.upload(uploadRequest!).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask<AnyObject>) -> Any? in
-        
-        if let error = task.error as? NSError {
-          if error.domain == AWSS3TransferManagerErrorDomain, let code = AWSS3TransferManagerErrorType(rawValue: error.code) {
-            switch code {
-            case .cancelled, .paused:
-              break
-            default:
-              print("Error uploading: \(uploadRequest?.key) Error: \(error)")
-            }
-          } else {
-            print("Error uploading: \(uploadRequest?.key) Error: \(error)")
-          }
-          return nil
-        }
-        
-        let uploadOutput = task.result
-        
-        print("Upload complete for: \(uploadRequest?.key)")
-        
-        self.showSuccessPopupDialog()
-        
-        return nil
-      })
-      
-    } catch {
-      
-      print("other error occurred : \(error)")
-      
-    }
+    
  
  */
   }
+    
+    func uploadImage(img: UIImage?) -> String! {
+        
+        let uuidFilename = UUID().uuidString + ".jpg"
+        
+        do {
+            
+            let uuidPrefix = uuidFilename.substring(to: uuidFilename.index(uuidFilename.startIndex, offsetBy: 4))
+            
+            let resizedImage = postTableView.firstImage.resizedImageWithinRect(rectSize: CGSize(width: 320, height: 240))
+            
+            // let resizedImage = postTableView.firstImage.resizedImage(newSize: CGSize(width: 320, height: 240))
+            
+            let testFileUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(uuidFilename)
+            
+            let data = UIImageJPEGRepresentation(resizedImage, 1.0)
+            
+            try data?.write(to: testFileUrl!)
+            
+            let transferManager = AWSS3TransferManager.default()
+            
+            let uploadRequest = AWSS3TransferManagerUploadRequest()
+            
+            uploadRequest?.bucket = "spots-app-bucket"
+            
+            uploadRequest?.key = "uploads/" + uuidPrefix + "/" + uuidFilename
+            
+            uploadRequest?.contentType = "image/jpeg"
+            
+            uploadRequest?.body = testFileUrl!
+            
+            transferManager.upload(uploadRequest!).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask<AnyObject>) -> Any? in
+                
+                if let error = task.error as NSError? {
+                    if error.domain == AWSS3TransferManagerErrorDomain, let code = AWSS3TransferManagerErrorType(rawValue: error.code) {
+                        switch code {
+                        case .cancelled, .paused:
+                            break
+                        default:
+                            print("Error uploading: \(String(describing: uploadRequest?.key)) Error: \(error)")
+                        }
+                    } else {
+                        print("Error uploading: \(String(describing: uploadRequest?.key)) Error: \(error)")
+                    }
+                    return nil
+                }
+                
+                let uploadOutput = task.result
+                
+                print("Upload complete for: \(String(describing: uploadRequest?.key))")
+                
+                // self.showSuccessPopupDialog()
+                
+                return uuidFilename
+            })
+            
+            return uuidFilename
+            
+        } catch {
+            
+            print("other error occurred : \(error)")
+            
+        }
+        
+        return ""
+    }
   
   func showValidationPopup(theTitle: String?, theMessage: String?, theImage: UIImage?) {
     
