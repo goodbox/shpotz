@@ -153,10 +153,16 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
             
             let submitAction = UIAlertAction(title: "Add", style: .default) { [unowned ac] _ in
                 let answer = ac.textFields![0]
-                // do something interesting with "answer" here
-                self.spotTypes.insert(SpotTypeModel(type: SpotsType.other, name: answer.text!, isSelected: true), at: self.spotTypes.count - 1)
+                if !(answer.text?.isEmpty)! {
+                    // do something interesting with "answer" here
+                    self.spotTypes.insert(SpotTypeModel(type: SpotsType.other, name: answer.text!, isSelected: true), at: self.spotTypes.count - 1)
+                    
+                    self.collectionView.insertItems(at: [IndexPath(row: self.spotTypes.count - 2, section: 0)])
+                    
+                    
+                }
                 
-                self.collectionView.insertItems(at: [IndexPath(row: self.spotTypes.count - 2, section: 0)])
+               
             }
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
