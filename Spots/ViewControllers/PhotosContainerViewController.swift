@@ -14,29 +14,28 @@ import MaterialComponents
 class PhotosContainerViewController : UIViewController {
   
   
-  @IBOutlet weak var cvPhotos: UICollectionView!
+    @IBOutlet weak var cvPhotos: UICollectionView!
   
-  var didTapPhotoDelegate: DidTapFacilityImageDelegate!
-  
-  var facilityDetail: FacilityDetail!
-  
-  fileprivate let cellResuseIdenitfier = "FacilityImageCell"
-  fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-  
-  fileprivate let itemsPerRow: CGFloat = 3
-  
-  
-  
-  public override func viewDidLoad() {
+    var didTapPhotoDelegate: DidTapFacilityImageDelegate!
     
-    super.viewDidLoad()
-    
-    cvPhotos.dataSource = self
-    cvPhotos.delegate = self
-    
-    cvPhotos.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
-  }
+    var images: [FacilityMedia] = []
   
+    fileprivate let cellResuseIdenitfier = "FacilityImageCell"
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+  
+    fileprivate let itemsPerRow: CGFloat = 3
+  
+  
+  
+    public override func viewDidLoad() {
+    
+        super.viewDidLoad()
+    
+        cvPhotos.dataSource = self
+        cvPhotos.delegate = self
+    
+        cvPhotos.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
+    }
 }
 
 
@@ -44,11 +43,7 @@ class PhotosContainerViewController : UIViewController {
 extension PhotosContainerViewController: UICollectionViewDataSource {
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-    if self.facilityDetail != nil && self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
-      return self.facilityDetail.Media.count
-    }
-    
-    return 0 // self.facilityDetail.Media.count
+   return self.images.count
     
   }
   
@@ -66,18 +61,12 @@ extension PhotosContainerViewController: UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
                                                   for: indexPath) as! FacilityImageCell
     
+    cell.configure(self.images[indexPath.row].Url)
     
-    cell.configure(self.facilityDetail.Media[indexPath.row].Url)
-    
-    
-    // cell.configure(self.activityName[indexPath.row])
-    // Configure the cell
     return cell
     
   }
 }
-
-
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension PhotosContainerViewController : UICollectionViewDelegateFlowLayout {

@@ -9,21 +9,19 @@
 import Foundation
 import UIKit
 import AlamofireImage
-
+import AWSS3
 
 public class FacilityImageCell: UICollectionViewCell {
   
-  @IBOutlet weak var imgPhoto: UIImageView!
-  
-  
-  func configure(_ imageUrl: String) {
+    @IBOutlet weak var imgPhoto: UIImageView!
     
-    self.imgPhoto.af_setImage( withURL: URL(string: (imageUrl))!,
+    func configure(_ imageUrl: String) {
+    
+        self.imgPhoto.af_setImage( withURL: URL(string: (imageUrl))!,
                                placeholderImage: nil,
                                filter: nil,
                                imageTransition: .crossDissolve(0.2)
-    )
-    
-  }
+        )
+    }
   
 }

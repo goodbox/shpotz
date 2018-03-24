@@ -342,7 +342,7 @@ extension PostTableViewController : ImagePickerDelegate {
         imgSecond.image = images[0]
         
       } else if thirdImage == nil {
-        thirdImage = images[0]
+        thirdImage = images[2]
         
         imgThird.contentMode = .scaleToFill
         imgThird.layer.cornerRadius = 5.0

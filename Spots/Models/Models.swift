@@ -213,23 +213,23 @@ public class RealmSpot: Object {
 // MARK: spots model
 public class SpotsModel {
   
-  var Id: Int64! = 0
+    var Id: Int64! = 0
   
-  var UserId: Int64! = 0
+    var UserId: Int64! = 0
   
-  var Lat: Double! = 0
+    var Lat: Double! = 0
   
-  var Long: Double! = 0
+    var Long: Double! = 0
   
     var selectedSpotTypes: [SpotTypeModel] = []
   
-  var Visibility: SpotsVisibility! = SpotsVisibility.none
+    var Visibility: SpotsVisibility! = SpotsVisibility.none
   
-  var State: Int! = 0
+    var State: Int! = 0
   
-  var Name: String! = ""
+    var Name: String! = ""
   
-  var Description: String! = ""
+    var Description: String! = ""
   
     var PhotoUrl1: String! = ""
     
@@ -237,29 +237,36 @@ public class SpotsModel {
     
     var PhotoUrl3: String! = ""
   
-  var SharedToFacebook: Bool! = false
+    var SharedToFacebook: Bool! = false
+    
+    var spotImages: [FacilityMedia]! = []
   
-  init() {}
+    init() {}
   
-  init(json: JSON) {
+    init(json: JSON) {
     
-    self.Id = json["id"].int64!
+        self.Id = json["id"].int64!
     
-    self.UserId = json["userId"].int64!
+        self.UserId = json["userId"].int64!
     
-    self.Lat = json["latitude"].double!
+        self.Lat = json["latitude"].double!
     
-    self.Long = json["longitude"].double!
+        self.Long = json["longitude"].double!
     
-    let spotTypes = json["spotTypes"]
+        let spotTypes = json["spotTypes"]
     
-    if(spotTypes != JSON.null) {
-        for(_, subJson):(String, JSON) in spotTypes {
-            self.selectedSpotTypes.append(SpotTypeModel(json: subJson))
+        if(spotTypes != JSON.null) {
+            for(_, subJson):(String, JSON) in spotTypes {
+                self.selectedSpotTypes.append(SpotTypeModel(json: subJson))
+            }
         }
-    }
     
-    
+        let spotImages = json["spotImages"]
+        if spotImages != JSON.null {
+            for(_, subJson):(String, JSON) in spotImages {
+                self.spotImages.append(FacilityMedia(json: subJson))
+            }
+        }
     
     /*
     if let spotType = json["spotType"].int {
@@ -267,17 +274,17 @@ public class SpotsModel {
     }
  */
     
-    if let visibility = json["visibility"].int {
-      self.Visibility = SpotsVisibility.init(rawValue: visibility)
-    }
+        if let visibility = json["visibility"].int {
+            self.Visibility = SpotsVisibility.init(rawValue: visibility)
+        }
 
-    self.State = json["state"].int!
+        self.State = json["state"].int!
     
-    self.Name = json["name"].string!
+        self.Name = json["name"].string!
     
-    if let description = json["description"].string {
-      self.Description = description
-    }
+        if let description = json["description"].string {
+            self.Description = description
+        }
     
     
     
@@ -288,7 +295,7 @@ public class SpotsModel {
     }
  */
     
-    self.SharedToFacebook = json["sharedToFacebook"].bool!
+        self.SharedToFacebook = json["sharedToFacebook"].bool!
     
   }
   
@@ -345,8 +352,6 @@ public class SpotMapModel {
   var Latitude: Double!
   
   var Longitude: Double!
-  
-  var SpotType: SpotsType! = SpotsType.all
   
   var SpotSystemType: SpotsSystemType! = SpotsSystemType.unknown
   

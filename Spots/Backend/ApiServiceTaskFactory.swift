@@ -43,4 +43,10 @@ extension ApiServiceTask {
     
     return ApiServiceTask(serviceMethod: .GET, serviceUrl: serviceUrl, urlParameters: nil, headerParameters: nil, authToken: accessToken)
   }
+    
+    static func GetSpot(_ accessToken: String, spotId: String) -> ApiServiceTask {
+        let serviceUrl = "/api/spots/spot/" + spotId
+        
+        return ApiServiceTask(serviceMethod: .GET, serviceUrl: serviceUrl, urlParameters: nil, headerParameters: nil, authToken: accessToken)
+    }
 }

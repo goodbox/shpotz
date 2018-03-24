@@ -131,6 +131,36 @@ class ApiServiceController {
     return true
   }
   
+    typealias GetSpotCompletionFunc = (_ success: Bool, _ spot: SpotsModel?, _ error: NSError?) -> Void
+    
+    func getSpot(_ accessToken: String, spotId: String, completion: @escaping GetSpotCompletionFunc) -> Bool {
+        
+        let task = ApiServiceTask.GetSpot(accessToken, spotId: spotId)
+        
+        _ = task.performTask({(success, json, headerFields, error) in
+            
+            if error != nil {
+                completion(false, nil, error)
+                return
+            }
+            
+            if success {
+                
+                let spot = SpotsModel(json: json!)
+                
+                completion(success, spot, error)
+                
+            } else {
+                
+                completion(false, nil, nil)
+                
+            }
+            
+        })
+        
+        return true
+    }
+    
   typealias GetFacilityCompletionFunc = (_ success: Bool, _ facilityDetail: FacilityDetail?,_ error: NSError?) -> Void
   
   func getFacility(_ accessToken: String, facilityId: String, completion: @escaping GetFacilityCompletionFunc) -> Bool {

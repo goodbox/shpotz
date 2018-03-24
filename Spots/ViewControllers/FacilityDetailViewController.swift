@@ -17,19 +17,19 @@ import GoogleMaps
 public class FacilityDetailViewController: UITableViewController {
   
   
-  @IBOutlet weak var vHeader: UIView!
+    @IBOutlet weak var vHeader: UIView!
   
-  @IBOutlet weak var imgHeaderPic: UIImageView!
+    @IBOutlet weak var imgHeaderPic: UIImageView!
 
-  @IBOutlet weak var lblFacilityName: UILabel!
+    @IBOutlet weak var lblFacilityName: UILabel!
   
-  @IBOutlet weak var lblFacilityPhone: UILabel!
+    @IBOutlet weak var lblFacilityPhone: UILabel!
   
-  @IBOutlet weak var wvDescription: UIWebView!
+    @IBOutlet weak var wvDescription: UIWebView!
   
-  @IBOutlet weak var cvActivities: UICollectionView!
+    @IBOutlet weak var cvActivities: UICollectionView!
   
-  @IBOutlet weak var photosContainer: UIView!
+    @IBOutlet weak var photosContainer: UIView!
   
     @IBOutlet weak var tvCellDescription: UITableViewCell!
     
@@ -43,18 +43,18 @@ public class FacilityDetailViewController: UITableViewController {
     
     var activityName: [String]! = []
   
-  var facilityDetail: FacilityDetail!
+    var facilityDetail: FacilityDetail!
   
-  var spotMapModel: SpotMapModel!
+    var spotMapModel: SpotMapModel!
   
-  var api: ApiServiceController!
+    var api: ApiServiceController!
   
-  fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
-  fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
   
-  fileprivate let itemsPerRow: CGFloat = 3
+    fileprivate let itemsPerRow: CGFloat = 3
   
-  var photosColContainer: PhotosContainerViewController!
+    var photosColContainer: PhotosContainerViewController!
     
     var webViewHeight : CGFloat = 300
   
@@ -62,27 +62,27 @@ public class FacilityDetailViewController: UITableViewController {
     var zoomLevel: Float = 15.0
     
     
-  public override func viewDidLoad() {
+    public override func viewDidLoad() {
     
-    super.viewDidLoad()
+        super.viewDidLoad()
     
-    api = ApiServiceController.sharedInstance
+        api = ApiServiceController.sharedInstance
     
-    wvDescription.scrollView.isScrollEnabled = false
-    wvDescription.delegate = self
+        wvDescription.scrollView.isScrollEnabled = false
+        wvDescription.delegate = self
     
-    cvActivities.delegate = self
-    cvActivities.dataSource = self
+        cvActivities.delegate = self
+        cvActivities.dataSource = self
     
-    cvActivities.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
+        cvActivities.register(UINib(nibName:cellResuseIdenitfier, bundle: nil), forCellWithReuseIdentifier: cellResuseIdenitfier)
     
-    btnGetDirections.backgroundColor = UIColor.spotsGreen()
-    btnGetDirections.setTitle("Get Directions", for: .normal)
-    btnGetDirections.setTitleColor(UIColor.white, for: .normal)
+        btnGetDirections.backgroundColor = UIColor.spotsGreen()
+        btnGetDirections.setTitle("Get Directions", for: .normal)
+        btnGetDirections.setTitleColor(UIColor.white, for: .normal)
     
-    loadFacility()
+        loadFacility()
     
-  }
+    }
     
     func setReserved() {
         
@@ -101,158 +101,158 @@ public class FacilityDetailViewController: UITableViewController {
         self.lblReserved.sizeToFit()
     }
   
-  override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    if segue.identifier == "PhotosSegue" {
+        if segue.identifier == "PhotosSegue" {
       
-      if let vc = segue.destination as? PhotosContainerViewController {
+            if let vc = segue.destination as? PhotosContainerViewController {
         
-        vc.didTapPhotoDelegate = self
+                vc.didTapPhotoDelegate = self
         
-        self.photosColContainer = vc
-      }
-    } else if segue.identifier == "PhotoGallerySegue" {
+                self.photosColContainer = vc
+            }
+        } else if segue.identifier == "PhotoGallerySegue" {
       
       
-      print("PhotoGallerySegue")
-      /*
-      if let vc = segue.destination as? UINavigationController {
+            print("PhotoGallerySegue")
+            /*
+             if let vc = segue.destination as? UINavigationController {
         
-        if let vd = vc.topViewController as? PhotoGalleryViewController {
-          vd.facilityDetail = self.facilityDetail
+             if let vd = vc.topViewController as? PhotoGalleryViewController {
+             vd.facilityDetail = self.facilityDetail
+             }
+             }
+             */
         }
-      }
- */
+        
     }
-
-  }
-  
-  func loadFacility() {
     
-    _ = api.getFacility(UserDefaults.SpotsToken!, facilityId: String(spotMapModel.Id), completion: { (success, facilityDetail, error) in
-      
-      // self.tableView.isHidden = false
-      self.facilityDetail = facilityDetail
-      
-      if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
-       
-        self.imgHeaderPic.af_setImage(
-          withURL: URL(string: (self.facilityDetail.Media.first?.Url)!)!,
-          placeholderImage: nil,
-          filter: nil,
-          imageTransition: .crossDissolve(0.2)
-        )
-      } else {
+    func loadFacility() {
         
-        self.imgHeaderPic.image = SpotIcons.other?.tint(with: Color.lightGray)
-        self.imgHeaderPic.contentMode = .center
-      }
-      
-      self.lblFacilityName.text = self.facilityDetail.Model.Name
-      
-      self.lblFacilityName.font = UIFont.spotsFacilityName()
-      
-      self.lblFacilityName.layer.shadowColor = UIColor.black.cgColor
-      self.lblFacilityName.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-      self.lblFacilityName.layer.shadowRadius = 0.0
-      self.lblFacilityName.layer.shadowOpacity = 1
-      
-      self.lblFacilityName.textAlignment = NSTextAlignment.left
-      self.lblFacilityName.contentMode = UIViewContentMode.bottom
-
-      if !self.facilityDetail.Model.Phone.isEmpty {
-        self.lblFacilityPhone.text = self.facilityDetail.Model.Phone
-      }
-        
-        self.setReserved()
-      
-      self.wvDescription.loadHTMLString(self.facilityDetail.Model.Description, baseURL: nil)
-      
-      if self.facilityDetail.Activities != nil && self.facilityDetail.Activities.count > 0 {
-        
-        self.setActivities()
-        
-        if self.activityName != nil && self.activityName.count > 0 {
-         
-          self.cvActivities.reloadData()
-          
-        }
-      }
-      
-      if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
-        self.photosColContainer.facilityDetail = self.facilityDetail
-        }
-      
-      // set the map and location
-        
-        let camera = GMSCameraPosition.camera(withLatitude: self.facilityDetail.Model.Latitude,
-                                              longitude: self.facilityDetail.Model.Longitude,
-                                              zoom: self.zoomLevel)
-        self.mapView = GMSMapView.map(withFrame: self.vLocation.bounds, camera: camera)
-        // mapView.settings.myLocationButton = true
-        self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.mapView.isMyLocationEnabled = false
-        self.mapView.settings.scrollGestures = false
-        self.mapView.settings.zoomGestures = false
-        
-        // Add the map to the view, hide it until we've got a location update.
-        self.vLocation.addSubview(self.mapView)
-        // mapView.isHidden = true
-        
-        let position = CLLocationCoordinate2D(latitude: self.facilityDetail.Model.Latitude, longitude: self.facilityDetail.Model.Longitude)
-        let marker = GMSMarker(position: position)
-        
-       marker.map = self.mapView
-        
-      self.tableView.reloadData()
-      
-    })
-  }
-  
-  func setActivities() {
-    let sortedActivities = self.facilityDetail.Activities.sorted { (f1, f2) -> Bool in
-        f1.Name < f2.Name
+        _ = api.getFacility(UserDefaults.SpotsToken!, facilityId: String(spotMapModel.Id), completion: { (success, facilityDetail, error) in
+            
+            // self.tableView.isHidden = false
+            self.facilityDetail = facilityDetail
+            
+            if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
+                
+                self.imgHeaderPic.af_setImage(
+                    withURL: URL(string: (self.facilityDetail.Media.first?.Url)!)!,
+                    placeholderImage: nil,
+                    filter: nil,
+                    imageTransition: .crossDissolve(0.2)
+                )
+            } else {
+                
+                self.imgHeaderPic.image = SpotIcons.other?.tint(with: Color.lightGray)
+                self.imgHeaderPic.contentMode = .center
+            }
+            
+            self.lblFacilityName.text = self.facilityDetail.Model.Name
+            
+            self.lblFacilityName.font = UIFont.spotsFacilityName()
+            
+            self.lblFacilityName.layer.shadowColor = UIColor.black.cgColor
+            self.lblFacilityName.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+            self.lblFacilityName.layer.shadowRadius = 0.0
+            self.lblFacilityName.layer.shadowOpacity = 1
+            
+            self.lblFacilityName.textAlignment = NSTextAlignment.left
+            self.lblFacilityName.contentMode = UIViewContentMode.bottom
+            
+            if !self.facilityDetail.Model.Phone.isEmpty {
+                self.lblFacilityPhone.text = self.facilityDetail.Model.Phone
+            }
+            
+            self.setReserved()
+            
+            self.wvDescription.loadHTMLString(self.facilityDetail.Model.Description, baseURL: nil)
+            
+            if self.facilityDetail.Activities != nil && self.facilityDetail.Activities.count > 0 {
+                
+                self.setActivities()
+                
+                if self.activityName != nil && self.activityName.count > 0 {
+                    
+                    self.cvActivities.reloadData()
+                    
+                }
+            }
+            
+            if self.facilityDetail.Media != nil && self.facilityDetail.Media.count > 0 {
+                self.photosColContainer.images = self.facilityDetail.Media
+            }
+            
+            // set the map and location
+            
+            let camera = GMSCameraPosition.camera(withLatitude: self.facilityDetail.Model.Latitude,
+                                                  longitude: self.facilityDetail.Model.Longitude,
+                                                  zoom: self.zoomLevel)
+            self.mapView = GMSMapView.map(withFrame: self.vLocation.bounds, camera: camera)
+            // mapView.settings.myLocationButton = true
+            self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            self.mapView.isMyLocationEnabled = false
+            self.mapView.settings.scrollGestures = false
+            self.mapView.settings.zoomGestures = false
+            
+            // Add the map to the view, hide it until we've got a location update.
+            self.vLocation.addSubview(self.mapView)
+            // mapView.isHidden = true
+            
+            let position = CLLocationCoordinate2D(latitude: self.facilityDetail.Model.Latitude, longitude: self.facilityDetail.Model.Longitude)
+            let marker = GMSMarker(position: position)
+            
+            marker.map = self.mapView
+            
+            self.tableView.reloadData()
+            
+        })
     }
-    for act in sortedActivities as [FacilityActivity] {
-      switch act.Name {
-      case "CAMPING":
-        
-        self.activityName.append("Camping")
-        
-      case "BIKING":
-        
-        self.activityName.append("Mtn Biking")
-  
-      case "CLIMBING":
-        
-        self.activityName.append("Rock Climbing")
-
-      case "FISHING":
-        
-        self.activityName.append("Fishing")
-       
-      case "HIKING":
-        
-        self.activityName.append("Hiking")
-        
-      case "HIKING":
-        
-        self.activityName.append("Hiking")
-        
-      case "SWIMMING":
-        
-        self.activityName.append("Swimming")
-        
-      default:
-        continue
-      }
+    
+    func setActivities() {
+        let sortedActivities = self.facilityDetail.Activities.sorted { (f1, f2) -> Bool in
+            f1.Name < f2.Name
+        }
+        for act in sortedActivities as [FacilityActivity] {
+            switch act.Name {
+            case "CAMPING":
+                
+                self.activityName.append("Camping")
+                
+            case "BIKING":
+                
+                self.activityName.append("Mtn Biking")
+                
+            case "CLIMBING":
+                
+                self.activityName.append("Rock Climbing")
+                
+            case "FISHING":
+                
+                self.activityName.append("Fishing")
+                
+            case "HIKING":
+                
+                self.activityName.append("Hiking")
+                
+            case "HIKING":
+                
+                self.activityName.append("Hiking")
+                
+            case "SWIMMING":
+                
+                self.activityName.append("Swimming")
+                
+            default:
+                continue
+            }
+        }
     }
-  }
     
     
     @IBAction func btnGetDirectionsTapped(_ sender: Any) {
         
-         let alert = UIAlertController(title: "Selection", message: "Select Navigation App", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Selection", message: "Select Navigation App", preferredStyle: .actionSheet)
         
         let googleUrl = URL(string:"comgooglemaps://")
         
@@ -281,7 +281,7 @@ public class FacilityDetailViewController: UITableViewController {
     }
     
   
-  // MARK: uitableview
+    // MARK: uitableview
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
@@ -316,88 +316,88 @@ public class FacilityDetailViewController: UITableViewController {
     }
     
     
-  override public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     
-    if facilityDetail != nil {
-      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
-        return UIView(frame: CGRect.zero)
-      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
-        return UIView(frame: CGRect.zero)
-      } else {
-        return super.tableView(tableView, viewForHeaderInSection: section)
-      }
+        if facilityDetail != nil {
+            if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+                return UIView(frame: CGRect.zero)
+            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+                return UIView(frame: CGRect.zero)
+            } else {
+                return super.tableView(tableView, viewForHeaderInSection: section)
+            }
+        }
+        else {
+            return super.tableView(tableView, viewForHeaderInSection: section)
+        }
     }
-    else {
-      return super.tableView(tableView, viewForHeaderInSection: section)
-    }
-  }
   
-  override public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    override public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     
-    if facilityDetail != nil {
-      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
-        return UIView(frame: CGRect.zero)
-      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
-        return UIView(frame: CGRect.zero)
-      } else {
-        return super.tableView(tableView, viewForFooterInSection: section)
-      }
+        if facilityDetail != nil {
+            if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+                return UIView(frame: CGRect.zero)
+            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+                return UIView(frame: CGRect.zero)
+            } else {
+                return super.tableView(tableView, viewForFooterInSection: section)
+            }
+        }
+        else {
+            return super.tableView(tableView, viewForFooterInSection: section)
+        }
     }
-    else {
-      return super.tableView(tableView, viewForFooterInSection: section)
-    }
-  }
   
-  override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    print("section : \(section)")
-    if facilityDetail != nil {
-      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
-        return 0.0
-      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
-        return 0.0
-      } else {
-        return super.tableView(tableView, heightForHeaderInSection: section)
-      }
-    }
-    else {
-      return super.tableView(tableView, heightForHeaderInSection: section)
-    }
+    override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        print("section : \(section)")
+        if facilityDetail != nil {
+            if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+                return 0.0
+            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+                return 0.0
+            } else {
+                return super.tableView(tableView, heightForHeaderInSection: section)
+            }
+        }
+        else {
+            return super.tableView(tableView, heightForHeaderInSection: section)
+        }
    
-  }
+    }
 
-  override public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    print("section : \(section)")
-    if facilityDetail != nil {
-      if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
-        return 0.0
-      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
-        return 0.0
-      } else {
-        return super.tableView(tableView, heightForFooterInSection: section)
-      }
-    }
-    else {
-      return super.tableView(tableView, heightForFooterInSection: section)
-    }
+    override public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        print("section : \(section)")
+        if facilityDetail != nil {
+            if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
+                return 0.0
+            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+                return 0.0
+            } else {
+                return super.tableView(tableView, heightForFooterInSection: section)
+            }
+        }
+        else {
+            return super.tableView(tableView, heightForFooterInSection: section)
+        }
     
-  }
+    }
 
   
-  override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    print("section : \(section)")
-    if facilityDetail != nil && facilityDetail.Model != nil {
-      if(section == 0 && self.facilityDetail.Model.Phone.isEmpty) {
-        return 0
-      } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
-        return 0
-      } else {
-        return super.tableView(tableView, numberOfRowsInSection: section)
-      }
+    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("section : \(section)")
+        if facilityDetail != nil && facilityDetail.Model != nil {
+            if(section == 0 && self.facilityDetail.Model.Phone.isEmpty) {
+                return 0
+            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+                return 0
+            } else {
+                return super.tableView(tableView, numberOfRowsInSection: section)
+            }
+        }
+        else {
+            return super.tableView(tableView, numberOfRowsInSection: section)
+        }
     }
-    else {
-      return super.tableView(tableView, numberOfRowsInSection: section)
-    }
-  }
 }
 
 
@@ -449,24 +449,24 @@ extension FacilityDetailViewController: SlideLeafViewControllerDelegate {
 
 // MARK: UICollectionViewDataSource
 extension FacilityDetailViewController: UICollectionViewDataSource {
-  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
-    return self.activityName.count
+        return self.activityName.count
   
-  }
+    }
   
-  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
                                                   for: indexPath) as! SelectSpotTypeCell
     
     
     
-    cell.configure(SpotTypeModel(name: self.activityName[indexPath.row]))
-    // Configure the cell
-    return cell
-    
-  }
+        cell.configure(SpotTypeModel(name: self.activityName[indexPath.row]))
+        // Configure the cell
+        return cell
+        
+    }
 }
 
 
@@ -474,26 +474,26 @@ extension FacilityDetailViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegateFlowLayout
 extension FacilityDetailViewController : UICollectionViewDelegateFlowLayout {
   
-  public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
     
-    let cell = collectionView.cellForItem(at: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = MDCPalette.grey.tint400
-  }
+        cell?.backgroundColor = MDCPalette.grey.tint400
+    }
   
-  public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
     
-    let cell = collectionView.cellForItem(at: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath)
     
-    cell?.backgroundColor = UIColor.clear
+        cell?.backgroundColor = UIColor.clear
     
-  }
+    }
   
-  public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-    collectionView.deselectItem(at: indexPath, animated: false)
+        collectionView.deselectItem(at: indexPath, animated: false)
     
-  }
+    }
   
   public func collectionView(_ collectionView: UICollectionView,
                              layout collectionViewLayout: UICollectionViewLayout,

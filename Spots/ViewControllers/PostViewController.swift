@@ -18,169 +18,206 @@ import Photos
 
 class PostViewController: UIViewController {
   
-  @IBOutlet weak var btnPost: ActivityIndicatorButton!
+    @IBOutlet weak var btnPost: ActivityIndicatorButton!
   
-  @IBOutlet weak var btnPostBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var btnPostBottomConstraint: NSLayoutConstraint!
   
-  var postTableView : PostTableViewController!
+    var postTableView : PostTableViewController!
   
-  var spotModel: SpotsModel!
+    var spotModel: SpotsModel!
     
     var selectedSpotTypes : [SpotTypeModel] = []
   
-  open override func viewDidLoad() {
-    super.viewDidLoad()
+    open override func viewDidLoad() {
+        super.viewDidLoad()
     
-    NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     
-    NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
 
     
-    btnPost.backgroundColor = UIColor.spotsGreen()
-    btnPost.setTitle("Add Spot", for: .normal)
-    btnPost.setTitleColor(UIColor.white, for: .normal)
+        btnPost.backgroundColor = UIColor.spotsGreen()
+        btnPost.setTitle("Add Spot", for: .normal)
+        btnPost.setTitleColor(UIColor.white, for: .normal)
     
-    spotModel = SpotsModel()
+        spotModel = SpotsModel()
     
-  }
+    }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? PostTableViewController, segue.identifier == "PostTableViewSegue" {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? PostTableViewController, segue.identifier == "PostTableViewSegue" {
       
-      vc.didTapAddPhotoDelegate = self
+            vc.didTapAddPhotoDelegate = self
       
-      self.postTableView = vc
+            self.postTableView = vc
+        }
     }
-  }
 
-  @IBAction func btnCancelTapped(_ sender: Any) {
+    @IBAction func btnCancelTapped(_ sender: Any) {
     
-    if postTableView.txtName.isFirstResponder {
-      postTableView.txtName.resignFirstResponder()
-    }
+        if postTableView.txtName.isFirstResponder {
+            postTableView.txtName.resignFirstResponder()
+        }
     
-    if postTableView.txtDescription.isFirstResponder {
-      postTableView.txtDescription.resignFirstResponder()
-    }
-    
-    self.dismiss(animated: true, completion: nil)
-    
-  }
-
-  @IBAction func btnPostTapped(_ sender: Any) {
-    
-    //validate all fields
-    if postTableView.txtName.text == "" {
-      
-      let uiImage = UIImage(named: "ic_error_red")
-      
-      showValidationPopup(theTitle: "Name is Required", theMessage: "Please enter a name for this spot.", theImage: uiImage)
-    
-      
-    } else if postTableView.txtDescription.text == "" {
-      
-      let uiImage = UIImage(named: "ic_error_red")
-      
-      showValidationPopup(theTitle: "Description is Required", theMessage: "Please enter a description for this spot.", theImage: uiImage)
-      
-      
-    } else if postTableView.selectedSpotTypes.count == 0 {
-      
-      let uiImage = UIImage(named: "ic_error_red")
-      
-      showValidationPopup(theTitle: "Activities are Required", theMessage: "Please select at least one activity for this spot.", theImage: uiImage)
-
-    } else if postTableView.spotVisibility == SpotsVisibility.none {
-      
-      let uiImage = UIImage(named: "ic_error_red")
-      
-      showValidationPopup(theTitle: "Spot Privacy is Required", theMessage: "Please specify a visibility for this spot.", theImage: uiImage)
-   
-    } else if postTableView.firstImage == nil &&
-      postTableView.secondImage == nil &&
-      postTableView.thirdImage == nil {
-      
-      let uiImage = UIImage(named: "ic_error_red")
-      
-      showValidationPopup(theTitle: "At Least One Image is Required", theMessage: "Please add at least one image for this spot.", theImage: uiImage)
-      
-      
-    } else {
-    
-      handleSpotPost()
-      
-    }
-  }
-  
-  func handleSpotPost() {
-    
-    self.btnPost.showLoading()
-
-    let api = ApiServiceController.sharedInstance
-    
-    spotModel.Name = postTableView.txtName.text
-    
-    spotModel.Description = postTableView.txtDescription.text
-    
-    spotModel.Lat = postTableView.currentLocation?.coordinate.latitude
-    
-    spotModel.Long = postTableView.currentLocation?.coordinate.longitude
-    
-    spotModel.selectedSpotTypes = postTableView.selectedSpotTypes
-    
-    // spotModel.SpotTypeName = postTableView.lblSpotType.text
-    
-    // spotModel.SpotType = SpotsType(rawValue: SpotsType.getSpotTypeFromSpotName(spotName: postTableView.lblSpotType.text!))
-    
-    spotModel.Visibility = postTableView.spotVisibility
-    
-    spotModel.SharedToFacebook = postTableView.swShareToFacebook.isOn
-    
-    if postTableView.firstImage != nil {
-        spotModel.PhotoUrl1 = uploadImage(img: postTableView.firstImage)
-    }
-    
-    if postTableView.secondImage != nil {
-        spotModel.PhotoUrl2 = uploadImage(img: postTableView.secondImage)
-        
-    }
-    
-    if postTableView.thirdImage != nil {
-        spotModel.PhotoUrl3 = uploadImage(img: postTableView.thirdImage)
-    }
-    
-    
-    _ = api.performPostSpot(UserDefaults.SpotsToken!, spotsModel: spotModel, completion: { (success, model, error) in
-      
-      if(error == nil) {
-        
-        if(success) {
-          
-          self.showSuccessPopupDialog()
-            
-            // now upload images to amazon in the background
-          
-        } else {
-          
-          // some other error happened
-          print("an error occurred")
+        if postTableView.txtDescription.isFirstResponder {
+            postTableView.txtDescription.resignFirstResponder()
         }
         
-      } else {
+        self.dismiss(animated: true, completion: nil)
         
-        // there was some network error or something
-        print("an error occurred")
+    }
+    
+    @IBAction func btnPostTapped(_ sender: Any) {
+        
+        //validate all fields
+        if postTableView.txtName.text == "" {
+            
+            let uiImage = UIImage(named: "ic_error_red")
+            
+            showValidationPopup(theTitle: "Name is Required", theMessage: "Please enter a name for this spot.", theImage: uiImage)
+            
+            
+        } else if postTableView.txtDescription.text == "" {
+            
+            let uiImage = UIImage(named: "ic_error_red")
+            
+            showValidationPopup(theTitle: "Description is Required", theMessage: "Please enter a description for this spot.", theImage: uiImage)
+            
+            
+        } else if postTableView.selectedSpotTypes.count == 0 {
+            
+            let uiImage = UIImage(named: "ic_error_red")
+            
+            showValidationPopup(theTitle: "Activities are Required", theMessage: "Please select at least one activity for   this spot.", theImage: uiImage)
+            
+        } else if postTableView.spotVisibility == SpotsVisibility.none {
+            
+            let uiImage = UIImage(named: "ic_error_red")
       
-      }
+            showValidationPopup(theTitle: "Spot Privacy is Required", theMessage: "Please specify a visibility for this spot.", theImage: uiImage)
+   
+        } else if postTableView.firstImage == nil &&
+            postTableView.secondImage == nil &&
+            postTableView.thirdImage == nil {
       
-    })
+            let uiImage = UIImage(named: "ic_error_red")
+      
+            showValidationPopup(theTitle: "At Least One Image is Required", theMessage: "Please add at least one image for this spot.", theImage: uiImage)
+      
+        } else {
     
-    /*
+            handleSpotPost()
+        }
+    }
+  
+    func handleSpotPost() {
+    
+        self.btnPost.showLoading()
+
+        let api = ApiServiceController.sharedInstance
+    
+        spotModel.Name = postTableView.txtName.text
+    
+        spotModel.Description = postTableView.txtDescription.text
+    
+        spotModel.Lat = postTableView.currentLocation?.coordinate.latitude
+    
+        spotModel.Long = postTableView.currentLocation?.coordinate.longitude
+    
+        spotModel.selectedSpotTypes = postTableView.selectedSpotTypes
+    
+        // spotModel.SpotTypeName = postTableView.lblSpotType.text
+    
+        // spotModel.SpotType = SpotsType(rawValue: SpotsType.getSpotTypeFromSpotName(spotName: postTableView.lblSpotType.text!))
+    
+        spotModel.Visibility = postTableView.spotVisibility
+    
+        spotModel.SharedToFacebook = postTableView.swShareToFacebook.isOn
+    
+        if postTableView.firstImage != nil {
+            spotModel.PhotoUrl1 = uploadImage(img: postTableView.firstImage)
+        }
+    
+        if postTableView.secondImage != nil {
+            spotModel.PhotoUrl2 = uploadImage(img: postTableView.secondImage)
+        
+        }
+    
+        if postTableView.thirdImage != nil {
+            spotModel.PhotoUrl3 = uploadImage(img: postTableView.thirdImage)
+        }
     
     
- 
- */
-  }
+        _ = api.performPostSpot(UserDefaults.SpotsToken!, spotsModel: spotModel, completion: { (success, model, error) in
+      
+            if(error == nil) {
+        
+                if(success) {
+          
+                    self.showSuccessPopupDialog()
+            
+                    // now upload images to amazon in the background
+          
+                } else {
+          
+                    // some other error happened
+                    print("an error occurred")
+                }
+                
+            } else {
+                
+                // there was some network error or something
+                print("an error occurred")
+                
+            }
+            
+        })
+        
+    }
+    
+    func resizeImage(image: UIImage) -> Data {
+        
+        var newImage = image
+        
+        var factor: CGFloat
+        
+        let resol: CGFloat = (newImage.size.height * newImage.size.width)
+        
+        let minResol: CGFloat = (1136 * 640)
+        
+        if resol > minResol {
+            
+            factor = sqrt(resol/minResol) * 2
+        
+            newImage = scaleDown(img: newImage, newSize: CGSize(width: newImage.size.width/factor, height: newImage.size.height/factor))
+        }
+        
+        var compression: CGFloat = 0.9
+        
+        let maxCompression: CGFloat = 0.1
+        
+        var imageData: Data = UIImageJPEGRepresentation(newImage, compression)!
+        
+        while imageData.count > 60 && compression > maxCompression {
+            compression -= 0.10
+            imageData = UIImageJPEGRepresentation(newImage, compression)!
+        }
+        
+        return imageData
+    }
+    
+    func scaleDown(img: UIImage, newSize: CGSize) -> UIImage {
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, true, 0.0)
+        
+        img.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return scaledImage!
+    }
     
     func uploadImage(img: UIImage?) -> String! {
         
@@ -190,15 +227,12 @@ class PostViewController: UIViewController {
             
             let uuidPrefix = uuidFilename.substring(to: uuidFilename.index(uuidFilename.startIndex, offsetBy: 4))
             
-            let resizedImage = postTableView.firstImage.resizedImageWithinRect(rectSize: CGSize(width: 320, height: 240))
-            
-            // let resizedImage = postTableView.firstImage.resizedImage(newSize: CGSize(width: 320, height: 240))
             
             let testFileUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(uuidFilename)
             
-            let data = UIImageJPEGRepresentation(resizedImage, 1.0)
+            let data = resizeImage(image: img!)
             
-            try data?.write(to: testFileUrl!)
+            try data.write(to: testFileUrl!)
             
             let transferManager = AWSS3TransferManager.default()
             
@@ -248,112 +282,109 @@ class PostViewController: UIViewController {
         return ""
     }
   
-  func showValidationPopup(theTitle: String?, theMessage: String?, theImage: UIImage?) {
+    func showValidationPopup(theTitle: String?, theMessage: String?, theImage: UIImage?) {
     
     
-    let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
+        let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
     
-    let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) { 
+        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) {
       
-      print("validation popup dismissed")
+            print("validation popup dismissed")
       
+        }
+    
+        let buttonOne = DefaultButton(title: "Dismiss") {
+      
+        }
+
+        popup.addButton(buttonOne)
+    
+        self.present(popup, animated: true, completion: nil)
+    
+        let vc = popup.viewController as! ValidationPopupViewController
+    
+        vc.imgValidationImage.image = theImage
+    
+        vc.lblValidationTitle.text = theTitle
+    
+        vc.lblValidationMessage.text = theMessage
+    
     }
+  
+    func showSuccessPopupDialog() {
     
-    let buttonOne = DefaultButton(title: "Dismiss") {
+        let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
+    
+        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) {
       
+            if let navController = self.navigationController {
+                navController.dismiss(animated: true, completion: {
+                })
+            }
+        }
+    
+        let buttonOne = DefaultButton(title: "OK") {
+            if let navController = self.navigationController {
+                navController.dismiss(animated: true, completion: {
+                })
+            }
+        }
+
+    
+        popup.addButton(buttonOne)
+    
+        self.present(popup, animated: true, completion: nil)
+    
+        let vc = popup.viewController as! ValidationPopupViewController
+    
+        vc.imgValidationImage.image = UIImage(named: "ic_check")//?.tint(with: UIColor.spotsGreen())
+    
+        vc.lblValidationTitle.text = "Success!"
+    
+        vc.lblValidationMessage.text = "THis spot has been successfully added!"
     }
 
-    popup.addButton(buttonOne)
-    
-    self.present(popup, animated: true, completion: nil)
-    
-    let vc = popup.viewController as! ValidationPopupViewController
-    
-    vc.imgValidationImage.image = theImage
-    
-    vc.lblValidationTitle.text = theTitle
-    
-    vc.lblValidationMessage.text = theMessage
-    
-    
-  }
   
-  func showSuccessPopupDialog() {
+  
+  
+    // MARK: keyboard notifications
+    @objc func keyboardWillHide(_ notification: Notification) {
     
-    let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
+        let animationDuration = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).doubleValue
     
-    let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) {
-      
-      if let navController = self.navigationController {
-        navController.dismiss(animated: true, completion: {
+        self.btnPostBottomConstraint.constant = 0
+    
+        UIView.animate(withDuration: animationDuration, animations: {
+            self.view.layoutIfNeeded()
         })
-      }
     }
+  
+  
+    @objc func keyboardWillShow(_ notification: Notification) {
     
-    let buttonOne = DefaultButton(title: "OK") {
-      if let navController = self.navigationController {
-        navController.dismiss(animated: true, completion: {
+        let keyboardFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+    
+        let animationDuration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+    
+        let height = keyboardFrame.size.height
+    
+        self.btnPostBottomConstraint.constant = height
+    
+        UIView.animate(withDuration: animationDuration, animations: {
+            self.view.layoutIfNeeded()
         })
-      }
     }
-
-    
-    popup.addButton(buttonOne)
-    
-    self.present(popup, animated: true, completion: nil)
-    
-    let vc = popup.viewController as! ValidationPopupViewController
-    
-    vc.imgValidationImage.image = UIImage(named: "ic_check")//?.tint(with: UIColor.spotsGreen())
-    
-    vc.lblValidationTitle.text = "Success!"
-    
-    vc.lblValidationMessage.text = "THis spot has been successfully added!"
-    
-  }
-
-  
-  
-  
-  // MARK: keyboard notifications
-@objc func keyboardWillHide(_ notification: Notification) {
-    
-    let animationDuration = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).doubleValue
-    
-    self.btnPostBottomConstraint.constant = 0
-    
-    UIView.animate(withDuration: animationDuration, animations: {
-      self.view.layoutIfNeeded()
-    })
-  }
-  
-  
-@objc func keyboardWillShow(_ notification: Notification) {
-    
-    
-    let keyboardFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-    
-    let animationDuration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-    
-    let height = keyboardFrame.size.height
-    
-    self.btnPostBottomConstraint.constant = height
-    
-    UIView.animate(withDuration: animationDuration, animations: {
-      self.view.layoutIfNeeded()
-    })
-  }
 }
 
 
 // MARK: DidTapAddPhotoButtonDelegate
 extension PostViewController : DidTapAddPhotoButtonDelegate {
   
-  func didTapAddPhoto(_ sender: Any?, numToAdd: Int?) {
+    func didTapAddPhoto(_ sender: Any?, numToAdd: Int?) {
     
-    let imagePickerController = ImagePickerController()
-    imagePickerController.imageLimit = numToAdd!
-    imagePickerController.delegate = self.postTableView
-    present(imagePickerController, animated: true, completion: nil)
-  }
+        let imagePickerController = ImagePickerController()
+        imagePickerController.imageLimit = numToAdd!
+        imagePickerController.delegate = self.postTableView
+        present(imagePickerController, animated: true, completion: nil)
+    }
 }
