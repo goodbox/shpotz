@@ -135,6 +135,8 @@ public class SpotDetailViewController: UITableViewController {
                 self.photosColContainer.images = self.spotDetail.spotImages
                 self.photosColContainer.cvPhotos.reloadData()
                 
+                self.imgHeaderPic.contentMode = .scaleAspectFit
+                
                 self.imgHeaderPic.af_setImage(
                     withURL: URL(string: (self.spotDetail.spotImages.first?.Url)!)!,
                     placeholderImage: nil,
@@ -144,7 +146,7 @@ public class SpotDetailViewController: UITableViewController {
             } else {
                 
                 self.imgHeaderPic.image = SpotIcons.other?.tint(with: Color.lightGray)
-                self.imgHeaderPic.contentMode = .center
+                self.imgHeaderPic.contentMode = .scaleAspectFit
             }
             
            
@@ -208,7 +210,7 @@ public class SpotDetailViewController: UITableViewController {
     
     @IBAction func btnGetDirectionsTapped(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Selection", message: "Select Navigation App", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Directions", message: "Select Navigation App", preferredStyle: .actionSheet)
         
         let googleUrl = URL(string:"comgooglemaps://")
         

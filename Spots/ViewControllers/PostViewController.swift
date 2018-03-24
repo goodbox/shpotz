@@ -337,7 +337,7 @@ class PostViewController: UIViewController {
     
         let vc = popup.viewController as! ValidationPopupViewController
     
-        vc.imgValidationImage.image = UIImage(named: "ic_check")//?.tint(with: UIColor.spotsGreen())
+        vc.imgValidationImage.image = UIImage(named: "ic_check")?.tint(with: UIColor.spotsGreen())
     
         vc.lblValidationTitle.text = "Success!"
     

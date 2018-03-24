@@ -252,7 +252,7 @@ public class FacilityDetailViewController: UITableViewController {
     
     @IBAction func btnGetDirectionsTapped(_ sender: Any) {
         
-        let alert = UIAlertController(title: "Selection", message: "Select Navigation App", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Directions", message: "Select Navigation App", preferredStyle: .actionSheet)
         
         let googleUrl = URL(string:"comgooglemaps://")
         
