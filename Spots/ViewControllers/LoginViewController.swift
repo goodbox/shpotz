@@ -51,14 +51,8 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     imgLogo.contentMode = .scaleAspectFit
     imgLogo.layer.masksToBounds = true
     
-    // imgLogo.backgroundColor = UIColor.red
-    
     lblAppTitle.font = UIFont(name:"Roboto-Light", size: 50)!
-    
-    
-    
-    
-  }
+    }
     
     public func loadReachableScreen() {
         
@@ -117,11 +111,11 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             if reachability.connection == .wifi || reachability.connection == .cellular {
                 self.loadReachableScreen()
             } else {
-                self.performSegue(withIdentifier: "NoNetworkSegue", sender: self)
+                self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
             }
         }
         reachability.whenUnreachable = { _ in
-            self.performSegue(withIdentifier: "NoNetworkSegue", sender: self)
+            self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
         }
         
         /*
@@ -236,44 +230,4 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
   }
 
 }
-
-
-
-
-
-
-
-
-
-/*
- self.btnLogin.isEnabled = false
- 
- self.btnLogin.showLoading()
- 
- let facebookReadPermissions = ["public_profile", "email", "user_friends"]
- 
- let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
- 
- fbLoginManager.loginBehavior = FBSDKLoginBehavior.native
- 
- fbLoginManager.logIn(withReadPermissions: facebookReadPermissions, from: self) { (result, error) in
- 
- if(error == nil) {
- 
- let fbLoginResult : FBSDKLoginManagerLoginResult = result!
- 
- let fbAccessToken = fbLoginResult.token.tokenString!
- 
- UserDefaults.FacebookAuthToken = fbAccessToken
- 
- self.performSegue(withIdentifier: "LoginSegue", sender: self)
- 
- } else {
- print("login error")
- self.btnLogin.hideLoading()
- self.btnLogin.isEnabled = true
- }
- 
- }
- */
 

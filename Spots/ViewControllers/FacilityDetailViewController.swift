@@ -56,7 +56,7 @@ public class FacilityDetailViewController: UITableViewController {
   
     var photosColContainer: PhotosContainerViewController!
     
-    var webViewHeight : CGFloat = 300
+    var webViewHeight : CGFloat = 100
   
     var mapView : GMSMapView!
     var zoomLevel: Float = 15.0
@@ -460,8 +460,6 @@ extension FacilityDetailViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
                                                   for: indexPath) as! SelectSpotTypeCell
     
-    
-    
         cell.configure(SpotTypeModel(name: self.activityName[indexPath.row]))
         // Configure the cell
         return cell
@@ -473,21 +471,6 @@ extension FacilityDetailViewController: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension FacilityDetailViewController : UICollectionViewDelegateFlowLayout {
-  
-    public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-    
-        let cell = collectionView.cellForItem(at: indexPath)
-    
-        cell?.backgroundColor = MDCPalette.grey.tint400
-    }
-  
-    public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-    
-        let cell = collectionView.cellForItem(at: indexPath)
-    
-        cell?.backgroundColor = UIColor.clear
-    
-    }
   
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     

@@ -54,7 +54,7 @@ public class SpotDetailViewController: UITableViewController {
     var mapView : GMSMapView!
     var zoomLevel: Float = 15.0
     
-    var webViewHeight : CGFloat = 300
+    var webViewHeight : CGFloat = 100
     
     public override func viewDidLoad() {
     
@@ -88,9 +88,7 @@ public class SpotDetailViewController: UITableViewController {
         self.lblDispersed.layer.backgroundColor = UIColor.totesBusinessMedia().cgColor
         
         self.lblDispersed.textColor = UIColor.white
-        
-        // self.lblReserved.font = UIFont.totesChallengeCategory()
-        
+ 
         (self.lblDispersed as! RoundedBGLabel).textInsets = UIEdgeInsets(top:4, left: 8, bottom: 4, right: 8)
         
         self.lblDispersed.layer.cornerRadius = 5
@@ -108,20 +106,8 @@ public class SpotDetailViewController: UITableViewController {
                 
                 self.photosColContainer = vc
             }
-        } else if segue.identifier == "PhotoGallerySegue" {
-            
-            
-            print("PhotoGallerySegue")
-            /*
-             if let vc = segue.destination as? UINavigationController {
-             
-             if let vd = vc.topViewController as? PhotoGalleryViewController {
-             vd.facilityDetail = self.facilityDetail
-             }
-             }
-             */
-        }
-        
+        } /*else if segue.identifier == "PhotoGallerySegue" {
+        }*/
     }
     
     func loadGoodSpot() {
@@ -263,25 +249,25 @@ extension SpotDetailViewController: DidTapFacilityImageDelegate {
 extension SpotDetailViewController: SlideLeafViewControllerDelegate {
     
     public func tapImageDetailView(slideLeaf: SlideLeaf, pageIndex: Int) {
-        print("tapImageDetailView")
-        print(pageIndex)
-        print(slideLeaf)
+        //print("tapImageDetailView")
+        //print(pageIndex)
+        //print(slideLeaf)
         
         //let viewController = DetailViewController.make(detailTitle: slideLeaf.title)
         //self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     public func longPressImageView(slideLeafViewController: SlideLeafViewController, slideLeaf: SlideLeaf, pageIndex: Int) {
-        print("longPressImageView")
-        print(slideLeafViewController)
-        print(slideLeaf)
-        print(pageIndex)
+       // print("longPressImageView")
+        //print(slideLeafViewController)
+        //print(slideLeaf)
+        //print(pageIndex)
     }
     
     public func slideLeafViewControllerDismissed(slideLeaf: SlideLeaf, pageIndex: Int) {
-        print("slideLeafViewControllerDismissed")
-        print(slideLeaf)
-        print(pageIndex)
+        //print("slideLeafViewControllerDismissed")
+        //print(slideLeaf)
+        //print(pageIndex)
         
         //let indexPath = IndexPath(row: pageIndex, section: 0)
         //self.collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
@@ -300,8 +286,7 @@ extension SpotDetailViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
                                                       for: indexPath) as! SelectSpotTypeCell
-        
-        
+    
         self.spotDetail.selectedSpotTypes[indexPath.row].IsSelected = false
         cell.configure(self.spotDetail.selectedSpotTypes[indexPath.row])
         // Configure the cell
@@ -313,21 +298,6 @@ extension SpotDetailViewController: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension SpotDetailViewController : UICollectionViewDelegateFlowLayout {
-    
-    public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        
-        let cell = collectionView.cellForItem(at: indexPath)
-        
-        cell?.backgroundColor = MDCPalette.grey.tint400
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        
-        let cell = collectionView.cellForItem(at: indexPath)
-        
-        cell?.backgroundColor = UIColor.clear
-        
-    }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
