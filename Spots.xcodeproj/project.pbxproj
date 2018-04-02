@@ -141,8 +141,6 @@
 		B776923E1E80E2930099412E /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		B77692401E80E3080099412E /* ApiServiceTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceTaskFactory.swift; sourceTree = "<group>"; };
 		B77692421E80E32C0099412E /* ApiServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceController.swift; sourceTree = "<group>"; };
-		B78164212071BB2E00554D54 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		B78164222071BB2E00554D54 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		B7A376521E62CD6B004F4786 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B7A376541E62CD76004F4786 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		B7A376561E62CD81004F4786 /* MapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
@@ -215,8 +213,6 @@
 		64862A4BE3AE2B58EEDAF17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B78164212071BB2E00554D54 /* Realm.framework */,
-				B78164222071BB2E00554D54 /* RealmSwift.framework */,
 				B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */,
 				B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */,
 				B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */,
