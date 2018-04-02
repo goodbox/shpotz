@@ -211,7 +211,7 @@ public class FacilityDetailViewController: UITableViewController {
     
     func setActivities() {
         let sortedActivities = self.facilityDetail.Activities.sorted { (f1, f2) -> Bool in
-            f1.Name < f2.Name
+            f1.Name.first! < f2.Name.first!
         }
         for act in sortedActivities as [FacilityActivity] {
             switch act.Name {
@@ -230,10 +230,6 @@ public class FacilityDetailViewController: UITableViewController {
             case "FISHING":
                 
                 self.activityName.append("Fishing")
-                
-            case "HIKING":
-                
-                self.activityName.append("Hiking")
                 
             case "HIKING":
                 

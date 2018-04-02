@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-import Realm
-import RealmSwift
+// import Realm
+// import RealmSwift
 
 enum SpotsSystemType: Int {
   
@@ -184,6 +184,7 @@ public class LoginModel {
 }
 
 // MARK: Realm Spot
+/*
 public class RealmSpot: Object {
     
     @objc dynamic var Id = 0
@@ -209,6 +210,7 @@ public class RealmSpot: Object {
     @objc dynamic var SharedToFacebook = false
     
 }
+ */
 
 // MARK: spots model
 public class SpotsModel {

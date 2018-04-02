@@ -20,8 +20,6 @@
 		B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */; };
 		B7049DFF1E651060000824EA /* IconExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFE1E651060000824EA /* IconExtension.swift */; };
 		B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049E2F1E66528A000824EA /* PostTableViewController.swift */; };
-		B7118894202D353A00C45C3B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7118892202D352700C45C3B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B7118895202D353B00C45C3B /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7118893202D353A00C45C3B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727755F1E62C27B009B20A7 /* AppDelegate.swift */; };
 		B72775651E62C27B009B20A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775631E62C27B009B20A7 /* Main.storyboard */; };
 		B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72775661E62C27B009B20A7 /* Assets.xcassets */; };
@@ -33,6 +31,8 @@
 		B72ED5F4201C6FE40029DBD3 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5EF201C6FDF0029DBD3 /* Roboto-Medium.ttf */; };
 		B72ED5F5201C6FE40029DBD3 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5F0201C6FE10029DBD3 /* Roboto-Regular.ttf */; };
 		B72ED5F6201C6FE40029DBD3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */; };
+		B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF520706FC300BA18CA /* ProfileViewController.swift */; };
+		B730ABF82070AA9100BA18CA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF72070AA9100BA18CA /* InfoViewController.swift */; };
 		B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */; };
 		B77692371E80DE060099412E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692361E80DE060099412E /* Models.swift */; };
 		B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692381E80E1420099412E /* GoodSpotsError.swift */; };
@@ -94,8 +94,6 @@
 			files = (
 				B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */,
 				B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */,
-				B7118894202D353A00C45C3B /* RealmSwift.framework in Embed Frameworks */,
-				B7118895202D353B00C45C3B /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,8 +117,6 @@
 		B7049DFE1E651060000824EA /* IconExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconExtension.swift; sourceTree = "<group>"; };
 		B7049E0B1E653B8A000824EA /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Spots-Bridging-Header.h"; path = "ThirdParty/PopupDialog/Spots-Bridging-Header.h"; sourceTree = "<group>"; };
 		B7049E2F1E66528A000824EA /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
-		B7118892202D352700C45C3B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		B7118893202D353A00C45C3B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		B727755C1E62C27B009B20A7 /* Spots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B727755F1E62C27B009B20A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B72775641E62C27B009B20A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +131,8 @@
 		B72ED5EF201C6FDF0029DBD3 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		B72ED5F0201C6FE10029DBD3 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		B730ABF520706FC300BA18CA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B730ABF72070AA9100BA18CA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkTableViewController.swift; sourceTree = "<group>"; };
 		B77692361E80DE060099412E /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B77692381E80E1420099412E /* GoodSpotsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodSpotsError.swift; sourceTree = "<group>"; };
@@ -143,6 +141,8 @@
 		B776923E1E80E2930099412E /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		B77692401E80E3080099412E /* ApiServiceTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceTaskFactory.swift; sourceTree = "<group>"; };
 		B77692421E80E32C0099412E /* ApiServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceController.swift; sourceTree = "<group>"; };
+		B78164212071BB2E00554D54 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		B78164222071BB2E00554D54 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		B7A376521E62CD6B004F4786 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B7A376541E62CD76004F4786 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		B7A376561E62CD81004F4786 /* MapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 		64862A4BE3AE2B58EEDAF17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B7118893202D353A00C45C3B /* Realm.framework */,
-				B7118892202D352700C45C3B /* RealmSwift.framework */,
+				B78164212071BB2E00554D54 /* Realm.framework */,
+				B78164222071BB2E00554D54 /* RealmSwift.framework */,
 				B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */,
 				B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */,
 				B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */,
@@ -342,6 +342,8 @@
 				B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */,
 				B7FB95B81F51107300CBEF81 /* NoNetworkViewController.swift */,
 				B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */,
+				B730ABF520706FC300BA18CA /* ProfileViewController.swift */,
+				B730ABF72070AA9100BA18CA /* InfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -650,7 +652,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+			shellScript = "";
 		};
 		CA03D56E2CF18809C982897D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -717,6 +719,7 @@
 				B7CE9B4A20201BEA00B823FF /* Color.swift in Sources */,
 				B7FBC55F1EA8383400EF0CAB /* PhotosContainerViewController.swift in Sources */,
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
+				B730ABF82070AA9100BA18CA /* InfoViewController.swift in Sources */,
 				B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */,
 				B77692371E80DE060099412E /* Models.swift in Sources */,
 				B7A376761E63828F004F4786 /* MapViewController.swift in Sources */,
@@ -737,6 +740,7 @@
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,
 				B7CE9B4C20201C8B00B823FF /* Material+UIImage.swift in Sources */,
 				B776923F1E80E2930099412E /* ApiServices.swift in Sources */,
+				B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */,
 				B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */,
 				B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */,
 			);
@@ -890,7 +894,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C76A7D860A97B1CC32CA5AC8 /* Pods-Spots.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJ8R67WH26;
@@ -912,7 +915,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 007EF68DF32644BB7D6CD605 /* Pods-Spots.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJ8R67WH26;

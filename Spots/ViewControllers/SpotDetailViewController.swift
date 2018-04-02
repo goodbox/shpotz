@@ -136,7 +136,10 @@ public class SpotDetailViewController: UITableViewController {
             }
             
            
-        
+            self.spotDetail.selectedSpotTypes = self.spotDetail.selectedSpotTypes.sorted(by: { (s1, s2) -> Bool in
+                s1.SpotName.first! < s2.SpotName.first!
+            })
+            
             self.lblSpotName.text = self.spotDetail.Name
             
             self.lblSpotName.font = UIFont.spotsFacilityName()
