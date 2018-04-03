@@ -36,6 +36,10 @@ public class SpotDetailViewController: UITableViewController {
     
     @IBOutlet weak var wvDescription: UIWebView!
     
+    @IBOutlet weak var imgSharedBy: UIImageView!
+    
+    @IBOutlet weak var lbSharedBy: UILabel!
+    
     // vars
     
     var spotDetail: SpotsModel!
@@ -77,6 +81,10 @@ public class SpotDetailViewController: UITableViewController {
         btnGetDirections.setTitleColor(UIColor.white, for: .normal)
         
         // photosColContainer.spotSystemType = SpotsSystemType.goodSpot
+        self.imgSharedBy.layer.cornerRadius = self.imgSharedBy.layer.frame.width/2
+        self.imgSharedBy.layer.masksToBounds = true
+        self.imgSharedBy.layer.borderColor = UIColor.lightGray.cgColor
+        self.imgSharedBy.layer.borderWidth = 2
         
         loadGoodSpot()
     }
@@ -179,8 +187,26 @@ public class SpotDetailViewController: UITableViewController {
             
             marker.map = self.mapView
             
+            if let userId = self.spotDetail.User.FacebookUserId {
+                
+                let profilePicUrl = "https://graph.facebook.com/v2.8/" + userId + "/picture?type=large"
+                
+                self.imgSharedBy.af_setImage(
+                    withURL: URL(string: profilePicUrl)!,
+                    placeholderImage: nil,
+                    filter: nil,
+                    imageTransition: .crossDissolve(0.2)
+                )
+            }
+            
+            self.lbSharedBy.text = self.spotDetail.User.fullName()
+            
             self.tableView.reloadData()
         })
+    }
+    
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -192,6 +218,8 @@ public class SpotDetailViewController: UITableViewController {
             return 200
         } else if indexPath.section == 3 {
             return 300
+        } else if indexPath.section == 4 {
+            return 120
         } else {
             return UITableViewAutomaticDimension
         }

@@ -212,6 +212,34 @@ public class RealmSpot: Object {
 }
  */
 
+// MARK: user view model
+public class UserViewModel {
+    var FacebookUserId: String! = ""
+    var FirstName: String! = ""
+    var LastName: String! = ""
+    
+    init() {}
+    
+    init(json: JSON) {
+        
+        if let facebookUserId = json["facebookUserId"].string {
+            self.FacebookUserId = facebookUserId
+        }
+        
+        if let firstName = json["firstName"].string {
+            self.FirstName = firstName
+        }
+        
+        if let lastName = json["lastName"].string {
+            self.LastName = lastName
+        }
+    }
+    
+    func fullName() -> String {
+        return FirstName + " " + LastName
+    }
+}
+
 // MARK: spots model
 public class SpotsModel {
   
@@ -242,7 +270,9 @@ public class SpotsModel {
     var SharedToFacebook: Bool! = false
     
     var spotImages: [FacilityMedia]! = []
-  
+    
+    var User: UserViewModel! = nil
+    
     init() {}
   
     init(json: JSON) {
@@ -299,6 +329,8 @@ public class SpotsModel {
     
         self.SharedToFacebook = json["sharedToFacebook"].bool!
     
+        
+        self.User = UserViewModel(json: json["userViewModel"])
   }
   
   
