@@ -27,6 +27,8 @@ class PostViewController: UIViewController {
     var spotModel: SpotsModel!
     
     var selectedSpotTypes : [SpotTypeModel] = []
+    
+    var didCancelNoNetworkSaveDelegate: DidCancelNoNetworkSaveDelegate!
   
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,10 @@ class PostViewController: UIViewController {
     
         if postTableView.txtDescription.isFirstResponder {
             postTableView.txtDescription.resignFirstResponder()
+        }
+        
+        if didCancelNoNetworkSaveDelegate != nil {
+            didCancelNoNetworkSaveDelegate.didTapCloseNoNetowrk(self)
         }
         
         self.dismiss(animated: true, completion: nil)

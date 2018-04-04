@@ -33,6 +33,14 @@
 		B72ED5F6201C6FE40029DBD3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */; };
 		B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF520706FC300BA18CA /* ProfileViewController.swift */; };
 		B730ABF82070AA9100BA18CA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF72070AA9100BA18CA /* InfoViewController.swift */; };
+		B74293472073FD5D0008B827 /* CustomPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = B742933F2073FD5D0008B827 /* CustomPage.xib */; };
+		B74293482073FD5D0008B827 /* SwiftyOnboardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74293402073FD5D0008B827 /* SwiftyOnboardOverlay.swift */; };
+		B74293492073FD5D0008B827 /* SwiftyOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74293422073FD5D0008B827 /* SwiftyOnboard.swift */; };
+		B742934A2073FD5D0008B827 /* CustomOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74293432073FD5D0008B827 /* CustomOverlay.xib */; };
+		B742934B2073FD5D0008B827 /* CustomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74293442073FD5D0008B827 /* CustomPage.swift */; };
+		B742934C2073FD5D0008B827 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74293452073FD5D0008B827 /* CustomOverlay.swift */; };
+		B742934D2073FD5D0008B827 /* SwiftyOnboardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74293462073FD5D0008B827 /* SwiftyOnboardPage.swift */; };
+		B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742934E2073FEC00008B827 /* NewUserViewController.swift */; };
 		B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */; };
 		B77692371E80DE060099412E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692361E80DE060099412E /* Models.swift */; };
 		B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692381E80E1420099412E /* GoodSpotsError.swift */; };
@@ -133,6 +141,15 @@
 		B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B730ABF520706FC300BA18CA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B730ABF72070AA9100BA18CA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B742933F2073FD5D0008B827 /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPage.xib; sourceTree = "<group>"; };
+		B74293402073FD5D0008B827 /* SwiftyOnboardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardOverlay.swift; sourceTree = "<group>"; };
+		B74293412073FD5D0008B827 /* SwiftyOnboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyOnboard.h; sourceTree = "<group>"; };
+		B74293422073FD5D0008B827 /* SwiftyOnboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboard.swift; sourceTree = "<group>"; };
+		B74293432073FD5D0008B827 /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlay.xib; sourceTree = "<group>"; };
+		B74293442073FD5D0008B827 /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPage.swift; sourceTree = "<group>"; };
+		B74293452073FD5D0008B827 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
+		B74293462073FD5D0008B827 /* SwiftyOnboardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyOnboardPage.swift; sourceTree = "<group>"; };
+		B742934E2073FEC00008B827 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkTableViewController.swift; sourceTree = "<group>"; };
 		B77692361E80DE060099412E /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		B77692381E80E1420099412E /* GoodSpotsError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodSpotsError.swift; sourceTree = "<group>"; };
@@ -299,6 +316,7 @@
 		B727755E1E62C27B009B20A7 /* Spots */ = {
 			isa = PBXGroup;
 			children = (
+				B742933E2073FBB40008B827 /* SwiftyOnboard */,
 				B72ED5EC201C6FB50029DBD3 /* Fonts */,
 				B7019CA71E830282000765DC /* Popups */,
 				B70EA4AE1E80DD340075ADA1 /* Models */,
@@ -340,6 +358,7 @@
 				B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */,
 				B730ABF520706FC300BA18CA /* ProfileViewController.swift */,
 				B730ABF72070AA9100BA18CA /* InfoViewController.swift */,
+				B742934E2073FEC00008B827 /* NewUserViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -354,6 +373,21 @@
 				B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B742933E2073FBB40008B827 /* SwiftyOnboard */ = {
+			isa = PBXGroup;
+			children = (
+				B74293452073FD5D0008B827 /* CustomOverlay.swift */,
+				B74293432073FD5D0008B827 /* CustomOverlay.xib */,
+				B74293442073FD5D0008B827 /* CustomPage.swift */,
+				B742933F2073FD5D0008B827 /* CustomPage.xib */,
+				B74293412073FD5D0008B827 /* SwiftyOnboard.h */,
+				B74293422073FD5D0008B827 /* SwiftyOnboard.swift */,
+				B74293402073FD5D0008B827 /* SwiftyOnboardOverlay.swift */,
+				B74293462073FD5D0008B827 /* SwiftyOnboardPage.swift */,
+			);
+			path = SwiftyOnboard;
 			sourceTree = "<group>";
 		};
 		B7A376791E63A46C004F4786 /* Utils */ = {
@@ -502,7 +536,9 @@
 				B72ED5F4201C6FE40029DBD3 /* Roboto-Medium.ttf in Resources */,
 				B72ED5F5201C6FE40029DBD3 /* Roboto-Regular.ttf in Resources */,
 				B727756A1E62C27B009B20A7 /* LaunchScreen.storyboard in Resources */,
+				B742934A2073FD5D0008B827 /* CustomOverlay.xib in Resources */,
 				B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */,
+				B74293472073FD5D0008B827 /* CustomPage.xib in Resources */,
 				B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */,
 				B7019CA91E8302D7000765DC /* ValidationPopup.xib in Resources */,
 				B7FBC5631EA86D7200EF0CAB /* FacilityImageCell.xib in Resources */,
@@ -698,13 +734,16 @@
 				B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */,
 				B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */,
 				B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */,
+				B742934C2073FD5D0008B827 /* CustomOverlay.swift in Sources */,
 				B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */,
 				B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */,
 				B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */,
 				B7020A5E1E724753007C437A /* SpotDetailViewController.swift in Sources */,
+				B74293492073FD5D0008B827 /* SwiftyOnboard.swift in Sources */,
 				B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
+				B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */,
 				B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */,
 				B72ADF102030383200D1CF71 /* RoundedBGLabel.swift in Sources */,
 				B776923D1E80E2030099412E /* ApiServiceTask.swift in Sources */,
@@ -712,6 +751,7 @@
 				B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
 				B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */,
+				B742934B2073FD5D0008B827 /* CustomPage.swift in Sources */,
 				B7CE9B4A20201BEA00B823FF /* Color.swift in Sources */,
 				B7FBC55F1EA8383400EF0CAB /* PhotosContainerViewController.swift in Sources */,
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
@@ -733,9 +773,11 @@
 				B776923B1E80E1940099412E /* APIConstants.swift in Sources */,
 				B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
+				B742934D2073FD5D0008B827 /* SwiftyOnboardPage.swift in Sources */,
 				B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */,
 				B7CE9B4C20201C8B00B823FF /* Material+UIImage.swift in Sources */,
 				B776923F1E80E2930099412E /* ApiServices.swift in Sources */,
+				B74293482073FD5D0008B827 /* SwiftyOnboardOverlay.swift in Sources */,
 				B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */,
 				B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */,
 				B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */,

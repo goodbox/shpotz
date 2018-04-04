@@ -15,16 +15,6 @@ import PopupDialog
 import Reachability
 
 public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDelegate {
-    
-    
-    func didTapCloseNoNetowrk(_ sender: Any?) {
-        
-        self.btnLogin.hideLoading()
-        
-        self.btnLogin.isEnabled = true
-        
-        self.tryLogin = false
-    }
   
     @IBOutlet weak var btnLogin: MDCRaisedButton!
   
@@ -79,11 +69,11 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
-        if(segue.identifier == "NoNetworkSegue") {
+        if(segue.identifier == "ShowPostSpotSegue") {
         
             let destinationVC = segue.destination as! UINavigationController
-            let noNetworkVC = destinationVC.topViewController as! NoNetworkViewController
-            noNetworkVC.didCancelNoNetworkSaveDelegate = self
+            let postVC = destinationVC.topViewController as! PostViewController
+            postVC.didCancelNoNetworkSaveDelegate = self
         }
     }
   
@@ -209,6 +199,15 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         popup.addButton(buttonOne)
     
         self.present(popup, animated: true, completion: nil)
+    }
+    
+    func didTapCloseNoNetowrk(_ sender: Any?) {
+        
+        self.btnLogin.hideLoading()
+        
+        self.btnLogin.isEnabled = true
+        
+        self.tryLogin = false
     }
 }
 
