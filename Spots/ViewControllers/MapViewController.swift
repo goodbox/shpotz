@@ -22,6 +22,8 @@ public class MapViewController : UIViewController {
     var didSelectMapMarkerDelegate: DidSelectMapMarkerDelegate!
   
     var selectedMarker: GMSMarker!
+    
+    
   
     override public func viewDidLoad() {
         super.viewDidLoad()

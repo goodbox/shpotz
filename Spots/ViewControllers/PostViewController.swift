@@ -29,6 +29,8 @@ class PostViewController: UIViewController {
     var selectedSpotTypes : [SpotTypeModel] = []
     
     var didCancelNoNetworkSaveDelegate: DidCancelNoNetworkSaveDelegate!
+    
+    var showNoNetworkModal: Bool = false
   
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,13 @@ class PostViewController: UIViewController {
     
         spotModel = SpotsModel()
     
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if showNoNetworkModal {
+            self.showNoNetwrokPopup(theTitle: "No Network", theMessage: "There is currently no service. You can still save the spot and the next time you open the app with service, it will get posted.")
+        }
     }
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -138,7 +147,7 @@ class PostViewController: UIViewController {
     
         spotModel.Visibility = postTableView.spotVisibility
     
-        spotModel.SharedToFacebook = postTableView.swShareToFacebook.isOn
+        // spotModel.SharedToFacebook = postTableView.swShareToFacebook.isOn
     
         if postTableView.firstImage != nil {
             spotModel.PhotoUrl1 = uploadImage(img: postTableView.firstImage)
@@ -379,6 +388,19 @@ class PostViewController: UIViewController {
         UIView.animate(withDuration: animationDuration, animations: {
             self.view.layoutIfNeeded()
         })
+    }
+    
+    func showNoNetwrokPopup(theTitle: String?, theMessage: String?) {
+        
+        let popup = PopupDialog(title: theTitle, message: theMessage, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
+        
+        let buttonOne = DefaultButton(title: "Ok") {
+            
+        }
+        
+        popup.addButton(buttonOne)
+        
+        self.present(popup, animated: true, completion: nil)
     }
 }
 

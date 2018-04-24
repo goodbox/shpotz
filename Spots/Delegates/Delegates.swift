@@ -29,3 +29,7 @@ protocol DidTapFacilityImageDelegate {
 protocol DidCancelNoNetworkSaveDelegate {
     func didTapCloseNoNetowrk(_ sender: Any?)
 }
+
+protocol DidCloseNewUserScreenDelegate  {
+    func didCloseNewUserScree(_ sender: Any?)
+}

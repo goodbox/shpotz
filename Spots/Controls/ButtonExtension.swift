@@ -16,107 +16,106 @@ private var xoActivityIndicator: UIActivityIndicatorView!
 
 extension MDCButton {
   
-  var originalButtonText: String! {
-    get {
-      return objc_getAssociatedObject(self, &xoOriginalButtonText) as? String
+    var originalButtonText: String! {
+        get {
+            return objc_getAssociatedObject(self, &xoOriginalButtonText) as? String
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &xoOriginalButtonText, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
     }
-    set(newValue) {
-      objc_setAssociatedObject(self, &xoOriginalButtonText, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
-    }
-  }
   
-  var activityIndicator: UIActivityIndicatorView! {
-    get {
-      return objc_getAssociatedObject(self, &xoActivityIndicator) as? UIActivityIndicatorView
+    var activityIndicator: UIActivityIndicatorView! {
+        get {
+            return objc_getAssociatedObject(self, &xoActivityIndicator) as? UIActivityIndicatorView
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &xoActivityIndicator, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
     }
-    set(newValue) {
-      objc_setAssociatedObject(self, &xoActivityIndicator, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
-    }
-  }
   
-  open func showLoading() {
-    originalButtonText = self.titleLabel?.text
-    self.setTitle("", for: UIControlState.normal)
+    open func showLoading(_ withColor: UIColor = UIColor.white) {
+        originalButtonText = self.titleLabel?.text
+        self.setTitle("", for: UIControlState.normal)
     
-    if (activityIndicator == nil) {
-      activityIndicator = createActivityIndicator()
+        if (activityIndicator == nil) {
+            activityIndicator = createActivityIndicator()
+        }
+        
+        activityIndicator.color = withColor
+        
+        showSpinning()
     }
+  
+    open func hideLoading() {
+        self.setTitle(originalButtonText, for: UIControlState.normal)
+        activityIndicator.stopAnimating()
+    }
+  
+    fileprivate func createActivityIndicator() -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }
+  
+    fileprivate func showSpinning() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(activityIndicator)
+        centerActivityIndicatorInButton()
+        activityIndicator.startAnimating()
+    }
+  
+    fileprivate func centerActivityIndicatorInButton() {
+        let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: activityIndicator, attribute: .centerX, multiplier: 1, constant: 0)
+        self.addConstraint(xCenterConstraint)
     
-    showSpinning()
-  }
-  
-  open func hideLoading() {
-    self.setTitle(originalButtonText, for: UIControlState.normal)
-    activityIndicator.stopAnimating()
-  }
-  
-  fileprivate func createActivityIndicator() -> UIActivityIndicatorView {
-    let activityIndicator = UIActivityIndicatorView()
-    activityIndicator.hidesWhenStopped = true
-    activityIndicator.color = UIColor.white
-    return activityIndicator
-  }
-  
-  fileprivate func showSpinning() {
-    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(activityIndicator)
-    centerActivityIndicatorInButton()
-    activityIndicator.startAnimating()
-  }
-  
-  fileprivate func centerActivityIndicatorInButton() {
-    let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: activityIndicator, attribute: .centerX, multiplier: 1, constant: 0)
-    self.addConstraint(xCenterConstraint)
-    
-    let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: activityIndicator, attribute: .centerY, multiplier: 1, constant: 0)
-    self.addConstraint(yCenterConstraint)
-  }
-
-  
- }
+        let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: activityIndicator, attribute: .centerY, multiplier: 1, constant: 0)
+        self.addConstraint(yCenterConstraint)
+    }
+}
 
 public class ActivityIndicatorButton : UIButton {
-  var originalButtonText: String?
-  var activityIndicator: UIActivityIndicatorView!
+    var originalButtonText: String?
+    var activityIndicator: UIActivityIndicatorView!
   
-  open func showLoading() {
-    originalButtonText = self.titleLabel?.text
-    self.setTitle("", for: UIControlState.normal)
+    open func showLoading(_ withColor: UIColor = UIColor.white) {
+        originalButtonText = self.titleLabel?.text
+        self.setTitle("", for: UIControlState.normal)
     
-    if (activityIndicator == nil) {
-      activityIndicator = createActivityIndicator()
+        if (activityIndicator == nil) {
+            activityIndicator = createActivityIndicator()
+        }
+        
+        activityIndicator.color = withColor
+        
+        showSpinning()
     }
+  
+    open func hideLoading() {
+        self.setTitle(originalButtonText, for: UIControlState.normal)
+        activityIndicator.stopAnimating()
+    }
+  
+    fileprivate func createActivityIndicator() -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
+    }
+  
+    fileprivate func showSpinning() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(activityIndicator)
+        centerActivityIndicatorInButton()
+        activityIndicator.startAnimating()
+    }
+  
+    fileprivate func centerActivityIndicatorInButton() {
+        let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: activityIndicator, attribute: .centerX, multiplier: 1, constant: 0)
+        self.addConstraint(xCenterConstraint)
     
-    showSpinning()
-  }
-  
-  open func hideLoading() {
-    self.setTitle(originalButtonText, for: UIControlState.normal)
-    activityIndicator.stopAnimating()
-  }
-  
-  fileprivate func createActivityIndicator() -> UIActivityIndicatorView {
-    let activityIndicator = UIActivityIndicatorView()
-    activityIndicator.hidesWhenStopped = true
-    activityIndicator.color = UIColor.white
-    return activityIndicator
-  }
-  
-  fileprivate func showSpinning() {
-    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-    self.addSubview(activityIndicator)
-    centerActivityIndicatorInButton()
-    activityIndicator.startAnimating()
-  }
-  
-  fileprivate func centerActivityIndicatorInButton() {
-    let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: activityIndicator, attribute: .centerX, multiplier: 1, constant: 0)
-    self.addConstraint(xCenterConstraint)
-    
-    let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: activityIndicator, attribute: .centerY, multiplier: 1, constant: 0)
-    self.addConstraint(yCenterConstraint)
-  }
-
+        let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: activityIndicator, attribute: .centerY, multiplier: 1, constant: 0)
+        self.addConstraint(yCenterConstraint)
+    }
 }
 
 

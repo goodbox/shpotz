@@ -256,12 +256,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="383" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="txZ-A2-N7T">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="txZ-A2-N7T">
                             <rect key="frame" x="0.0" y="0.0" width="383" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pDh-eS-Vlc">
-                                    <rect key="frame" x="92" y="-22" width="200" height="80"/>
+                                    <rect key="frame" x="92" y="40" width="200" height="80"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-oS-Qf5">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
@@ -963,8 +963,24 @@
                     <view key="view" contentMode="scaleToFill" id="Eqm-YL-5nN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBy-sa-53i" customClass="SwiftyOnboard" customModule="Spots" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eWP-2M-U98" firstAttribute="top" secondItem="CBy-sa-53i" secondAttribute="bottom" id="XDx-Lp-kMr"/>
+                            <constraint firstItem="CBy-sa-53i" firstAttribute="top" secondItem="Gy5-lP-XPC" secondAttribute="bottom" id="oEK-x6-QC7"/>
+                            <constraint firstItem="CBy-sa-53i" firstAttribute="leading" secondItem="Eqm-YL-5nN" secondAttribute="leading" id="vrU-yV-a0O"/>
+                            <constraint firstAttribute="trailing" secondItem="CBy-sa-53i" secondAttribute="trailing" id="xNI-2i-tRU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="swiftyOnboard" destination="CBy-sa-53i" id="MKB-Ph-pIS"/>
+                        <segue destination="LwP-Z6-Mr6" kind="presentation" identifier="LoginSegue" id="u8L-D6-pBq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbO-jr-5CZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1047,7 +1063,6 @@
                         <outlet property="imgLogo" destination="o5G-2y-fNX" id="GWd-Mb-RNW"/>
                         <outlet property="lblAppTitle" destination="9j3-0f-Ydj" id="8wQ-t4-3sf"/>
                         <segue destination="LwP-Z6-Mr6" kind="presentation" identifier="LoginSegue" id="qcB-gz-uWS"/>
-                        <segue destination="cf6-iI-XNT" kind="presentation" identifier="NoNetworkSegue" id="equ-PQ-GOc"/>
                         <segue destination="aer-qX-0fe" kind="presentation" identifier="ShowPostSpotSegue" id="DMU-70-Gxb"/>
                         <segue destination="LWv-Ho-3AT" kind="presentation" identifier="NewUserSegue" id="D0K-2T-tiD"/>
                     </connections>
@@ -1702,7 +1717,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOO-H2-CxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922" y="-903"/>
+            <point key="canvasLocation" x="1873" y="-1137"/>
         </scene>
         <!--No Network Table View Controller-->
         <scene sceneID="mbs-jk-rnH">
@@ -1712,7 +1727,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="415" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="x5B-Ha-q4V">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="x5B-Ha-q4V">
                             <rect key="frame" x="0.0" y="0.0" width="415" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1796,5 +1811,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="QsC-ty-0xn"/>
         <segue reference="DMU-70-Gxb"/>
+        <segue reference="qcB-gz-uWS"/>
     </inferredMetricsTieBreakers>
 </document>

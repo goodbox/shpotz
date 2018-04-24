@@ -19,6 +19,8 @@ class MapContainerViewController: UIViewController {
   
     var spotsModel: SpotMapModel!
   
+    var showHelpTip: Bool = false
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         prepareTabBarItem()

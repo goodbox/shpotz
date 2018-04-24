@@ -27,7 +27,7 @@ public class PostTableViewController : UITableViewController {
     @IBOutlet weak var btnSecondDelete: UIButton!
     @IBOutlet weak var imgThird: UIImageView!
     @IBOutlet weak var btnThirdDelete: UIButton!
-    @IBOutlet weak var swShareToFacebook: UISwitch!
+    // @IBOutlet weak var swShareToFacebook: UISwitch!
   
     @IBOutlet weak var lblSpotPrivacy: UILabel!
     @IBOutlet weak var imgSpotPrivacy: UIImageView!

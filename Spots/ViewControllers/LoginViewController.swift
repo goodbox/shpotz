@@ -14,7 +14,7 @@ import MaterialComponents
 import PopupDialog
 import Reachability
 
-public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDelegate {
+public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDelegate, DidCloseNewUserScreenDelegate {
   
     @IBOutlet weak var btnLogin: MDCRaisedButton!
   
@@ -25,6 +25,8 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     var readPermissions: [ReadPermission] = [.publicProfile, .email, .userFriends]
   
     var tryLogin: Bool = true
+    
+    var showHelp: Bool = false
     
     public override func viewDidLoad() {
     
@@ -45,19 +47,34 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             
             _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
                 
+                
+                
+                
                 if success {
                     
                     UserDefaults.SpotsToken = loginModel?.BearerToken
                     
-                    self.performSegue(withIdentifier: "LoginSegue", sender: self)
+                    self.performSegue(withIdentifier: "NewUserSegue", sender: self)
+                    /*
+                    if (loginModel?.IsNewUser)! {
+                        
+                        self.performSegue(withIdentifier: "NewUserSegue", sender: self)
+                        
+                    } else {
+                        
+                        self.performSegue(withIdentifier: "LoginSegue", sender: self)
+                        
+                    }
+ */
                     
                 } else {
                     
                     // TODO: modal to say there was an error
                     
                 }
+ 
+ 
             })
-            
             
         } else {
             self.btnLogin.isEnabled = true
@@ -74,6 +91,20 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             let destinationVC = segue.destination as! UINavigationController
             let postVC = destinationVC.topViewController as! PostViewController
             postVC.didCancelNoNetworkSaveDelegate = self
+            postVC.showNoNetworkModal = true
+            
+        } else if(segue.identifier == "NewUserSegue") {
+            
+            let destinationVC = segue.destination as! NewUserViewController
+            
+            destinationVC.didCloseNewUserDelegate = self
+        } else if(segue.identifier == "LoginSegue") {
+            if self.showHelp {
+                let destinationVC = segue.destination as! UITabBarController
+                let navVC = destinationVC.viewControllers![0] as! UINavigationController
+                let mapVC = navVC.topViewController as! MapContainerViewController
+                mapVC.showHelpTip = true
+            }
         }
     }
   
@@ -117,7 +148,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     
         self.btnLogin.isEnabled = false
     
-        self.btnLogin.showLoading()
+        self.btnLogin.showLoading(UIColor.totesMidnightBlue())
 
         let loginManager = LoginManager(loginBehavior: .native, defaultAudience: .friends)
     
@@ -168,14 +199,21 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             
                         if success {
                             
+                            UserDefaults.SpotsToken = loginModel?.BearerToken
+                            
+                            self.performSegue(withIdentifier: "NewUserSegue", sender: self)
+                            
+                            /*
                             if (loginModel?.IsNewUser)! {
                                 
                                 // show welcome screen
+                                self.performSegue(withIdentifier: "NewUserSegue", sender: self)
                                 
                             } else {
-                                UserDefaults.SpotsToken = loginModel?.BearerToken
+                                
                                 self.performSegue(withIdentifier: "LoginSegue", sender: self)
                             }
+ */
                         } else {
               
                             // TODO: modal to say there was an error
@@ -209,5 +247,12 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         
         self.tryLogin = false
     }
+    
+    func didCloseNewUserScree(_ sender: Any?) {
+        self.tryLogin = false
+        self.showHelp = true
+        self.performSegue(withIdentifier: "LoginSegue", sender: self)
+    }
 }
+
 

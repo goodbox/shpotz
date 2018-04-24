@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyJSON
 
-// import Realm
-// import RealmSwift
+import Realm
+import RealmSwift
 
 enum SpotsSystemType: Int {
   
@@ -183,34 +183,6 @@ public class LoginModel {
   }
 }
 
-// MARK: Realm Spot
-/*
-public class RealmSpot: Object {
-    
-    @objc dynamic var Id = 0
-    
-    @objc dynamic var UserId = 0
-    
-    @objc dynamic var Lat = 0
-    
-    @objc dynamic var Long = 0
-    
-    @objc dynamic var SpotType = 0
-    
-    @objc dynamic var Visibility = 0
-    
-    @objc dynamic var State = 0
-    
-    @objc dynamic var Name = ""
-    
-    @objc dynamic var Description = ""
-    
-    @objc dynamic var SpotTypeName = ""
-    
-    @objc dynamic var SharedToFacebook = false
-    
-}
- */
 
 // MARK: user view model
 public class UserViewModel {
@@ -626,6 +598,46 @@ public class FacilityActivity {
     }
   }
 }
+
+// MARK: realm image
+public class RealmImage: Object {
+    @objc dynamic var picture: Data? = nil
+}
+
+// MARK: realm spot type model
+public class RealmSpotType: Object {
+
+    @objc dynamic var SpotType = 0
+    
+    @objc dynamic var SpotName = ""
+}
+
+// MARK: Realm Spot
+public class RealmSpot: Object {
+ 
+    @objc dynamic var Id = 0
+ 
+    @objc dynamic var UserId = 0
+ 
+    @objc dynamic var Lat = 0
+ 
+    @objc dynamic var Long = 0
+ 
+    @objc dynamic var Visibility = 0
+ 
+    @objc dynamic var State = 0
+ 
+    @objc dynamic var Name = ""
+ 
+    @objc dynamic var Description = ""
+ 
+    @objc dynamic var SharedToFacebook = false
+    
+    let spotTypes = List<RealmSpotType>()
+    
+    let images = List<RealmImage>();
+ 
+ }
 
 
 
