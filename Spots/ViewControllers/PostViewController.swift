@@ -15,6 +15,9 @@ import ImagePicker
 import Lightbox
 import AWSS3
 import Photos
+import Reachability
+import Realm
+import RealmSwift
 
 class PostViewController: UIViewController {
   
@@ -52,6 +55,7 @@ class PostViewController: UIViewController {
         super.viewDidAppear(animated)
         if showNoNetworkModal {
             self.showNoNetwrokPopup(theTitle: "No Network", theMessage: "There is currently no service. You can still save the spot and the next time you open the app with service, it will get posted.")
+            showNoNetworkModal = false
         }
     }
   
@@ -121,8 +125,80 @@ class PostViewController: UIViewController {
       
         } else {
     
-            handleSpotPost()
+            let reachability = Reachability()!
+            
+            reachability.whenReachable = { reachability in
+                if reachability.connection == .wifi || reachability.connection == .cellular {
+                    self.handleSpotPost()
+                } else {
+                    self.handleSaveSpot()
+                }
+            }
+            reachability.whenUnreachable = { _ in
+                self.handleSaveSpot()
+            }
+            
+            do {
+                try reachability.startNotifier()
+            } catch {
+                print("Unable to start notifier")
+            }
         }
+    }
+    
+    func handleSaveSpot() {
+        let realmSpot = RealmSpot()
+        
+        realmSpot.Name = postTableView.txtName.text!
+        
+        realmSpot.Description = postTableView.txtDescription.text
+        
+        realmSpot.Lat = String(format: "%f", (postTableView.currentLocation?.coordinate.latitude)!)
+        
+        realmSpot.Long = String(format: "%f", (postTableView.currentLocation?.coordinate.longitude)!)
+        
+        realmSpot.Visibility = postTableView.spotVisibility.rawValue
+        
+        realmSpot.State = 0
+        
+        // get the spot types
+        for spotType in postTableView.selectedSpotTypes {
+            
+            let realmSpotType = RealmSpotType()
+            
+            realmSpotType.SpotName = spotType.SpotName
+            
+            realmSpotType.SpotType = spotType.SpotType.rawValue
+            
+            realmSpot.spotTypes.append(realmSpotType)
+        }
+        
+        // get the images
+        if postTableView.firstImage != nil {
+            let realmImage = RealmImage()
+            realmImage.picture = resizeImage(image: postTableView.firstImage)
+            realmSpot.images.append(realmImage)
+        }
+        
+        if postTableView.secondImage != nil {
+            let realmImage = RealmImage()
+            realmImage.picture = resizeImage(image: postTableView.secondImage)
+            realmSpot.images.append(realmImage)
+        }
+        
+        if postTableView.thirdImage != nil {
+            let realmImage = RealmImage()
+            realmImage.picture = resizeImage(image: postTableView.thirdImage)
+            realmSpot.images.append(realmImage)
+        }
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(realmSpot)
+        }
+        
+        self.showSuccessPopupDialog("Success!", message: "This spot has been saved. The next time you open the app while connected it will be uploaded.")
     }
   
     func handleSpotPost() {
@@ -162,14 +238,13 @@ class PostViewController: UIViewController {
             spotModel.PhotoUrl3 = uploadImage(img: postTableView.thirdImage)
         }
     
-    
         _ = api.performPostSpot(UserDefaults.SpotsToken!, spotsModel: spotModel, completion: { (success, model, error) in
       
             if(error == nil) {
         
                 if(success) {
           
-                    self.showSuccessPopupDialog()
+                    self.showSuccessPopupDialog("Success!",  message: "This spot has been successfully added!")
             
                     // now upload images to amazon in the background
           
@@ -241,7 +316,6 @@ class PostViewController: UIViewController {
         do {
             
             let uuidPrefix = uuidFilename.substring(to: uuidFilename.index(uuidFilename.startIndex, offsetBy: 4))
-            
             
             let testFileUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(uuidFilename)
             
@@ -326,7 +400,7 @@ class PostViewController: UIViewController {
     
     }
   
-    func showSuccessPopupDialog() {
+    func showSuccessPopupDialog(_ title: String, message: String) {
     
         let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
     
@@ -340,7 +414,13 @@ class PostViewController: UIViewController {
     
         let buttonOne = DefaultButton(title: "OK") {
             if let navController = self.navigationController {
+                
+                if self.didCancelNoNetworkSaveDelegate != nil {
+                    self.didCancelNoNetworkSaveDelegate.didTapCloseNoNetowrk(self)
+                }
+                
                 navController.dismiss(animated: true, completion: {
+                    
                 })
             }
         }
@@ -354,9 +434,9 @@ class PostViewController: UIViewController {
     
         vc.imgValidationImage.image = UIImage(named: "ic_check")?.tint(with: UIColor.spotsGreen())
     
-        vc.lblValidationTitle.text = "Success!"
+        vc.lblValidationTitle.text = title
     
-        vc.lblValidationMessage.text = "THis spot has been successfully added!"
+        vc.lblValidationMessage.text = message
     }
 
   

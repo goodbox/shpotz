@@ -21,7 +21,6 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     @IBOutlet weak var lblAppTitle: UILabel!
     @IBOutlet weak var imgLogo: UIImageView!
   
-    
     var readPermissions: [ReadPermission] = [.publicProfile, .email, .userFriends]
   
     var tryLogin: Bool = true
@@ -46,9 +45,6 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             let api = ApiServiceController.sharedInstance
             
             _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
-                
-                
-                
                 
                 if success {
                     
@@ -98,7 +94,9 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             let destinationVC = segue.destination as! NewUserViewController
             
             destinationVC.didCloseNewUserDelegate = self
+            
         } else if(segue.identifier == "LoginSegue") {
+            
             if self.showHelp {
                 let destinationVC = segue.destination as! UITabBarController
                 let navVC = destinationVC.viewControllers![0] as! UINavigationController
@@ -141,62 +139,60 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         }
     }
   
-  
-    @IBAction func btnLoginTapped(_ sender: Any) {
-    
+    public func loginViaFacebook() {
         self.tryLogin = true
-    
+        
         self.btnLogin.isEnabled = false
-    
+        
         self.btnLogin.showLoading(UIColor.totesMidnightBlue())
-
+        
         let loginManager = LoginManager(loginBehavior: .native, defaultAudience: .friends)
-    
+        
         loginManager.logIn(readPermissions: readPermissions, viewController: self) { (loginResult) in
-      
+            
             switch loginResult {
-        
+                
             case .failed(let error):
-        
+                
                 // TODO: log error maybe
-        
+                
                 self.btnLogin.hideLoading()
-    
+                
                 self.btnLogin.isEnabled = true
-        
+                
             case .cancelled:
-        
+                
                 self.btnLogin.hideLoading()
-      
+                
                 self.btnLogin.isEnabled = true
-        
+                
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-        
+                
                 self.btnLogin.isEnabled = false
-        
+                
                 self.btnLogin.showLoading()
-        
+                
                 if declinedPermissions.contains("email") {
-          
+                    
                     // show popup dialog saying email is required
                     self.showValidationPopup(theTitle: "Email is Required", theMessage: "Email is required to use this app.")
-        
+                    
                 } else if declinedPermissions.contains("user_friends") {
-          
+                    
                     // show popup dialog saying friends list is required
                     self.showValidationPopup(theTitle: "Friends List is Required", theMessage: "Friends List is required to use this app.")
-          
+                    
                 } else {
-          
+                    
                     UserDefaults.FacebookUserId = accessToken.userId
-          
+                    
                     UserDefaults.FacebookAuthToken = accessToken.authenticationToken
-          
+                    
                     // authenticate user against spot api
                     let api = ApiServiceController.sharedInstance
-          
+                    
                     _ = api.performFbAuth(accessToken.authenticationToken, completion: { (success, loginModel, error) in
-            
+                        
                         if success {
                             
                             UserDefaults.SpotsToken = loginModel?.BearerToken
@@ -204,25 +200,49 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                             self.performSegue(withIdentifier: "NewUserSegue", sender: self)
                             
                             /*
-                            if (loginModel?.IsNewUser)! {
-                                
-                                // show welcome screen
-                                self.performSegue(withIdentifier: "NewUserSegue", sender: self)
-                                
-                            } else {
-                                
-                                self.performSegue(withIdentifier: "LoginSegue", sender: self)
-                            }
- */
+                             if (loginModel?.IsNewUser)! {
+                             
+                             // show welcome screen
+                             self.performSegue(withIdentifier: "NewUserSegue", sender: self)
+                             
+                             } else {
+                             
+                             self.performSegue(withIdentifier: "LoginSegue", sender: self)
+                             }
+                             */
                         } else {
-              
+                            
                             // TODO: modal to say there was an error
                             self.showValidationPopup(theTitle: "Login failed", theMessage: "An error occurred logging in with Facebook.")
-              
+                            
                         }
                     })
                 }
             }
+        }
+    }
+  
+    @IBAction func btnLoginTapped(_ sender: Any) {
+    
+        //declare this property where it won't go ou dt of scope relative to your listener
+        
+        let reachability = Reachability()!
+        
+        reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi || reachability.connection == .cellular {
+                self.loginViaFacebook()
+            } else {
+                self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
         }
     }
   

@@ -615,13 +615,13 @@ public class RealmSpotType: Object {
 // MARK: Realm Spot
 public class RealmSpot: Object {
  
-    @objc dynamic var Id = 0
+    @objc dynamic var Id = UUID().uuidString
  
     @objc dynamic var UserId = 0
  
-    @objc dynamic var Lat = 0
+    @objc dynamic var Lat = ""
  
-    @objc dynamic var Long = 0
+    @objc dynamic var Long = ""
  
     @objc dynamic var Visibility = 0
  
@@ -636,6 +636,10 @@ public class RealmSpot: Object {
     let spotTypes = List<RealmSpotType>()
     
     let images = List<RealmImage>();
+    
+    override public static func primaryKey() -> String? {
+        return "Id"
+    }
  
  }
 
