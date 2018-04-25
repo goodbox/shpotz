@@ -61,7 +61,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                         self.performSegue(withIdentifier: "LoginSegue", sender: self)
                         
                     }
- */
+                    */
                     
                 } else {
                     
@@ -136,6 +136,10 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             } catch {
                 print("Unable to start notifier")
             }
+        } else {
+            self.btnLogin.hideLoading()
+            
+            self.btnLogin.isEnabled = true
         }
     }
   

@@ -23,7 +23,7 @@
         <scene sceneID="ZSy-Fv-tAU">
             <objects>
                 <tableViewController id="h1X-Gg-7iN" customClass="InfoViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uVB-eO-xXQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uVB-eO-xXQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -98,6 +98,43 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Feedback/Questions" id="UYc-Ni-HBO">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="ase-QW-UnK">
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ase-QW-UnK" id="p9l-7B-H2c">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dzP-qR-f3M">
+                                                    <rect key="frame" x="10" y="7.5" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="Uhb-e6-L9n"/>
+                                                        <constraint firstAttribute="height" constant="44" id="VKD-Rh-X2c"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goodspotsapp@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26Y-3L-UH0">
+                                                    <rect key="frame" x="64" y="7.5" width="301" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="TwJ-DK-Y36"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dzP-qR-f3M" firstAttribute="leading" secondItem="p9l-7B-H2c" secondAttribute="leading" constant="10" id="EZx-v7-Qqr"/>
+                                                <constraint firstAttribute="trailing" secondItem="26Y-3L-UH0" secondAttribute="trailing" constant="10" id="Tua-OG-yJh"/>
+                                                <constraint firstItem="dzP-qR-f3M" firstAttribute="centerY" secondItem="p9l-7B-H2c" secondAttribute="centerY" id="Y9h-Ne-ofr"/>
+                                                <constraint firstItem="26Y-3L-UH0" firstAttribute="leading" secondItem="dzP-qR-f3M" secondAttribute="trailing" constant="10" id="hYx-hG-6yj"/>
+                                                <constraint firstItem="26Y-3L-UH0" firstAttribute="centerY" secondItem="p9l-7B-H2c" secondAttribute="centerY" id="inJ-w8-GhJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="h1X-Gg-7iN" id="gXB-do-Mw2"/>
@@ -113,6 +150,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imgDispersedCamping" destination="H8g-pp-P0m" id="Ez6-t6-zSs"/>
+                        <outlet property="imgEmail" destination="dzP-qR-f3M" id="EUS-np-J2V"/>
                         <outlet property="imgReservedCamping" destination="28d-So-e9g" id="qSw-0R-feO"/>
                     </connections>
                 </tableViewController>
