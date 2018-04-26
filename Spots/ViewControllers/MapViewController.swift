@@ -98,11 +98,13 @@ extension MapViewController: GMSMapViewDelegate {
                         
                         if spot.SpotSystemType == SpotsSystemType.facility {
                             
-                            marker.icon = UIImage(named: "ic_place_white_48pt")?.tint(with: UIColor.totesBlueColor())
+                            // marker.icon?  //  = UIImage(named: "ic_place_white_48pt")?.tint(with: UIColor.totesBlueColor())
                             
                         } else if spot.SpotSystemType == SpotsSystemType.goodSpot {
-                            marker.icon = UIImage(named: "ic_place_white_48pt")?.tint(with: UIColor.totesGreenColor())
+                            marker.icon = GMSMarker.markerImage(with: UIColor.spotsGreen())
+                            
                         }
+                        
                         
                         marker.layer.shadowColor = UIColor.black.cgColor
                         marker.layer.shadowOpacity = 0.5

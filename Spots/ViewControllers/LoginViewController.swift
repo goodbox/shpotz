@@ -49,8 +49,9 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                 if success {
                     
                     UserDefaults.SpotsToken = loginModel?.BearerToken
+                    self.performSegue(withIdentifier: "LoginSegue", sender: self)
                     
-                    self.performSegue(withIdentifier: "NewUserSegue", sender: self)
+                    // self.performSegue(withIdentifier: "NewUserSegue", sender: self)
                     /*
                     if (loginModel?.IsNewUser)! {
                         
@@ -201,7 +202,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                             
                             UserDefaults.SpotsToken = loginModel?.BearerToken
                             
-                            self.performSegue(withIdentifier: "NewUserSegue", sender: self)
+                            self.performSegue(withIdentifier: "LoginSegue", sender: self)
                             
                             /*
                              if (loginModel?.IsNewUser)! {

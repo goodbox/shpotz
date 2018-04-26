@@ -21,9 +21,9 @@ class InfoViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imgReservedCamping.image = UIImage(named: "ic_place_white-1")?.tint(with: UIColor.totesBlueColor())
+        imgReservedCamping.image = UIImage(named: "reserved_marker")
         
-        imgDispersedCamping.image = UIImage(named: "ic_place_white-1")?.tint(with: UIColor.totesGreenColor())
+        imgDispersedCamping.image = UIImage(named: "dispersed_marker")
         
         imgEmail.image = UIImage(named:"ic_email_white")?.tint(with: MDCPalette.grey.tint500)
     }
