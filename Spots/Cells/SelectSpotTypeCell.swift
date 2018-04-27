@@ -61,6 +61,8 @@ public class SelectSpotTypeCell: UICollectionViewCell {
             imgSpotIcon.image = SpotIcons.beach?.tint(with: spotModel.IsSelected ? Color.white : Color.grey.darken3)
         case "Add Custom":
             imgSpotIcon.image = SpotIcons.add_button?.tint(with: Color.grey.darken3)
+        case "Firepit":
+            imgSpotIcon.image = SpotIcons.firepit?.tint(with: spotModel.IsSelected ? Color.white : Color.grey.darken3)
         default:
             imgSpotIcon.image = SpotIcons.other?.tint(with: spotModel.IsSelected ? Color.white : Color.grey.darken3)
         }

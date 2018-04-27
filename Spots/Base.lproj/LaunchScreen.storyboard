@@ -34,17 +34,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_image" translatesAutoresizingMaskIntoConstraints="NO" id="PTH-HF-wTf">
-                                <rect key="frame" x="87" y="194" width="200" height="200"/>
+                                <rect key="frame" x="93" y="188" width="188" height="188"/>
                                 <color key="tintColor" red="0.81176470588235294" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="6bA-jt-rE0"/>
-                                    <constraint firstAttribute="width" constant="200" id="I4o-e0-vQT"/>
+                                    <constraint firstAttribute="height" constant="188" id="6bA-jt-rE0"/>
+                                    <constraint firstAttribute="width" constant="188" id="I4o-e0-vQT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PTH-HF-wTf" firstAttribute="top" secondItem="xhY-KE-Qgm" secondAttribute="bottom" constant="48" id="7Vn-hh-wnm"/>
+                            <constraint firstItem="PTH-HF-wTf" firstAttribute="top" secondItem="xhY-KE-Qgm" secondAttribute="bottom" constant="42" id="7Vn-hh-wnm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xhY-KE-Qgm" secondAttribute="trailing" id="cvS-iZ-7iL"/>
                             <constraint firstItem="xhY-KE-Qgm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="mlp-IR-3lu"/>
                             <constraint firstItem="PTH-HF-wTf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oMH-dx-BEM"/>

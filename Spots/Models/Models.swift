@@ -26,6 +26,7 @@ enum SpotsSystemType: Int {
 enum SpotsType : Int {
     case all = 0
     case camping = 1
+    case firepit = 14
     case fishing = 2
     case hiking = 3
     case rockclimbing = 4
@@ -90,6 +91,9 @@ enum SpotsType : Int {
       
         case "Add":
             return SpotsType.add.rawValue
+            
+        case "Firepit":
+            return SpotsType.firepit.rawValue
             
         default:
             return SpotsType.other.rawValue

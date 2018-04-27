@@ -20,6 +20,7 @@ public class SelectSpotTypeViewController : UIViewController {
     fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     fileprivate let itemsPerRow: CGFloat = 3
     fileprivate var spotTypes: [SpotTypeModel] = [SpotTypeModel(name: "Camping"),
+                                                  SpotTypeModel(name: "Firepit"),
                                                SpotTypeModel(name: "Fishing"),
                                                SpotTypeModel(name: "Hiking"),
                                                SpotTypeModel(name: "Hot Springs"),

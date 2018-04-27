@@ -68,7 +68,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
-    
+        
+        window = UIWindow(frame:UIScreen.main.bounds)
+        
+        let initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController")
+        
+        window?.rootViewController = initialViewController
+        
+        window?.makeKeyAndVisible()
         
         return true
     }
@@ -115,6 +122,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     
         return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+    }
+    
+    func switchRootViewController(rootViewController: UIViewController, animated: Bool, completion: (() -> Void)?) {
+        if animated {
+            UIView.transition(with: window!, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                self.window!.rootViewController = rootViewController
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: { (finished: Bool) -> () in
+                if (completion != nil) {
+                    completion!()
+                }
+            })
+        } else {
+            window!.rootViewController = rootViewController
+        }
+    }
+    
+    func switchViewControllers() {
+        
+        // switch root view controllers
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        self.window?.rootViewController = nav
+        
     }
     
     func uploadSavedSpots() {

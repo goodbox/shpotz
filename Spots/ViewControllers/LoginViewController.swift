@@ -27,6 +27,8 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     
     var showHelp: Bool = false
     
+    var setAsRoot: Bool = false
+    
     public override func viewDidLoad() {
     
         super.viewDidLoad()
@@ -36,6 +38,11 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         imgLogo.layer.masksToBounds = true
     
         lblAppTitle.font = UIFont(name:"Roboto-Light", size: 50)!
+        
+        if setAsRoot == true {
+            // UIApplication.shared.keyWindow?.window?.rootViewController = self
+            self.view.window?.rootViewController = self
+        }
     }
     
     public func loadReachableScreen() {
@@ -51,26 +58,9 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                     UserDefaults.SpotsToken = loginModel?.BearerToken
                     self.performSegue(withIdentifier: "LoginSegue", sender: self)
                     
-                    // self.performSegue(withIdentifier: "NewUserSegue", sender: self)
-                    /*
-                    if (loginModel?.IsNewUser)! {
-                        
-                        self.performSegue(withIdentifier: "NewUserSegue", sender: self)
-                        
-                    } else {
-                        
-                        self.performSegue(withIdentifier: "LoginSegue", sender: self)
-                        
-                    }
-                    */
-                    
                 } else {
-                    
                     // TODO: modal to say there was an error
-                    
                 }
- 
- 
             })
             
         } else {
@@ -78,7 +68,6 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             
             self.btnLogin.hideLoading()
         }
-        
     }
     
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {

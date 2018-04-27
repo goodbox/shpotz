@@ -77,6 +77,20 @@
 		B7E77BD71F3BC62A00C39E65 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */; };
 		B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */; };
 		B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F04DA31EA04B1000FFCF1C /* FXLabel.m */; };
+		B7F160FB2092B74700B13A26 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160E82092B74700B13A26 /* OnboardingContentView.swift */; };
+		B7F160FC2092B74700B13A26 /* OnboardingContantViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160EA2092B74700B13A26 /* OnboardingContantViewItem.swift */; };
+		B7F160FD2092B74700B13A26 /* PaperOnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160EB2092B74700B13A26 /* PaperOnboardingDelegate.swift */; };
+		B7F160FE2092B74700B13A26 /* PageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160EE2092B74700B13A26 /* PageContainer.swift */; };
+		B7F160FF2092B74700B13A26 /* PageViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160F02092B74700B13A26 /* PageViewItem.swift */; };
+		B7F161002092B74700B13A26 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160F12092B74700B13A26 /* PageView.swift */; };
+		B7F161012092B74700B13A26 /* ConstraintsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160F32092B74700B13A26 /* ConstraintsHelper.swift */; };
+		B7F161022092B74700B13A26 /* Configuring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160F42092B74700B13A26 /* Configuring.swift */; };
+		B7F161032092B74700B13A26 /* PaperOnboardingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160F52092B74700B13A26 /* PaperOnboardingDataSource.swift */; };
+		B7F161042092B74700B13A26 /* FillAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160F72092B74700B13A26 /* FillAnimationView.swift */; };
+		B7F161052092B74700B13A26 /* PaperOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160F82092B74700B13A26 /* PaperOnboarding.swift */; };
+		B7F161062092B74700B13A26 /* GestureControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160FA2092B74700B13A26 /* GestureControl.swift */; };
+		B7F161082092B9A900B13A26 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F161072092B9A900B13A26 /* OnboardingView.swift */; };
+		B7F1610A2092BD1C00B13A26 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F161092092BD1C00B13A26 /* OnboardingViewController.swift */; };
 		B7F1A4581E6E447D003D1FE8 /* SelectSpotTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F1A4571E6E447D003D1FE8 /* SelectSpotTypeCell.xib */; };
 		B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */; };
 		B7F1A45F1E6FBBE9003D1FE8 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */; };
@@ -190,6 +204,20 @@
 		B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityDetailViewController.swift; sourceTree = "<group>"; };
 		B7F04DA21EA04AE300FFCF1C /* FXLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXLabel.h; sourceTree = "<group>"; };
 		B7F04DA31EA04B1000FFCF1C /* FXLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLabel.m; sourceTree = "<group>"; };
+		B7F160E82092B74700B13A26 /* OnboardingContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
+		B7F160EA2092B74700B13A26 /* OnboardingContantViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContantViewItem.swift; sourceTree = "<group>"; };
+		B7F160EB2092B74700B13A26 /* PaperOnboardingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperOnboardingDelegate.swift; sourceTree = "<group>"; };
+		B7F160EE2092B74700B13A26 /* PageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContainer.swift; sourceTree = "<group>"; };
+		B7F160F02092B74700B13A26 /* PageViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewItem.swift; sourceTree = "<group>"; };
+		B7F160F12092B74700B13A26 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		B7F160F32092B74700B13A26 /* ConstraintsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHelper.swift; sourceTree = "<group>"; };
+		B7F160F42092B74700B13A26 /* Configuring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuring.swift; sourceTree = "<group>"; };
+		B7F160F52092B74700B13A26 /* PaperOnboardingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperOnboardingDataSource.swift; sourceTree = "<group>"; };
+		B7F160F72092B74700B13A26 /* FillAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillAnimationView.swift; sourceTree = "<group>"; };
+		B7F160F82092B74700B13A26 /* PaperOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperOnboarding.swift; sourceTree = "<group>"; };
+		B7F160FA2092B74700B13A26 /* GestureControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureControl.swift; sourceTree = "<group>"; };
+		B7F161072092B9A900B13A26 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B7F161092092BD1C00B13A26 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		B7F1A4571E6E447D003D1FE8 /* SelectSpotTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectSpotTypeCell.xib; sourceTree = "<group>"; };
 		B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeCell.swift; sourceTree = "<group>"; };
 		B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSCore.framework; sourceTree = "<group>"; };
@@ -296,6 +324,7 @@
 		B7049E001E653AC5000824EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B7F160E62092B6F500B13A26 /* PaperOnboarding */,
 				B7CE9B4820201B9300B823FF /* Material */,
 				B7F04DA11EA04AB300FFCF1C /* FXLabel */,
 			);
@@ -375,6 +404,8 @@
 				B730ABF520706FC300BA18CA /* ProfileViewController.swift */,
 				B730ABF72070AA9100BA18CA /* InfoViewController.swift */,
 				B742934E2073FEC00008B827 /* NewUserViewController.swift */,
+				B7F161072092B9A900B13A26 /* OnboardingView.swift */,
+				B7F161092092BD1C00B13A26 /* OnboardingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -453,6 +484,89 @@
 				B7F04DA31EA04B1000FFCF1C /* FXLabel.m */,
 			);
 			path = FXLabel;
+			sourceTree = "<group>";
+		};
+		B7F160E62092B6F500B13A26 /* PaperOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160F62092B74700B13A26 /* FillAnimationView */,
+				B7F160F92092B74700B13A26 /* GestureControl */,
+				B7F160F22092B74700B13A26 /* Helpers */,
+				B7F160E72092B74700B13A26 /* OnboardingContentView */,
+				B7F160EC2092B74700B13A26 /* PageView */,
+				B7F160F82092B74700B13A26 /* PaperOnboarding.swift */,
+				B7F160F52092B74700B13A26 /* PaperOnboardingDataSource.swift */,
+				B7F160EB2092B74700B13A26 /* PaperOnboardingDelegate.swift */,
+			);
+			path = PaperOnboarding;
+			sourceTree = "<group>";
+		};
+		B7F160E72092B74700B13A26 /* OnboardingContentView */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160E82092B74700B13A26 /* OnboardingContentView.swift */,
+				B7F160E92092B74700B13A26 /* Item */,
+			);
+			path = OnboardingContentView;
+			sourceTree = "<group>";
+		};
+		B7F160E92092B74700B13A26 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160EA2092B74700B13A26 /* OnboardingContantViewItem.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		B7F160EC2092B74700B13A26 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160ED2092B74700B13A26 /* PageContainerView */,
+				B7F160EF2092B74700B13A26 /* Item */,
+				B7F160F12092B74700B13A26 /* PageView.swift */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
+		B7F160ED2092B74700B13A26 /* PageContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160EE2092B74700B13A26 /* PageContainer.swift */,
+			);
+			path = PageContainerView;
+			sourceTree = "<group>";
+		};
+		B7F160EF2092B74700B13A26 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160F02092B74700B13A26 /* PageViewItem.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		B7F160F22092B74700B13A26 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160F32092B74700B13A26 /* ConstraintsHelper.swift */,
+				B7F160F42092B74700B13A26 /* Configuring.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B7F160F62092B74700B13A26 /* FillAnimationView */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160F72092B74700B13A26 /* FillAnimationView.swift */,
+			);
+			path = FillAnimationView;
+			sourceTree = "<group>";
+		};
+		B7F160F92092B74700B13A26 /* GestureControl */ = {
+			isa = PBXGroup;
+			children = (
+				B7F160FA2092B74700B13A26 /* GestureControl.swift */,
+			);
+			path = GestureControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -748,6 +862,7 @@
 				B7B20AE01EA05421006B86CA /* FXLabel.h in Sources */,
 				B77692431E80E32C0099412E /* ApiServiceController.swift in Sources */,
 				B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */,
+				B7F161022092B74700B13A26 /* Configuring.swift in Sources */,
 				B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */,
 				B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */,
 				B742934C2073FD5D0008B827 /* CustomOverlay.swift in Sources */,
@@ -759,18 +874,23 @@
 				B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
+				B7F160FE2092B74700B13A26 /* PageContainer.swift in Sources */,
 				B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */,
+				B7F160FF2092B74700B13A26 /* PageViewItem.swift in Sources */,
 				B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */,
 				B72ADF102030383200D1CF71 /* RoundedBGLabel.swift in Sources */,
+				B7F161032092B74700B13A26 /* PaperOnboardingDataSource.swift in Sources */,
 				B776923D1E80E2030099412E /* ApiServiceTask.swift in Sources */,
 				B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */,
 				B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */,
 				B7049DFF1E651060000824EA /* IconExtension.swift in Sources */,
 				B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */,
+				B7F161042092B74700B13A26 /* FillAnimationView.swift in Sources */,
 				B742934B2073FD5D0008B827 /* CustomPage.swift in Sources */,
 				B7CE9B4A20201BEA00B823FF /* Color.swift in Sources */,
 				B7FBC55F1EA8383400EF0CAB /* PhotosContainerViewController.swift in Sources */,
 				B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */,
+				B7F1610A2092BD1C00B13A26 /* OnboardingViewController.swift in Sources */,
 				B730ABF82070AA9100BA18CA /* InfoViewController.swift in Sources */,
 				B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */,
 				B77692371E80DE060099412E /* Models.swift in Sources */,
@@ -778,14 +898,20 @@
 				B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */,
 				B7019CAB1E830327000765DC /* ValidationPopupViewController.swift in Sources */,
 				B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */,
+				B7F161002092B74700B13A26 /* PageView.swift in Sources */,
 				B77692411E80E3080099412E /* ApiServiceTaskFactory.swift in Sources */,
+				B7F160FB2092B74700B13A26 /* OnboardingContentView.swift in Sources */,
+				B7F161052092B74700B13A26 /* PaperOnboarding.swift in Sources */,
 				B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */,
 				B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */,
 				B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */,
 				B7CE9B50202021C200B823FF /* Icon.swift in Sources */,
+				B7F160FD2092B74700B13A26 /* PaperOnboardingDelegate.swift in Sources */,
+				B7F161062092B74700B13A26 /* GestureControl.swift in Sources */,
 				B7CE9B4E20201D5700B823FF /* Screen.swift in Sources */,
 				B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */,
 				B7FB95B91F51107300CBEF81 /* NoNetworkViewController.swift in Sources */,
+				B7F160FC2092B74700B13A26 /* OnboardingContantViewItem.swift in Sources */,
 				B776923B1E80E1940099412E /* APIConstants.swift in Sources */,
 				B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
@@ -797,6 +923,8 @@
 				B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */,
 				B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */,
 				B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */,
+				B7F161082092B9A900B13A26 /* OnboardingView.swift in Sources */,
+				B7F161012092B74700B13A26 /* ConstraintsHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
