@@ -23,6 +23,8 @@ public class SelectSpotTypeViewController : UIViewController {
                                                   SpotTypeModel(name: "Firepit"),
                                                SpotTypeModel(name: "Fishing"),
                                                SpotTypeModel(name: "Hiking"),
+                                               SpotTypeModel(name: "Kid Friendly"),
+                                               SpotTypeModel(name: "Pet Friendly"),
                                                SpotTypeModel(name: "Hot Springs"),
                                                SpotTypeModel(name: "Mtn Biking"),
                                                SpotTypeModel(name: "Surfing"),

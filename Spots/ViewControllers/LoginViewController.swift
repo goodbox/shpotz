@@ -79,12 +79,6 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             postVC.didCancelNoNetworkSaveDelegate = self
             postVC.showNoNetworkModal = true
             
-        } else if(segue.identifier == "NewUserSegue") {
-            
-            let destinationVC = segue.destination as! NewUserViewController
-            
-            destinationVC.didCloseNewUserDelegate = self
-            
         } else if(segue.identifier == "LoginSegue") {
             
             if self.showHelp {

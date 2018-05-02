@@ -63,6 +63,11 @@ public class SelectSpotTypeCell: UICollectionViewCell {
             imgSpotIcon.image = SpotIcons.add_button?.tint(with: Color.grey.darken3)
         case "Firepit":
             imgSpotIcon.image = SpotIcons.firepit?.tint(with: spotModel.IsSelected ? Color.white : Color.grey.darken3)
+        case "Kid Friendly":
+            imgSpotIcon.image = SpotIcons.kidfriendly?.tint(with: spotModel.IsSelected ? Color.white : Color.grey.darken3)
+        case "Pet Friendly":
+            imgSpotIcon.image = SpotIcons.petfriendly?.tint(with: spotModel.IsSelected ? Color.white : Color.grey.darken3)
+            
         default:
             imgSpotIcon.image = SpotIcons.other?.tint(with: spotModel.IsSelected ? Color.white : Color.grey.darken3)
         }

@@ -39,6 +39,8 @@ enum SpotsType : Int {
     case rafting = 11
     case hotsprings = 12
     case beach = 13
+    case kidfriendly = 15
+    case petfriendly = 16
     case other = 10000
     case add = 10001
   
@@ -94,6 +96,12 @@ enum SpotsType : Int {
             
         case "Firepit":
             return SpotsType.firepit.rawValue
+            
+        case "Kid Friendly":
+            return SpotsType.kidfriendly.rawValue
+            
+        case "Pet Friendly":
+            return SpotsType.petfriendly.rawValue
             
         default:
             return SpotsType.other.rawValue

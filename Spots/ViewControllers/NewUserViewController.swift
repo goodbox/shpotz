@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-
+/*
 class NewUserViewController : UIViewController {
     
     @IBOutlet weak var swiftyOnboard: SwiftyOnboard!
@@ -101,3 +101,4 @@ extension NewUserViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource 
         }
     }
 }
+ */
