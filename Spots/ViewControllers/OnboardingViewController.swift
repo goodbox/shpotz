@@ -41,6 +41,13 @@ public class OnboardingViewController: UIViewController, PaperOnboardingDataSour
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         appDelegate.switchRootViewController(rootViewController: loginVC, animated: true, completion: nil)
+        
+        // set the user defaults
+        let userDefaults = UserDefaults.standard
+        
+        userDefaults.setValue(true, forKey: "onboardingComplete")
+        
+        userDefaults.synchronize()
     }
     
     // MARK: onboarding date source

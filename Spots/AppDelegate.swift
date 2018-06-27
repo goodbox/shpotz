@@ -71,7 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame:UIScreen.main.bounds)
         
-        let initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController")
+        var initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnboardingViewController")
+        
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.bool(forKey: "onboardingComplete") {
+            initialViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        }
         
         window?.rootViewController = initialViewController
         

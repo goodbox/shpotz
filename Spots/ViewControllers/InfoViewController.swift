@@ -37,7 +37,7 @@ class InfoViewController : UITableViewController {
         
         if indexPath.section == 1 && indexPath.row == 0 {
             // open email dialog
-            let email = "goodspotsapp@gmail.com"
+            let email = "info@goodspotsapp.com"
             if let url = URL(string: "mailto:\(email)") {
                 UIApplication.shared.open(url)
             }

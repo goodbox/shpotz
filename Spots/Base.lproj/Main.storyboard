@@ -114,7 +114,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="VKD-Rh-X2c"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goodspotsapp@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26Y-3L-UH0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info@goodspotsapp.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26Y-3L-UH0">
                                                     <rect key="frame" x="64" y="7.5" width="301" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="TwJ-DK-Y36"/>
@@ -347,12 +347,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="383" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="txZ-A2-N7T">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="txZ-A2-N7T">
                             <rect key="frame" x="0.0" y="0.0" width="383" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pDh-eS-Vlc">
-                                    <rect key="frame" x="92" y="-22" width="200" height="80"/>
+                                    <rect key="frame" x="92" y="40" width="200" height="80"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-oS-Qf5">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
@@ -1783,7 +1783,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="415" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="x5B-Ha-q4V">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="x5B-Ha-q4V">
                             <rect key="frame" x="0.0" y="0.0" width="415" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

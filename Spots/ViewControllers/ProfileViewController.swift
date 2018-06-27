@@ -61,8 +61,8 @@ class ProfileViewController : UITableViewController {
         switch(indexPath.section) {
             
         case 0 :
-            let textToShare = "Find and share dispersed and reserved campspots with your friends!"
-            if let myWebsite = NSURL(string: "http://goodspotsapp.com/") {
+            let textToShare = "Find and share dispersed and reserved campspots privately with your friends!"
+            if let myWebsite = NSURL(string: "https://goodspotsapp.com/") {
                 let objectsToShare = [textToShare, myWebsite] as [Any]
                 let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
                 
