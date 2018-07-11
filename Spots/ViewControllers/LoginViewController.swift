@@ -165,10 +165,16 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                     // show popup dialog saying email is required
                     self.showValidationPopup(theTitle: "Email is Required", theMessage: "Email is required to use this app.")
                     
+                   
+                    
+                    
                 } else if declinedPermissions.contains("user_friends") {
                     
                     // show popup dialog saying friends list is required
                     self.showValidationPopup(theTitle: "Friends List is Required", theMessage: "Friends List is required to use this app.")
+                    
+                    
+                    
                     
                 } else {
                     
@@ -239,7 +245,8 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         let popup = PopupDialog(title: theTitle, message: theMessage, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
     
         let buttonOne = DefaultButton(title: "Dismiss") {
-      
+            self.btnLogin.isEnabled = true
+            self.btnLogin.hideLoading()
         }
     
         popup.addButton(buttonOne)

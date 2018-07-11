@@ -66,7 +66,6 @@
 		B7CE9B50202021C200B823FF /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4F202021C200B823FF /* Icon.swift */; };
 		B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D925D01E8620E100F160F8 /* SpotTypeName.xib */; };
 		B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D925D21E86211A00F160F8 /* SpotTypeNameViewController.swift */; };
-		B7E77BD51F3BC61E00C39E65 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */; };
 		B7E77BD71F3BC62A00C39E65 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */; };
 		B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */; };
 		B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F04DA31EA04B1000FFCF1C /* FXLabel.m */; };
@@ -90,6 +89,7 @@
 		B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B7F1A4611E6FBBE9003D1FE8 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; };
 		B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7F746BB20EAF8C400DB131D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */; };
 		B7FB95B91F51107300CBEF81 /* NoNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FB95B81F51107300CBEF81 /* NoNetworkViewController.swift */; };
 		B7FBC55F1EA8383400EF0CAB /* PhotosContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */; };
 		B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FBC5601EA86D1800EF0CAB /* FacilityImageCell.swift */; };
@@ -224,7 +224,7 @@
 				B7E77BD71F3BC62A00C39E65 /* MobileCoreServices.framework in Frameworks */,
 				B77567A92086F8980014B8EB /* RealmSwift.framework in Frameworks */,
 				B7221DD720800CC700AB9B65 /* RealmSwift.framework in Frameworks */,
-				B7E77BD51F3BC61E00C39E65 /* ImageIO.framework in Frameworks */,
+				B7F746BB20EAF8C400DB131D /* ImageIO.framework in Frameworks */,
 				B77567A72086F8980014B8EB /* Realm.framework in Frameworks */,
 				B7F1A45F1E6FBBE9003D1FE8 /* AWSS3.framework in Frameworks */,
 				B7F1A4611E6FBBE9003D1FE8 /* AWSCore.framework in Frameworks */,
@@ -958,7 +958,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1026,6 +1026,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -1041,12 +1042,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = UJ8R67WH26;
+				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.goodspots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
@@ -1068,6 +1071,7 @@
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.goodspots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
