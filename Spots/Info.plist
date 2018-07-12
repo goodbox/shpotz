@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>2.2</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>2.2</string>
 	<key>FacebookAppID</key>
 	<string>618989654951994</string>
 	<key>FacebookDisplayName</key>
@@ -49,11 +49,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>camera</string>
+	<string>goodspots uses your camera so you can take pictures of the campsites you visit.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>location</string>
+	<string>goodspots uses your location so you can find and share campsites you visit.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>photo library</string>
+	<string>goodspots uses your photo library so you can post pictures of the campsites you visit.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Thin.ttf</string>
