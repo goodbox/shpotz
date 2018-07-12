@@ -142,13 +142,13 @@
 		B7049E2F1E66528A000824EA /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		B7221DD420800CC600AB9B65 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		B7221DD520800CC700AB9B65 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		B727755C1E62C27B009B20A7 /* Spots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spots.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B727755C1E62C27B009B20A7 /* goodspots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goodspots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B727755F1E62C27B009B20A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B72775641E62C27B009B20A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B72775661E62C27B009B20A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B72775691E62C27B009B20A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B727756B1E62C27B009B20A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B72775701E62C27B009B20A7 /* SpotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B72775701E62C27B009B20A7 /* goodspotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goodspotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBottomNavigationController.swift; sourceTree = "<group>"; };
 		B72ADF0F2030383200D1CF71 /* RoundedBGLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBGLabel.swift; sourceTree = "<group>"; };
 		B72ED5ED201C6FDB0029DBD3 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -337,8 +337,8 @@
 		B727755D1E62C27B009B20A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B727755C1E62C27B009B20A7 /* Spots.app */,
-				B72775701E62C27B009B20A7 /* SpotsTests.xctest */,
+				B727755C1E62C27B009B20A7 /* goodspots.app */,
+				B72775701E62C27B009B20A7 /* goodspotsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -541,9 +541,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B727755B1E62C27B009B20A7 /* Spots */ = {
+		B727755B1E62C27B009B20A7 /* goodspots */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B72775791E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "Spots" */;
+			buildConfigurationList = B72775791E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "goodspots" */;
 			buildPhases = (
 				D3037DBA24D67E1925CA1A64 /* [CP] Check Pods Manifest.lock */,
 				B72775581E62C27B009B20A7 /* Sources */,
@@ -558,14 +558,14 @@
 			);
 			dependencies = (
 			);
-			name = Spots;
+			name = goodspots;
 			productName = Spots;
-			productReference = B727755C1E62C27B009B20A7 /* Spots.app */;
+			productReference = B727755C1E62C27B009B20A7 /* goodspots.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B727756F1E62C27B009B20A7 /* SpotsTests */ = {
+		B727756F1E62C27B009B20A7 /* goodspotsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B727757C1E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "SpotsTests" */;
+			buildConfigurationList = B727757C1E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "goodspotsTests" */;
 			buildPhases = (
 				CA03D56E2CF18809C982897D /* [CP] Check Pods Manifest.lock */,
 				B727756C1E62C27B009B20A7 /* Sources */,
@@ -579,9 +579,9 @@
 			dependencies = (
 				B72775721E62C27B009B20A7 /* PBXTargetDependency */,
 			);
-			name = SpotsTests;
+			name = goodspotsTests;
 			productName = SpotsTests;
-			productReference = B72775701E62C27B009B20A7 /* SpotsTests.xctest */;
+			productReference = B72775701E62C27B009B20A7 /* goodspotsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -608,7 +608,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B72775571E62C27B009B20A7 /* Build configuration list for PBXProject "Spots" */;
+			buildConfigurationList = B72775571E62C27B009B20A7 /* Build configuration list for PBXProject "goodspots" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -621,8 +621,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B727755B1E62C27B009B20A7 /* Spots */,
-				B727756F1E62C27B009B20A7 /* SpotsTests */,
+				B727755B1E62C27B009B20A7 /* goodspots */,
+				B727756F1E62C27B009B20A7 /* goodspotsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -902,7 +902,7 @@
 /* Begin PBXTargetDependency section */
 		B72775721E62C27B009B20A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B727755B1E62C27B009B20A7 /* Spots */;
+			target = B727755B1E62C27B009B20A7 /* goodspots */;
 			targetProxy = B72775711E62C27B009B20A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1091,7 +1091,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.SpotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spots.app/Spots";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/goodspots.app/goodspots";
 			};
 			name = Debug;
 		};
@@ -1107,14 +1107,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.SpotsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spots.app/Spots";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/goodspots.app/goodspots";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B72775571E62C27B009B20A7 /* Build configuration list for PBXProject "Spots" */ = {
+		B72775571E62C27B009B20A7 /* Build configuration list for PBXProject "goodspots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B72775771E62C27B009B20A7 /* Debug */,
@@ -1123,7 +1123,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B72775791E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "Spots" */ = {
+		B72775791E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "goodspots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B727757A1E62C27B009B20A7 /* Debug */,
@@ -1132,7 +1132,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B727757C1E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "SpotsTests" */ = {
+		B727757C1E62C27B009B20A7 /* Build configuration list for PBXNativeTarget "goodspotsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B727757D1E62C27B009B20A7 /* Debug */,
