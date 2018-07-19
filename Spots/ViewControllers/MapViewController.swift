@@ -53,6 +53,13 @@ public class MapViewController : UIViewController {
     
     }
 }
+/*
+extension MapViewController: GMUClusterManagerDelegate {
+    
+    
+    
+}
+ */
 
 extension MapViewController: GMSMapViewDelegate {
   

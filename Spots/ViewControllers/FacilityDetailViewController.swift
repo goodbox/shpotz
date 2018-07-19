@@ -86,7 +86,7 @@ public class FacilityDetailViewController: UITableViewController {
     
     func setReserved() {
         
-        self.lblReserved.text = "Reserved Camping"
+        self.lblReserved.text = "Designated Camping"
         
         self.lblReserved.layer.backgroundColor = UIColor.totesBusinessMedia().cgColor
         
