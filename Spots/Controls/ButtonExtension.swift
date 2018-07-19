@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import MaterialComponents
+import MaterialComponents.MaterialButtons
 import ObjectiveC
 
 private var xoOriginalButtonText: String? = ""

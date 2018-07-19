@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MaterialComponents
+import MaterialComponents.MaterialPalettes
 
 class PageViewItem: UIView {
 

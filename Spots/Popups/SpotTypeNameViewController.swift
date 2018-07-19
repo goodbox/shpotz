@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import MaterialComponents
+import MaterialComponents.MaterialTextFields
 
 class SpotTypeNameViewController: UIViewController {
   

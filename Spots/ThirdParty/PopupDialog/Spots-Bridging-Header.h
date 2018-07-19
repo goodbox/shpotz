@@ -5,5 +5,6 @@
 #ifndef Spots_Bridging_Header_h
 #define Spots_Bridging_Header_h
 
+#import "GMUMarkerClustering.h"
 
 #endif

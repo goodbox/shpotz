@@ -50,19 +50,27 @@ public class MapViewController : UIViewController {
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         mapView.isHidden = false
-    
     }
 }
-/*
+
+
+
 extension MapViewController: GMUClusterManagerDelegate {
     
-    
-    
+    public func clusterManager(_ clusterManager: GMUClusterManager, didTap cluster: GMUCluster) -> Bool {
+        let newCamera = GMSCameraPosition.camera(withTarget: cluster.position,
+                                                 zoom: mapView.camera.zoom + 1)
+        let update = GMSCameraUpdate.setCamera(newCamera)
+        mapView.moveCamera(update)
+        return false
+    }
 }
- */
+
 
 extension MapViewController: GMSMapViewDelegate {
   
+    
+    
     public func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
 
         return false

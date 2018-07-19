@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import FacebookCore
 import FacebookLogin
-import MaterialComponents
+import MaterialComponents.MaterialPalettes
 import PopupDialog
 import Reachability
 
