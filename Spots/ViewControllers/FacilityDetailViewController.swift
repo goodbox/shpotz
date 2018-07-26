@@ -196,7 +196,6 @@ public class FacilityDetailViewController: UITableViewController {
             self.mapView.settings.zoomGestures = false
             
             // Add the map to the view, hide it until we've got a location update.
-            self.vLocation.addSubview(self.mapView)
             // mapView.isHidden = true
             
             let position = CLLocationCoordinate2D(latitude: self.facilityDetail.Model.Latitude, longitude: self.facilityDetail.Model.Longitude)
@@ -204,7 +203,10 @@ public class FacilityDetailViewController: UITableViewController {
             
             marker.map = self.mapView
             
+            self.vLocation.addSubview(self.mapView)
+            
             self.tableView.reloadData()
+            
             
         })
     }
