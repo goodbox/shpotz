@@ -68,6 +68,7 @@ public class MapViewController : UIViewController {
         // Set up the cluster manager with default icon generator and renderer.
         let iconGenerator = GMUDefaultClusterIconGenerator()
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
+        
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
         renderer.delegate = self as! GMUClusterRendererDelegate
         clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)

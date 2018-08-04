@@ -22,7 +22,7 @@
         <!--help/info-->
         <scene sceneID="ZSy-Fv-tAU">
             <objects>
-                <tableViewController id="h1X-Gg-7iN" customClass="InfoViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="h1X-Gg-7iN" customClass="InfoViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uVB-eO-xXQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,7 +214,7 @@
         <!--goodspots-->
         <scene sceneID="SAy-9e-2jc">
             <objects>
-                <viewController storyboardIdentifier="MapContainerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I2G-Pk-jEF" customClass="MapContainerViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapContainerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I2G-Pk-jEF" customClass="MapContainerViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KHX-9W-0SX"/>
                         <viewControllerLayoutGuide type="bottom" id="S1p-q1-pMm"/>
@@ -286,7 +286,7 @@
         <!--Add a Spot-->
         <scene sceneID="R9N-7U-GWo">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eP-qL-Za9" customClass="PostViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3eP-qL-Za9" customClass="PostViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gsT-Dt-CcT"/>
                         <viewControllerLayoutGuide type="bottom" id="fNd-Sf-yq6"/>
@@ -295,7 +295,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB1-2T-WNB" customClass="ActivityIndicatorButton" customModule="Spots" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB1-2T-WNB" customClass="ActivityIndicatorButton" customModule="goodspots" customModuleProvider="target">
                                 <rect key="frame" x="-4" y="607" width="383" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Gsy-yc-Bo5"/>
@@ -342,17 +342,17 @@
         <!--Post Table View Controller-->
         <scene sceneID="upF-Pn-ZzB">
             <objects>
-                <tableViewController id="rvu-kt-jEt" customClass="PostTableViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="rvu-kt-jEt" customClass="PostTableViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="9AK-I1-UdO">
                         <rect key="frame" x="0.0" y="0.0" width="383" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="txZ-A2-N7T">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="txZ-A2-N7T">
                             <rect key="frame" x="0.0" y="0.0" width="383" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pDh-eS-Vlc">
-                                    <rect key="frame" x="92" y="40" width="200" height="80"/>
+                                    <rect key="frame" x="92" y="-22" width="200" height="80"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-oS-Qf5">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
@@ -642,7 +642,7 @@
         <!--Select Activities-->
         <scene sceneID="6MV-Qd-Ppu">
             <objects>
-                <viewController storyboardIdentifier="SelectSpotTypeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="83W-xt-kwo" customClass="SelectSpotTypeViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectSpotTypeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="83W-xt-kwo" customClass="SelectSpotTypeViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aen-aO-GeI"/>
                         <viewControllerLayoutGuide type="bottom" id="5kA-jU-UzC"/>
@@ -695,7 +695,7 @@
         <!--Map View Controller-->
         <scene sceneID="AF5-WV-55R">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dhp-Km-oGn" customClass="MapViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dhp-Km-oGn" customClass="MapViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I5Z-91-9ur"/>
                         <viewControllerLayoutGuide type="bottom" id="dFg-II-yYl"/>
@@ -713,7 +713,7 @@
         <!--User Settings View Controller-->
         <scene sceneID="SOA-fB-qcN">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="viY-yz-RSw" customClass="UserSettingsViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="viY-yz-RSw" customClass="UserSettingsViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Ye2-qO-a1B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -771,7 +771,7 @@
         <!--me-->
         <scene sceneID="7Fv-YD-KQZ">
             <objects>
-                <tableViewController id="u7z-gF-ITT" customClass="ProfileViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="u7z-gF-ITT" customClass="ProfileViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="HTL-5e-wac">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -892,7 +892,7 @@
         <!--my spots-->
         <scene sceneID="RFE-gq-kxP">
             <objects>
-                <viewController storyboardIdentifier="MeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FKh-Gd-jhY" customClass="MeViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FKh-Gd-jhY" customClass="MeViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v0m-hq-nqO"/>
                         <viewControllerLayoutGuide type="bottom" id="dLx-Ru-d56"/>
@@ -960,7 +960,7 @@
         <!--No Network-->
         <scene sceneID="i5Z-oF-1v5">
             <objects>
-                <viewController id="ccS-CB-oOR" customClass="NoNetworkViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ccS-CB-oOR" customClass="NoNetworkViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wOk-uY-c1n"/>
                         <viewControllerLayoutGuide type="bottom" id="Ko4-Rc-oWt"/>
@@ -1046,7 +1046,7 @@
         <!--Login View Controller-->
         <scene sceneID="E0U-9w-Wlk">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eRI-PV-gs2" customClass="LoginViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eRI-PV-gs2" customClass="LoginViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iQa-Qs-QRz"/>
                         <viewControllerLayoutGuide type="bottom" id="Wh3-oz-bmc"/>
@@ -1148,7 +1148,7 @@
         <!--Spot Detail View Controller-->
         <scene sceneID="ve4-iN-Hmn">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="LG2-9s-eTI" customClass="SpotDetailViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="LG2-9s-eTI" customClass="SpotDetailViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tBw-LQ-dJj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1157,13 +1157,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTx-sq-upl" customClass="UIGradientImageView" customModule="Spots" customModuleProvider="target">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTx-sq-upl" customClass="UIGradientImageView" customModule="goodspots" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9P-Kq-JhR">
                                     <rect key="frame" x="10" y="10" width="355" height="30"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-bn-ZQf" customClass="RoundedBGLabel" customModule="Spots" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-bn-ZQf" customClass="RoundedBGLabel" customModule="goodspots" customModuleProvider="target">
                                             <rect key="frame" x="355" y="0.0" width="0.0" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -1383,7 +1383,7 @@
         <!--Facility Detail View Controller-->
         <scene sceneID="BWi-Fe-wBD">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="Tp5-YW-l9x" customClass="FacilityDetailViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Tp5-YW-l9x" customClass="FacilityDetailViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="9EU-7Z-giF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1392,14 +1392,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-iB-96u" customClass="UIGradientImageView" customModule="Spots" customModuleProvider="target">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pBS-iB-96u" customClass="UIGradientImageView" customModule="goodspots" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgK-c3-L3k">
                                     <rect key="frame" x="10" y="10" width="355" height="30"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-NM-0rE" customClass="RoundedBGLabel" customModule="Spots" customModuleProvider="target">
-                                            <rect key="frame" x="313" y="0.0" width="42" height="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-NM-0rE" customClass="RoundedBGLabel" customModule="goodspots" customModuleProvider="target">
+                                            <rect key="frame" x="355" y="0.0" width="0.0" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="E9l-Z9-Gx0"/>
                                             </constraints>
@@ -1574,7 +1574,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="239.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEt-bW-yJt" customClass="ActivityIndicatorButton" customModule="Spots" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEt-bW-yJt" customClass="ActivityIndicatorButton" customModule="goodspots" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="239.5" width="375" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="MwO-ie-IAC"/>
@@ -1681,7 +1681,7 @@
         <!--My Spots View Controller-->
         <scene sceneID="jy3-q1-qJk">
             <objects>
-                <viewController id="ol9-Ve-qRx" customClass="MySpotsViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ol9-Ve-qRx" customClass="MySpotsViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="euM-dp-mv6"/>
                         <viewControllerLayoutGuide type="bottom" id="wfF-Ka-qHM"/>
@@ -1699,17 +1699,17 @@
         <!--Photos Container View Controller-->
         <scene sceneID="ix5-jH-Yv4">
             <objects>
-                <viewController id="PvM-cL-h3X" customClass="PhotosContainerViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PvM-cL-h3X" customClass="PhotosContainerViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lma-M3-19z"/>
                         <viewControllerLayoutGuide type="bottom" id="V7A-Qd-saQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wsa-KY-MqR">
-                        <rect key="frame" x="0.0" y="0.0" width="379" height="203.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="395" height="219"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kV1-bH-lgC">
-                                <rect key="frame" x="-4" y="0.0" width="387" height="203.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="395" height="219"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wDr-5P-1kT">
                                     <size key="itemSize" width="50" height="50"/>
@@ -1719,7 +1719,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="inM-PS-XtC">
-                                        <rect key="frame" x="0.0" y="52" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1778,12 +1778,12 @@
         <!--No Network Table View Controller-->
         <scene sceneID="mbs-jk-rnH">
             <objects>
-                <tableViewController id="q92-Vn-2nz" customClass="NoNetworkTableViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="q92-Vn-2nz" customClass="NoNetworkTableViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ilV-Kz-hhh">
                         <rect key="frame" x="0.0" y="0.0" width="415" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="x5B-Ha-q4V">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="x5B-Ha-q4V">
                             <rect key="frame" x="0.0" y="0.0" width="415" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1823,7 +1823,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="xH7-q0-UcZ">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" id="Q9q-S9-Fv5" customClass="OnboardingViewController" customModule="Spots" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="Q9q-S9-Fv5" customClass="OnboardingViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cnc-0x-jLR"/>
                         <viewControllerLayoutGuide type="bottom" id="bO9-uy-xkW"/>
@@ -1832,7 +1832,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nur-25-HG2" customClass="OnboardingView" customModule="Spots" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nur-25-HG2" customClass="OnboardingView" customModule="goodspots" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -1930,7 +1930,7 @@
         <image name="ic_lock_white_18pt" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QsC-ty-0xn"/>
+        <segue reference="aH1-bY-Pcm"/>
         <segue reference="DMU-70-Gxb"/>
     </inferredMetricsTieBreakers>
 </document>
