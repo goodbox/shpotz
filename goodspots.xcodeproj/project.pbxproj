@@ -36,6 +36,7 @@
 		B72ED5F6201C6FE40029DBD3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */; };
 		B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF520706FC300BA18CA /* ProfileViewController.swift */; };
 		B730ABF82070AA9100BA18CA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF72070AA9100BA18CA /* InfoViewController.swift */; };
+		B73990A02115741E00DD3B2A /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */; };
 		B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742934E2073FEC00008B827 /* NewUserViewController.swift */; };
 		B74587B921004DF000EECFCC /* GMUClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B745877421004DF000EECFCC /* GMUClusterManager.m */; };
 		B74587BA21004DF000EECFCC /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B745877821004DF000EECFCC /* GMUGridBasedClusterAlgorithm.m */; };
@@ -224,6 +225,7 @@
 		B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B730ABF520706FC300BA18CA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B730ABF72070AA9100BA18CA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFiltersViewController.swift; sourceTree = "<group>"; };
 		B742934E2073FEC00008B827 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		B745877421004DF000EECFCC /* GMUClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUClusterManager.m; sourceTree = "<group>"; };
 		B745877521004DF000EECFCC /* GMUStaticCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUStaticCluster.h; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				B742934E2073FEC00008B827 /* NewUserViewController.swift */,
 				B7F161072092B9A900B13A26 /* OnboardingView.swift */,
 				B7F161092092BD1C00B13A26 /* OnboardingViewController.swift */,
+				B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1186,6 +1189,7 @@
 				B7F160FC2092B74700B13A26 /* OnboardingContantViewItem.swift in Sources */,
 				B776923B1E80E1940099412E /* APIConstants.swift in Sources */,
 				B74587C121004DF000EECFCC /* GMUWeightedLatLng.m in Sources */,
+				B73990A02115741E00DD3B2A /* SearchFiltersViewController.swift in Sources */,
 				B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */,
 				B74587CA21004DF000EECFCC /* GMUGroundOverlay.m in Sources */,
 				B74587BA21004DF000EECFCC /* GMUGridBasedClusterAlgorithm.m in Sources */,

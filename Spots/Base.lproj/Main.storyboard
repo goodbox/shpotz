@@ -271,6 +271,11 @@
                                 <segue destination="dcY-az-ds2" kind="presentation" id="sq5-im-iLB"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Nf4-Ju-rez">
+                            <connections>
+                                <segue destination="a5V-En-Xn3" kind="presentation" id="2fx-Y0-7T9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btnAdd" destination="osS-1y-B9G" id="dRI-lA-1Oa"/>
@@ -337,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FO1-DZ-naE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4567" y="-313"/>
+            <point key="canvasLocation" x="5504.8000000000002" y="-313.49325337331339"/>
         </scene>
         <!--Post Table View Controller-->
         <scene sceneID="upF-Pn-ZzB">
@@ -347,12 +352,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="383" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="txZ-A2-N7T">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="txZ-A2-N7T">
                             <rect key="frame" x="0.0" y="0.0" width="383" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pDh-eS-Vlc">
-                                    <rect key="frame" x="92" y="-22" width="200" height="80"/>
+                                    <rect key="frame" x="92" y="40" width="200" height="80"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-oS-Qf5">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
@@ -1783,7 +1788,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="415" height="543"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="x5B-Ha-q4V">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="x5B-Ha-q4V">
                             <rect key="frame" x="0.0" y="0.0" width="415" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1819,6 +1824,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hE-0Q-zWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3337" y="-1193"/>
+        </scene>
+        <!--Search Filters View Controller-->
+        <scene sceneID="ES4-2B-taE">
+            <objects>
+                <viewController id="rr3-yW-Std" customClass="SearchFiltersViewController" customModule="goodspots" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KT1-ll-9C1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mbu-W7-CtO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sw5-Pi-0Jg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fXP-4M-jXP">
+                        <barButtonItem key="leftBarButtonItem" title="cancel" id="egS-k2-c6f">
+                            <connections>
+                                <action selector="didCancel:" destination="rr3-yW-Std" id="B1N-6M-fhW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6b-Hb-RLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5007.1999999999998" y="-898.2008995502249"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="xH7-q0-UcZ">
@@ -1922,6 +1952,24 @@
             </objects>
             <point key="canvasLocation" x="2701.5999999999999" y="598.65067466266873"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uhG-CV-a1v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a5V-En-Xn3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lU0-Co-d0O">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rr3-yW-Std" kind="relationship" relationship="rootViewController" id="OHS-FA-1Wf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZK-8N-LIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4068" y="-898.2008995502249"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cm_settings_white" width="24" height="24"/>
@@ -1931,6 +1979,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aH1-bY-Pcm"/>
-        <segue reference="DMU-70-Gxb"/>
+        <segue reference="Qs4-jL-0W0"/>
     </inferredMetricsTieBreakers>
 </document>
