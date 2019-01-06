@@ -63,9 +63,6 @@ public class FacilityDetailViewController: UITableViewController {
     var mapView : GMSMapView!
     var zoomLevel: Float = 15.0
     
-    @IBAction func btnAddReviewAction(_ sender: Any) {
-    }
-    
     public override func viewDidLoad() {
     
         super.viewDidLoad()
@@ -84,9 +81,62 @@ public class FacilityDetailViewController: UITableViewController {
         btnGetDirections.setTitle("Get Directions", for: .normal)
         btnGetDirections.setTitleColor(UIColor.white, for: .normal)
         
-        btnAddFavorite.backgroundColor = UIColor.red
+        btnAddFavorite.backgroundColor = UIColor.defaultTableHeaderColor()
         
-        btnAddReview.backgroundColor = UIColor.green
+        
+        /*
+        
+        //let txtAttach = NSTextAttachment()
+        let bookmarkText = NSAttributedString(string: "\nBookmark")
+        
+        //txtAttach.image = UIImage(named: "")
+        
+        let mutableAttributedString = NSMutableAttributedString()
+        
+        //mutableAttributedString.append(NSAttributedString(attachment: txtAttach))
+        mutableAttributedString.append(bookmarkText)
+        
+        btnAddFavorite.setAttributedTitle(mutableAttributedString, for: .normal)
+        
+        // let attString = NSMutableAttributedString(
+        */
+        
+        /*
+        self.btnAddFavorite.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
+        let btnVisibilityText : NSString = NSString(format: "%@%@%@", "img", "\n", "Bookmark")
+        
+        //getting the range to separate the button title strings
+        let newlineRange: NSRange = btnVisibilityText.range(of: "\n")
+        
+        //getting both substrings
+        var substring1: NSString = ""
+        var substring2: NSString = ""
+        
+        if(newlineRange.location != NSNotFound) {
+            substring1 = btnVisibilityText.substring(to: newlineRange.location) as NSString
+            substring2 = btnVisibilityText.substring(from: newlineRange.location) as NSString
+        }
+        
+        let attrString = NSMutableAttributedString(string: substring1 as String, attributes: [NSAttributedStringKey.font:UIFont(name: "Arial", size: 14.0)!])
+        
+        let attrString1 = NSMutableAttributedString(string: substring2 as String, attributes: [NSAttributedStringKey.font:UIFont(name: "Arial", size: 14.0)!])
+        
+        attrString.append(attrString1)
+        
+        //assigning the resultant attributed strings to the button
+        self.btnAddFavorite?.setAttributedTitle(attrString, for: UIControlState.normal)
+        
+        // self.btnAddFavorite.backgroundColor = backgroundColor
+        
+        self.btnAddFavorite.titleLabel?.textAlignment = NSTextAlignment.center
+
+        */
+        
+       
+        
+        
+        btnAddReview.backgroundColor = UIColor.defaultTableHeaderColor()
         
         lblFacilityName.textColor = UIColor.white
     
@@ -94,9 +144,41 @@ public class FacilityDetailViewController: UITableViewController {
     
     }
     
+    
+    @IBAction func BookmarkFaciltiy(_ sender: Any) {
+        self.facilityDetail.IsBookmarked = !self.facilityDetail.IsBookmarked
+        
+        initBookmark(self.facilityDetail.IsBookmarked)
+    }
+    
+    func initBookmark(_ isBookmarked: Bool) {
+        
+        let fullString = NSMutableAttributedString(string: "\n" + (isBookmarked ? "BOOKMARKED!" : "ADD BOOKMARK"), attributes:
+            [NSAttributedStringKey.font:UIFont(name:"Roboto-Regular", size: 10)!,
+             NSAttributedStringKey.foregroundColor: (isBookmarked ? UIColor.spotsGreen() : Color.grey.darken3)])
+        
+        // create our NSTextAttachment
+        let image1Attachment = NSTextAttachment()
+        
+        // image1Attachment.image = SpotIcons.bookmark?.tint(with: Color.grey.darken3)
+        image1Attachment.image = SpotIcons.bookmark?.tint(with: isBookmarked ? UIColor.spotsGreen() : Color.grey.darken3)
+        // wrap the attachment in its own attributed string so we can append it
+        let image1String = NSAttributedString(attachment: image1Attachment)
+        
+        // add the NSTextAttachment wrapper to our full string, then add some more text.
+        // fullString.append(image1String)
+        fullString.insert(image1String, at: 0)
+        // fullString.append(NSAttributedString(string: "End of text"))
+        
+        // draw the result in a label
+        self.btnAddFavorite.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.btnAddFavorite.titleLabel?.textAlignment = NSTextAlignment.center
+        self.btnAddFavorite.setAttributedTitle(fullString, for: .normal)
+    }
+    
     func setReserved() {
         
-        self.lblReserved.text = "Designated Camping"
+        self.lblReserved.text = "Reserved Camping"
         
         self.lblReserved.layer.backgroundColor = UIColor.totesBusinessMedia().cgColor
         
@@ -178,6 +260,8 @@ public class FacilityDetailViewController: UITableViewController {
             }
             
             self.setReserved()
+            
+            self.initBookmark(self.facilityDetail.IsBookmarked)
             
             self.wvDescription.loadHTMLString(self.facilityDetail.Model.Description, baseURL: nil)
             

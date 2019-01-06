@@ -42,6 +42,10 @@ extension UIColor {
         
     }
     
+    class func defaultTableHeaderColor() -> UIColor {
+        return UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+    }
+    
     class func totesLightGray() -> UIColor {
         return UIColor(red: 239/255.0, green: 239/255.0, blue: 239/255.0, alpha: 1.0)
     }

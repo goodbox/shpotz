@@ -74,6 +74,10 @@ extension MDCButton {
     }
 }
 
+public class BookmarkButton: UIButton {
+    var bookmarkImage: UIImageView!
+}
+
 public class ActivityIndicatorButton : UIButton {
     var originalButtonText: String?
     var activityIndicator: UIActivityIndicatorView!

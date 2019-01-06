@@ -42,7 +42,7 @@ public struct SpotIcons {
     public static let surfing = SpotIcons.icon("surfing_image")
   
     public static let swimming = SpotIcons.icon("swimming_image")
-  
+  	
     public static let beach = SpotIcons.icon("beach_image")
   
     public static let hottub = SpotIcons.icon("hottub_image")
@@ -60,4 +60,6 @@ public struct SpotIcons {
     public static let kidfriendly = SpotIcons.icon("kidfriendly_image")
     
     public static let petfriendly = SpotIcons.icon("petfriendly_image")
+    
+    public static let bookmark = SpotIcons.icon("ic_bookmark")
 }
