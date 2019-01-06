@@ -27,6 +27,7 @@
 		B727756A1E62C27B009B20A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775681E62C27B009B20A7 /* LaunchScreen.storyboard */; };
 		B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */; };
 		B72ADF102030383200D1CF71 /* RoundedBGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72ADF0F2030383200D1CF71 /* RoundedBGLabel.swift */; };
+		B72BC16F21E2C3F50073CF92 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */; };
 		B72ED5F2201C6FE40029DBD3 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5ED201C6FDB0029DBD3 /* Roboto-Bold.ttf */; };
 		B72ED5F3201C6FE40029DBD3 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5EE201C6FDD0029DBD3 /* Roboto-Light.ttf */; };
 		B72ED5F4201C6FE40029DBD3 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5EF201C6FDF0029DBD3 /* Roboto-Medium.ttf */; };
@@ -216,6 +217,7 @@
 		B72775701E62C27B009B20A7 /* goodspotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goodspotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBottomNavigationController.swift; sourceTree = "<group>"; };
 		B72ADF0F2030383200D1CF71 /* RoundedBGLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBGLabel.swift; sourceTree = "<group>"; };
+		B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		B72ED5ED201C6FDB0029DBD3 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B72ED5EE201C6FDD0029DBD3 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		B72ED5EF201C6FDF0029DBD3 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 				B7020A5D1E724753007C437A /* SpotDetailViewController.swift */,
 				B702583C1E6400700090E86B /* UserSettingsViewController.swift */,
 				B7D285C921A56B19009AD618 /* ReviewController.swift */,
+				B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1103,6 +1106,7 @@
 				B7F160FE2092B74700B13A26 /* PageContainer.swift in Sources */,
 				B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */,
 				B7F160FF2092B74700B13A26 /* PageViewItem.swift in Sources */,
+				B72BC16F21E2C3F50073CF92 /* BookmarksViewController.swift in Sources */,
 				B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */,
 				B72ADF102030383200D1CF71 /* RoundedBGLabel.swift in Sources */,
 				B7F161032092B74700B13A26 /* PaperOnboardingDataSource.swift in Sources */,

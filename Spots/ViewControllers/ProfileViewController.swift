@@ -20,6 +20,9 @@ class ProfileViewController : UITableViewController {
     
     @IBOutlet weak var imgGroupAdd: UIImageView!
     @IBOutlet weak var imgLock: UIImageView!
+    @IBOutlet weak var imgBookmark: UIImageView!
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,6 +43,7 @@ class ProfileViewController : UITableViewController {
         
         self.imgGroupAdd.image = UIImage(named: "ic_group_add_white_18pt")?.tint(with: Color.grey.darken1)
         self.imgLock.image = UIImage(named: "ic_lock_white_18pt")?.tint(with: Color.grey.darken1)
+        self.imgBookmark.image = UIImage(named: "ic_bookmark")?.tint(with: Color.grey.darken1)
         
         if let userId = UserDefaults.FacebookUserId {
             
@@ -58,7 +62,7 @@ class ProfileViewController : UITableViewController {
         
         self.tableView.deselectRow(at: indexPath, animated: true)
         
-        switch(indexPath.section) {
+        switch(indexPath.row) {
             
         case 0 :
             let textToShare = "Find and share dispersed and reserved campspots privately with your friends!"
@@ -76,6 +80,10 @@ class ProfileViewController : UITableViewController {
             }
             
         case 1:
+            
+            self.performSegue(withIdentifier: "BookmarksSegue", sender: self)
+            
+        case 2:
             let loginManager = LoginManager()
             
             loginManager.logOut()
