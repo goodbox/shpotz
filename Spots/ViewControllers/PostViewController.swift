@@ -15,7 +15,6 @@ import ImagePicker
 import Lightbox
 import AWSS3
 import Photos
-import Reachability
 import Realm
 import RealmSwift
 

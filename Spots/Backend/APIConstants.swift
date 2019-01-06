@@ -12,7 +12,7 @@ import Foundation
 
 class APIConstants {
   
-  static let transferProtocol = "https://"
+  static let transferProtocol = "http://"
   
   #if RELEASE
   
@@ -20,7 +20,7 @@ class APIConstants {
   
   #else
   
-  static let baseUrl = "goodspotsapp.com"
+  static let baseUrl = "dev.goodspotsapp.com/"
   
   #endif
   

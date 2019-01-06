@@ -21,8 +21,6 @@
 		B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */; };
 		B7049DFF1E651060000824EA /* IconExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFE1E651060000824EA /* IconExtension.swift */; };
 		B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049E2F1E66528A000824EA /* PostTableViewController.swift */; };
-		B7221DD620800CC700AB9B65 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7221DD420800CC600AB9B65 /* Realm.framework */; };
-		B7221DD720800CC700AB9B65 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7221DD520800CC700AB9B65 /* RealmSwift.framework */; };
 		B72775601E62C27B009B20A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727755F1E62C27B009B20A7 /* AppDelegate.swift */; };
 		B72775651E62C27B009B20A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775631E62C27B009B20A7 /* Main.storyboard */; };
 		B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72775661E62C27B009B20A7 /* Assets.xcassets */; };
@@ -102,10 +100,6 @@
 		B74587F62100516200EECFCC /* GQTPointQuadTreeChild.h in Sources */ = {isa = PBXBuildFile; fileRef = B74587B721004DF000EECFCC /* GQTPointQuadTreeChild.h */; };
 		B74587F72100516200EECFCC /* GQTBounds.h in Sources */ = {isa = PBXBuildFile; fileRef = B74587B821004DF000EECFCC /* GQTBounds.h */; };
 		B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */; };
-		B77567A72086F8980014B8EB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7221DD420800CC600AB9B65 /* Realm.framework */; };
-		B77567A82086F8980014B8EB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7221DD420800CC600AB9B65 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B77567A92086F8980014B8EB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7221DD520800CC700AB9B65 /* RealmSwift.framework */; };
-		B77567AA2086F8980014B8EB /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7221DD520800CC700AB9B65 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B77692371E80DE060099412E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692361E80DE060099412E /* Models.swift */; };
 		B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692381E80E1420099412E /* GoodSpotsError.swift */; };
 		B776923B1E80E1940099412E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776923A1E80E1940099412E /* APIConstants.swift */; };
@@ -120,20 +114,26 @@
 		B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376771E63946C004F4786 /* LoginViewController.swift */; };
 		B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A3767A1E63A48D004F4786 /* Colors.swift */; };
 		B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4AD971E6900B10055FC80 /* Delegates.swift */; };
+		B7A7370D21CF968700A336CC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370B21CF968600A336CC /* RealmSwift.framework */; };
+		B7A7370E21CF968700A336CC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370B21CF968600A336CC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B7A7370F21CF968700A336CC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370C21CF968600A336CC /* Realm.framework */; };
+		B7A7371021CF968700A336CC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370C21CF968600A336CC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */; };
 		B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */; };
 		B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */; };
-		B7B20AE01EA05421006B86CA /* FXLabel.h in Sources */ = {isa = PBXBuildFile; fileRef = B7F04DA21EA04AE300FFCF1C /* FXLabel.h */; };
 		B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20AE11EA0550F006B86CA /* FontExtension.swift */; };
+		B7C69F3D21D04C6800BEE490 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C69F3C21D04C6800BEE490 /* Reachability.swift */; };
+		B7C69F3F21D0543800BEE490 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C69F3E21D0543800BEE490 /* CoreTelephony.framework */; };
+		B7C69F4121D1846500BEE490 /* DataRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C69F4021D1846400BEE490 /* DataRequestExtension.swift */; };
 		B7CE9B4A20201BEA00B823FF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4920201BE900B823FF /* Color.swift */; };
 		B7CE9B4C20201C8B00B823FF /* Material+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4B20201C8B00B823FF /* Material+UIImage.swift */; };
 		B7CE9B4E20201D5700B823FF /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4D20201D5600B823FF /* Screen.swift */; };
 		B7CE9B50202021C200B823FF /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CE9B4F202021C200B823FF /* Icon.swift */; };
+		B7D285CA21A56B19009AD618 /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D285C921A56B19009AD618 /* ReviewController.swift */; };
 		B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7D925D01E8620E100F160F8 /* SpotTypeName.xib */; };
 		B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D925D21E86211A00F160F8 /* SpotTypeNameViewController.swift */; };
 		B7E77BD71F3BC62A00C39E65 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */; };
 		B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */; };
-		B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F04DA31EA04B1000FFCF1C /* FXLabel.m */; };
 		B7F160FB2092B74700B13A26 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160E82092B74700B13A26 /* OnboardingContentView.swift */; };
 		B7F160FC2092B74700B13A26 /* OnboardingContantViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160EA2092B74700B13A26 /* OnboardingContantViewItem.swift */; };
 		B7F160FD2092B74700B13A26 /* PaperOnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F160EB2092B74700B13A26 /* PaperOnboardingDelegate.swift */; };
@@ -178,10 +178,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B77567A82086F8980014B8EB /* Realm.framework in Embed Frameworks */,
+				B7A7371021CF968700A336CC /* Realm.framework in Embed Frameworks */,
 				B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */,
-				B77567AA2086F8980014B8EB /* RealmSwift.framework in Embed Frameworks */,
 				B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */,
+				B7A7370E21CF968700A336CC /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,8 +207,6 @@
 		B7049DFE1E651060000824EA /* IconExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconExtension.swift; sourceTree = "<group>"; };
 		B7049E0B1E653B8A000824EA /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Spots-Bridging-Header.h"; path = "ThirdParty/PopupDialog/Spots-Bridging-Header.h"; sourceTree = "<group>"; };
 		B7049E2F1E66528A000824EA /* PostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
-		B7221DD420800CC600AB9B65 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		B7221DD520800CC700AB9B65 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		B727755C1E62C27B009B20A7 /* goodspots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goodspots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B727755F1E62C27B009B20A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B72775641E62C27B009B20A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -305,21 +303,25 @@
 		B7A376771E63946C004F4786 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7A3767A1E63A48D004F4786 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B7A4AD971E6900B10055FC80 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
+		B7A7370B21CF968600A336CC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = realm/RealmSwift.framework; sourceTree = "<group>"; };
+		B7A7370C21CF968600A336CC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = realm/Realm.framework; sourceTree = "<group>"; };
 		B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeViewController.swift; sourceTree = "<group>"; };
 		B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGradientImageView.swift; sourceTree = "<group>"; };
 		B7B20AE11EA0550F006B86CA /* FontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		B7C69F3C21D04C6800BEE490 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B7C69F3E21D0543800BEE490 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B7C69F4021D1846400BEE490 /* DataRequestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestExtension.swift; sourceTree = "<group>"; };
 		B7CE9B4920201BE900B823FF /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B7CE9B4B20201C8B00B823FF /* Material+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage.swift"; sourceTree = "<group>"; };
 		B7CE9B4D20201D5600B823FF /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		B7CE9B4F202021C200B823FF /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		B7D285C921A56B19009AD618 /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		B7D925D01E8620E100F160F8 /* SpotTypeName.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpotTypeName.xib; sourceTree = "<group>"; };
 		B7D925D21E86211A00F160F8 /* SpotTypeNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotTypeNameViewController.swift; sourceTree = "<group>"; };
 		B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilityDetailViewController.swift; sourceTree = "<group>"; };
-		B7F04DA21EA04AE300FFCF1C /* FXLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXLabel.h; sourceTree = "<group>"; };
-		B7F04DA31EA04B1000FFCF1C /* FXLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLabel.m; sourceTree = "<group>"; };
 		B7F160E82092B74700B13A26 /* OnboardingContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
 		B7F160EA2092B74700B13A26 /* OnboardingContantViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContantViewItem.swift; sourceTree = "<group>"; };
 		B7F160EB2092B74700B13A26 /* PaperOnboardingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperOnboardingDelegate.swift; sourceTree = "<group>"; };
@@ -351,13 +353,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7221DD620800CC700AB9B65 /* Realm.framework in Frameworks */,
+				B7C69F3F21D0543800BEE490 /* CoreTelephony.framework in Frameworks */,
 				B7E77BD71F3BC62A00C39E65 /* MobileCoreServices.framework in Frameworks */,
-				B77567A92086F8980014B8EB /* RealmSwift.framework in Frameworks */,
-				B7221DD720800CC700AB9B65 /* RealmSwift.framework in Frameworks */,
 				B7F746BB20EAF8C400DB131D /* ImageIO.framework in Frameworks */,
-				B77567A72086F8980014B8EB /* Realm.framework in Frameworks */,
+				B7A7370D21CF968700A336CC /* RealmSwift.framework in Frameworks */,
 				B7F1A45F1E6FBBE9003D1FE8 /* AWSS3.framework in Frameworks */,
+				B7A7370F21CF968700A336CC /* Realm.framework in Frameworks */,
 				B7F1A4611E6FBBE9003D1FE8 /* AWSCore.framework in Frameworks */,
 				39A61C4A1157A0226D94EBA4 /* Pods_goodspots.framework in Frameworks */,
 			);
@@ -389,8 +390,7 @@
 		64862A4BE3AE2B58EEDAF17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B7221DD420800CC600AB9B65 /* Realm.framework */,
-				B7221DD520800CC700AB9B65 /* RealmSwift.framework */,
+				B7C69F3E21D0543800BEE490 /* CoreTelephony.framework */,
 				B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */,
 				B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */,
 				B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */,
@@ -443,10 +443,11 @@
 		B7049E001E653AC5000824EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B7C69F3C21D04C6800BEE490 /* Reachability.swift */,
 				B745877221004DF000EECFCC /* GoogleMapsClustering */,
 				B7F160E62092B6F500B13A26 /* PaperOnboarding */,
 				B7CE9B4820201B9300B823FF /* Material */,
-				B7F04DA11EA04AB300FFCF1C /* FXLabel */,
+				B7C69F4021D1846400BEE490 /* DataRequestExtension.swift */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -462,6 +463,8 @@
 		B72775531E62C27B009B20A7 = {
 			isa = PBXGroup;
 			children = (
+				B7A7370C21CF968600A336CC /* Realm.framework */,
+				B7A7370B21CF968600A336CC /* RealmSwift.framework */,
 				B727755E1E62C27B009B20A7 /* Spots */,
 				B727755D1E62C27B009B20A7 /* Products */,
 				39DC86549FEB527A4401AE63 /* Pods */,
@@ -504,28 +507,29 @@
 		B72775831E62C44E009B20A7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B702583A1E63D8730090E86B /* AppNavigationController.swift */,
 				B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */,
-				B7A376521E62CD6B004F4786 /* PostViewController.swift */,
-				B7A376541E62CD76004F4786 /* MeViewController.swift */,
+				B702583A1E63D8730090E86B /* AppNavigationController.swift */,
+				B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */,
+				B730ABF72070AA9100BA18CA /* InfoViewController.swift */,
+				B7A376771E63946C004F4786 /* LoginViewController.swift */,
 				B7A376561E62CD81004F4786 /* MapContainerViewController.swift */,
 				B7A376751E63828F004F4786 /* MapViewController.swift */,
-				B7A376771E63946C004F4786 /* LoginViewController.swift */,
-				B702583C1E6400700090E86B /* UserSettingsViewController.swift */,
-				B7049E2F1E66528A000824EA /* PostTableViewController.swift */,
-				B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */,
+				B7A376541E62CD76004F4786 /* MeViewController.swift */,
 				B7020A5B1E72463D007C437A /* MySpotsViewController.swift */,
-				B7020A5D1E724753007C437A /* SpotDetailViewController.swift */,
-				B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */,
-				B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */,
-				B7FB95B81F51107300CBEF81 /* NoNetworkViewController.swift */,
-				B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */,
-				B730ABF520706FC300BA18CA /* ProfileViewController.swift */,
-				B730ABF72070AA9100BA18CA /* InfoViewController.swift */,
 				B742934E2073FEC00008B827 /* NewUserViewController.swift */,
+				B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */,
+				B7FB95B81F51107300CBEF81 /* NoNetworkViewController.swift */,
 				B7F161072092B9A900B13A26 /* OnboardingView.swift */,
 				B7F161092092BD1C00B13A26 /* OnboardingViewController.swift */,
+				B7FBC55E1EA8383400EF0CAB /* PhotosContainerViewController.swift */,
+				B7049E2F1E66528A000824EA /* PostTableViewController.swift */,
+				B7A376521E62CD6B004F4786 /* PostViewController.swift */,
+				B730ABF520706FC300BA18CA /* ProfileViewController.swift */,
 				B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */,
+				B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */,
+				B7020A5D1E724753007C437A /* SpotDetailViewController.swift */,
+				B702583C1E6400700090E86B /* UserSettingsViewController.swift */,
+				B7D285C921A56B19009AD618 /* ReviewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -556,16 +560,16 @@
 		B745877321004DF000EECFCC /* Clustering */ = {
 			isa = PBXGroup;
 			children = (
-				B745878321004DF000EECFCC /* View */,
-				B745877721004DF000EECFCC /* Algo */,
-				B745877421004DF000EECFCC /* GMUClusterManager.m */,
-				B745877521004DF000EECFCC /* GMUStaticCluster.h */,
-				B745877621004DF000EECFCC /* GMUMarkerClustering.h */,
-				B745878121004DF000EECFCC /* GMUClusterManager.h */,
-				B745878221004DF000EECFCC /* GMUClusterManager+Testing.h */,
-				B745878C21004DF000EECFCC /* GMUStaticCluster.m */,
 				B745878D21004DF000EECFCC /* GMUCluster.h */,
 				B745878E21004DF000EECFCC /* GMUClusterItem.h */,
+				B745878121004DF000EECFCC /* GMUClusterManager.h */,
+				B745878221004DF000EECFCC /* GMUClusterManager+Testing.h */,
+				B745877621004DF000EECFCC /* GMUMarkerClustering.h */,
+				B745877521004DF000EECFCC /* GMUStaticCluster.h */,
+				B745877421004DF000EECFCC /* GMUClusterManager.m */,
+				B745878C21004DF000EECFCC /* GMUStaticCluster.m */,
+				B745877721004DF000EECFCC /* Algo */,
+				B745878321004DF000EECFCC /* View */,
 			);
 			path = Clustering;
 			sourceTree = "<group>";
@@ -708,15 +712,6 @@
 			path = Material;
 			sourceTree = "<group>";
 		};
-		B7F04DA11EA04AB300FFCF1C /* FXLabel */ = {
-			isa = PBXGroup;
-			children = (
-				B7F04DA21EA04AE300FFCF1C /* FXLabel.h */,
-				B7F04DA31EA04B1000FFCF1C /* FXLabel.m */,
-			);
-			path = FXLabel;
-			sourceTree = "<group>";
-		};
 		B7F160E62092B6F500B13A26 /* PaperOnboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,8 +828,6 @@
 				B727756C1E62C27B009B20A7 /* Sources */,
 				B727756D1E62C27B009B20A7 /* Frameworks */,
 				B727756E1E62C27B009B20A7 /* Resources */,
-				3E0FE905211DC50154150A92 /* [CP] Embed Pods Frameworks */,
-				81A2C02A50A7AC6F9A0BE9B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -853,7 +846,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = goodbox;
 				TargetAttributes = {
 					B727755B1E62C27B009B20A7 = {
@@ -943,7 +936,6 @@
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Serrata/Serrata.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
@@ -967,7 +959,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Serrata.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
@@ -989,41 +980,12 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodspots/Pods-goodspots-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3E0FE905211DC50154150A92 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodspotsTests/Pods-goodspotsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		81A2C02A50A7AC6F9A0BE9B9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodspotsTests/Pods-goodspotsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B7118896202D37DD00C45C3B /* ShellScript */ = {
@@ -1103,6 +1065,7 @@
 				B74587E32100516200EECFCC /* GMUHeatmapTileLayer.h in Sources */,
 				B74587E42100516200EECFCC /* GMUWeightedLatLng.h in Sources */,
 				B74587E52100516200EECFCC /* GMUGeoJSONParser.h in Sources */,
+				B7C69F4121D1846500BEE490 /* DataRequestExtension.swift in Sources */,
 				B74587E62100516200EECFCC /* GMUPoint.h in Sources */,
 				B74587E72100516200EECFCC /* GMUStyle.h in Sources */,
 				B74587E82100516200EECFCC /* GMUGeometryContainer.h in Sources */,
@@ -1121,12 +1084,10 @@
 				B74587F52100516200EECFCC /* GQTPointQuadTree.h in Sources */,
 				B74587F62100516200EECFCC /* GQTPointQuadTreeChild.h in Sources */,
 				B74587F72100516200EECFCC /* GQTBounds.h in Sources */,
-				B7B20AE01EA05421006B86CA /* FXLabel.h in Sources */,
 				B77692431E80E32C0099412E /* ApiServiceController.swift in Sources */,
 				B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */,
 				B7F161022092B74700B13A26 /* Configuring.swift in Sources */,
 				B74587C021004DF000EECFCC /* GMUStaticCluster.m in Sources */,
-				B7F04DA41EA04B1000FFCF1C /* FXLabel.m in Sources */,
 				B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */,
 				B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */,
 				B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */,
@@ -1136,6 +1097,7 @@
 				B74587C521004DF000EECFCC /* GMUGeometryRenderer.m in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B74587C621004DF000EECFCC /* GMUGeometryCollection.m in Sources */,
+				B7C69F3D21D04C6800BEE490 /* Reachability.swift in Sources */,
 				B74587CB21004DF000EECFCC /* GMUStyle.m in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
 				B7F160FE2092B74700B13A26 /* PageContainer.swift in Sources */,
@@ -1167,6 +1129,7 @@
 				B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */,
 				B7019CAB1E830327000765DC /* ValidationPopupViewController.swift in Sources */,
 				B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */,
+				B7D285CA21A56B19009AD618 /* ReviewController.swift in Sources */,
 				B7F161002092B74700B13A26 /* PageView.swift in Sources */,
 				B74587BB21004DF000EECFCC /* GMUWrappingDictionaryKey.m in Sources */,
 				B77692411E80E3080099412E /* ApiServiceTaskFactory.swift in Sources */,
@@ -1260,6 +1223,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1267,6 +1231,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1278,7 +1243,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1296,6 +1261,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = goodspots;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1317,6 +1283,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1324,6 +1291,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1347,6 +1315,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = goodspots;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -1366,8 +1335,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/realm",
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.goodspots;
@@ -1388,8 +1359,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/realm",
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.goodspots;

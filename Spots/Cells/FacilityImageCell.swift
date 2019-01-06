@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import AlamofireImage
 import AWSS3
+import Alamofire
 
 public class FacilityImageCell: UICollectionViewCell {
   
     @IBOutlet weak var imgPhoto: UIImageView!
     
     func configure(_ imageUrl: String) {
-    
+        
         self.imgPhoto.af_setImage( withURL: URL(string: (imageUrl))!,
                                placeholderImage: nil,
                                filter: nil,

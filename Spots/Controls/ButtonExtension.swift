@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import MaterialComponents.MaterialButtons
+import MaterialComponents.MDCButton
 import ObjectiveC
 
 private var xoOriginalButtonText: String? = ""
@@ -49,7 +49,7 @@ extension MDCButton {
   
     open func hideLoading() {
         self.setTitle(originalButtonText, for: UIControlState.normal)
-        activityIndicator.stopAnimating()
+        activityIndicator?.stopAnimating()
     }
   
     fileprivate func createActivityIndicator() -> UIActivityIndicatorView {

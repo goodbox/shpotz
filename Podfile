@@ -13,13 +13,14 @@ target 'goodspots' do
   
   # pod 'XCGLogger', '~> 4.0'
   
-  pod 'SwiftyJSON'
+  pod 'SwiftyJSON', '~> 4.0'
+  
   
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   
-  #pod 'FBSDKCoreKit'
-  #pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit', '~> 4.38.0'
+  pod 'FBSDKLoginKit', '~> 4.38.0'
   #pod 'FBSDKShareKit'
   
   pod 'FacebookCore'
@@ -59,7 +60,7 @@ target 'goodspots' do
   #pod 'AXPhotoViewer'
 
   #reachability
-  pod 'ReachabilitySwift'
+  # pod 'Reachability'
 
     pod 'Serrata'
 

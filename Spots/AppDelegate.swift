@@ -13,8 +13,9 @@ import FBSDKCoreKit
 import AWSCore
 import Realm
 import RealmSwift
-import Reachability
 import AWSS3
+import Alamofire
+import AlamofireImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
     
+        DataRequest.addAcceptableImageContentTypes(["binary/octet-stream"])
+        
         GMSServices.provideAPIKey("AIzaSyBJNy5PDnzKCWq98NzQkuUv-L-1GBRaEPg")
     
         GMSPlacesClient.provideAPIKey("AIzaSyBJNy5PDnzKCWq98NzQkuUv-L-1GBRaEPg")
@@ -50,6 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let cacheSizeDisk = 1024 * 1024 * 200
         let sharedCache = URLCache(memoryCapacity: cacheSizeMemory, diskCapacity: cacheSizeDisk, diskPath: nil)
         URLCache.shared = sharedCache
+        
+        
+        
         
         /*
         do {

@@ -57,7 +57,7 @@ class ApiServiceTask {
   
   func performTask(_ completion: @escaping (_ success: Bool, _ json: JSON?, _ headerFields: [AnyHashable: Any]?, _ error: NSError?) -> Void) -> Bool
   {
-    guard serviceUrl.characters.count > 0
+    guard serviceUrl.count > 0
       else {
         print("ApiServiceTask.performTask ERROR There is no Service URL String")
         return false

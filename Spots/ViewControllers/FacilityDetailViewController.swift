@@ -13,10 +13,10 @@ import PopupDialog
 import AlamofireImage
 import Serrata
 import GoogleMaps
+import Alamofire
 
 public class FacilityDetailViewController: UITableViewController {
-  
-  
+    
     @IBOutlet weak var vHeader: UIView!
   
     @IBOutlet weak var imgHeaderPic: UIImageView!
@@ -39,7 +39,9 @@ public class FacilityDetailViewController: UITableViewController {
     
     @IBOutlet weak var lblReserved: UILabel!
     
+    @IBOutlet weak var btnAddReview: UIButton!
     
+    @IBOutlet weak var btnAddFavorite: UIButton!
     
     var activityName: [String]! = []
   
@@ -61,6 +63,8 @@ public class FacilityDetailViewController: UITableViewController {
     var mapView : GMSMapView!
     var zoomLevel: Float = 15.0
     
+    @IBAction func btnAddReviewAction(_ sender: Any) {
+    }
     
     public override func viewDidLoad() {
     
@@ -79,6 +83,12 @@ public class FacilityDetailViewController: UITableViewController {
         btnGetDirections.backgroundColor = UIColor.spotsGreen()
         btnGetDirections.setTitle("Get Directions", for: .normal)
         btnGetDirections.setTitleColor(UIColor.white, for: .normal)
+        
+        btnAddFavorite.backgroundColor = UIColor.red
+        
+        btnAddReview.backgroundColor = UIColor.green
+        
+        lblFacilityName.textColor = UIColor.white
     
         loadFacility()
     
@@ -142,13 +152,16 @@ public class FacilityDetailViewController: UITableViewController {
                     filter: nil,
                     imageTransition: .crossDissolve(0.2)
                 )
+                
             } else {
                 
                 self.imgHeaderPic.image = SpotIcons.other?.tint(with: Color.lightGray)
                 self.imgHeaderPic.contentMode = .center
             }
             
-            self.lblFacilityName.text = self.facilityDetail.Model.Name
+            self.lblFacilityName.text = "Some really long text thta will definiely take up more than one line" // self.facilityDetail.Model.Name
+            
+            self.lblFacilityName.sizeToFit()
             
             self.lblFacilityName.font = UIFont.spotsFacilityName()
             
@@ -305,7 +318,11 @@ public class FacilityDetailViewController: UITableViewController {
         } else if indexPath.section == 2 {
             return 220
         } else if indexPath.section == 3 {
-            return 200
+            if facilityDetail != nil && facilityDetail.Media != nil && facilityDetail.Media.count > 0 {
+                return 200
+            } else {
+                return 0
+            }
         } else if indexPath.section == 4 {
             return 300
         } else {
@@ -319,7 +336,7 @@ public class FacilityDetailViewController: UITableViewController {
         if facilityDetail != nil {
             if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
                 return UIView(frame: CGRect.zero)
-            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+            } else if section == 3 && ((facilityDetail.Media != nil && facilityDetail.Media.count == 0) || facilityDetail.Media == nil) {
                 return UIView(frame: CGRect.zero)
             } else {
                 return super.tableView(tableView, viewForHeaderInSection: section)
@@ -351,7 +368,7 @@ public class FacilityDetailViewController: UITableViewController {
         if facilityDetail != nil {
             if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
                 return 0.0
-            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+            } else if section == 3 && ((facilityDetail.Media != nil && facilityDetail.Media.count == 0) || facilityDetail.Media == nil) {
                 return 0.0
             } else {
                 return super.tableView(tableView, heightForHeaderInSection: section)
@@ -368,7 +385,7 @@ public class FacilityDetailViewController: UITableViewController {
         if facilityDetail != nil {
             if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
                 return 0.0
-            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+            } else if section == 3 && ((facilityDetail.Media != nil && facilityDetail.Media.count == 0) || facilityDetail.Media == nil) {
                 return 0.0
             } else {
                 return super.tableView(tableView, heightForFooterInSection: section)
@@ -383,10 +400,10 @@ public class FacilityDetailViewController: UITableViewController {
   
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("section : \(section)")
-        if facilityDetail != nil && facilityDetail.Model != nil {
-            if(section == 0 && self.facilityDetail.Model.Phone.isEmpty) {
+        if facilityDetail != nil {
+            if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
                 return 0
-            } else if section == 3 && facilityDetail.Media != nil && facilityDetail.Media.count == 0 {
+            } else if section == 3 && ((facilityDetail.Media != nil && facilityDetail.Media.count == 0) || facilityDetail.Media == nil) {
                 return 0
             } else {
                 return super.tableView(tableView, numberOfRowsInSection: section)

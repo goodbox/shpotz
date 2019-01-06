@@ -12,7 +12,7 @@ import FacebookCore
 import FacebookLogin
 import MaterialComponents.MaterialPalettes
 import PopupDialog
-import Reachability
+import MaterialComponents.MDCButton
 
 public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDelegate, DidCloseNewUserScreenDelegate {
   
@@ -29,6 +29,8 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     
     var setAsRoot: Bool = false
     
+    let reachability = Reachability()!
+    
     public override func viewDidLoad() {
     
         super.viewDidLoad()
@@ -43,6 +45,8 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             // UIApplication.shared.keyWindow?.window?.rootViewController = self
             self.view.window?.rootViewController = self
         }
+        
+        // btnLogin.isEnabled = true;
     }
     
     public func loadReachableScreen() {
@@ -99,10 +103,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             self.btnLogin.isEnabled = false
         
             self.btnLogin.showLoading()
-        
-            //declare this property where it won't go ou d     t of scope relative to your listener
-            let reachability = Reachability()!
-        
+            
             reachability.whenReachable = { reachability in
                 if reachability.connection == .wifi || reachability.connection == .cellular {
                     self.loadReachableScreen()
@@ -117,6 +118,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
        
             do {
                 try reachability.startNotifier()
+                print(reachability.connection)
             } catch {
                 print("Unable to start notifier")
             }
@@ -220,8 +222,13 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
     
         //declare this property where it won't go ou dt of scope relative to your listener
         
-        let reachability = Reachability()!
+         if reachability.connection == .wifi || reachability.connection == .cellular {
+             self.loginViaFacebook()
+        } else {
+            self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
+        }
         
+        /*
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi || reachability.connection == .cellular {
                 self.loginViaFacebook()
@@ -235,10 +242,12 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         
         do {
             try reachability.startNotifier()
+            print(reachability.connection)
         } catch {
             print("Unable to start notifier")
         }
-    }
+ */
+    }	
   
     func showValidationPopup(theTitle: String?, theMessage: String?) {
     
