@@ -935,12 +935,27 @@
                     <view key="view" contentMode="scaleToFill" id="pfw-Zq-3dY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g6q-Ri-4b7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g6q-Ri-4b7" firstAttribute="leading" secondItem="pfw-Zq-3dY" secondAttribute="leading" id="D5Q-P2-hZR"/>
+                            <constraint firstAttribute="trailing" secondItem="g6q-Ri-4b7" secondAttribute="trailing" id="HaZ-91-hsY"/>
+                            <constraint firstItem="5hT-VS-pNP" firstAttribute="top" secondItem="g6q-Ri-4b7" secondAttribute="bottom" id="dYp-Pd-HOv"/>
+                            <constraint firstItem="g6q-Ri-4b7" firstAttribute="top" secondItem="WXL-kq-S4t" secondAttribute="bottom" id="pjb-ZA-U7L"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblBookmarks" destination="g6q-Ri-4b7" id="ztb-A6-pko"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tpn-5o-HXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="891"/>
+            <point key="canvasLocation" x="2212" y="887"/>
         </scene>
         <!--my spots-->
         <scene sceneID="RFE-gq-kxP">
@@ -2049,7 +2064,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTO-Cn-Bcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2701.5999999999999" y="598.65067466266873"/>
+            <point key="canvasLocation" x="2879" y="600"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uhG-CV-a1v">
