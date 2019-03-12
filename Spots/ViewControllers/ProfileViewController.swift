@@ -88,6 +88,8 @@ class ProfileViewController : UITableViewController {
             
             loginManager.logOut()
             
+            UserDefaults.TryLogin = false
+            
             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         default:
             print("nothing selected")

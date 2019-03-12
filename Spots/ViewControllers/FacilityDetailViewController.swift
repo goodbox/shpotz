@@ -39,9 +39,9 @@ public class FacilityDetailViewController: UITableViewController {
     
     @IBOutlet weak var lblReserved: UILabel!
     
-    @IBOutlet weak var btnAddReview: UIButton!
+    // @IBOutlet weak var btnAddReview: UIButton!
     
-    @IBOutlet weak var btnAddFavorite: UIButton!
+   //  @IBOutlet weak var btnAddFavorite: UIButton!
     
     var activityName: [String]! = []
   
@@ -81,7 +81,7 @@ public class FacilityDetailViewController: UITableViewController {
         btnGetDirections.setTitle("Get Directions", for: .normal)
         btnGetDirections.setTitleColor(UIColor.white, for: .normal)
         
-        btnAddFavorite.backgroundColor = UIColor.defaultTableHeaderColor()
+        // btnAddFavorite.backgroundColor = UIColor.defaultTableHeaderColor()
         
         
         /*
@@ -136,7 +136,7 @@ public class FacilityDetailViewController: UITableViewController {
        
         
         
-        btnAddReview.backgroundColor = UIColor.defaultTableHeaderColor()
+        // btnAddReview.backgroundColor = UIColor.defaultTableHeaderColor()
         
         lblFacilityName.textColor = UIColor.white
     
@@ -144,7 +144,7 @@ public class FacilityDetailViewController: UITableViewController {
     
     }
     
-    
+    /*
     @IBAction func BookmarkFaciltiy(_ sender: Any) {
         self.facilityDetail.IsBookmarked = !self.facilityDetail.IsBookmarked
         
@@ -171,11 +171,11 @@ public class FacilityDetailViewController: UITableViewController {
         // fullString.append(NSAttributedString(string: "End of text"))
         
         // draw the result in a label
-        self.btnAddFavorite.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        self.btnAddFavorite.titleLabel?.textAlignment = NSTextAlignment.center
-        self.btnAddFavorite.setAttributedTitle(fullString, for: .normal)
+        //self.btnAddFavorite.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        // self.btnAddFavorite.titleLabel?.textAlignment = NSTextAlignment.center
+        // self.btnAddFavorite.setAttributedTitle(fullString, for: .normal)
     }
-    
+    */
     func setReserved() {
         
         self.lblReserved.text = "Reserved Camping"
@@ -241,7 +241,7 @@ public class FacilityDetailViewController: UITableViewController {
                 self.imgHeaderPic.contentMode = .center
             }
             
-            self.lblFacilityName.text = "Some really long text thta will definiely take up more than one line" // self.facilityDetail.Model.Name
+            self.lblFacilityName.text = self.facilityDetail.Model.Name
             
             self.lblFacilityName.sizeToFit()
             
@@ -261,7 +261,7 @@ public class FacilityDetailViewController: UITableViewController {
             
             self.setReserved()
             
-            self.initBookmark(self.facilityDetail.IsBookmarked)
+            // self.initBookmark(self.facilityDetail.IsBookmarked)
             
             self.wvDescription.loadHTMLString(self.facilityDetail.Model.Description, baseURL: nil)
             

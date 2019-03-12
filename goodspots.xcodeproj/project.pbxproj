@@ -35,6 +35,8 @@
 		B72ED5F6201C6FE40029DBD3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */; };
 		B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF520706FC300BA18CA /* ProfileViewController.swift */; };
 		B730ABF82070AA9100BA18CA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B730ABF72070AA9100BA18CA /* InfoViewController.swift */; };
+		B732A89E2233971D001F734F /* SpotTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B732A89D2233971D001F734F /* SpotTypeCollectionViewCell.xib */; };
+		B732A8A02233980C001F734F /* SpotTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732A89F2233980C001F734F /* SpotTypeCollectionViewCell.swift */; };
 		B73990A02115741E00DD3B2A /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */; };
 		B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742934E2073FEC00008B827 /* NewUserViewController.swift */; };
 		B74587B921004DF000EECFCC /* GMUClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B745877421004DF000EECFCC /* GMUClusterManager.m */; };
@@ -225,6 +227,8 @@
 		B72ED5F1201C6FE40029DBD3 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		B730ABF520706FC300BA18CA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B730ABF72070AA9100BA18CA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B732A89D2233971D001F734F /* SpotTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		B732A89F2233980C001F734F /* SpotTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFiltersViewController.swift; sourceTree = "<group>"; };
 		B742934E2073FEC00008B827 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		B745877421004DF000EECFCC /* GMUClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUClusterManager.m; sourceTree = "<group>"; };
@@ -700,6 +704,8 @@
 				B7F1A4591E6E44A0003D1FE8 /* SelectSpotTypeCell.swift */,
 				B7FBC5601EA86D1800EF0CAB /* FacilityImageCell.swift */,
 				B7FBC5621EA86D7200EF0CAB /* FacilityImageCell.xib */,
+				B732A89D2233971D001F734F /* SpotTypeCollectionViewCell.xib */,
+				B732A89F2233980C001F734F /* SpotTypeCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -893,6 +899,7 @@
 				B72ED5F4201C6FE40029DBD3 /* Roboto-Medium.ttf in Resources */,
 				B72ED5F5201C6FE40029DBD3 /* Roboto-Regular.ttf in Resources */,
 				B727756A1E62C27B009B20A7 /* LaunchScreen.storyboard in Resources */,
+				B732A89E2233971D001F734F /* SpotTypeCollectionViewCell.xib in Resources */,
 				B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */,
 				B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */,
 				B7019CA91E8302D7000765DC /* ValidationPopup.xib in Resources */,
@@ -1131,6 +1138,7 @@
 				B77692371E80DE060099412E /* Models.swift in Sources */,
 				B7A376761E63828F004F4786 /* MapViewController.swift in Sources */,
 				B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */,
+				B732A8A02233980C001F734F /* SpotTypeCollectionViewCell.swift in Sources */,
 				B7019CAB1E830327000765DC /* ValidationPopupViewController.swift in Sources */,
 				B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */,
 				B7D285CA21A56B19009AD618 /* ReviewController.swift in Sources */,

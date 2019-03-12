@@ -16,8 +16,8 @@ public class SelectSpotTypeViewController : UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     
-    fileprivate let cellResuseIdenitfier = "SelectSpotTypeCell"
-    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    fileprivate let cellResuseIdenitfier = "SpotTypeCollectionViewCell"
+    fileprivate let sectionInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0)
     fileprivate let itemsPerRow: CGFloat = 3
     fileprivate var spotTypes: [SpotTypeModel] = [SpotTypeModel(name: "Camping"),
                                                   SpotTypeModel(name: "Firepit"),
@@ -52,6 +52,10 @@ public class SelectSpotTypeViewController : UIViewController {
         setSelectedSpotTypes()
     }
     
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
     func setSelectedSpotTypes() {
         for spotType in selectedSpotTypes {
             let s = spotTypes.first(where: { (spot) -> Bool in
@@ -65,6 +69,8 @@ public class SelectSpotTypeViewController : UIViewController {
             }
         }
     }
+    
+    
   
     @IBAction func btnCancelTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -135,9 +141,12 @@ extension SelectSpotTypeViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellResuseIdenitfier,
-                                                  for: indexPath) as! SelectSpotTypeCell
+                                                  for: indexPath) as! SpotTypeCollectionViewCell
+       
         cell.configure(spotTypes[indexPath.row])
-        // Configure the cell
+        
+        cell.layoutIfNeeded()
+        
         return cell
     }
 }
@@ -180,70 +189,47 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
         } else {
             spotTypes[indexPath.row].IsSelected = !spotTypes[indexPath.row].IsSelected
             
-            let cell = collectionView.cellForItem(at: indexPath) as! SelectSpotTypeCell
+            let cell = collectionView.cellForItem(at: indexPath) as! SpotTypeCollectionViewCell
             
             cell.configure(spotTypes[indexPath.row])
         }
     }
-    /*
-    
-    var spotName = spotTypes[indexPath.row]
-    
-    if spotName == "Other" {
-      
-      // make them enter the name of the spot
-      let spotNameViewController = SpotTypeNameViewController(nibName: "SpotTypeName", bundle: nil)
-      
-      let popup = PopupDialog(viewController: spotNameViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false) {
-        
-        // print("validation popup dismissed")
-        
-      }
-      
-      let btnCancel = CancelButton(title: "Cancel") {
-        //print("validation popup dismissed : Cancel")
-      }
-      
-      let btnOk = DefaultButton(title: "Select", action: { 
-        
-        let vc = popup.viewController as! SpotTypeNameViewController
-        
-        if vc.txtSpotName.text! == "" || (vc.txtSpotName.text?.count)! < 2 {
-          
-          // TODO: figure otu what to do here
-          
-        } else {
-          
-          self.dismiss(animated: true, completion: nil)
-          
-          spotName = (popup.viewController as! SpotTypeNameViewController).txtSpotName.text!
-          
-          self.spotTypeDelegate.didSelectSpotType(_sender: self, spotType: self.spotTypes[indexPath.row], spotName: spotName)
-
-        }
-      })
-      
-      popup.addButtons([btnCancel, btnOk])
-      
-      self.present(popup, animated: true, completion: nil)
-      
-    } else {
-    
-      dismiss(animated: true, completion: nil)
-    
-      spotTypeDelegate.didSelectSpotType(_sender: self, spotType: spotTypes[indexPath.row], spotName: spotName)
-    }
- 
- */
   
     public func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        /*
+        let paddingSpace = sectionInsets.left * (4)
         let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        let widthPerItem = (availableWidth / 3) + 20
     
+        print("WIDTH PER ITEM : \(widthPerItem)")
+        
         return CGSize(width: widthPerItem, height: widthPerItem + 20)
+ */
+        
+        /*
+        
+        print("bounds.width : \(collectionView.bounds.width)")
+        let yourWidth = (collectionView.bounds.width/3.0)
+        let yourHeight = yourWidth
+        
+        return CGSize(width: yourWidth, height: yourHeight)
+ */
+        let numberOfItemsPerRow = 3
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        
+        print("flowLayout.sectionInset.left : \(flowLayout.sectionInset.left)")
+        
+        print("flowLayout.sectionInset.right : \(flowLayout.sectionInset.right)")
+        
+        print("flowLayout.minimumInteritemSpacing : \(flowLayout.minimumInteritemSpacing)")
+        
+        let totalSpace = flowLayout.sectionInset.left
+            + flowLayout.sectionInset.right
+            + (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItemsPerRow - 1))
+        let size = Int((collectionView.bounds.width -  totalSpace) / CGFloat(numberOfItemsPerRow))
+        return CGSize(width: size, height: size + 50)
     }
   
     public func collectionView(_ collectionView: UICollectionView,
@@ -253,8 +239,66 @@ extension SelectSpotTypeViewController : UICollectionViewDelegateFlowLayout {
     }
   
     public func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
 }
+
+
+/*
+ 
+ var spotName = spotTypes[indexPath.row]
+ 
+ if spotName == "Other" {
+ 
+ // make them enter the name of the spot
+ let spotNameViewController = SpotTypeNameViewController(nibName: "SpotTypeName", bundle: nil)
+ 
+ let popup = PopupDialog(viewController: spotNameViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false) {
+ 
+ // print("validation popup dismissed")
+ 
+ }
+ 
+ let btnCancel = CancelButton(title: "Cancel") {
+ //print("validation popup dismissed : Cancel")
+ }
+ 
+ let btnOk = DefaultButton(title: "Select", action: {
+ 
+ let vc = popup.viewController as! SpotTypeNameViewController
+ 
+ if vc.txtSpotName.text! == "" || (vc.txtSpotName.text?.count)! < 2 {
+ 
+ // TODO: figure otu what to do here
+ 
+ } else {
+ 
+ self.dismiss(animated: true, completion: nil)
+ 
+ spotName = (popup.viewController as! SpotTypeNameViewController).txtSpotName.text!
+ 
+ self.spotTypeDelegate.didSelectSpotType(_sender: self, spotType: self.spotTypes[indexPath.row], spotName: spotName)
+ 
+ }
+ })
+ 
+ popup.addButtons([btnCancel, btnOk])
+ 
+ self.present(popup, animated: true, completion: nil)
+ 
+ } else {
+ 
+ dismiss(animated: true, completion: nil)
+ 
+ spotTypeDelegate.didSelectSpotType(_sender: self, spotType: spotTypes[indexPath.row], spotName: spotName)
+ }
+ 
+ */

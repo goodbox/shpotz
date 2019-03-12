@@ -23,7 +23,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
   
     var readPermissions: [ReadPermission] = [.publicProfile, .email, .userFriends]
   
-    var tryLogin: Bool = true
+    // var tryLogin: Bool = false
     
     var showHelp: Bool = false
     
@@ -42,11 +42,12 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         lblAppTitle.font = UIFont(name:"Roboto-Light", size: 50)!
         
         if setAsRoot == true {
-            // UIApplication.shared.keyWindow?.window?.rootViewController = self
             self.view.window?.rootViewController = self
         }
         
-        // btnLogin.isEnabled = true;
+        btnLogin.originalButtonText = "Login via Facebook"
+        
+        UserDefaults.TryLogin = true
     }
     
     public func loadReachableScreen() {
@@ -96,9 +97,8 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
   
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-  
-        if self.tryLogin {
         
+        if UserDefaults.TryLogin! {
         
             self.btnLogin.isEnabled = false
         
@@ -117,20 +117,24 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         
        
             do {
+                
                 try reachability.startNotifier()
-                print(reachability.connection)
+                print("REACHABILITY : \(reachability.connection)")
+                
             } catch {
                 print("Unable to start notifier")
             }
         } else {
-            self.btnLogin.hideLoading()
             
             self.btnLogin.isEnabled = true
+            
+            self.btnLogin.hideLoading()
         }
     }
   
     public func loginViaFacebook() {
-        self.tryLogin = true
+        
+        UserDefaults.TryLogin = true
         
         self.btnLogin.isEnabled = false
         
@@ -194,7 +198,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                             UserDefaults.SpotsToken = loginModel?.BearerToken
                             
                             self.performSegue(withIdentifier: "LoginSegue", sender: self)
-                            
+  
                             /*
                              if (loginModel?.IsNewUser)! {
                              
@@ -227,26 +231,6 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         } else {
             self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
         }
-        
-        /*
-        reachability.whenReachable = { reachability in
-            if reachability.connection == .wifi || reachability.connection == .cellular {
-                self.loginViaFacebook()
-            } else {
-                self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
-            }
-        }
-        reachability.whenUnreachable = { _ in
-            self.performSegue(withIdentifier: "ShowPostSpotSegue", sender: self)
-        }
-        
-        do {
-            try reachability.startNotifier()
-            print(reachability.connection)
-        } catch {
-            print("Unable to start notifier")
-        }
- */
     }	
   
     func showValidationPopup(theTitle: String?, theMessage: String?) {
@@ -269,11 +253,11 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
         
         self.btnLogin.isEnabled = true
         
-        self.tryLogin = false
+        UserDefaults.TryLogin = false
     }
     
     func didCloseNewUserScree(_ sender: Any?) {
-        self.tryLogin = false
+        UserDefaults.TryLogin = false
         self.showHelp = true
         self.performSegue(withIdentifier: "LoginSegue", sender: self)
     }
