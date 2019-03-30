@@ -206,7 +206,7 @@ public class FacilityDetailViewController: UITableViewController {
         } else if segue.identifier == "PhotoGallerySegue" {
       
       
-            print("PhotoGallerySegue")
+            // print("PhotoGallerySegue")
             /*
              if let vc = segue.destination as? UINavigationController {
         
@@ -448,7 +448,7 @@ public class FacilityDetailViewController: UITableViewController {
     }
   
     override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        print("section : \(section)")
+        // print("section : \(section)")
         if facilityDetail != nil {
             if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
                 return 0.0
@@ -465,7 +465,7 @@ public class FacilityDetailViewController: UITableViewController {
     }
 
     override public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        print("section : \(section)")
+        // print("section : \(section)")
         if facilityDetail != nil {
             if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
                 return 0.0
@@ -483,7 +483,7 @@ public class FacilityDetailViewController: UITableViewController {
 
   
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("section : \(section)")
+        // print("section : \(section)")
         if facilityDetail != nil {
             if(section == 0 && facilityDetail.Model != nil && self.facilityDetail.Model.Phone.isEmpty) {
                 return 0
@@ -504,7 +504,7 @@ public class FacilityDetailViewController: UITableViewController {
 extension FacilityDetailViewController: DidTapFacilityImageDelegate {
   
     func didTapFacilityImage(_ sender: Any?, index: Int?, imageCell: FacilityImageCell?) {
-        print("did tap photo")
+        // print("did tap photo")
     
         let slideLeafs: [SlideLeaf] = facilityDetail.Media.enumerated().map { SlideLeaf(imageUrlString: $0.1.Url, title: "", caption: "") }
     
@@ -521,25 +521,25 @@ extension FacilityDetailViewController: DidTapFacilityImageDelegate {
 extension FacilityDetailViewController: SlideLeafViewControllerDelegate {
     
     public func tapImageDetailView(slideLeaf: SlideLeaf, pageIndex: Int) {
-        print("tapImageDetailView")
-        print(pageIndex)
-        print(slideLeaf)
+        //print("tapImageDetailView")
+        //print(pageIndex)
+        //print(slideLeaf)
         
         //let viewController = DetailViewController.make(detailTitle: slideLeaf.title)
         //self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     public func longPressImageView(slideLeafViewController: SlideLeafViewController, slideLeaf: SlideLeaf, pageIndex: Int) {
-        print("longPressImageView")
-        print(slideLeafViewController)
-        print(slideLeaf)
-        print(pageIndex)
+        //print("longPressImageView")
+        //print(slideLeafViewController)
+        //print(slideLeaf)
+        //print(pageIndex)
     }
     
     public func slideLeafViewControllerDismissed(slideLeaf: SlideLeaf, pageIndex: Int) {
-        print("slideLeafViewControllerDismissed")
-        print(slideLeaf)
-        print(pageIndex)
+        //print("slideLeafViewControllerDismissed")
+        //print(slideLeaf)
+        //print(pageIndex)
         
         //let indexPath = IndexPath(row: pageIndex, section: 0)
         //self.collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)

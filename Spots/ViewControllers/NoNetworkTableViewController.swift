@@ -71,7 +71,7 @@ extension NoNetworkTableViewController : CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
         locationManager.stopUpdatingLocation()
-        print("Error: \(error)")
+        // print("Error: \(error)")
         
     }
     

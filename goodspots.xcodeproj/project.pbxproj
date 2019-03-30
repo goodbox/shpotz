@@ -15,7 +15,6 @@
 		B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7020A5B1E72463D007C437A /* MySpotsViewController.swift */; };
 		B7020A5E1E724753007C437A /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7020A5D1E724753007C437A /* SpotDetailViewController.swift */; };
 		B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70258371E63BED00090E86B /* ButtonExtension.swift */; };
-		B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583A1E63D8730090E86B /* AppNavigationController.swift */; };
 		B702583D1E6400700090E86B /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583C1E6400700090E86B /* UserSettingsViewController.swift */; };
 		B702583F1E64016A0090E86B /* SimpleBackUIBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */; };
 		B7049DFD1E6500B9000824EA /* AppUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */; };
@@ -25,7 +24,6 @@
 		B72775651E62C27B009B20A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775631E62C27B009B20A7 /* Main.storyboard */; };
 		B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72775661E62C27B009B20A7 /* Assets.xcassets */; };
 		B727756A1E62C27B009B20A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775681E62C27B009B20A7 /* LaunchScreen.storyboard */; };
-		B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */; };
 		B72ADF102030383200D1CF71 /* RoundedBGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72ADF0F2030383200D1CF71 /* RoundedBGLabel.swift */; };
 		B72BC16F21E2C3F50073CF92 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */; };
 		B72ED5F2201C6FE40029DBD3 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5ED201C6FDB0029DBD3 /* Roboto-Bold.ttf */; };
@@ -38,7 +36,6 @@
 		B732A89E2233971D001F734F /* SpotTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B732A89D2233971D001F734F /* SpotTypeCollectionViewCell.xib */; };
 		B732A8A02233980C001F734F /* SpotTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B732A89F2233980C001F734F /* SpotTypeCollectionViewCell.swift */; };
 		B73990A02115741E00DD3B2A /* SearchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */; };
-		B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742934E2073FEC00008B827 /* NewUserViewController.swift */; };
 		B74587B921004DF000EECFCC /* GMUClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B745877421004DF000EECFCC /* GMUClusterManager.m */; };
 		B74587BA21004DF000EECFCC /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B745877821004DF000EECFCC /* GMUGridBasedClusterAlgorithm.m */; };
 		B74587BB21004DF000EECFCC /* GMUWrappingDictionaryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = B745877B21004DF000EECFCC /* GMUWrappingDictionaryKey.m */; };
@@ -203,7 +200,6 @@
 		B7020A5B1E72463D007C437A /* MySpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySpotsViewController.swift; sourceTree = "<group>"; };
 		B7020A5D1E724753007C437A /* SpotDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
 		B70258371E63BED00090E86B /* ButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
-		B702583A1E63D8730090E86B /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		B702583C1E6400700090E86B /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		B702583E1E64016A0090E86B /* SimpleBackUIBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBackUIBarButton.swift; sourceTree = "<group>"; };
 		B7049DFC1E6500B9000824EA /* AppUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaults.swift; sourceTree = "<group>"; };
@@ -217,7 +213,6 @@
 		B72775691E62C27B009B20A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B727756B1E62C27B009B20A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72775701E62C27B009B20A7 /* goodspotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goodspotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBottomNavigationController.swift; sourceTree = "<group>"; };
 		B72ADF0F2030383200D1CF71 /* RoundedBGLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBGLabel.swift; sourceTree = "<group>"; };
 		B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		B72ED5ED201C6FDB0029DBD3 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -230,7 +225,6 @@
 		B732A89D2233971D001F734F /* SpotTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B732A89F2233980C001F734F /* SpotTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFiltersViewController.swift; sourceTree = "<group>"; };
-		B742934E2073FEC00008B827 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		B745877421004DF000EECFCC /* GMUClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUClusterManager.m; sourceTree = "<group>"; };
 		B745877521004DF000EECFCC /* GMUStaticCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUStaticCluster.h; sourceTree = "<group>"; };
 		B745877621004DF000EECFCC /* GMUMarkerClustering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUMarkerClustering.h; sourceTree = "<group>"; };
@@ -513,8 +507,6 @@
 		B72775831E62C44E009B20A7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B72775841E62C506009B20A7 /* AppBottomNavigationController.swift */,
-				B702583A1E63D8730090E86B /* AppNavigationController.swift */,
 				B7F04D9F1EA041CA00FFCF1C /* FacilityDetailViewController.swift */,
 				B730ABF72070AA9100BA18CA /* InfoViewController.swift */,
 				B7A376771E63946C004F4786 /* LoginViewController.swift */,
@@ -522,7 +514,6 @@
 				B7A376751E63828F004F4786 /* MapViewController.swift */,
 				B7A376541E62CD76004F4786 /* MeViewController.swift */,
 				B7020A5B1E72463D007C437A /* MySpotsViewController.swift */,
-				B742934E2073FEC00008B827 /* NewUserViewController.swift */,
 				B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */,
 				B7FB95B81F51107300CBEF81 /* NoNetworkViewController.swift */,
 				B7F161072092B9A900B13A26 /* OnboardingView.swift */,
@@ -1111,7 +1102,6 @@
 				B74587CB21004DF000EECFCC /* GMUStyle.m in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
 				B7F160FE2092B74700B13A26 /* PageContainer.swift in Sources */,
-				B742934F2073FEC00008B827 /* NewUserViewController.swift in Sources */,
 				B7F160FF2092B74700B13A26 /* PageViewItem.swift in Sources */,
 				B72BC16F21E2C3F50073CF92 /* BookmarksViewController.swift in Sources */,
 				B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */,
@@ -1137,7 +1127,6 @@
 				B7D925D31E86211A00F160F8 /* SpotTypeNameViewController.swift in Sources */,
 				B77692371E80DE060099412E /* Models.swift in Sources */,
 				B7A376761E63828F004F4786 /* MapViewController.swift in Sources */,
-				B72775851E62C506009B20A7 /* AppBottomNavigationController.swift in Sources */,
 				B732A8A02233980C001F734F /* SpotTypeCollectionViewCell.swift in Sources */,
 				B7019CAB1E830327000765DC /* ValidationPopupViewController.swift in Sources */,
 				B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */,
@@ -1177,7 +1166,6 @@
 				B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */,
 				B74587CE21004DF000EECFCC /* GMUGeoJSONParser.m in Sources */,
 				B74587CC21004DF000EECFCC /* GMUPoint.m in Sources */,
-				B702583B1E63D8730090E86B /* AppNavigationController.swift in Sources */,
 				B74587C321004DF000EECFCC /* GMUHeatmapTileLayer.m in Sources */,
 				B7F161082092B9A900B13A26 /* OnboardingView.swift in Sources */,
 				B74587BF21004DF000EECFCC /* GMUDefaultClusterIconGenerator.m in Sources */,

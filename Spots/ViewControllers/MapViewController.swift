@@ -83,7 +83,7 @@ extension MapViewController: GMSMapViewDelegate, GMUClusterManagerDelegate, GMUC
     // GMUClusterManagerDelegate
     
     public func renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {
-        print("renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {")
+        // print("renderer(_ renderer: GMUClusterRenderer, markerFor object: Any) -> GMSMarker? {")
         if let poiItem = object as? POIItem {
             let position = CLLocationCoordinate2D(latitude: poiItem.model.Latitude, longitude: poiItem.model.Longitude)
             let marker = GMSMarker(position: position)
@@ -151,7 +151,7 @@ extension MapViewController: GMSMapViewDelegate, GMUClusterManagerDelegate, GMUC
                     
                     if error != nil {
                         
-                        print(error ?? "an error occurred")
+                        // print(error ?? "an error occurred")
                         
                     } else {
                         
@@ -237,7 +237,7 @@ extension MapViewController: CLLocationManagerDelegate {
   public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     
         locationManager.stopUpdatingLocation()
-        print("Error: \(error)")
+        // print("Error: \(error)")
   }
   
   public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

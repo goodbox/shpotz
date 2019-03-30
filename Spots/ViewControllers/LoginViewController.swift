@@ -119,10 +119,10 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
             do {
                 
                 try reachability.startNotifier()
-                print("REACHABILITY : \(reachability.connection)")
+                //print("REACHABILITY : \(reachability.connection)")
                 
             } catch {
-                print("Unable to start notifier")
+                //print("Unable to start notifier")
             }
         } else {
             
