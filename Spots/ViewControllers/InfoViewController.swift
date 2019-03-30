@@ -16,16 +16,12 @@ class InfoViewController : UITableViewController {
     
     @IBOutlet weak var imgReservedCamping: UIImageView!
     
-    @IBOutlet weak var imgEmail: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imgReservedCamping.image = UIImage(named: "reserved_marker")
         
         imgDispersedCamping.image = UIImage(named: "dispersed_marker")
-        
-        imgEmail.image = UIImage(named:"ic_email_white")?.tint(with: MDCPalette.grey.tint500)
     }
     
     @IBAction func btnCloseTapped(_ sender: Any) {
@@ -34,7 +30,7 @@ class InfoViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        
+        /*
         if indexPath.section == 1 && indexPath.row == 0 {
             // open email dialog
             let email = "info@goodspotsapp.com"
@@ -42,5 +38,6 @@ class InfoViewController : UITableViewController {
                 UIApplication.shared.open(url)
             }
         }
+ */
     }
 }

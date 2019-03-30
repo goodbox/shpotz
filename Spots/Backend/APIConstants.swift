@@ -12,19 +12,24 @@ import Foundation
 
 class APIConstants {
   
-  static let transferProtocol = "http://"
+    static let transferProtocol = "http://"
   
-  #if RELEASE
+    #if RELEASE
   
-  static let baseUrl = "goodspotsapp.com"
+    static let baseUrl = "goodspotsapp.com"
   
-  #else
+    #else
   
-  static let baseUrl = "dev.goodspotsapp.com/"
+    static let baseUrl = "dev.goodspotsapp.com/"
   
-  #endif
+    #endif
   
-  
-  static var apiUrl: String { get { return transferProtocol + baseUrl } }
+    static var apiUrl: String
+    {
+        get
+        {
+            return transferProtocol + baseUrl   
+        }
+    }
   
 }

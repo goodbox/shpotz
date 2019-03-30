@@ -20,8 +20,8 @@ class ProfileViewController : UITableViewController {
     
     @IBOutlet weak var imgGroupAdd: UIImageView!
     @IBOutlet weak var imgLock: UIImageView!
-    @IBOutlet weak var imgBookmark: UIImageView!
     
+    @IBOutlet weak var imgEmail: UIImageView!
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,8 +42,12 @@ class ProfileViewController : UITableViewController {
         
         
         self.imgGroupAdd.image = UIImage(named: "ic_group_add_white_18pt")?.tint(with: Color.grey.darken1)
-        self.imgLock.image = UIImage(named: "ic_lock_white_18pt")?.tint(with: Color.grey.darken1)
-        self.imgBookmark.image = UIImage(named: "ic_bookmark")?.tint(with: Color.grey.darken1)
+        
+        self.imgLock.image = UIImage(named: "ic_lock_white")?.tint(with: Color.grey.darken1)
+        
+        // self.imgBookmark.image = UIImage(named: "ic_bookmark")?.tint(with: Color.grey.darken1)
+        self.imgEmail.image = UIImage(named:"ic_email_white")?.tint(with: Color.grey.darken1)
+        // self.imgEmail.image = UIImage(named:"ic_email_white")?.tint(with: MDCPalette.grey.tint500)
         
         if let userId = UserDefaults.FacebookUserId {
             
@@ -80,8 +84,10 @@ class ProfileViewController : UITableViewController {
             }
             
         case 1:
-            
-            self.performSegue(withIdentifier: "BookmarksSegue", sender: self)
+            let email = "info@goodspotsapp.com"
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
             
         case 2:
             let loginManager = LoginManager()

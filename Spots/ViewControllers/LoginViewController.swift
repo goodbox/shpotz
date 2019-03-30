@@ -154,11 +154,15 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
                 
                 self.btnLogin.isEnabled = true
                 
+                UserDefaults.TryLogin = false
+                
             case .cancelled:
                 
                 self.btnLogin.hideLoading()
                 
                 self.btnLogin.isEnabled = true
+                
+                UserDefaults.TryLogin = false
                 
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 
