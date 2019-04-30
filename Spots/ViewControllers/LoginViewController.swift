@@ -11,7 +11,6 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 import MaterialComponents.MaterialPalettes
-import PopupDialog
 import MaterialComponents.MDCButton
 
 public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDelegate, DidCloseNewUserScreenDelegate {
@@ -239,7 +238,7 @@ public class LoginViewController : UIViewController, DidCancelNoNetworkSaveDeleg
   
     func showValidationPopup(theTitle: String?, theMessage: String?) {
     
-        let popup = PopupDialog(title: theTitle, message: theMessage, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
+        let popup = PopupDialog(title: theTitle, message: theMessage, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, tapGestureDismissal: false)
     
         let buttonOne = DefaultButton(title: "Dismiss") {
             self.btnLogin.isEnabled = true

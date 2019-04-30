@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import MaterialComponents
-import PopupDialog
 
 public class SelectSpotTypeViewController : UIViewController {
   
@@ -105,7 +104,7 @@ public class SelectSpotTypeViewController : UIViewController {
         
         let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
         
-        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) {
+        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, tapGestureDismissal: true) {
             
             print("validation popup dismissed")
             

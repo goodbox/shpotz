@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 import GoogleMaps
-import PopupDialog
 import ImagePicker
 import Lightbox
 import AWSS3
@@ -37,9 +36,9 @@ class PostViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
     
-        NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     
-        NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillHide(_:)), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 
     
         btnPost.backgroundColor = UIColor.spotsGreen()
@@ -285,11 +284,11 @@ class PostViewController: UIViewController {
         
         let maxCompression: CGFloat = 0.1
         
-        var imageData: Data = UIImageJPEGRepresentation(newImage, compression)!
+        var imageData: Data = newImage.jpegData(compressionQuality: compression)!
         
         while imageData.count > 60 && compression > maxCompression {
             compression -= 0.10
-            imageData = UIImageJPEGRepresentation(newImage, compression)!
+            imageData = newImage.jpegData(compressionQuality: compression)!
         }
         
         return imageData
@@ -375,7 +374,7 @@ class PostViewController: UIViewController {
     
         let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
     
-        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) {
+        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, tapGestureDismissal: true) {
       
             print("validation popup dismissed")
       
@@ -403,7 +402,7 @@ class PostViewController: UIViewController {
     
         let validationViewController = ValidationPopupViewController(nibName: "ValidationPopup", bundle: nil)
     
-        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: true) {
+        let popup = PopupDialog(viewController: validationViewController, buttonAlignment: .horizontal, transitionStyle: .bounceDown, tapGestureDismissal: true) {
       
             if let navController = self.navigationController {
                 navController.dismiss(animated: true, completion: {
@@ -444,7 +443,7 @@ class PostViewController: UIViewController {
     // MARK: keyboard notifications
     @objc func keyboardWillHide(_ notification: Notification) {
     
-        let animationDuration = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).doubleValue
+        let animationDuration = (notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber).doubleValue
     
         self.btnPostBottomConstraint.constant = 0
     
@@ -456,9 +455,9 @@ class PostViewController: UIViewController {
   
     @objc func keyboardWillShow(_ notification: Notification) {
     
-        let keyboardFrame = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
     
-        let animationDuration = (notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let animationDuration = (notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
     
         let height = keyboardFrame.size.height
     
@@ -471,7 +470,7 @@ class PostViewController: UIViewController {
     
     func showNoNetwrokPopup(theTitle: String?, theMessage: String?) {
         
-        let popup = PopupDialog(title: theTitle, message: theMessage, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, gestureDismissal: false)
+        let popup = PopupDialog(title: theTitle, message: theMessage, image: nil, buttonAlignment: .horizontal, transitionStyle: .bounceDown, tapGestureDismissal: false)
         
         let buttonOne = DefaultButton(title: "Ok") {
             
@@ -488,7 +487,6 @@ class PostViewController: UIViewController {
 extension PostViewController : DidTapAddPhotoButtonDelegate {
   
     func didTapAddPhoto(_ sender: Any?, numToAdd: Int?) {
-    
         let imagePickerController = ImagePickerController()
         imagePickerController.imageLimit = numToAdd!
         imagePickerController.delegate = self.postTableView

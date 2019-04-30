@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -1116,13 +1116,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOODSPOTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j3-0f-Ydj">
-                                <rect key="frame" x="20" y="103.99999999999999" width="374" height="58.333333333333329"/>
+                                <rect key="frame" x="20" y="104" width="374" height="66"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="50"/>
                                 <color key="textColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o5G-2y-fNX">
-                                <rect key="frame" x="107" y="202.33333333333337" width="200" height="200"/>
+                                <rect key="frame" x="107" y="210" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="57b-OM-6U6"/>
                                     <constraint firstAttribute="width" constant="200" id="LEB-no-YEs"/>
@@ -1423,7 +1423,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgK-c3-L3k">
                                     <rect key="frame" x="10" y="10" width="394" height="30"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-NM-0rE" customClass="RoundedBGLabel" customModule="goodspots" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-NM-0rE" customClass="RoundedBGLabel" customModule="goodspots" customModuleProvider="target">
                                             <rect key="frame" x="394" y="0.0" width="0.0" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="E9l-Z9-Gx0"/>
@@ -1987,9 +1987,9 @@
     </scenes>
     <resources>
         <image name="cm_settings_white" width="24" height="24"/>
-        <image name="ic_group_add_white_18pt" width="54" height="54"/>
-        <image name="ic_help_white" width="72" height="72"/>
-        <image name="ic_lock_white_18pt" width="54" height="54"/>
+        <image name="ic_group_add_white_18pt" width="18" height="18"/>
+        <image name="ic_help_white" width="24" height="24"/>
+        <image name="ic_lock_white_18pt" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QsC-ty-0xn"/>

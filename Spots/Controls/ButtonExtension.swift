@@ -36,7 +36,7 @@ extension MDCButton {
   
     open func showLoading(_ withColor: UIColor = UIColor.white) {
         originalButtonText = self.titleLabel?.text
-        self.setTitle("", for: UIControlState.normal)
+        self.setTitle("", for: UIControl.State.normal)
     
         if (activityIndicator == nil) {
             activityIndicator = createActivityIndicator()
@@ -48,7 +48,7 @@ extension MDCButton {
     }
   
     open func hideLoading() {
-        self.setTitle(originalButtonText, for: UIControlState.normal)
+        self.setTitle(originalButtonText, for: UIControl.State.normal)
         activityIndicator?.stopAnimating()
     }
   
@@ -84,7 +84,7 @@ public class ActivityIndicatorButton : UIButton {
   
     open func showLoading(_ withColor: UIColor = UIColor.white) {
         originalButtonText = self.titleLabel?.text
-        self.setTitle("", for: UIControlState.normal)
+        self.setTitle("", for: UIControl.State.normal)
     
         if (activityIndicator == nil) {
             activityIndicator = createActivityIndicator()
@@ -96,7 +96,7 @@ public class ActivityIndicatorButton : UIButton {
     }
   
     open func hideLoading() {
-        self.setTitle(originalButtonText, for: UIControlState.normal)
+        self.setTitle(originalButtonText, for: UIControl.State.normal)
         activityIndicator.stopAnimating()
     }
   

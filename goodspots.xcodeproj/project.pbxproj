@@ -25,6 +25,42 @@
 		B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B72775661E62C27B009B20A7 /* Assets.xcassets */; };
 		B727756A1E62C27B009B20A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72775681E62C27B009B20A7 /* LaunchScreen.storyboard */; };
 		B72ADF102030383200D1CF71 /* RoundedBGLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72ADF0F2030383200D1CF71 /* RoundedBGLabel.swift */; };
+		B72B4D6F225EBB6E0017DCAD /* SlideLeafCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D67225EBB650017DCAD /* SlideLeafCell.swift */; };
+		B72B4D70225EBB6E0017DCAD /* SerrataTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D68225EBB670017DCAD /* SerrataTransition.swift */; };
+		B72B4D71225EBB6E0017DCAD /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D69225EBB680017DCAD /* ImageDetailView.swift */; };
+		B72B4D72225EBB6E0017DCAD /* SlideLeafViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D6A225EBB690017DCAD /* SlideLeafViewController.swift */; };
+		B72B4D73225EBB6E0017DCAD /* SlideLeafCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72B4D6B225EBB6A0017DCAD /* SlideLeafCell.xib */; };
+		B72B4D74225EBB6E0017DCAD /* SlideLeafViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72B4D6C225EBB6C0017DCAD /* SlideLeafViewController.storyboard */; };
+		B72B4D75225EBB6E0017DCAD /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D6D225EBB6D0017DCAD /* UIButtonExtension.swift */; };
+		B72B4D76225EBB6E0017DCAD /* SlideLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D6E225EBB6E0017DCAD /* SlideLeaf.swift */; };
+		B72B4D79225FE5F20017DCAD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7351F33225EB2EF00991919 /* Realm.framework */; };
+		B72B4D7A225FE5F20017DCAD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7351F32225EB2EF00991919 /* RealmSwift.framework */; };
+		B72B4D7D226185170017DCAD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B72B4D7B226185170017DCAD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B72B4D7E226185170017DCAD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B72B4D7C226185170017DCAD /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B72B4D92226297DE0017DCAD /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D82226297DD0017DCAD /* PopupDialog.swift */; };
+		B72B4D93226297DE0017DCAD /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D83226297DD0017DCAD /* TransitionAnimations.swift */; };
+		B72B4D94226297DE0017DCAD /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D84226297DD0017DCAD /* PopupDialogDefaultView.swift */; };
+		B72B4D95226297DE0017DCAD /* PopupDialogContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D85226297DD0017DCAD /* PopupDialogContainerView.swift */; };
+		B72B4D96226297DE0017DCAD /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D86226297DD0017DCAD /* PresentationManager.swift */; };
+		B72B4D97226297DE0017DCAD /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D87226297DD0017DCAD /* PresentationController.swift */; };
+		B72B4D98226297DE0017DCAD /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D88226297DD0017DCAD /* InteractiveTransition.swift */; };
+		B72B4D99226297DE0017DCAD /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D89226297DD0017DCAD /* UIViewController+Visibility.swift */; };
+		B72B4D9A226297DE0017DCAD /* PopupDialogOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D8A226297DD0017DCAD /* PopupDialogOverlayView.swift */; };
+		B72B4D9B226297DE0017DCAD /* PopupDialogDefaultButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D8B226297DD0017DCAD /* PopupDialogDefaultButtons.swift */; };
+		B72B4D9C226297DE0017DCAD /* PopupDialog+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D8C226297DD0017DCAD /* PopupDialog+Keyboard.swift */; };
+		B72B4D9D226297DE0017DCAD /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D8D226297DD0017DCAD /* UIImageView+Calculations.swift */; };
+		B72B4D9E226297DE0017DCAD /* PopupDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D8E226297DD0017DCAD /* PopupDialogButton.swift */; };
+		B72B4D9F226297DE0017DCAD /* PopupDialogDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D8F226297DD0017DCAD /* PopupDialogDefaultViewController.swift */; };
+		B72B4DA0226297DE0017DCAD /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D90226297DD0017DCAD /* UIView+Animations.swift */; };
+		B72B4DA1226297DE0017DCAD /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D91226297DE0017DCAD /* TransitionAnimator.swift */; };
+		B72B4DAC22629A170017DCAD /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4DA322629A160017DCAD /* BlurLayer.swift */; };
+		B72B4DAD22629A170017DCAD /* CaptureQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4DA422629A170017DCAD /* CaptureQuality.swift */; };
+		B72B4DAE22629A170017DCAD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B72B4DA522629A170017DCAD /* Info.plist */; };
+		B72B4DAF22629A170017DCAD /* CGImage+Accelerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4DA722629A170017DCAD /* CGImage+Accelerate.swift */; };
+		B72B4DB022629A170017DCAD /* CGContext+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4DA822629A170017DCAD /* CGContext+CGImage.swift */; };
+		B72B4DB122629A170017DCAD /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4DA922629A170017DCAD /* TrackingMode.swift */; };
+		B72B4DB222629A170017DCAD /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4DAA22629A170017DCAD /* DynamicBlurView.swift */; };
+		B72B4DB322629A170017DCAD /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4DAB22629A170017DCAD /* UIImage+Blur.swift */; };
 		B72BC16F21E2C3F50073CF92 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */; };
 		B72ED5F2201C6FE40029DBD3 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5ED201C6FDB0029DBD3 /* Roboto-Bold.ttf */; };
 		B72ED5F3201C6FE40029DBD3 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B72ED5EE201C6FDD0029DBD3 /* Roboto-Light.ttf */; };
@@ -108,16 +144,11 @@
 		B77692411E80E3080099412E /* ApiServiceTaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692401E80E3080099412E /* ApiServiceTaskFactory.swift */; };
 		B77692431E80E32C0099412E /* ApiServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77692421E80E32C0099412E /* ApiServiceController.swift */; };
 		B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376521E62CD6B004F4786 /* PostViewController.swift */; };
-		B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376541E62CD76004F4786 /* MeViewController.swift */; };
 		B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376561E62CD81004F4786 /* MapContainerViewController.swift */; };
 		B7A376761E63828F004F4786 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376751E63828F004F4786 /* MapViewController.swift */; };
 		B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A376771E63946C004F4786 /* LoginViewController.swift */; };
 		B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A3767A1E63A48D004F4786 /* Colors.swift */; };
 		B7A4AD981E6900B10055FC80 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A4AD971E6900B10055FC80 /* Delegates.swift */; };
-		B7A7370D21CF968700A336CC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370B21CF968600A336CC /* RealmSwift.framework */; };
-		B7A7370E21CF968700A336CC /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370B21CF968600A336CC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B7A7370F21CF968700A336CC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370C21CF968600A336CC /* Realm.framework */; };
-		B7A7371021CF968700A336CC /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B7A7370C21CF968600A336CC /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */; };
 		B7AEB7071E6D322900AF6E65 /* SelectSpotTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */; };
 		B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */; };
@@ -178,10 +209,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B7A7371021CF968700A336CC /* Realm.framework in Embed Frameworks */,
+				B72B4D7D226185170017DCAD /* Realm.framework in Embed Frameworks */,
+				B72B4D7E226185170017DCAD /* RealmSwift.framework in Embed Frameworks */,
 				B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */,
 				B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */,
-				B7A7370E21CF968700A336CC /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +245,42 @@
 		B727756B1E62C27B009B20A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72775701E62C27B009B20A7 /* goodspotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goodspotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72ADF0F2030383200D1CF71 /* RoundedBGLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBGLabel.swift; sourceTree = "<group>"; };
+		B72B4D67225EBB650017DCAD /* SlideLeafCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeafCell.swift; sourceTree = "<group>"; };
+		B72B4D68225EBB670017DCAD /* SerrataTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerrataTransition.swift; sourceTree = "<group>"; };
+		B72B4D69225EBB680017DCAD /* ImageDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		B72B4D6A225EBB690017DCAD /* SlideLeafViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeafViewController.swift; sourceTree = "<group>"; };
+		B72B4D6B225EBB6A0017DCAD /* SlideLeafCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideLeafCell.xib; sourceTree = "<group>"; };
+		B72B4D6C225EBB6C0017DCAD /* SlideLeafViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideLeafViewController.storyboard; sourceTree = "<group>"; };
+		B72B4D6D225EBB6D0017DCAD /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		B72B4D6E225EBB6E0017DCAD /* SlideLeaf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeaf.swift; sourceTree = "<group>"; };
+		B72B4D7B226185170017DCAD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
+		B72B4D7C226185170017DCAD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
+		B72B4D81226297990017DCAD /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Spots-Bridging-Header.h"; sourceTree = "<group>"; };
+		B72B4D82226297DD0017DCAD /* PopupDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
+		B72B4D83226297DD0017DCAD /* TransitionAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimations.swift; sourceTree = "<group>"; };
+		B72B4D84226297DD0017DCAD /* PopupDialogDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultView.swift; sourceTree = "<group>"; };
+		B72B4D85226297DD0017DCAD /* PopupDialogContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogContainerView.swift; sourceTree = "<group>"; };
+		B72B4D86226297DD0017DCAD /* PresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		B72B4D87226297DD0017DCAD /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		B72B4D88226297DD0017DCAD /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		B72B4D89226297DD0017DCAD /* UIViewController+Visibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Visibility.swift"; sourceTree = "<group>"; };
+		B72B4D8A226297DD0017DCAD /* PopupDialogOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogOverlayView.swift; sourceTree = "<group>"; };
+		B72B4D8B226297DD0017DCAD /* PopupDialogDefaultButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultButtons.swift; sourceTree = "<group>"; };
+		B72B4D8C226297DD0017DCAD /* PopupDialog+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PopupDialog+Keyboard.swift"; sourceTree = "<group>"; };
+		B72B4D8D226297DD0017DCAD /* UIImageView+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Calculations.swift"; sourceTree = "<group>"; };
+		B72B4D8E226297DD0017DCAD /* PopupDialogButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogButton.swift; sourceTree = "<group>"; };
+		B72B4D8F226297DD0017DCAD /* PopupDialogDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultViewController.swift; sourceTree = "<group>"; };
+		B72B4D90226297DD0017DCAD /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		B72B4D91226297DE0017DCAD /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		B72B4DA322629A160017DCAD /* BlurLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurLayer.swift; sourceTree = "<group>"; };
+		B72B4DA422629A170017DCAD /* CaptureQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureQuality.swift; sourceTree = "<group>"; };
+		B72B4DA522629A170017DCAD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B72B4DA622629A170017DCAD /* DynamicBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicBlurView.h; sourceTree = "<group>"; };
+		B72B4DA722629A170017DCAD /* CGImage+Accelerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Accelerate.swift"; sourceTree = "<group>"; };
+		B72B4DA822629A170017DCAD /* CGContext+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+CGImage.swift"; sourceTree = "<group>"; };
+		B72B4DA922629A170017DCAD /* TrackingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingMode.swift; sourceTree = "<group>"; };
+		B72B4DAA22629A170017DCAD /* DynamicBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBlurView.swift; sourceTree = "<group>"; };
+		B72B4DAB22629A170017DCAD /* UIImage+Blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
 		B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
 		B72ED5ED201C6FDB0029DBD3 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		B72ED5EE201C6FDD0029DBD3 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -224,6 +291,8 @@
 		B730ABF72070AA9100BA18CA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		B732A89D2233971D001F734F /* SpotTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpotTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B732A89F2233980C001F734F /* SpotTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B7351F32225EB2EF00991919 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
+		B7351F33225EB2EF00991919 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
 		B739909F2115741E00DD3B2A /* SearchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFiltersViewController.swift; sourceTree = "<group>"; };
 		B745877421004DF000EECFCC /* GMUClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUClusterManager.m; sourceTree = "<group>"; };
 		B745877521004DF000EECFCC /* GMUStaticCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUStaticCluster.h; sourceTree = "<group>"; };
@@ -297,14 +366,11 @@
 		B77692401E80E3080099412E /* ApiServiceTaskFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceTaskFactory.swift; sourceTree = "<group>"; };
 		B77692421E80E32C0099412E /* ApiServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceController.swift; sourceTree = "<group>"; };
 		B7A376521E62CD6B004F4786 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		B7A376541E62CD76004F4786 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		B7A376561E62CD81004F4786 /* MapContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapContainerViewController.swift; sourceTree = "<group>"; };
 		B7A376751E63828F004F4786 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B7A376771E63946C004F4786 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B7A3767A1E63A48D004F4786 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B7A4AD971E6900B10055FC80 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
-		B7A7370B21CF968600A336CC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = realm/RealmSwift.framework; sourceTree = "<group>"; };
-		B7A7370C21CF968600A336CC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = realm/Realm.framework; sourceTree = "<group>"; };
 		B7AEB7041E6D165000AF6E65 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B7AEB7061E6D322900AF6E65 /* SelectSpotTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSpotTypeViewController.swift; sourceTree = "<group>"; };
 		B7B20ADE1EA05066006B86CA /* UIGradientImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGradientImageView.swift; sourceTree = "<group>"; };
@@ -353,12 +419,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72B4D79225FE5F20017DCAD /* Realm.framework in Frameworks */,
+				B72B4D7A225FE5F20017DCAD /* RealmSwift.framework in Frameworks */,
 				B7C69F3F21D0543800BEE490 /* CoreTelephony.framework in Frameworks */,
 				B7E77BD71F3BC62A00C39E65 /* MobileCoreServices.framework in Frameworks */,
 				B7F746BB20EAF8C400DB131D /* ImageIO.framework in Frameworks */,
-				B7A7370D21CF968700A336CC /* RealmSwift.framework in Frameworks */,
 				B7F1A45F1E6FBBE9003D1FE8 /* AWSS3.framework in Frameworks */,
-				B7A7370F21CF968700A336CC /* Realm.framework in Frameworks */,
 				B7F1A4611E6FBBE9003D1FE8 /* AWSCore.framework in Frameworks */,
 				39A61C4A1157A0226D94EBA4 /* Pods_goodspots.framework in Frameworks */,
 			);
@@ -390,6 +456,8 @@
 		64862A4BE3AE2B58EEDAF17B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7351F33225EB2EF00991919 /* Realm.framework */,
+				B7351F32225EB2EF00991919 /* RealmSwift.framework */,
 				B7C69F3E21D0543800BEE490 /* CoreTelephony.framework */,
 				B7E77BD61F3BC62A00C39E65 /* MobileCoreServices.framework */,
 				B7E77BD41F3BC61E00C39E65 /* ImageIO.framework */,
@@ -443,6 +511,9 @@
 		B7049E001E653AC5000824EA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B72B4DA2226299CC0017DCAD /* DynamicBlurView */,
+				B72B4D80226297990017DCAD /* PopupDialog */,
+				B72B4D66225EBB2B0017DCAD /* Serrata */,
 				B7C69F3C21D04C6800BEE490 /* Reachability.swift */,
 				B745877221004DF000EECFCC /* GoogleMapsClustering */,
 				B7F160E62092B6F500B13A26 /* PaperOnboarding */,
@@ -463,8 +534,8 @@
 		B72775531E62C27B009B20A7 = {
 			isa = PBXGroup;
 			children = (
-				B7A7370C21CF968600A336CC /* Realm.framework */,
-				B7A7370B21CF968600A336CC /* RealmSwift.framework */,
+				B72B4D7B226185170017DCAD /* Realm.framework */,
+				B72B4D7C226185170017DCAD /* RealmSwift.framework */,
 				B727755E1E62C27B009B20A7 /* Spots */,
 				B727755D1E62C27B009B20A7 /* Products */,
 				39DC86549FEB527A4401AE63 /* Pods */,
@@ -512,7 +583,6 @@
 				B7A376771E63946C004F4786 /* LoginViewController.swift */,
 				B7A376561E62CD81004F4786 /* MapContainerViewController.swift */,
 				B7A376751E63828F004F4786 /* MapViewController.swift */,
-				B7A376541E62CD76004F4786 /* MeViewController.swift */,
 				B7020A5B1E72463D007C437A /* MySpotsViewController.swift */,
 				B765D52F2022DA8C00D9EAD5 /* NoNetworkTableViewController.swift */,
 				B7FB95B81F51107300CBEF81 /* NoNetworkViewController.swift */,
@@ -530,6 +600,61 @@
 				B72BC16E21E2C3F50073CF92 /* BookmarksViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B72B4D66225EBB2B0017DCAD /* Serrata */ = {
+			isa = PBXGroup;
+			children = (
+				B72B4D69225EBB680017DCAD /* ImageDetailView.swift */,
+				B72B4D68225EBB670017DCAD /* SerrataTransition.swift */,
+				B72B4D6E225EBB6E0017DCAD /* SlideLeaf.swift */,
+				B72B4D67225EBB650017DCAD /* SlideLeafCell.swift */,
+				B72B4D6B225EBB6A0017DCAD /* SlideLeafCell.xib */,
+				B72B4D6C225EBB6C0017DCAD /* SlideLeafViewController.storyboard */,
+				B72B4D6A225EBB690017DCAD /* SlideLeafViewController.swift */,
+				B72B4D6D225EBB6D0017DCAD /* UIButtonExtension.swift */,
+			);
+			path = Serrata;
+			sourceTree = "<group>";
+		};
+		B72B4D80226297990017DCAD /* PopupDialog */ = {
+			isa = PBXGroup;
+			children = (
+				B72B4D88226297DD0017DCAD /* InteractiveTransition.swift */,
+				B72B4D82226297DD0017DCAD /* PopupDialog.swift */,
+				B72B4D8C226297DD0017DCAD /* PopupDialog+Keyboard.swift */,
+				B72B4D8E226297DD0017DCAD /* PopupDialogButton.swift */,
+				B72B4D85226297DD0017DCAD /* PopupDialogContainerView.swift */,
+				B72B4D8B226297DD0017DCAD /* PopupDialogDefaultButtons.swift */,
+				B72B4D84226297DD0017DCAD /* PopupDialogDefaultView.swift */,
+				B72B4D8F226297DD0017DCAD /* PopupDialogDefaultViewController.swift */,
+				B72B4D8A226297DD0017DCAD /* PopupDialogOverlayView.swift */,
+				B72B4D87226297DD0017DCAD /* PresentationController.swift */,
+				B72B4D86226297DD0017DCAD /* PresentationManager.swift */,
+				B72B4D83226297DD0017DCAD /* TransitionAnimations.swift */,
+				B72B4D91226297DE0017DCAD /* TransitionAnimator.swift */,
+				B72B4D8D226297DD0017DCAD /* UIImageView+Calculations.swift */,
+				B72B4D90226297DD0017DCAD /* UIView+Animations.swift */,
+				B72B4D89226297DD0017DCAD /* UIViewController+Visibility.swift */,
+				B72B4D81226297990017DCAD /* Spots-Bridging-Header.h */,
+			);
+			path = PopupDialog;
+			sourceTree = "<group>";
+		};
+		B72B4DA2226299CC0017DCAD /* DynamicBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				B72B4DA322629A160017DCAD /* BlurLayer.swift */,
+				B72B4DA422629A170017DCAD /* CaptureQuality.swift */,
+				B72B4DA822629A170017DCAD /* CGContext+CGImage.swift */,
+				B72B4DA722629A170017DCAD /* CGImage+Accelerate.swift */,
+				B72B4DA622629A170017DCAD /* DynamicBlurView.h */,
+				B72B4DAA22629A170017DCAD /* DynamicBlurView.swift */,
+				B72B4DA522629A170017DCAD /* Info.plist */,
+				B72B4DA922629A170017DCAD /* TrackingMode.swift */,
+				B72B4DAB22629A170017DCAD /* UIImage+Blur.swift */,
+			);
+			path = DynamicBlurView;
 			sourceTree = "<group>";
 		};
 		B72ED5EC201C6FB50029DBD3 /* Fonts */ = {
@@ -809,7 +934,7 @@
 				0FBECD4C8CE514542FB21955 /* [CP] Embed Pods Frameworks */,
 				2E78958E4ACD01DA621F5C54 /* [CP] Copy Pods Resources */,
 				B7F1A4631E6FBBE9003D1FE8 /* Embed Frameworks */,
-				B7118896202D37DD00C45C3B /* ShellScript */,
+				B7118896202D37DD00C45C3B /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -868,6 +993,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -887,6 +1013,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72B4DAE22629A170017DCAD /* Info.plist in Resources */,
 				B72ED5F4201C6FE40029DBD3 /* Roboto-Medium.ttf in Resources */,
 				B72ED5F5201C6FE40029DBD3 /* Roboto-Regular.ttf in Resources */,
 				B727756A1E62C27B009B20A7 /* LaunchScreen.storyboard in Resources */,
@@ -894,10 +1021,12 @@
 				B72775671E62C27B009B20A7 /* Assets.xcassets in Resources */,
 				B7D925D11E8620E100F160F8 /* SpotTypeName.xib in Resources */,
 				B7019CA91E8302D7000765DC /* ValidationPopup.xib in Resources */,
+				B72B4D74225EBB6E0017DCAD /* SlideLeafViewController.storyboard in Resources */,
 				B7FBC5631EA86D7200EF0CAB /* FacilityImageCell.xib in Resources */,
 				B72775651E62C27B009B20A7 /* Main.storyboard in Resources */,
 				B72ED5F6201C6FE40029DBD3 /* Roboto-Thin.ttf in Resources */,
 				B72ED5F2201C6FE40029DBD3 /* Roboto-Bold.ttf in Resources */,
+				B72B4D73225EBB6E0017DCAD /* SlideLeafCell.xib in Resources */,
 				B7F1A4581E6E447D003D1FE8 /* SelectSpotTypeCell.xib in Resources */,
 				B72ED5F3201C6FE40029DBD3 /* Roboto-Light.ttf in Resources */,
 			);
@@ -931,13 +1060,10 @@
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Lightbox/Lightbox.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/Serrata/Serrata.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
 			);
@@ -954,13 +1080,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lightbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Serrata.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
 			);
@@ -989,18 +1112,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodspots/Pods-goodspots-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B7118896202D37DD00C45C3B /* ShellScript */ = {
+		B7118896202D37DD00C45C3B /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
 		};
 		CA03D56E2CF18809C982897D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1054,11 +1178,14 @@
 				B74587D72100516200EECFCC /* GMUClusterAlgorithm.h in Sources */,
 				B74587D82100516200EECFCC /* GMUNonHierarchicalDistanceBasedAlgorithm.h in Sources */,
 				B74587D92100516200EECFCC /* GMUGridBasedClusterAlgorithm.h in Sources */,
+				B72B4D9C226297DE0017DCAD /* PopupDialog+Keyboard.swift in Sources */,
 				B74587DA2100516200EECFCC /* GMUSimpleClusterAlgorithm.h in Sources */,
+				B72B4DAF22629A170017DCAD /* CGImage+Accelerate.swift in Sources */,
 				B74587DB2100516200EECFCC /* GMUWrappingDictionaryKey.h in Sources */,
 				B74587DC2100516200EECFCC /* GMUStaticCluster.h in Sources */,
 				B74587DD2100516200EECFCC /* GMUMarkerClustering.h in Sources */,
 				B74587DE2100516200EECFCC /* GMUClusterManager.h in Sources */,
+				B72B4D92226297DE0017DCAD /* PopupDialog.swift in Sources */,
 				B74587DF2100516200EECFCC /* GMUClusterManager+Testing.h in Sources */,
 				B74587E02100516200EECFCC /* GMUCluster.h in Sources */,
 				B74587E12100516200EECFCC /* GMUClusterItem.h in Sources */,
@@ -1066,12 +1193,16 @@
 				B74587E32100516200EECFCC /* GMUHeatmapTileLayer.h in Sources */,
 				B74587E42100516200EECFCC /* GMUWeightedLatLng.h in Sources */,
 				B74587E52100516200EECFCC /* GMUGeoJSONParser.h in Sources */,
+				B72B4D75225EBB6E0017DCAD /* UIButtonExtension.swift in Sources */,
 				B7C69F4121D1846500BEE490 /* DataRequestExtension.swift in Sources */,
+				B72B4D9F226297DE0017DCAD /* PopupDialogDefaultViewController.swift in Sources */,
 				B74587E62100516200EECFCC /* GMUPoint.h in Sources */,
 				B74587E72100516200EECFCC /* GMUStyle.h in Sources */,
 				B74587E82100516200EECFCC /* GMUGeometryContainer.h in Sources */,
 				B74587E92100516200EECFCC /* GMULineString.h in Sources */,
 				B74587EA2100516200EECFCC /* GMUGeometry.h in Sources */,
+				B72B4D6F225EBB6E0017DCAD /* SlideLeafCell.swift in Sources */,
+				B72B4DB022629A170017DCAD /* CGContext+CGImage.swift in Sources */,
 				B74587EB2100516200EECFCC /* GMUGeometryCollection.h in Sources */,
 				B74587EC2100516200EECFCC /* GMUPolygon.h in Sources */,
 				B74587ED2100516200EECFCC /* GMUPlacemark.h in Sources */,
@@ -1087,30 +1218,46 @@
 				B74587F72100516200EECFCC /* GQTBounds.h in Sources */,
 				B77692431E80E32C0099412E /* ApiServiceController.swift in Sources */,
 				B77692391E80E1420099412E /* GoodSpotsError.swift in Sources */,
+				B72B4D94226297DE0017DCAD /* PopupDialogDefaultView.swift in Sources */,
+				B72B4DAD22629A170017DCAD /* CaptureQuality.swift in Sources */,
+				B72B4D9B226297DE0017DCAD /* PopupDialogDefaultButtons.swift in Sources */,
 				B7F161022092B74700B13A26 /* Configuring.swift in Sources */,
+				B72B4DB222629A170017DCAD /* DynamicBlurView.swift in Sources */,
 				B74587C021004DF000EECFCC /* GMUStaticCluster.m in Sources */,
+				B72B4DA1226297DE0017DCAD /* TransitionAnimator.swift in Sources */,
 				B7020A5C1E72463D007C437A /* MySpotsViewController.swift in Sources */,
+				B72B4D72225EBB6E0017DCAD /* SlideLeafViewController.swift in Sources */,
+				B72B4DB322629A170017DCAD /* UIImage+Blur.swift in Sources */,
 				B70258381E63BED00090E86B /* ButtonExtension.swift in Sources */,
+				B72B4D98226297DE0017DCAD /* InteractiveTransition.swift in Sources */,
+				B72B4DB122629A170017DCAD /* TrackingMode.swift in Sources */,
 				B7B20ADF1EA05066006B86CA /* UIGradientImageView.swift in Sources */,
 				B7A376781E63946C004F4786 /* LoginViewController.swift in Sources */,
 				B7020A5E1E724753007C437A /* SpotDetailViewController.swift in Sources */,
 				B7AEB7051E6D165000AF6E65 /* UIImageExtension.swift in Sources */,
+				B72B4D9D226297DE0017DCAD /* UIImageView+Calculations.swift in Sources */,
+				B72B4D97226297DE0017DCAD /* PresentationController.swift in Sources */,
 				B74587C521004DF000EECFCC /* GMUGeometryRenderer.m in Sources */,
+				B72B4D76225EBB6E0017DCAD /* SlideLeaf.swift in Sources */,
 				B7A3767B1E63A48D004F4786 /* Colors.swift in Sources */,
 				B74587C621004DF000EECFCC /* GMUGeometryCollection.m in Sources */,
 				B7C69F3D21D04C6800BEE490 /* Reachability.swift in Sources */,
+				B72B4D99226297DE0017DCAD /* UIViewController+Visibility.swift in Sources */,
 				B74587CB21004DF000EECFCC /* GMUStyle.m in Sources */,
 				B7A376531E62CD6B004F4786 /* PostViewController.swift in Sources */,
 				B7F160FE2092B74700B13A26 /* PageContainer.swift in Sources */,
 				B7F160FF2092B74700B13A26 /* PageViewItem.swift in Sources */,
+				B72B4DAC22629A170017DCAD /* BlurLayer.swift in Sources */,
 				B72BC16F21E2C3F50073CF92 /* BookmarksViewController.swift in Sources */,
 				B7F04DA01EA041CA00FFCF1C /* FacilityDetailViewController.swift in Sources */,
 				B72ADF102030383200D1CF71 /* RoundedBGLabel.swift in Sources */,
 				B7F161032092B74700B13A26 /* PaperOnboardingDataSource.swift in Sources */,
 				B776923D1E80E2030099412E /* ApiServiceTask.swift in Sources */,
 				B74587C221004DF000EECFCC /* GMUGradient.m in Sources */,
+				B72B4D71225EBB6E0017DCAD /* ImageDetailView.swift in Sources */,
 				B7F1A45A1E6E44A0003D1FE8 /* SelectSpotTypeCell.swift in Sources */,
 				B74587C821004DF000EECFCC /* GMUPolygon.m in Sources */,
+				B72B4D96226297DE0017DCAD /* PresentationManager.swift in Sources */,
 				B74587C921004DF000EECFCC /* GMUFeature.m in Sources */,
 				B74587BD21004DF000EECFCC /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
 				B765D5302022DA8C00D9EAD5 /* NoNetworkTableViewController.swift in Sources */,
@@ -1142,11 +1289,12 @@
 				B7049E301E66528A000824EA /* PostTableViewController.swift in Sources */,
 				B74587C421004DF000EECFCC /* GMUKMLParser.m in Sources */,
 				B74587BE21004DF000EECFCC /* GMUDefaultClusterRenderer.m in Sources */,
+				B72B4DA0226297DE0017DCAD /* UIView+Animations.swift in Sources */,
 				B7CE9B50202021C200B823FF /* Icon.swift in Sources */,
 				B7F160FD2092B74700B13A26 /* PaperOnboardingDelegate.swift in Sources */,
+				B72B4D9E226297DE0017DCAD /* PopupDialogButton.swift in Sources */,
 				B7F161062092B74700B13A26 /* GestureControl.swift in Sources */,
 				B7CE9B4E20201D5700B823FF /* Screen.swift in Sources */,
-				B7A376551E62CD76004F4786 /* MeViewController.swift in Sources */,
 				B7FB95B91F51107300CBEF81 /* NoNetworkViewController.swift in Sources */,
 				B74587C721004DF000EECFCC /* GMUPlacemark.m in Sources */,
 				B74587CD21004DF000EECFCC /* GMULineString.m in Sources */,
@@ -1155,6 +1303,8 @@
 				B74587C121004DF000EECFCC /* GMUWeightedLatLng.m in Sources */,
 				B73990A02115741E00DD3B2A /* SearchFiltersViewController.swift in Sources */,
 				B7B20AE21EA0550F006B86CA /* FontExtension.swift in Sources */,
+				B72B4D93226297DE0017DCAD /* TransitionAnimations.swift in Sources */,
+				B72B4D9A226297DE0017DCAD /* PopupDialogOverlayView.swift in Sources */,
 				B74587CA21004DF000EECFCC /* GMUGroundOverlay.m in Sources */,
 				B74587BA21004DF000EECFCC /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				B7A376571E62CD81004F4786 /* MapContainerViewController.swift in Sources */,
@@ -1163,6 +1313,8 @@
 				B7CE9B4C20201C8B00B823FF /* Material+UIImage.swift in Sources */,
 				B776923F1E80E2930099412E /* ApiServices.swift in Sources */,
 				B730ABF620706FC300BA18CA /* ProfileViewController.swift in Sources */,
+				B72B4D95226297DE0017DCAD /* PopupDialogContainerView.swift in Sources */,
+				B72B4D70225EBB6E0017DCAD /* SerrataTransition.swift in Sources */,
 				B7FBC5611EA86D1800EF0CAB /* FacilityImageCell.swift in Sources */,
 				B74587CE21004DF000EECFCC /* GMUGeoJSONParser.m in Sources */,
 				B74587CC21004DF000EECFCC /* GMUPoint.m in Sources */,
@@ -1265,7 +1417,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1318,7 +1470,7 @@
 				PRODUCT_MODULE_NAME = goodspots;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1336,6 +1488,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/realm",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1345,7 +1498,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1360,6 +1513,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/realm",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = Spots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1368,7 +1522,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodboxdesign.goodspots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Spots/ThirdParty/PopupDialog/Spots-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

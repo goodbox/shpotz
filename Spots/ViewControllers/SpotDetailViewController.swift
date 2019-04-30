@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 import MaterialComponents
-import PopupDialog
 import AlamofireImage
-import Serrata
+// import Serrata
 import GoogleMaps
 
 public class SpotDetailViewController: UITableViewController {
@@ -158,7 +157,7 @@ public class SpotDetailViewController: UITableViewController {
             self.lblSpotName.layer.shadowOpacity = 1
             
             self.lblSpotName.textAlignment = NSTextAlignment.left
-            self.lblSpotName.contentMode = UIViewContentMode.bottom
+            self.lblSpotName.contentMode = UIView.ContentMode.bottom
             
             self.setDispersed()
             
@@ -221,7 +220,7 @@ public class SpotDetailViewController: UITableViewController {
         } else if indexPath.section == 4 {
             return 120
         } else {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
     }
     

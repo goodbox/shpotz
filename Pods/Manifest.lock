@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.6.0)
-  - AlamofireImage (3.3.1):
-    - Alamofire (~> 4.5)
+  - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -9,91 +9,87 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
   - Cache (5.2.0)
-  - FacebookCore (0.5.0):
+  - FacebookCore (0.6.0):
     - Bolts (~> 1.9)
-    - FBSDKCoreKit (~> 4.37)
-  - FacebookLogin (0.5.0):
+    - FBSDKCoreKit (~> 4.43)
+  - FacebookLogin (0.6.0):
     - Bolts (~> 1.9)
     - FacebookCore (~> 0.5)
-    - FBSDKCoreKit (~> 4.37)
-    - FBSDKLoginKit (~> 4.37)
-  - FBSDKCoreKit (4.38.1):
+    - FBSDKCoreKit (~> 4.43)
+    - FBSDKLoginKit (~> 4.43)
+  - FBSDKCoreKit (4.44.1):
     - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.38.1):
+  - FBSDKLoginKit (4.44.1):
     - FBSDKCoreKit
-  - GoogleMaps (2.7.0):
-    - GoogleMaps/Maps (= 2.7.0)
-  - GoogleMaps/Base (2.7.0)
-  - GoogleMaps/Maps (2.7.0):
+  - GoogleMaps (3.0.3):
+    - GoogleMaps/Maps (= 3.0.3)
+  - GoogleMaps/Base (3.0.3)
+  - GoogleMaps/Maps (3.0.3):
     - GoogleMaps/Base
-  - GooglePlaces (2.7.0):
-    - GoogleMaps/Base (= 2.7.0)
-  - Hue (3.0.1)
-  - ImagePicker (3.1.0)
+  - GooglePlaces (3.0.3):
+    - GoogleMaps/Base (= 3.0.3)
+  - Hue (4.0.0)
+  - ImagePicker (3.2.0)
   - Imaginary (4.2.0):
     - Cache (~> 5.0)
-  - Kingfisher (5.0.1)
   - Lightbox (2.3.0):
     - Imaginary (~> 4.0)
-  - MaterialComponents/AnimationTiming (73.0.0)
-  - MaterialComponents/Buttons (73.0.0):
+  - MaterialComponents/AnimationTiming (81.1.0)
+  - MaterialComponents/Buttons (81.1.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
-    - MaterialComponents/private/Shapes
+    - MaterialComponents/Ripple
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Ink (73.0.0):
+  - MaterialComponents/Ink (81.1.0):
     - MaterialComponents/private/Math
-  - MaterialComponents/Palettes (73.0.0)
-  - MaterialComponents/private/Application (73.0.0)
-  - MaterialComponents/private/Math (73.0.0)
-  - MaterialComponents/private/Shapes (73.0.0):
+  - MaterialComponents/Palettes (81.1.0)
+  - MaterialComponents/private/Application (81.1.0)
+  - MaterialComponents/private/Math (81.1.0)
+  - MaterialComponents/Ripple (81.1.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (81.1.0)
+  - MaterialComponents/ShadowLayer (81.1.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (81.1.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/ShadowElevations (73.0.0)
-  - MaterialComponents/ShadowLayer (73.0.0):
-    - MaterialComponents/ShadowElevations
-  - MaterialComponents/TextFields (73.0.0):
+  - MaterialComponents/TextFields (81.1.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/Palettes
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/Typography (73.0.0):
+  - MaterialComponents/Typography (81.1.0):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
-  - PopupDialog (0.6.2)
-  - Serrata (1.0.10):
-    - Kingfisher
-  - SwiftyJSON (4.2.0)
-  - XLActionController (4.1.1):
-    - XLActionController/Core (= 4.1.1)
-  - XLActionController/Core (4.1.1)
-  - XLActionController/Twitter (4.1.1):
+  - SwiftyJSON (4.3.0)
+  - XLActionController (5.0.0):
+    - XLActionController/Core (= 5.0.0)
+  - XLActionController/Core (5.0.0)
+  - XLActionController/Twitter (5.0.0):
     - XLActionController/Core
 
 DEPENDENCIES:
-  - Alamofire (~> 4.6.0)
-  - AlamofireImage (~> 3.3.0)
+  - Alamofire (~> 4.8.1)
+  - AlamofireImage (~> 3.5)
   - FacebookCore
   - FacebookLogin
-  - FBSDKCoreKit (~> 4.38.0)
-  - FBSDKLoginKit (~> 4.38.0)
   - GoogleMaps
   - GooglePlaces
   - Hue
-  - ImagePicker
+  - ImagePicker (from `https://github.com/appsailor/ImagePicker.git`, branch `feature/Swift-4.2`)
   - Lightbox
   - MaterialComponents/Buttons
   - MaterialComponents/Palettes
   - MaterialComponents/TextFields
-  - PopupDialog (~> 0.6.2)
-  - Serrata
   - SwiftyJSON (~> 4.0)
   - XLActionController
   - XLActionController/Twitter
@@ -111,42 +107,45 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - Hue
-    - ImagePicker
     - Imaginary
-    - Kingfisher
     - Lightbox
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
-    - PopupDialog
-    - Serrata
     - SwiftyJSON
     - XLActionController
 
+EXTERNAL SOURCES:
+  ImagePicker:
+    :branch: feature/Swift-4.2
+    :git: https://github.com/appsailor/ImagePicker.git
+
+CHECKOUT OPTIONS:
+  ImagePicker:
+    :commit: aa0e56d613dd15067ded53a5cab9bf46d46fe113
+    :git: https://github.com/appsailor/ImagePicker.git
+
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  FacebookCore: 74288d0add931d361b1596beae787ab72c438249
-  FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
-  FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
-  FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
-  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
-  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
-  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
-  ImagePicker: db1fd7626337b2577c523bef5f499bbbe5a37079
+  FacebookCore: 38cd3a4078738d6f648eb9b6b9d35b02d693e9a1
+  FacebookLogin: 658b0569961a081a0890f5f4dbf69ced00657d9e
+  FBSDKCoreKit: a823ae35bdb60ebb8d7a7e51abe7c5d87d2bfced
+  FBSDKLoginKit: 54ae59987f2a8703021557c90a9aebb9e5c2bef6
+  GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
+  GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
+  Hue: afe18b4e819e2848e7d2d5b4b33f4d3f88dd921b
+  ImagePicker: 456b7fab7022f1f7d8adad42b43d20963c9b5cea
   Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
-  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
-  MaterialComponents: 5ee94fadd206902ffa318ba5adfd3c9c8c799000
+  MaterialComponents: c2045515505992357e210b33cb3ffc3a404a14fd
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
-  PopupDialog: d4336d7274a6aa3af4cb26d8b6691510eba90cc3
-  Serrata: cfaf2a46ddfa89b202685983246e9c1da68b595b
-  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  XLActionController: d2ab12a967ae0fee0b4563b8d809c8fb13ebc636
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  XLActionController: d7dea0b162bd3977311bcba7d377b88d6b87a7b4
 
-PODFILE CHECKSUM: 8072ba3eea44fb103a329269f8be5b92d9621718
+PODFILE CHECKSUM: 91169bfb480a4c11a95e68fbb5ad62c60fb4fd65
 
 COCOAPODS: 1.5.3

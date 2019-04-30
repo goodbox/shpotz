@@ -7,9 +7,9 @@ target 'goodspots' do
 
 
   
-  pod 'Alamofire', '~> 4.6.0'
+  pod 'Alamofire', '~> 4.8.1'
   
-  pod 'AlamofireImage', '~> 3.3.0'
+  pod 'AlamofireImage', '~> 3.5'
   
   # pod 'XCGLogger', '~> 4.0'
   
@@ -19,15 +19,15 @@ target 'goodspots' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   
-  pod 'FBSDKCoreKit', '~> 4.38.0'
-  pod 'FBSDKLoginKit', '~> 4.38.0'
+  # pod 'FBSDKCoreKit', '~> 4.38.0'
+  # pod 'FBSDKLoginKit', '~> 4.38.0'
   #pod 'FBSDKShareKit'
   
   pod 'FacebookCore'
   pod 'FacebookLogin'
   #pod 'FacebookShare'
   
-  pod 'PopupDialog', '~> 0.6.2'
+  # pod 'PopupDialog', '~> 0.9.0'
   
   # Pods for Spots
   # pod 'Material'
@@ -39,7 +39,8 @@ target 'goodspots' do
   pod 'MaterialComponents/Palettes'
   
   # image picker pods
-  pod 'ImagePicker'
+  pod 'ImagePicker', :git => 'https://github.com/appsailor/ImagePicker.git', :branch => 'feature/Swift-4.2'
+  # pod 'ImagePicker', '~> 3.0.0'
   pod 'Lightbox'
   #pod 'Sugar', git: 'https://github.com/hyperoslo/Sugar.git'
   pod 'Hue'
@@ -62,13 +63,26 @@ target 'goodspots' do
   #reachability
   # pod 'Reachability'
 
-    pod 'Serrata'
+  # pod 'Serrata'
 
   target 'goodspotsTests' do
     inherit! :search_paths
     # Pods for testing
   end
   
+  
+  post_install do |installer|
+      installer.pods_project.targets.each do |target|
+          # Cache pod does not accept optimization level '-O', causing Bus 10 error. Use '-Osize' or '-Onone'
+          if target.name == 'Cache'
+              target.build_configurations.each do |config|
+                  level = '-Osize'
+                  config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = level
+                  puts "Set #{target.name} #{config.name} to Optimization Level #{level}"
+              end
+          end
+      end
+  end
   
   #post_install do |installer|
   #  installer.pods_project.targets.each do |target|

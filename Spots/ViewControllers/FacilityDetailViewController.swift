@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 import MaterialComponents
-import PopupDialog
 import AlamofireImage
-import Serrata
 import GoogleMaps
 import Alamofire
 
@@ -253,7 +251,7 @@ public class FacilityDetailViewController: UITableViewController {
             self.lblFacilityName.layer.shadowOpacity = 1
             
             self.lblFacilityName.textAlignment = NSTextAlignment.left
-            self.lblFacilityName.contentMode = UIViewContentMode.bottom
+            self.lblFacilityName.contentMode = UIView.ContentMode.bottom
             
             if !self.facilityDetail.Model.Phone.isEmpty {
                 self.lblFacilityPhone.text = self.facilityDetail.Model.Phone
@@ -410,7 +408,7 @@ public class FacilityDetailViewController: UITableViewController {
         } else if indexPath.section == 4 {
             return 300
         } else {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
     }
     

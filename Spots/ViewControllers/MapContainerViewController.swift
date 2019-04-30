@@ -87,7 +87,7 @@ class MapContainerViewController: UIViewController {
         tabBarItem.title = nil
         tabBarItem.image = SpotIcons.world?.tint(with: Color.blueGrey.base)
         tabBarItem.selectedImage = SpotIcons.world?.tint(with: UIColor.spotsGreen())
-        tabBarItem.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0)
+        tabBarItem.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
     
     }
 }

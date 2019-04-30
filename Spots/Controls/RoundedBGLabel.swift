@@ -32,8 +32,15 @@ extension UIEdgeInsets {
     var inverse: UIEdgeInsets {
         return UIEdgeInsets(top: -top, left: -left, bottom: -bottom, right: -right)
     }
+
     func apply(_ rect: CGRect) -> CGRect {
-        return UIEdgeInsetsInsetRect(rect, self)
+        
+        // return rect.insetb
+        return rect.inset(by: self)
+        // return rect.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 10))
+        
+        // return CGRect.init(origin: rect.origin, size: rect.size)
+        // return UIEdgeInsetsInsetRect(rect, self)
     }
 }
 

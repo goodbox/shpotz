@@ -51,7 +51,9 @@ class ProfileViewController : UITableViewController {
         
         if let userId = UserDefaults.FacebookUserId {
             
-            let profilePicUrl = "https://graph.facebook.com/v2.8/" + userId + "/picture?type=large"
+            let profilePicUrl = "https://graph.facebook.com/v3.2/" + userId + "/picture?type=large"
+            
+            
             
             self.imgProfilePic.af_setImage(
                 withURL: URL(string: profilePicUrl)!,
@@ -110,6 +112,6 @@ class ProfileViewController : UITableViewController {
         tabBarItem.title = nil
         tabBarItem.image = SpotIcons.person?.tint(with: Color.blueGrey.base)
         tabBarItem.selectedImage = SpotIcons.person?.tint(with: UIColor.spotsGreen())
-        tabBarItem.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0)
+        tabBarItem.imageInsets = UIEdgeInsets(top: 7, left: 0, bottom: -7, right: 0)
     }
 }

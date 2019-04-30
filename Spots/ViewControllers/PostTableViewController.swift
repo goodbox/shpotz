@@ -240,6 +240,7 @@ extension PostTableViewController : DidSelectSpotTypesDelegate {
 
 
 // MARK: ImagePickerDelegate
+
 extension PostTableViewController : ImagePickerDelegate {
   
     public func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
