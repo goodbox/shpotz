@@ -2,79 +2,101 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
-  - Bolts (1.9.0):
-    - Bolts/AppLinks (= 1.9.0)
-    - Bolts/Tasks (= 1.9.0)
-  - Bolts/AppLinks (1.9.0):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.9.0)
-  - Cache (5.2.0)
-  - FacebookCore (0.6.0):
-    - Bolts (~> 1.9)
-    - FBSDKCoreKit (~> 4.43)
-  - FacebookLogin (0.6.0):
-    - Bolts (~> 1.9)
-    - FacebookCore (~> 0.5)
-    - FBSDKCoreKit (~> 4.43)
-    - FBSDKLoginKit (~> 4.43)
-  - FBSDKCoreKit (4.44.1):
-    - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.44.1):
-    - FBSDKCoreKit
-  - GoogleMaps (3.0.3):
-    - GoogleMaps/Maps (= 3.0.3)
-  - GoogleMaps/Base (3.0.3)
-  - GoogleMaps/Maps (3.0.3):
+  - Cache (5.3.0)
+  - FacebookCore (0.9.0):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookLogin (0.9.0):
+    - FacebookCore (~> 0.9.0)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKLoginKit (~> 5.0)
+  - FBSDKCoreKit (5.15.1):
+    - FBSDKCoreKit/Basics (= 5.15.1)
+    - FBSDKCoreKit/Core (= 5.15.1)
+  - FBSDKCoreKit/Basics (5.15.1)
+  - FBSDKCoreKit/Core (5.15.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.15.1):
+    - FBSDKLoginKit/Login (= 5.15.1)
+  - FBSDKLoginKit/Login (5.15.1):
+    - FBSDKCoreKit (~> 5.0)
+  - GoogleMaps (3.9.0):
+    - GoogleMaps/Maps (= 3.9.0)
+  - GoogleMaps/Base (3.9.0)
+  - GoogleMaps/Maps (3.9.0):
     - GoogleMaps/Base
-  - GooglePlaces (3.0.3):
-    - GoogleMaps/Base (= 3.0.3)
-  - Hue (4.0.0)
+  - GooglePlaces (3.9.0):
+    - GoogleMaps/Base (= 3.9.0)
+  - Hue (5.0.0)
   - ImagePicker (3.2.0)
   - Imaginary (4.2.0):
     - Cache (~> 5.0)
   - Lightbox (2.3.0):
     - Imaginary (~> 4.0)
-  - MaterialComponents/AnimationTiming (81.1.0)
-  - MaterialComponents/Buttons (81.1.0):
+  - MaterialComponents/AnimationTiming (109.6.0)
+  - MaterialComponents/Availability (109.6.0)
+  - MaterialComponents/Buttons (109.6.0):
+    - MaterialComponents/Elevation
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
     - MaterialComponents/Ripple
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
+    - MaterialComponents/ShapeLibrary
     - MaterialComponents/Shapes
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Ink (81.1.0):
+  - MaterialComponents/Elevation (109.6.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
     - MaterialComponents/private/Math
-  - MaterialComponents/Palettes (81.1.0)
-  - MaterialComponents/private/Application (81.1.0)
-  - MaterialComponents/private/Math (81.1.0)
-  - MaterialComponents/Ripple (81.1.0):
+  - MaterialComponents/Ink (109.6.0):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Palettes (109.6.0)
+  - MaterialComponents/private/Application (109.6.0)
+  - MaterialComponents/private/Color (109.6.0):
+    - MaterialComponents/Availability
+  - MaterialComponents/private/Math (109.6.0)
+  - MaterialComponents/Ripple (109.6.0):
     - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
     - MaterialComponents/private/Math
-  - MaterialComponents/ShadowElevations (81.1.0)
-  - MaterialComponents/ShadowLayer (81.1.0):
+  - MaterialComponents/ShadowElevations (109.6.0)
+  - MaterialComponents/ShadowLayer (109.6.0):
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/Shapes (81.1.0):
+  - MaterialComponents/ShapeLibrary (109.6.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
+  - MaterialComponents/Shapes (109.6.0):
+    - MaterialComponents/private/Color
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/TextFields (81.1.0):
+  - MaterialComponents/TextFields (109.6.0):
     - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
     - MaterialComponents/Palettes
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/Typography (81.1.0):
+  - MaterialComponents/Typography (109.6.0):
     - MaterialComponents/private/Application
     - MaterialComponents/private/Math
   - MDFInternationalization (2.0.0)
   - MDFTextAccessibility (2.0.0)
+  - Realm (5.0.2):
+    - Realm/Headers (= 5.0.2)
+  - Realm/Headers (5.0.2)
+  - RealmSwift (5.0.2):
+    - Realm (= 5.0.2)
   - SwiftyJSON (4.3.0)
-  - XLActionController (5.0.0):
-    - XLActionController/Core (= 5.0.0)
-  - XLActionController/Core (5.0.0)
-  - XLActionController/Twitter (5.0.0):
+  - XLActionController (5.0.2):
+    - XLActionController/Core (= 5.0.2)
+  - XLActionController/Core (5.0.2)
+  - XLActionController/Twitter (5.0.2):
     - XLActionController/Core
 
 DEPENDENCIES:
@@ -90,6 +112,7 @@ DEPENDENCIES:
   - MaterialComponents/Buttons
   - MaterialComponents/Palettes
   - MaterialComponents/TextFields
+  - RealmSwift
   - SwiftyJSON (~> 4.0)
   - XLActionController
   - XLActionController/Twitter
@@ -98,7 +121,6 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
-    - Bolts
     - Cache
     - FacebookCore
     - FacebookLogin
@@ -112,6 +134,8 @@ SPEC REPOS:
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
+    - Realm
+    - RealmSwift
     - SwiftyJSON
     - XLActionController
 
@@ -128,24 +152,25 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
-  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
-  FacebookCore: 38cd3a4078738d6f648eb9b6b9d35b02d693e9a1
-  FacebookLogin: 658b0569961a081a0890f5f4dbf69ced00657d9e
-  FBSDKCoreKit: a823ae35bdb60ebb8d7a7e51abe7c5d87d2bfced
-  FBSDKLoginKit: 54ae59987f2a8703021557c90a9aebb9e5c2bef6
-  GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
-  GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
-  Hue: afe18b4e819e2848e7d2d5b4b33f4d3f88dd921b
+  Cache: 48762993ec44e1d93483c4d4a13edd18452326f4
+  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
+  FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
+  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
+  FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
+  Hue: c129cb67be7d093a82bbbc30ce8a96757bf6f37a
   ImagePicker: 456b7fab7022f1f7d8adad42b43d20963c9b5cea
   Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
   Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
-  MaterialComponents: c2045515505992357e210b33cb3ffc3a404a14fd
+  MaterialComponents: 7c5a7d77fbe08aca9383fc97aeb7423b1fbce6b4
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  Realm: 6b6f096671b64b04d08974177cabb2ff9343d153
+  RealmSwift: a3db6be0488bf3e1d5314c2956cefe98a65cdd01
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
-  XLActionController: d7dea0b162bd3977311bcba7d377b88d6b87a7b4
+  XLActionController: f1f2226d2c6629db197d4a41f2da907085a4cb9d
 
-PODFILE CHECKSUM: 91169bfb480a4c11a95e68fbb5ad62c60fb4fd65
+PODFILE CHECKSUM: b5d5f6f4c8db2c09e3974a04e9d9035e092678bd
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.5

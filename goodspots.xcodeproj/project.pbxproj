@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		39A61C4A1157A0226D94EBA4 /* Pods_goodspots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC1D44D5AF9652E547E1BD1 /* Pods_goodspots.framework */; };
-		3F0C8C940309DB5B59CA1016 /* Pods_SpotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB318AC6AE1AD6ECD965AB01 /* Pods_SpotsTests.framework */; };
 		5944FB9F1D0F6300152A0603 /* Pods_goodspotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5603BC48AA41E04E9D83B498 /* Pods_goodspotsTests.framework */; };
 		B7019CA91E8302D7000765DC /* ValidationPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7019CA81E8302D7000765DC /* ValidationPopup.xib */; };
 		B7019CAB1E830327000765DC /* ValidationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7019CAA1E830327000765DC /* ValidationPopupViewController.swift */; };
@@ -35,8 +34,6 @@
 		B72B4D76225EBB6E0017DCAD /* SlideLeaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D6E225EBB6E0017DCAD /* SlideLeaf.swift */; };
 		B72B4D79225FE5F20017DCAD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7351F33225EB2EF00991919 /* Realm.framework */; };
 		B72B4D7A225FE5F20017DCAD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7351F32225EB2EF00991919 /* RealmSwift.framework */; };
-		B72B4D7D226185170017DCAD /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B72B4D7B226185170017DCAD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B72B4D7E226185170017DCAD /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B72B4D7C226185170017DCAD /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B72B4D92226297DE0017DCAD /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D82226297DD0017DCAD /* PopupDialog.swift */; };
 		B72B4D93226297DE0017DCAD /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D83226297DD0017DCAD /* TransitionAnimations.swift */; };
 		B72B4D94226297DE0017DCAD /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B4D84226297DD0017DCAD /* PopupDialogDefaultView.swift */; };
@@ -209,8 +206,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B72B4D7D226185170017DCAD /* Realm.framework in Embed Frameworks */,
-				B72B4D7E226185170017DCAD /* RealmSwift.framework in Embed Frameworks */,
 				B7F1A4601E6FBBE9003D1FE8 /* AWSS3.framework in Embed Frameworks */,
 				B7F1A4621E6FBBE9003D1FE8 /* AWSCore.framework in Embed Frameworks */,
 			);
@@ -225,7 +220,6 @@
 		5603BC48AA41E04E9D83B498 /* Pods_goodspotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goodspotsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		582FDB3F05CF7841AC46FA69 /* Pods_Spots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C2256F56C20C245005B19A /* Pods-goodspotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goodspotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-goodspotsTests/Pods-goodspotsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AB318AC6AE1AD6ECD965AB01 /* Pods_SpotsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7019CA81E8302D7000765DC /* ValidationPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ValidationPopup.xib; sourceTree = "<group>"; };
 		B7019CAA1E830327000765DC /* ValidationPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationPopupViewController.swift; sourceTree = "<group>"; };
 		B7020A5B1E72463D007C437A /* MySpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySpotsViewController.swift; sourceTree = "<group>"; };
@@ -253,8 +247,6 @@
 		B72B4D6C225EBB6C0017DCAD /* SlideLeafViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SlideLeafViewController.storyboard; sourceTree = "<group>"; };
 		B72B4D6D225EBB6D0017DCAD /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		B72B4D6E225EBB6E0017DCAD /* SlideLeaf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeaf.swift; sourceTree = "<group>"; };
-		B72B4D7B226185170017DCAD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
-		B72B4D7C226185170017DCAD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
 		B72B4D81226297990017DCAD /* Spots-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Spots-Bridging-Header.h"; sourceTree = "<group>"; };
 		B72B4D82226297DD0017DCAD /* PopupDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
 		B72B4D83226297DD0017DCAD /* TransitionAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimations.swift; sourceTree = "<group>"; };
@@ -434,7 +426,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F0C8C940309DB5B59CA1016 /* Pods_SpotsTests.framework in Frameworks */,
 				5944FB9F1D0F6300152A0603 /* Pods_goodspotsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +455,6 @@
 				B7F1A45D1E6F9ECF003D1FE8 /* AWSS3.framework */,
 				B7F1A45B1E6F9EB9003D1FE8 /* AWSCore.framework */,
 				582FDB3F05CF7841AC46FA69 /* Pods_Spots.framework */,
-				AB318AC6AE1AD6ECD965AB01 /* Pods_SpotsTests.framework */,
 				0EC1D44D5AF9652E547E1BD1 /* Pods_goodspots.framework */,
 				5603BC48AA41E04E9D83B498 /* Pods_goodspotsTests.framework */,
 			);
@@ -534,8 +524,6 @@
 		B72775531E62C27B009B20A7 = {
 			isa = PBXGroup;
 			children = (
-				B72B4D7B226185170017DCAD /* Realm.framework */,
-				B72B4D7C226185170017DCAD /* RealmSwift.framework */,
 				B727755E1E62C27B009B20A7 /* Spots */,
 				B727755D1E62C27B009B20A7 /* Products */,
 				39DC86549FEB527A4401AE63 /* Pods */,
@@ -1048,10 +1036,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-goodspots/Pods-goodspots-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-goodspots/Pods-goodspots-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1064,6 +1051,8 @@
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/XLActionController/XLActionController.framework",
 			);
@@ -1071,7 +1060,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -1084,12 +1072,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLActionController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodspots/Pods-goodspots-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-goodspots/Pods-goodspots-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2E78958E4ACD01DA621F5C54 /* [CP] Copy Pods Resources */ = {
@@ -1098,7 +1088,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-goodspots/Pods-goodspots-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-goodspots/Pods-goodspots-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
@@ -1109,7 +1099,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-goodspots/Pods-goodspots-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-goodspots/Pods-goodspots-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B7118896202D37DD00C45C3B /* Run Script */ = {
