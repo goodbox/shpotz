@@ -25,8 +25,8 @@ target 'goodspots' do
   # pod 'FBSDKLoginKit', '~> 4.38.0'
   #pod 'FBSDKShareKit'
   
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
+  # pod 'FacebookCore'
+  # pod 'FacebookLogin'
   #pod 'FacebookShare'
   
   # pod 'PopupDialog', '~> 0.9.0'
